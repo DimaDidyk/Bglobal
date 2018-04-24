@@ -1,6 +1,9 @@
 // Colors
 $white: #fff;
-$purpure: rgb(115, 48, 113);
+$black: #000;
+$gray: rgb(117, 117, 117);
+$purple: rgb(115, 48, 113);
+$purple-light: rgba(119, 38, 112, 0.902);
 $red: #9d205e;
 
 
@@ -9,4 +12,20 @@ a{
 }
 a:hover{
 	text-decoration: none;
+}
+
+swiper>.swiper.s-wrapper .swiper-pagination .swiper-pagination-handle{
+    margin: 8px;
+}
+.swiper-pagination-handle .swiper-pagination-bullet{
+	width: 15px;
+	height: 15px;
+	opacity: 1;
+	border: 2px solid $white !important;
+	background: $white;
+}
+.swiper-pagination-handle .swiper-pagination-bullet-active{
+	background: transparent;
+	border: 2px solid $white !important;
+	margin: 0 !important;
 }

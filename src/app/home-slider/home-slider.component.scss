@@ -1,0 +1,35 @@
+@import '../assets/scss/typography';
+
+#home-slider{
+	height: 730px;
+	box-shadow: 0px 6px 11.52px 0.48px rgba(0, 0, 0, 0.25);
+	position: relative;
+	z-index: 4;
+	.swiper-slide{
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			z-index: 0;
+			cursor: pointer;
+		}
+		.banner-text{
+			text-align: right;
+			position: relative;
+  			font-size: 160px;
+			color: $purple-light;
+			max-width: 760px;
+			font-weight: 700;
+			margin-left: auto;
+			line-height: 1;
+			cursor: pointer;
+		}
+
+	}
+	
+}

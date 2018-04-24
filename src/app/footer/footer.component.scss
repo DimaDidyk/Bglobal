@@ -1,0 +1,35 @@
+@import '../assets/scss/typography';
+
+footer{
+	height: 450px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	
+	.logo{
+		max-width: 250px;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.terms{
+		color: $black; 
+  		font-size: 26px;
+		text-align: center;
+		display: block;
+		width: 100%;
+	    line-height: 1;
+	}
+	hr{
+		width: 60%;
+		max-width: 1200px;
+		margin: 20px auto;
+		display: block;
+		border-color: $red;
+	}
+	.footer-info{
+		text-align: center;
+		color: $gray;
+  		font-size: 20px;
+	}
+}

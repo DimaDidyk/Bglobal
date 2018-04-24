@@ -7,12 +7,14 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+	
   title = 'app';
 
   public ngOnInit(){
   	$(document).ready(function(){
   		console.log( 'test' );
   	});
+
   }
   
 }
