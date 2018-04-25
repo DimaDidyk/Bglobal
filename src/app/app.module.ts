@@ -11,6 +11,7 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { FlyFormComponent } from './fly-form/fly-form.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -23,7 +24,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    FlyFormComponent
   ],
   imports: [
     BrowserModule,

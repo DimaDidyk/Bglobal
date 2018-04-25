@@ -1,26 +1,20 @@
 <section id="home-slider">
+	<!-- slider -->
 	<swiper [config]="config" [(index)]="index">
+		<div class="swiper-slide" *ngFor="let slide of sliderItems">
+			<img src="{{slide['url-image']}}" alt="banner">
+			<div class="container">
+				<div class="banner-text">{{slide['text-slide']}}</div>
+			</div>
+		</div>
+	</swiper><!-- #slider -->
 
-	  <div class="swiper-slide">
-	    <img src="./assets/img/banner.jpg" alt="banner">
-	    <div class="container">
-	    	<div class="banner-text">1 סים אחד לכל החיים</div>
-	  	</div>
-	  </div>
-
-	  <div class="swiper-slide">
-	    <img src="./assets/img/banner.jpg" alt="banner">
-	    <div class="container">
-	    	<div class="banner-text">2 סים אחד לכל החיים</div>
-	  	</div>
-	  </div>
-
-	  <div class="swiper-slide">
-	    <img src="./assets/img/banner.jpg" alt="banner">
-	  	<div class="container">
-	    	<div class="banner-text">3 סים אחד לכל החיים</div>
-	  	</div>
-	  </div>
-
-	</swiper>
+	<div class="hedline">
+		<div class="container">
+			<h1>{{headlineTitle}}</h1>
+			<h3>{{headlineSubTitle}}</h3>
+		</div>
+	</div>
 </section>
+
+

@@ -9,6 +9,7 @@ import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
 })
 export class HomeSliderComponent implements OnInit {
 
+  // slider config
   index = 0;
   public config: SwiperConfigInterface = {
     direction: 'horizontal',
@@ -22,9 +23,19 @@ export class HomeSliderComponent implements OnInit {
     effect: 'fade' 
   };
 
-  constructor() { }
+  // slider content
+  sliderItems = [
+    {'text-slide': 'סים אחד לכל החיים', 'url-image': './assets/img/banner.jpg'},
+    {'text-slide': '2 סים אחד לכל החיים', 'url-image': './assets/img/banner.jpg'},
+    {'text-slide': '3 סים אחד לכל החיים', 'url-image': './assets/img/banner.jpg'},
+  ];
 
-  ngOnInit() {
-  }
+  // headline
+  headlineTitle = 'טסים לחו״ל?';
+  headlineSubTitle = 'מזמינים מראש כרטיס SIM עם חבילת גלישה ונהנים מהמחיר הזול ביותר במעל 100 מדינות!';
+
+  constructor() {}
+
+  ngOnInit() {}
 
 }
