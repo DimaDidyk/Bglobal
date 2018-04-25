@@ -1,3 +1,17 @@
-<p>
-  fly-form works!
-</p>
+<section id="fly-form">
+	<div class="container">
+		<h1>לאן טסים?</h1>
+		<h4>אנא בחרו את היעד המבוקש ותאריכי טיסה</h4>
+
+		<mat-form-field>
+			
+			<!-- datapicker -->
+			<input matInput [matDatepicker]="picker" placeholder="Choose a date">
+			<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+
+		</mat-form-field>
+
+
+	</div>
+</section>

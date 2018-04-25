@@ -1,7 +1,7 @@
 // bootstrap sass version 3
 @import 'variables';
 @import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 // 
 @import './assets/scss/typography.scss';

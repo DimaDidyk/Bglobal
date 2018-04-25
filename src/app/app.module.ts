@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// anumation
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// materual
+import { MatButtonModule, MatCheckboxModule, MatSelectModule, MatNativeDateModule, MatDatepickerModule, MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,7 +33,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   imports: [
     BrowserModule,
-    SwiperModule
+    SwiperModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatInputModule
   ],
   providers: [
     {
