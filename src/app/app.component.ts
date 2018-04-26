@@ -12,7 +12,7 @@ export class AppComponent {
 
   public ngOnInit(){
   	$(document).ready(function(){
-  		console.log( 'test' );
+  		// console.log( 'test' 
   	});
 
   }
