@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-client-info',
   templateUrl: './client-info.component.html',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientInfoComponent implements OnInit {
 
-  constructor() { }
+	onSubmit(clientInfoForm: NgForm) {
+		console.log('test');
+	}
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }

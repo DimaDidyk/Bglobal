@@ -1,3 +1,51 @@
-<p>
-  client-info works!
-</p>
+<section id="client-info">
+	<div class="container">
+		
+		<h1>פרטי לקוח</h1>
+
+		<form #clientInfoForm="ngForm" (ngSubmit)="onSubmit(clientInfoForm)">
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<mat-form-field>
+						<input matInput placeholder="שם משפחה" name="soname" ngModel />
+					</mat-form-field>
+				</div>
+				<div class="col-sm-6">
+					<mat-form-field>
+						<input matInput placeholder="שם פרטי" name="name" ngModel />
+					</mat-form-field>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<mat-form-field>
+						<input matInput placeholder="דוא״ל לקבלת חשבונית" name="email" ngModel />
+					</mat-form-field>
+				</div>
+				<div class="col-sm-6">
+					<mat-form-field>
+						<input matInput placeholder="טלפון נייד" name="tel" ngModel />
+					</mat-form-field>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-sm-12">
+					<button mat-button class="bg-button bg-green-button">המשך</button>
+				</div>
+
+				<div class="col-sm-12 checked-wrapper">
+					<mat-checkbox [align]="true" name="checked" ngModel>מאשר קבלת דיוור למייל</mat-checkbox>
+				</div>
+				
+			</div>
+
+		</form>
+
+		<!-- <pre>{{ clientInfoForm.value | json }}</pre> -->
+
+	</div>
+</section>
