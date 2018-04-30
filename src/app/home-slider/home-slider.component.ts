@@ -26,7 +26,7 @@ export class HomeSliderComponent implements OnInit {
   // slider content
   sliderItems = [
     {'text-slide': 'סים אחד לכל החיים', 'url-image': './assets/img/banner.jpg'},
-    {'text-slide': '2 סים אחד לכל החיים', 'url-image': './assets/img/banner.jpg'},
+    {'text-slide': '2 סים אחד לכל החיים', 'url-image': './assets/img/page-banner.jpg'},
     {'text-slide': '3 סים אחד לכל החיים', 'url-image': './assets/img/banner.jpg'},
   ];
 
