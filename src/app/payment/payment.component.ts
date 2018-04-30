@@ -6,28 +6,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 @Component({
-	selector: 'app-fly-form',
-	templateUrl: './fly-form.component.html',
-	styleUrls: ['./fly-form.component.scss']
+  selector: 'app-payment',
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.scss']
 })
-
-export class FlyFormComponent implements OnInit {
-	foods = [
-		{value: 'steak-0', viewValue: 'Steak'},
-		{value: 'pizza-1', viewValue: 'Pizza'},
-		{value: 'tacos-2', viewValue: 'Tacos'}
-	];
+export class PaymentComponent implements OnInit {
 
 
-	onSubmit(FlyForm: NgForm) {
+	onSubmit(PaymentForm: NgForm) {
 		console.log('test');
 	}
 
-	constructor() { 
-		
-	}
+	
+	constructor() { }
 
 	ngOnInit() {
 	}

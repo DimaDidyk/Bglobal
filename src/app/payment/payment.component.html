@@ -1,0 +1,49 @@
+<section id="payment-form">
+	<div class="container">
+		<h1>פרטי תשלום</h1>
+		<h3>אנה הזן פרטי תשלום </h3>
+		
+		
+		<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
+
+			<div class="row form-inputs">
+				<div class="col-sm-2">
+					<mat-form-field>
+						<input matInput placeholder="CVV" pattern="[0-9]{3}" required maxlength="3" minlength="3" name="cvv" ngModel />
+					</mat-form-field>
+
+				</div>
+				<div class="col-sm-4">
+					<mat-form-field>
+						<input matInput [matDatepicker]="picker1" placeholder=":תוקף" name="date_card" ngModel>
+						<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+						<mat-datepicker touchUi="true" #picker1></mat-datepicker>
+					</mat-form-field>
+				</div>
+				<div class="col-sm-6">
+					<mat-form-field>
+						<input matInput placeholder="מספר כרטיס אשראי" name="number_card" ngModel>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="payment-service">
+						<img src="./assets/img/1-payment.png" alt="payment">
+						<img src="./assets/img/2-payment.png" alt="payment">
+						<img src="./assets/img/3-payment.png" alt="payment">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<mat-checkbox [align]="true" name="checked" ngModel>מאשר לשמור פרטי הכרטיס במערכת לטעינות עתידיות</mat-checkbox>
+				</div>
+			</div>
+			<button mat-button class="bg-button">הזמן כטיס </button>
+		</form>
+		
+		<br>
+		<br>
+		<pre>{{ PaymentForm.value | json }}</pre>
+
+	</div>
+</section>

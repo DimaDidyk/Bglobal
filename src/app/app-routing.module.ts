@@ -5,9 +5,8 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { FlyFormComponent } from './fly-form/fly-form.component';
 import { BannerComponent } from './banner/banner.component';
 
-
 const routes: Routes = [
-	{ path: '', redirectTo: '/', pathMatch: 'full' },
+	{ path: '', redirectTo: '/', pathMatch: 'full'},
 	{ path: 'sim-order', component: BannerComponent },
 ];
 

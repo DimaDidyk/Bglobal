@@ -24,6 +24,9 @@ h3{
 	font-size: 26px;
 }
 
+label{
+	font-weight: 400;
+}
 
 // hedline-box
 .hedline{
@@ -43,6 +46,8 @@ a{
 a:hover{
 	text-decoration: none;
 }
+
+
 
 // swiper slider
 swiper>.swiper.s-wrapper .swiper-pagination .swiper-pagination-handle{
@@ -75,13 +80,15 @@ input:-webkit-autofill {
 	margin-bottom: 18px;
 	font-size: 26px;
 	height: 70px;
-
 }
-
-
+.mat-form-field{
+	max-width: 100%;
+	width: 100%;
+}
 .mat-input-wrapper{
 	background: $white;
 	color: $gray;
+	text-align: right;
 	padding-right: 30px;
 }
 .mat-select-value{
@@ -99,33 +106,52 @@ input:-webkit-autofill {
 .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option{
 	height: 50px;
 }
+// labels
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+	margin-top: -21px;
+    line-height: 3;
+	color: $black;
+}
 
 // buttons
 .bg-button{
-	color: $white;
+	color: $white !important;
+	border-radius: 12px;
 	width: 100%;
+	font-size: 34px;
 	height: 70px;
 	background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
 
 
-.mat-form-field-label-wrapper{
-	// display: none;
+//  checkbox
+.mat-checkbox-inner-container,
+.mat-checkbox-frame{
+	width: 30px !important;
+	height: 30px !important;
+	border-radius: 5px !important;
+	padding-left: 10px;
+}
+.mat-checkbox{
+	color: $black;
+	font-size: 24px !important;
+	font-weight: 200 !important;
+}
+.mat-checkbox-layout{
+	width: 100% !important;
+}
+.mat-checkbox-layout{
+}
+.mat-checkbox-inner-container{
 }
 
-//
-.mat-form-field-label{
-	// display: none !important;
-}  
-.mat-input-placeholder{
-
+.mat-checkbox-layout .mat-checkbox-label{
+    width: 100%;
+    text-align: right;
 }
 
-.mat-input-placeholder-wrapper{
-	// display: none;
 
-}
-.mat-form-field-placeholder-wrapper{
-
-
+// form inputs
+#payment-form .mat-form-field-wrapper{
+	border: 2px solid rgb(149, 149, 149);
 }

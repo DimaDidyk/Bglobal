@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // materual
 import { 
+ MatRadioModule,
+ MatIconModule,
  MatButtonModule,
  MatCheckboxModule,
  MatSelectModule,
@@ -12,6 +14,7 @@ import {
  MatDatepickerModule,
  MatInputModule,
  MatFormFieldModule } from '@angular/material';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 
@@ -31,6 +34,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { FlyFormComponent } from './fly-form/fly-form.component';
 import { BannerComponent } from './banner/banner.component';
+import { PaymentComponent } from './payment/payment.component';
+import { TotalComponent } from './total/total.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -45,7 +50,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FooterComponent,
     HomeSliderComponent,
     FlyFormComponent,
-    BannerComponent
+    BannerComponent,
+    PaymentComponent,
+    TotalComponent
   ],
   imports: [
     BrowserModule,
@@ -58,10 +65,11 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
-
+    MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatRadioModule
   ],
   providers: [
     {
