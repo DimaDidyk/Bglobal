@@ -36,6 +36,10 @@ import { FlyFormComponent } from './fly-form/fly-form.component';
 import { BannerComponent } from './banner/banner.component';
 import { PaymentComponent } from './payment/payment.component';
 import { TotalComponent } from './total/total.component';
+import { AdditionallyComponent } from './additionally/additionally.component';
+import { FormSimComponent } from './form-sim/form-sim.component';
+import { ClientInfoComponent } from './client-info/client-info.component';
+import { SimActiveFormComponent } from './sim-active-form/sim-active-form.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -52,7 +56,11 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FlyFormComponent,
     BannerComponent,
     PaymentComponent,
-    TotalComponent
+    TotalComponent,
+    AdditionallyComponent,
+    FormSimComponent,
+    ClientInfoComponent,
+    SimActiveFormComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,10 @@ $purpleDark: rgb(74, 48, 130);
 $red: #9d205e;
 $green: #019b94;
 
+@mixin gradient-background(){
+    background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
+}
+
 
 // headlines
 h1, h2, h3, h4, h5, h6{
@@ -122,7 +126,7 @@ input:-webkit-autofill {
 	width: 100%;
 	font-size: 34px;
 	height: 70px;
-	background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
+	@include gradient-background();
 }
 // green button
 .bg-button.bg-green-button{
