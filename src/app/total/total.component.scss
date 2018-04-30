@@ -1,0 +1,80 @@
+@import '../assets/scss/typography.scss';
+
+
+
+#total{
+	padding-top: 100px;
+	h1{
+		text-align: right;
+		margin-top: 50px;
+		color: $purpleDark;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+	h2{
+  		font-size: 26px;
+  		color: $black;
+  		text-align: right;
+  		margin-bottom: 20px;
+	}
+	h3{
+		text-align: center;
+		color: $grayDark;
+		margin-bottom: 60px;
+	}
+	.input-box{
+		padding-right: 40px;
+	}
+	.total-price{
+  		font-size: 60px;
+		text-align: right;
+  		color: $black;
+  		font-weight: 900;
+	}
+	.mat-form-field-wrapper{
+		height: 60px !important;
+	}
+	.mat-form-field-infix{
+		margin-top: -5px !important;
+	}
+
+	.selected-services{
+		padding-left: 40px;
+	}
+	.table{
+		position: relative;
+		tr{
+			td{
+				font-size: 24px;
+				line-height: 1.167;
+				border: none;
+				padding-top: 0;
+				padding-bottom: 16px;
+				&:nth-child(2n){
+					text-align: right;
+				}
+			}
+		}
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			left: -30px;
+			top: -4%;
+			height: 108%;
+			width: 2px;
+			background: $grayLight;
+		}
+	}
+
+	hr{
+		background: $grayLight;
+		height: 2px;
+		border: none;
+		margin-top: 70px;
+		margin-bottom: 14px;
+	}
+
+
+}
+

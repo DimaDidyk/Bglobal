@@ -9,20 +9,20 @@
 			<div class="row form-inputs">
 				<div class="col-sm-2">
 					<mat-form-field>
-						<input matInput placeholder="CVV" pattern="[0-9]{3}" required maxlength="3" minlength="3" name="cvv" ngModel />
+						<input matInput required placeholder="CVV" pattern="[0-9]{3}"  maxlength="3" minlength="3" name="cvv" ngModel />
 					</mat-form-field>
 
 				</div>
 				<div class="col-sm-4">
 					<mat-form-field>
-						<input matInput [matDatepicker]="picker1" placeholder=":תוקף" name="date_card" ngModel>
+						<input matInput required [matDatepicker]="picker1" placeholder=":תוקף" name="date_card" ngModel>
 						<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
 						<mat-datepicker touchUi="true" #picker1></mat-datepicker>
 					</mat-form-field>
 				</div>
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput placeholder="מספר כרטיס אשראי" name="number_card" ngModel>
+						<input matInput required placeholder="מספר כרטיס אשראי" name="number_card" ngModel>
 					</mat-form-field>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 		
 		<br>
 		<br>
-		<pre>{{ PaymentForm.value | json }}</pre>
+		<!-- <pre>{{ PaymentForm.value | json }}</pre> -->
 
 	</div>
 </section>

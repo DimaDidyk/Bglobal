@@ -1,3 +1,54 @@
-<p>
-  total works!
-</p>
+<section id="total">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 input-box">
+				<h1>סה״כ לתשלום</h1>
+				<h2>יש לך קוד קופון</h2>
+				<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
+					<mat-form-field>
+						<input matInput placeholder="הזן קוד קופון" name="coupon" ngModel/>
+					</mat-form-field>
+				</form>
+				<div class="total-price">₪ 117</div>
+			</div>
+			<div class="col-sm-6 selected-services">
+				<h1>שרותים שנבחרו</h1>
+				<table class="table">
+				  <tbody>
+				    <tr>
+				      <td><b>29 ₪ ליום</b></td>
+				      <td>unlimited : חבילת גלישה</td>
+				    </tr>
+				    <tr>
+				      <td><b>10 ימים</b></td>
+				      <td>סה”כ ימים </td>
+				    </tr>
+				    <tr>
+				      <td><b> </b></td>
+				      <td> </td> 
+				    </tr>
+				    <tr>
+				      <td><b>59 ₪ </b></td>
+				      <td>unlimited : חבילת שיחות</td>
+				    </tr>
+				    <tr>
+				      <td><b>29 ₪ </b></td>
+				      <td>עלות כרטיס ומשלוח (חד פעמי)</td> 
+				    </tr>
+				    
+				  </tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3>
+				<button mat-button class="bg-button bg-green-button">המשך</button>
+				<hr>
+			</div>
+		</div>
+	</div>
+
+
+</section>

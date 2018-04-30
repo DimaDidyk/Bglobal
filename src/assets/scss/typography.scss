@@ -4,11 +4,13 @@ $white: #fff;
 $black: #000;
 $gray: rgb(117, 117, 117);
 $grayDark: rgb(64, 64, 64);
+$grayLight: rgb(149, 149, 149);
 $purple: rgb(115, 48, 113);
 $purple-light: rgba(119, 38, 112, 0.902);
 $purpleDark: rgb(74, 48, 130);
 $red: #9d205e;
 $green: #019b94;
+
 
 // headlines
 h1, h2, h3, h4, h5, h6{
@@ -122,6 +124,13 @@ input:-webkit-autofill {
 	height: 70px;
 	background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
+// green button
+.bg-button.bg-green-button{
+	background: $green;
+	max-width: 320px;
+	margin: 0 auto;
+	display: block;
+}
 
 
 //  checkbox
@@ -152,6 +161,7 @@ input:-webkit-autofill {
 
 
 // form inputs
+#total .mat-form-field-wrapper,
 #payment-form .mat-form-field-wrapper{
-	border: 2px solid rgb(149, 149, 149);
+	border: 2px solid $grayLight;
 }
