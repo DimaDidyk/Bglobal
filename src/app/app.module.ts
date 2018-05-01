@@ -33,6 +33,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 // routing
 import { AppRoutingModule } from './/app-routing.module';
 
+
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { FlyFormComponent } from './fly-form/fly-form.component';
 import { BannerComponent } from './banner/banner.component';
