@@ -7,14 +7,13 @@
 		<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
 
 			<div class="row">
-				<span class="form-info">?</span>
-				<div class="row form-inputs">
+				<span class="form-info" (mouseover)="tooltipCVV.show()">?</span>
 
-					<div class="col-sm-2">
-						<mat-form-field>
+				<div class="row form-inputs">
+					<div class="col-sm-2" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
+						<mat-form-field class="cvv-input">
 							<input matInput required placeholder="CVV" pattern="[0-9]{3}"  maxlength="3" minlength="3" name="cvv" ngModel />
 						</mat-form-field>
-
 					</div>
 					<div class="col-sm-4">
 						<mat-form-field>

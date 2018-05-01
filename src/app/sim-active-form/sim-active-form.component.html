@@ -12,12 +12,16 @@
 				</div>
 				<div class="col-sm-5">
 					<mat-form-field>
-						<input matInput placeholder="בחרו תאריך נחיתה" name="soname" ngModel />
+						<input matInput [matDatepicker]="pickerDateLanding" placeholder="בחרו תאריך נחיתה" name="date-landing" ngModel>
+						<mat-datepicker-toggle matSuffix [for]="pickerDateLanding"></mat-datepicker-toggle>
+						<mat-datepicker touchUi="true" #pickerDateLanding></mat-datepicker>
 					</mat-form-field>
 				</div>
 				<div class="col-sm-5">
 					<mat-form-field>
-						<input matInput placeholder="בחרו תאריך המראה" name="name" ngModel />
+						<input matInput [matDatepicker]="pickerDateAppearance" placeholder="בחרו תאריך המראה" name="date-appearance" ngModel>
+						<mat-datepicker-toggle matSuffix [for]="pickerDateAppearance"></mat-datepicker-toggle>
+						<mat-datepicker touchUi="true" #pickerDateAppearance></mat-datepicker>
 					</mat-form-field>
 				</div>
 			</div>

@@ -16,3 +16,36 @@
 	}
 }
 
+@media only screen and (max-width: 1600px) {
+	#form-sim{
+		h3{
+			padding: 0 15px;
+		}
+	}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#form-sim{
+		h3{
+			padding: 0 15px;
+		}
+		.input-sim{
+			margin-bottom: -14px;
+		}
+	}
+	
+}

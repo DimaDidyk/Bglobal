@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // materual
 import { 
+ MatTooltipModule,
  MatRadioModule,
  MatIconModule,
  MatButtonModule,
@@ -14,6 +15,7 @@ import {
  MatDatepickerModule,
  MatInputModule,
  MatFormFieldModule } from '@angular/material';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
@@ -77,7 +79,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTooltipModule
   ],
   providers: [
     {

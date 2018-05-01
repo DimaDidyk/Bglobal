@@ -177,21 +177,92 @@ input:-webkit-autofill {
 	border-radius: 5px;
 }
 
-// form inputs
-#form-sim .mat-form-field-wrapper,
-#total .mat-form-field-wrapper,
-#sim-active-form .mat-form-field-wrapper,
-#payment-form .mat-form-field-wrapper{
-	border: 2px solid $grayLight;
+// md tooltip
+
+.mat-tooltip-panel{
+	border-radius: 10px;
+	// padding: 30px !important;
+}
+.mat-tooltip{
+	background-color: $green;
+	font-size: 12px;
+	border-radius: 10px;
+	padding: 10px 20px !important;
+	font-weight: 200;
+	max-width: 310px !important;
+}
+@media screen and (-ms-high-contrast:active){
+	.mat-tooltip{outline:solid 0px}
+}
+.mat-tooltip-handset{
+	margin:24px;
+	padding-left:16px;
+	padding-right:16px;
 }
 
-#client-info{
-	.mat-checkbox-label{
-		color: $white;
+
+
+
+
+
+
+
+@media only screen and (max-width: 1600px) {
+	#page-banner{
+		.banner-content{
+			.banner-text{
+	  			font-size: 80px;
+	  			max-width: 400px;
+	  		}
+		}	
+	}
+
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+	// / headlines
+	h1{
+		font-size: 40px;
+	}
+	h2{
+		font-size: 30px;
+	}
+	h3{
 		font-size: 26px;
-		line-height: 2.413;
 	}
-	.mat-checkbox-frame{
-		border-color: $white;
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	// / headlines
+	h1{
+		font-size: 30px;
 	}
+	h2{
+		font-size: 30px;
+	}
+	h3{
+		font-size: 26px;
+	}
+	
+	// md input
+	.mat-input-wrapper,
+	.mat-form-field-infix{
+		height: 60px;
+		line-height: 1;
+	}
+	// buttons
+	.bg-button{
+		height: 60px;
+	}
+
 }

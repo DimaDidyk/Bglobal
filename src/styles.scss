@@ -27,6 +27,38 @@ img{
 }
 
 
+// form inputs
+#form-sim .mat-form-field-wrapper,
+#total .mat-form-field-wrapper,
+#sim-active-form .mat-form-field-wrapper,
+#payment-form .mat-form-field-wrapper{
+  border: 2px solid $grayLight;
+}
+
+#payment-form .cvv-input .mat-form-field-wrapper{
+  margin: 0;
+}
+
+
+#client-info{
+  .mat-checkbox-label{
+    color: $white;
+    font-size: 26px;
+    line-height: 2.413;
+  }
+  .mat-checkbox-frame{
+    border-color: $white;
+  }
+}
+
+
+@media only screen and (max-width: 1500px) {
+  .row > .row{
+    margin: 0 !important;
+  }
+
+}
+
 
 // fonts
 @font-face {
