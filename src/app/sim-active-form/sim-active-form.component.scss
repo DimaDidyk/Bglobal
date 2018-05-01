@@ -1,0 +1,24 @@
+@import '../assets/scss/typography.scss';
+
+
+#sim-active-form{
+	padding-bottom: 104px;
+	padding-top: 20px;
+	h1{
+		text-align: center;
+		margin-top: 70px;
+		color: $purpleDark;
+		font-weight: 700;
+		margin-bottom: 66px;
+	}
+
+	.days-travel{
+		color: $green;
+  		font-size: 26px;
+		line-height: 2.413;
+	}
+	.bg-button{
+		margin-top: 30px;
+	}
+	
+}

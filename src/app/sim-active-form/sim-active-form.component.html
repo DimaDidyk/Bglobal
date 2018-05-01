@@ -1,3 +1,37 @@
-<p>
-  sim-active-form works!
-</p>
+<section id="sim-active-form">
+	<div class="container">
+		
+		<h1>מועד הפעלת הכרטיס</h1>
+
+		<form #simAcriveFrom="ngForm" (ngSubmit)="onSubmit(simAcriveFrom)">
+			
+			<div class="row">
+			<div class="row">
+				<div class="col-sm-2">
+					<b class="days-travel">18 ימי נסיעה</b>
+				</div>
+				<div class="col-sm-5">
+					<mat-form-field>
+						<input matInput placeholder="בחרו תאריך נחיתה" name="soname" ngModel />
+					</mat-form-field>
+				</div>
+				<div class="col-sm-5">
+					<mat-form-field>
+						<input matInput placeholder="בחרו תאריך המראה" name="name" ngModel />
+					</mat-form-field>
+				</div>
+			</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<button mat-button class="bg-button bg-green-button">המשך</button>
+				</div>
+			</div>
+
+		</form>
+
+		<!-- <pre>{{ simAcriveFrom.value | json }}</pre> -->
+
+	</div>
+</section>

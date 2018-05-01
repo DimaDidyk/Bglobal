@@ -1,13 +1,13 @@
 @import '../assets/scss/typography';
 
 footer{
-	height: 450px;
+	height: 486px;
 	display: flex;
     flex-direction: column;
     justify-content: center;
 	
 	.logo{
-		max-width: 250px;
+		max-width: 210px;
 		display: block;
 		margin: 0 auto;
 		margin-bottom: 30px;
@@ -19,17 +19,21 @@ footer{
 		display: block;
 		width: 100%;
 	    line-height: 1;
+	    span{
+	    	padding: 0 42px;
+	    	cursor: pointer;
+	    }
 	}
 	hr{
-		width: 60%;
-		max-width: 1200px;
+		max-width: 100%;
+		width: 1200px;
 		margin: 20px auto;
 		display: block;
 		border-color: $red;
 	}
 	.footer-info{
 		text-align: center;
-		color: $gray;
+		color: $black;
   		font-size: 20px;
 	}
 }

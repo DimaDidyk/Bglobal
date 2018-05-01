@@ -1,7 +1,6 @@
 @import '../assets/scss/typography.scss';
 
 #additionally{
-	padding-top: 100px;
 	@include gradient-background();
 
 	h1{
@@ -9,16 +8,65 @@
 		margin-top: 50px;
 		color: $white;
 		font-weight: 700;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
-
 	h3{
 		text-align: center;
 		color: $white;
-		margin-bottom: 60px;
+		margin-bottom: 28px;
+		font-size: 23px;
+	}
+	
+	.options{
+		display: block;
+		width: max-content;
+		margin: 0 auto;
+
+		.option-item{
+			padding: 24px 26px;
+			display: inline-block;
+			margin-bottom: 20px;
+			.option-content{
+				width: 220px;
+				height: 200px;
+				border-radius: 50%;
+				text-align: center;
+				display: block;
+				margin: 10px auto;
+				box-shadow: 0px 3px 4.7px 0.3px rgba(0, 0, 0, 0.24),0px 1px 5.88px 0.12px rgba(0, 0, 0, 0.16);
+				color: $white;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				span{
+					font-size: 25px;
+				}
+				b{
+					font-size: 60px;
+					display: block;
+				}
+			}
+			.bg-orange-button{
+				margin-top: 50px;
+				margin-bottom: 6px;
+			}
+		}
+		.option-item-orange{
+			.option-content{
+		        background-image: linear-gradient(to right, rgb(71,51,132) 0%, rgb(7,127,191) 100%);
+			}
+		}
+		.option-item-blue{
+			.option-content{
+			    background-image: linear-gradient(to right, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
+			}
+		}
 	}
 
-
+	.bg-button{
+		margin-bottom: 60px;
+	}
+	
 
 }
 

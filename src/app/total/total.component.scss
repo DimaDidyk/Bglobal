@@ -1,13 +1,13 @@
 @import '../assets/scss/typography.scss';
 
 #total{
-	padding-top: 100px;
+	padding-top: 15px;
 	h1{
 		text-align: right;
 		margin-top: 50px;
 		color: $purpleDark;
 		font-weight: 700;
-		margin-bottom: 20px;
+		margin-bottom: 32px;
 	}
 	h2{
   		font-size: 26px;
@@ -18,15 +18,18 @@
 	h3{
 		text-align: center;
 		color: $grayDark;
-		margin-bottom: 60px;
+		margin-bottom: 133px;
+		margin-top: 22px;
+		font-size: 24px;
 	}
 	.input-box{
-		padding-right: 40px;
+		padding-right: 50px;
 	}
 	.total-price{
-  		font-size: 60px;
+  		font-size: 74px;
 		text-align: right;
   		color: $black;
+  		margin-top: -26px;
   		font-weight: 900;
 	}
 	.mat-form-field-wrapper{
@@ -37,7 +40,7 @@
 	}
 
 	.selected-services{
-		padding-left: 40px;
+		padding-left: 26px;
 	}
 	.table{
 		position: relative;
@@ -47,7 +50,7 @@
 				line-height: 1.167;
 				border: none;
 				padding-top: 0;
-				padding-bottom: 16px;
+				padding-bottom: 20px;
 				&:nth-child(2n){
 					text-align: right;
 				}
@@ -58,8 +61,8 @@
 			display: block;
 			position: absolute;
 			left: -30px;
-			top: -4%;
-			height: 108%;
+			top: -11%;
+    		height: 111%;
 			width: 2px;
 			background: $grayLight;
 		}
@@ -69,7 +72,7 @@
 		background: $grayLight;
 		height: 2px;
 		border: none;
-		margin-top: 70px;
+		margin-top: 72px;
 		margin-bottom: 14px;
 	}
 

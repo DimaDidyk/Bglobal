@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-sim-active-form',
   templateUrl: './sim-active-form.component.html',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimActiveFormComponent implements OnInit {
 
-  constructor() { }
+	onSubmit(simAcriveFrom: NgForm) {
+		console.log('test');
+	}
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }

@@ -6,6 +6,7 @@
 		<form #clientInfoForm="ngForm" (ngSubmit)="onSubmit(clientInfoForm)">
 			
 			<div class="row">
+			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
 						<input matInput placeholder="שם משפחה" name="soname" ngModel />
@@ -17,7 +18,10 @@
 					</mat-form-field>
 				</div>
 			</div>
+			</div>
 			
+			
+			<div class="row">
 			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
@@ -30,17 +34,19 @@
 					</mat-form-field>
 				</div>
 			</div>
+			</div>
 
 
+			<div class="row">
 			<div class="row">
 				<div class="col-sm-12">
 					<button mat-button class="bg-button bg-green-button">המשך</button>
 				</div>
 
 				<div class="col-sm-12 checked-wrapper">
-					<mat-checkbox [align]="true" name="checked" ngModel>מאשר קבלת דיוור למייל</mat-checkbox>
+					<mat-checkbox [align]="true" name="checked" id="my-select" ngModel>מאשר קבלת דיוור למייל</mat-checkbox>
 				</div>
-				
+			</div>
 			</div>
 
 		</form>

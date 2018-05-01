@@ -10,10 +10,13 @@ $purple-light: rgba(119, 38, 112, 0.902);
 $purpleDark: rgb(74, 48, 130);
 $red: #9d205e;
 $green: #019b94;
+$orange: #fcb30e;
 
 @mixin gradient-background(){
     background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
+
+
 
 
 // headlines
@@ -135,7 +138,13 @@ input:-webkit-autofill {
 	margin: 0 auto;
 	display: block;
 }
-
+.bg-button.bg-orange-button{
+	background: $orange;
+	margin: 0 auto;
+	margin: 20px auto;
+	display: block;
+	width: 200px;
+}
 
 //  checkbox
 .mat-checkbox-inner-container,
@@ -157,17 +166,32 @@ input:-webkit-autofill {
 }
 .mat-checkbox-inner-container{
 }
-
 .mat-checkbox-layout .mat-checkbox-label{
     width: 100%;
     text-align: right;
 }
-
+// active color
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
+	background: $green;
+	border-radius: 5px;
+}
 
 // form inputs
 #form-sim .mat-form-field-wrapper,
 #total .mat-form-field-wrapper,
+#sim-active-form .mat-form-field-wrapper,
 #payment-form .mat-form-field-wrapper{
 	border: 2px solid $grayLight;
 }
 
+#client-info{
+	.mat-checkbox-label{
+		color: $white;
+		font-size: 26px;
+		line-height: 2.413;
+	}
+	.mat-checkbox-frame{
+		border-color: $white;
+	}
+}
