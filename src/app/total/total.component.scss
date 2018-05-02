@@ -74,7 +74,17 @@
 		margin-top: 72px;
 		margin-bottom: 14px;
 	}
-
-
 }
 
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#total{
+		.selected-services{
+			padding-left: 15px;
+		}
+		.input-box{
+			padding-right: 15px;
+		}
+	}
+}

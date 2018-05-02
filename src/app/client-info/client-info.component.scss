@@ -38,3 +38,13 @@
 	}
 }
 
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	#client-info{
+		.checked-wrapper{
+			position: static;
+			width: 100%;
+			text-align: right;
+		}
+	}
+}
