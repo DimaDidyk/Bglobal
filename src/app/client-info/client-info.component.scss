@@ -1,9 +1,7 @@
 @import '../assets/scss/typography.scss';
 
-
 #client-info{
-	@include gradient-background();
-
+	
 	h1{
 		text-align: center;
 		margin-top: 40px;
@@ -11,21 +9,17 @@
 		font-weight: 700;
 		margin-bottom: 50px;
 	}
-	
-
 	.bg-button{
 		margin-top: 10px;
 		margin-bottom: 80px;
 	}
-
-
 	.checked-wrapper{
 		color: $white;
 		position: absolute;
+		z-index: 1;
     	margin-top: 10px;
 	    width: max-content;
 		right: 0;
-
 		.mat-checkbox-label{
 			color: $white;
 			font-size: 18px;
@@ -34,8 +28,10 @@
 	}
 
 	#my-select .mat-checkbox-label{
-		color: #fff !important;
+		color: $white !important;
 	}
+
+	
 }
 
 /* Medium devices (desktops, 992px and up) */
