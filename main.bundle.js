@@ -74,7 +74,8 @@ var AdditionallyComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__banner_banner_component__ = __webpack_require__("./src/app/banner/banner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sim_order_page_sim_order_page_component__ = __webpack_require__("./src/app/sim-order-page/sim-order-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__homa_page_homa_page_component__ = __webpack_require__("./src/app/homa-page/homa-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -84,9 +85,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
-    { path: '', redirectTo: '/', pathMatch: 'full' },
-    { path: 'sim-order', component: __WEBPACK_IMPORTED_MODULE_2__banner_banner_component__["a" /* BannerComponent */] },
+    // { path: 'sim-order', redirectTo: '/', pathMatch: 'full'},
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_2__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */] },
+    { path: 'sim-order', component: __WEBPACK_IMPORTED_MODULE_3__homa_page_homa_page_component__["a" /* HomaPageComponent */] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -112,7 +115,7 @@ var AppRoutingModule = /** @class */ (function () {
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Header -->\n<app-header></app-header>\n\n<app-banner></app-banner>\n\n<app-form-sim></app-form-sim>\n\n<app-client-info></app-client-info>\n\n<app-sim-active-form></app-sim-active-form>\n\n<app-additionally></app-additionally>\n\n<app-total></app-total>\n\n<app-payment></app-payment>\n\n\n<!-- router -->\n<!-- <router-outlet></router-outlet> -->\n\n<!-- Slider -->\n<!-- <app-home-slider></app-home-slider> -->\n\n<!-- Form -->\n<!-- <app-fly-form></app-fly-form> -->\n\n<!-- Footer -->\n<app-footer></app-footer>"
+module.exports = "<!-- Header -->\n<app-header></app-header>\n\n<!-- router -->\n<router-outlet></router-outlet>\n\n<!-- Footer -->\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -186,6 +189,8 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__form_sim_form_sim_component__ = __webpack_require__("./src/app/form-sim/form-sim.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__client_info_client_info_component__ = __webpack_require__("./src/app/client-info/client-info.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__sim_active_form_sim_active_form_component__ = __webpack_require__("./src/app/sim-active-form/sim-active-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__homa_page_homa_page_component__ = __webpack_require__("./src/app/homa-page/homa-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__sim_order_page_sim_order_page_component__ = __webpack_require__("./src/app/sim-order-page/sim-order-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -217,6 +222,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var DEFAULT_SWIPER_CONFIG = {
     direction: 'horizontal',
     slidesPerView: 'auto'
@@ -238,7 +245,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__additionally_additionally_component__["a" /* AdditionallyComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__form_sim_form_sim_component__["a" /* FormSimComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__client_info_client_info_component__["a" /* ClientInfoComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__sim_active_form_sim_active_form_component__["a" /* SimActiveFormComponent */]
+                __WEBPACK_IMPORTED_MODULE_18__sim_active_form_sim_active_form_component__["a" /* SimActiveFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__homa_page_homa_page_component__["a" /* HomaPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -551,7 +560,7 @@ var FormSimComponent = /** @class */ (function () {
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header >\n\t<div class=\"container\">\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\n\t\t\n\n\t\t<!-- mobile sandwich -->\n\t\t<div id=\"sandwich\"\n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t<div class=\"sw sw-topper\"></div>\n\t\t\t<div class=\"sw sw-bottom\"></div>\n\t\t\t<div class=\"sw sw-footer\"></div>\n\t\t</div>\n\n\t\t<div id=\"main-menu\" \n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t\n\t\t\t<button mat-button class=\"main-manu-item\"\n\t\t\t[matMenuTriggerFor]=\"logInMenu\" \n\t\t\t(mouseenter)=\"openMenu()\" \n\t\t\t#notificationMenuBtn>\n\t\t\t\t<a routerLink=\"/\" id=\"sign-in\">כניסה למנויים <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i></a>\n\t\t\t</button>\n\t\t\t\n\t\t\t<mat-menu #logInMenu=\"matMenu\">\n\t\t\t  <button mat-menu-item>כרטיס סים שלי</button>\n\t\t\t  <button mat-menu-item>מצב החבילה עדכני</button>\n\t\t\t  <button mat-menu-item>פרטים אישיים</button>\n\t\t\t  <button mat-menu-item>יציאה</button>\n\t\t\t</mat-menu>\n\n\t\t\t<a routerLink=\"/sim-order\" class=\"main-manu-item\">צור קשר</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item\">הפעלת/טעינת כרטיס</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item\">שאלות נפוצות</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item\">רשימת מדינות נתמכות</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item bold\">דף הבית</a>\n\t\t</div>\n\t</div>\n</header>\n"
+module.exports = "<header >\n\t<div class=\"container\">\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\n\n\t\t<!-- mobile sandwich -->\n\t\t<div id=\"sandwich\"\n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t<div class=\"sw sw-topper\"></div>\n\t\t\t<div class=\"sw sw-bottom\"></div>\n\t\t\t<div class=\"sw sw-footer\"></div>\n\t\t</div>\n\n\t\t<div id=\"main-menu\" \n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t\n\t\t\t<button mat-button class=\"main-manu-item\"\n\t\t\t[matMenuTriggerFor]=\"logInMenu\" \n\t\t\t(mouseenter)=\"openMenu()\" \n\t\t\t#notificationMenuBtn>\n\t\t\t\t<a routerLink=\"/\" id=\"sign-in\">כניסה למנויים <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i></a>\n\t\t\t</button>\n\t\t\t\n\t\t\t<mat-menu #logInMenu=\"matMenu\">\n\t\t\t  <button mat-menu-item>כרטיס סים שלי</button>\n\t\t\t  <button mat-menu-item>מצב החבילה עדכני</button>\n\t\t\t  <button mat-menu-item>פרטים אישיים</button>\n\t\t\t  <button mat-menu-item>יציאה</button>\n\t\t\t</mat-menu>\n\n\t\t\t<a routerLink=\"/sim-order\" class=\"main-manu-item\">צור קשר</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item\">הפעלת/טעינת כרטיס</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item\">שאלות נפוצות</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item\">רשימת מדינות נתמכות</a>\n\t\t\t<a routerLink=\"/\" class=\"main-manu-item bold\">דף הבית</a>\n\t\t</div>\n\t</div>\n</header>\n"
 
 /***/ }),
 
@@ -610,6 +619,56 @@ var HeaderComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/homa-page/homa-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Slider -->\n<app-home-slider></app-home-slider>\n\n<!-- Form -->\n<app-fly-form></app-fly-form>"
+
+/***/ }),
+
+/***/ "./src/app/homa-page/homa-page.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/homa-page/homa-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomaPageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HomaPageComponent = /** @class */ (function () {
+    function HomaPageComponent() {
+    }
+    HomaPageComponent.prototype.ngOnInit = function () {
+    };
+    HomaPageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-homa-page',
+            template: __webpack_require__("./src/app/homa-page/homa-page.component.html"),
+            styles: [__webpack_require__("./src/app/homa-page/homa-page.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], HomaPageComponent);
+    return HomaPageComponent;
 }());
 
 
@@ -788,6 +847,56 @@ var SimActiveFormComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], SimActiveFormComponent);
     return SimActiveFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/sim-order-page/sim-order-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-banner></app-banner>\n\n<app-form-sim></app-form-sim>\n\n<app-client-info></app-client-info>\n\n<app-sim-active-form></app-sim-active-form>\n\n<app-additionally></app-additionally>\n\n<app-total></app-total>\n\n<app-payment></app-payment>"
+
+/***/ }),
+
+/***/ "./src/app/sim-order-page/sim-order-page.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/sim-order-page/sim-order-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SimOrderPageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SimOrderPageComponent = /** @class */ (function () {
+    function SimOrderPageComponent() {
+    }
+    SimOrderPageComponent.prototype.ngOnInit = function () {
+    };
+    SimOrderPageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-sim-order-page',
+            template: __webpack_require__("./src/app/sim-order-page/sim-order-page.component.html"),
+            styles: [__webpack_require__("./src/app/sim-order-page/sim-order-page.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SimOrderPageComponent);
+    return SimOrderPageComponent;
 }());
 
 
