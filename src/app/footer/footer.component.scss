@@ -1,21 +1,22 @@
 @import '../assets/scss/typography';
 
 footer{
-	height: 486px;
+	height: 380px;
 	display: flex;
     flex-direction: column;
     justify-content: center;
 	
-	.logo{
-		max-width: 210px;
+	img.logo{
+		max-width: 200px;
 		display: block;
 		margin: 0 auto;
 		margin-bottom: 30px;
 	}
 	.terms{
 		color: $black; 
-  		font-size: 26px;
+  		font-size: 18px;
 		text-align: center;
+		font-weight: normal;
 		display: block;
 		width: 100%;
 	    line-height: 1;
@@ -34,6 +35,19 @@ footer{
 	.footer-info{
 		text-align: center;
 		color: $black;
-  		font-size: 20px;
+  		font-size: 16px;
+  		font-weight: normal;
+	}
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	footer{
+		.terms{
+			span{
+				padding: 0 15px;
+			}
+		}
 	}
 }

@@ -2,7 +2,7 @@
 $mainBackground: #f1f1f1;
 $white: #fff;
 $black: #000;
-$gray: rgb(117, 117, 117);
+$gray: #757575;
 $grayDark: rgb(64, 64, 64);
 $grayLight: rgb(149, 149, 149);
 $purple: rgb(115, 48, 113);
@@ -24,13 +24,13 @@ h1, h2, h3, h4, h5, h6{
 	margin: 10px 0;
 }
 h1{
-	font-size: 50px;
+	font-size: 23px;
 }
 h2{
-	font-size: 30px;
+	font-size: 20px;
 }
 h3{
-	font-size: 26px;
+	font-size: 18px;
 }
 
 label{
@@ -82,14 +82,51 @@ input:-webkit-autofill {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
 }
+
+// mat menu
+.cdk-overlay-pane{
+	// width: 100%;
+}
+.mat-menu-panel{
+    width: 220px;
+    margin-top: 38px;
+    margin-left: -52px;
+
+}
+.mat-elevation-z2{
+	box-shadow: none !important;
+}
+.mat-button-focus-overlay{
+	background-color: transparent !important;
+}
+.mat-menu-panel button{
+	text-align: right;
+	font-size: 20px;
+    height: 34px;
+    line-height: 1;
+    padding: 0 20px;
+}
+.mat-menu-content{
+	padding: 10px 0 !important;
+}
+
+
 // material inputs
 .mat-input-wrapper,
 .bg-button{
 	border-radius: 12px;
-	margin-bottom: 24px;
-	font-size: 26px;
-	height: 70px;
+	margin-bottom: 26px;
+	font-weight: 100;
+	font-size: 18px;
+	height: 50px;
 }
+.mat-form-field-infix{
+	border: 0;
+	height: 50px;
+	line-height: 1.8;
+	padding-right: 10px;
+}
+
 .mat-form-field{
 	max-width: 100%;
 	width: 100%;
@@ -98,17 +135,17 @@ input:-webkit-autofill {
 	background: $white;
 	color: $gray;
 	text-align: right;
-	padding-right: 30px;
+	padding-right: 20px;
+}
+
+.mat-form-field-suffix{
+	position: relative;
+    top: -4px;
 }
 .mat-select-value{
 	padding-right: 24px;
 }
-.mat-form-field-infix{
-	border: 0;
-	height: 70px;
-	line-height: 1.7;
-	padding-right: 10px;
-}
+
 .mat-form-field-underline{
 	display: none;
 }
@@ -117,8 +154,8 @@ input:-webkit-autofill {
 }
 // labels
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
-	margin-top: -21px;
-    line-height: 3;
+	margin-top: -8px;
+    line-height: 2;
 	color: $black;
 }
 
@@ -127,14 +164,14 @@ input:-webkit-autofill {
 	color: $white !important;
 	border-radius: 12px;
 	width: 100%;
-	font-size: 34px;
-	height: 70px;
+	font-size: 22px;
+	height: 50px;
 	@include gradient-background();
 }
 // green button
 .bg-button.bg-green-button{
 	background: $green;
-	max-width: 320px;
+	max-width: 260px;
 	margin: 0 auto;
 	display: block;
 }
@@ -143,20 +180,20 @@ input:-webkit-autofill {
 	margin: 0 auto;
 	margin: 20px auto;
 	display: block;
-	width: 200px;
+	width: 180px;
 }
 
 //  checkbox
 .mat-checkbox-inner-container,
 .mat-checkbox-frame{
-	width: 30px !important;
-	height: 30px !important;
+	width: 20px !important;
+	height: 20px !important;
 	border-radius: 5px !important;
 	padding-left: 10px;
 }
 .mat-checkbox{
 	color: $black;
-	font-size: 24px !important;
+	font-size: 20px !important;
 	font-weight: 200 !important;
 }
 .mat-checkbox-layout{
@@ -169,6 +206,7 @@ input:-webkit-autofill {
 .mat-checkbox-layout .mat-checkbox-label{
     width: 100%;
     text-align: right;
+    white-space: pre-line;
 }
 // active color
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,
@@ -195,19 +233,17 @@ input:-webkit-autofill {
 	.mat-tooltip{outline:solid 0px}
 }
 .mat-tooltip-handset{
-	margin:24px;
-	padding-left:16px;
-	padding-right:16px;
+	margin: 24px;
+	padding-left: 16px;
+	padding-right: 16px;
 }
 
 
 
 
 
-
-
-
-@media only screen and (max-width: 1600px) {
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
 	#page-banner{
 		.banner-content{
 			.banner-text{
@@ -215,22 +251,6 @@ input:-webkit-autofill {
 	  			max-width: 400px;
 	  		}
 		}	
-	}
-
-}
-
-
-/* Large devices (large desktops, 1200px and up) */
-@media only screen and (max-width: 1200px) {
-	// / headlines
-	h1{
-		font-size: 40px;
-	}
-	h2{
-		font-size: 30px;
-	}
-	h3{
-		font-size: 26px;
 	}
 
 }
@@ -243,26 +263,13 @@ input:-webkit-autofill {
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-	// / headlines
-	h1{
-		font-size: 30px;
-	}
-	h2{
-		font-size: 30px;
-	}
-	h3{
-		font-size: 26px;
-	}
 	
 	// md input
 	.mat-input-wrapper,
 	.mat-form-field-infix{
-		height: 60px;
-		line-height: 1;
 	}
 	// buttons
 	.bg-button{
-		height: 60px;
 	}
 
 }

@@ -1,9 +1,34 @@
-<header>
+<header >
 	<div class="container">
 		<img routerLink="/" src="./assets/img/logo.png" alt="Bglobal" class="logo">
 		
-		<div id="main-menu">
-			<a routerLink="/" class="main-manu-item" id="sign-in">כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></a>
+
+		<!-- mobile sandwich -->
+		<div id="sandwich"
+		 (click)="clickSendwich()" 
+		 [ngClass]="status ? 'active' : '' ">
+			<div class="sw sw-topper"></div>
+			<div class="sw sw-bottom"></div>
+			<div class="sw sw-footer"></div>
+		</div>
+
+		<div id="main-menu" 
+		 (click)="clickSendwich()" 
+		 [ngClass]="status ? 'active' : '' ">
+			
+			<button mat-button class="main-manu-item"
+			[matMenuTriggerFor]="logInMenu" 
+			(mouseenter)="openMenu()" 
+			#notificationMenuBtn>
+				<a routerLink="/" id="sign-in">כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></a>
+			</button>
+			
+			<mat-menu #logInMenu="matMenu">
+			  <button mat-menu-item>כרטיס סים שלי</button>
+			  <button mat-menu-item>מצב החבילה עדכני</button>
+			  <button mat-menu-item>פרטים אישיים</button>
+			  <button mat-menu-item>יציאה</button>
+			</mat-menu>
 
 			<a routerLink="/sim-order" class="main-manu-item">צור קשר</a>
 			<a routerLink="/" class="main-manu-item">הפעלת/טעינת כרטיס</a>

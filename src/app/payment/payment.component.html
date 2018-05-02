@@ -7,22 +7,22 @@
 		<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
 
 			<div class="row">
-				<span class="form-info" (mouseover)="tooltipCVV.show()">?</span>
+				<span class="form-info" (click)="tooltipCVV.show()">?</span>
 
 				<div class="row form-inputs">
-					<div class="col-sm-2" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
+					<div class="col-md-2" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
 						<mat-form-field class="cvv-input">
 							<input matInput required placeholder="CVV" pattern="[0-9]{3}"  maxlength="3" minlength="3" name="cvv" ngModel />
 						</mat-form-field>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-md-4">
 						<mat-form-field>
 							<input matInput required [matDatepicker]="picker1" placeholder=":תוקף" name="date_card" ngModel>
 							<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
 							<mat-datepicker touchUi="true" #picker1></mat-datepicker>
 						</mat-form-field>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-md-6">
 						<mat-form-field>
 							<input matInput required placeholder="מספר כרטיס אשראי" name="number_card" ngModel>
 						</mat-form-field>
@@ -32,14 +32,14 @@
 
 			<div class="row">
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="payment-service">
 						<img src="./assets/img/1-payment.png" alt="payment">
 						<img src="./assets/img/2-payment.png" alt="payment">
 						<img src="./assets/img/3-payment.png" alt="payment">
 					</div>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-8">
 					<mat-checkbox [align]="true" name="checked" ngModel>מאשר לשמור פרטי הכרטיס במערכת לטעינות עתידיות</mat-checkbox>
 				</div>
 			</div>

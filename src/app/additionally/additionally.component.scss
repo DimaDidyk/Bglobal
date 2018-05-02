@@ -14,21 +14,21 @@
 		text-align: center;
 		color: $white;
 		margin-bottom: 28px;
-		font-size: 23px;
+		font-size: 18px;
 	}
 	
 	.options{
 		display: block;
 		width: max-content;
+		max-width: 100%;
 		margin: 0 auto;
-
 		.option-item{
 			padding: 24px 26px;
 			display: inline-block;
 			margin-bottom: 20px;
 			.option-content{
-				width: 220px;
-				height: 200px;
+				width: 180px;
+				height: 180px;
 				border-radius: 50%;
 				text-align: center;
 				display: block;
@@ -39,11 +39,14 @@
 				flex-direction: column;
 				justify-content: center;
 				span{
-					font-size: 25px;
+					font-size: 20px;
+					font-weight: bold;
 				}
 				b{
 					font-size: 60px;
 					display: block;
+					font-weight: 900;
+					line-height: 59px;
 				}
 			}
 			.bg-orange-button{
@@ -70,3 +73,15 @@
 
 }
 
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#additionally{
+		.options{
+			.option-item{
+				display: block;
+			}
+		}
+	}
+}

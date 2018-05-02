@@ -9,7 +9,7 @@
 		margin-top: 40px;
 		color: $white;
 		font-weight: 700;
-		margin-bottom: 102px;
+		margin-bottom: 50px;
 	}
 	
 
@@ -24,10 +24,12 @@
 		position: absolute;
     	margin-top: 10px;
 	    width: max-content;
-		right: -14px;
+		right: 0;
 
 		.mat-checkbox-label{
 			color: $white;
+			font-size: 18px;
+			line-height: 2.413;
 		}
 	}
 

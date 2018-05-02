@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // materual
 import { 
+ MatMenuTrigger,
+ MatMenuModule,
  MatTooltipModule,
  MatRadioModule,
  MatIconModule,
@@ -81,7 +83,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ReactiveFormsModule,
     AppRoutingModule,
     MatRadioModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule,
   ],
   providers: [
     {

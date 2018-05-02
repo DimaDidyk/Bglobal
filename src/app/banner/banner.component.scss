@@ -23,9 +23,9 @@
 		.banner-text{
 			text-align: right;
 			position: relative;
-  			font-size: 160px;
 			color: $purple-light;
-			max-width: 760px;
+			font-size: 134px;
+    		max-width: 745px;
 			font-weight: 900;
 			margin-left: auto;
 			line-height: 1;
@@ -35,7 +35,7 @@
 	}
 
 	.hedline{
-		height: 140px;
+		height: 70px;
 		background: rgba(81,46,127,1);
 		background: linear-gradient(to right, rgba(81,46,127,1) 0%, rgba(165,25,106,1) 80%, rgba(165,25,106,1) 100%);
 		color: #fff;
@@ -49,18 +49,8 @@
 
 
 
-@media only screen and (max-width: 1600px) {
-	#page-banner{
-		.banner-content{
-			.banner-text{
-	  			font-size: 80px;
-	  			max-width: 400px;
-	  		}
-		}	
-		.hedline{
-			height: 100px;
-		}
-	}
+@media only screen and (max-width: 1920px) {
+
 }
 
 

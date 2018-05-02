@@ -19,14 +19,16 @@
 		display: inline-block;
 		color: $white;
 		background: $green;
-		width: 38px;
-		height: 38px;
+		width: 30px;
+		height: 30px;
 		border-radius: 50%;
 		text-align: center;
-    	font-size: 26px;
+    	font-size: 22px;
     	position: absolute;
-    	margin-top: 14px;
+    	left: 15px;
+    	margin-top: 6px;
     	cursor: pointer;
+    	z-index: 1;
 	}
 	.form-inputs{
 		margin-bottom: 12px;
@@ -38,12 +40,13 @@
 		img{
 			display: inline-block;
 			padding-right: 24px;
+			width: 68px;
 		}
 	}
 
 
 	.bg-button{
-		max-width: 720px;
+		max-width: 500px;
 		display: block;
 		margin: 50px auto;
 	}
@@ -52,3 +55,17 @@
 
 }
 
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	#payment-form{
+		.form-inputs{
+			padding-left: 0;
+		}
+		.cvv-input{
+			padding-left: 40px;
+			margin-bottom: 26px;
+		}
+	}
+
+}

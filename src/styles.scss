@@ -7,7 +7,13 @@
 @import './assets/scss/typography.scss';
 
 
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 
+}
 body{
 	font-family: 'Open Sans Hebrew', sans-serif;
 	font-style: normal;
@@ -17,9 +23,9 @@ body{
 }
 
 .container{
-    width: 1200px;
-    max-width: 100%;
-    position: relative;
+  width: 1020px;
+  max-width: 100%;
+  position: relative;
 }
 
 img{
@@ -32,7 +38,7 @@ img{
 #total .mat-form-field-wrapper,
 #sim-active-form .mat-form-field-wrapper,
 #payment-form .mat-form-field-wrapper{
-  border: 2px solid $grayLight;
+  border: 1px solid $grayLight;
 }
 
 #payment-form .cvv-input .mat-form-field-wrapper{
@@ -43,7 +49,7 @@ img{
 #client-info{
   .mat-checkbox-label{
     color: $white;
-    font-size: 26px;
+    font-size: 22px;
     line-height: 2.413;
   }
   .mat-checkbox-frame{
@@ -52,7 +58,7 @@ img{
 }
 
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1920px) {
   .row > .row{
     margin: 0 !important;
   }
