@@ -11,6 +11,7 @@
 					*ngIf="simAcriveFrom.value.dateLanding && simAcriveFrom.value.dateAppearance; else showInfo">
 					{{ daydiff(simAcriveFrom.value.dateLanding, simAcriveFrom.value.dateAppearance) }}
 					 ימי נסיעה</b>
+					<ng-template #showInfo><b class="days-travel">הזן את התאריך</b></ng-template>
 				</div>
 
 				<div class="col-sm-5">
