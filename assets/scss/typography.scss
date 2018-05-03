@@ -258,6 +258,28 @@ input:-webkit-autofill {
 	padding-right: 16px;
 }
 
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+// arrow disables
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+input{
+  -moz-appearance: textfield;
+}
+
 
 
 
