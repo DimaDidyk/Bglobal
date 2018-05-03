@@ -1,19 +1,18 @@
 <section id="client-info" class="gradient-background">
 	<div class="container">
-		
-		<h1>פרטי לקוח</h1>
 
+		<h1>פרטי לקוח</h1>
 		<form #clientInfoForm="ngForm" (ngSubmit)="onSubmit(clientInfoForm)">
 			<div class="row">
 			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput placeholder="שם משפחה" name="soname" ngModel />
+						<input matInput required placeholder="שם משפחה" name="soname" ngModel />
 					</mat-form-field>
 				</div>
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput placeholder="שם פרטי" name="name" ngModel />
+						<input matInput required placeholder="שם פרטי" name="name" ngModel />
 					</mat-form-field>
 				</div>
 			</div>
@@ -23,12 +22,16 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput placeholder="דוא״ל לקבלת חשבונית" name="email" ngModel />
+						<input matInput name="email"  required placeholder="דוא״ל לקבלת חשבונית" 
+						[pattern]="emailPattern" 
+						ngModel/>
 					</mat-form-field>
 				</div>
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput placeholder="טלפון נייד" name="tel" ngModel />
+						<input matInput required type="number" placeholder="טלפון נייד" name="tel" 
+						
+						ngModel />
 					</mat-form-field>
 				</div>
 			</div>
@@ -37,16 +40,27 @@
 			<div class="row">
 			<div class="row">
 				<div class="col-sm-12 checked-wrapper">
-					<mat-checkbox [align]="true" name="checked" id="my-select" ngModel>מאשר קבלת דיוור למייל</mat-checkbox>
+					<mat-checkbox name="checked" [ngModel]="isChecked">מאשר קבלת דיוור למייל</mat-checkbox>
 				</div>
 				<div class="col-sm-12">
-					<button mat-button class="bg-button bg-green-button">המשך</button>
+					<button mat-button class="bg-button bg-green-button" 
+					[disabled]="!clientInfoForm.valid">המשך</button>
 				</div>
 			</div>
 			</div>
-		</form>
 
+		</form>
+		
+		<!-- <h1>{{formSimData | json}}</h1> -->
 		<!-- <pre>{{ clientInfoForm.value | json }}</pre> -->
+		<!-- <pre>{{ clientInfoForm.value.name | json }}</pre> -->
+		<!-- <pre>{{ clientInfoForm.valid | json }}</pre> -->
 
 	</div>
 </section>
+
+
+<app-sim-active-form
+	[clientInfoFormData]="clientInfoForm.value" 
+	*ngIf="clientInfoForm.submitted && clientInfoForm.valid">
+</app-sim-active-form>

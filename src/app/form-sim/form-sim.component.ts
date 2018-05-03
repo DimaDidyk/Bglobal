@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl, Validators } from '@angular/forms';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
+import { ClientInfoComponent } from '../client-info/client-info.component';
 
 
 @Component({
@@ -12,6 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './form-sim.component.html',
   styleUrls: ['./form-sim.component.scss']
 })
+
+
 export class FormSimComponent implements OnInit {
 
 	simcards = [
@@ -21,12 +27,13 @@ export class FormSimComponent implements OnInit {
 	];
 
 	onSubmit(formSim: NgForm) {
-		console.log('test');
+		console.log( formSim );
 	}
 
 	constructor() { }
 
 	ngOnInit() {
 	}
+
 
 }

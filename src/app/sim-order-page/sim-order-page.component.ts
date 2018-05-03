@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { BannerComponent } from '../banner/banner.component';
 import { FormSimComponent } from '../form-sim/form-sim.component';
@@ -14,11 +14,12 @@ import { PaymentComponent } from '../payment/payment.component';
   templateUrl: './sim-order-page.component.html',
   styleUrls: ['./sim-order-page.component.scss']
 })
+
 export class SimOrderPageComponent implements OnInit {
+	
+	constructor() { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }

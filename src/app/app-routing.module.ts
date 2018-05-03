@@ -14,6 +14,7 @@ const routes: Routes = [
   // { path: 'sim-order', redirectTo: '/', pathMatch: 'full'},
   { path: '', component: SimOrderPageComponent },
   { path: 'sim-order', component:  HomaPageComponent },
+  // { path: 'sim-order/', component:  HomaPageComponent },
 ];
 
 @NgModule({

@@ -1,25 +1,34 @@
 <section id="sim-active-form">
 	<div class="container">
 		
+		
 		<h1>מועד הפעלת הכרטיס</h1>
-
 		<form #simAcriveFrom="ngForm" (ngSubmit)="onSubmit(simAcriveFrom)">
-			
 			<div class="row">
 			<div class="row">
 				<div class="col-sm-2">
-					<b class="days-travel">18 ימי נסיעה</b>
+					<b class="days-travel"
+					*ngIf="simAcriveFrom.value.dateLanding && simAcriveFrom.value.dateAppearance; else showInfo">
+					{{ daydiff(simAcriveFrom.value.dateLanding, simAcriveFrom.value.dateAppearance) }}
+					 ימי נסיעה</b>
 				</div>
+
 				<div class="col-sm-5">
 					<mat-form-field>
-						<input matInput [matDatepicker]="pickerDateLanding" placeholder="בחרו תאריך נחיתה" name="date-landing" ngModel>
+						<input matInput 
+						[min]="minDate" 
+						[matDatepicker]="pickerDateLanding" 
+						placeholder="בחרו תאריך נחיתה" name="dateLanding" ngModel>
 						<mat-datepicker-toggle matSuffix [for]="pickerDateLanding"></mat-datepicker-toggle>
 						<mat-datepicker touchUi="true" #pickerDateLanding></mat-datepicker>
 					</mat-form-field>
 				</div>
 				<div class="col-sm-5">
 					<mat-form-field>
-						<input matInput [matDatepicker]="pickerDateAppearance" placeholder="בחרו תאריך המראה" name="date-appearance" ngModel>
+						<input matInput 
+						 [min]="simAcriveFrom.value.dateLanding"
+						 [matDatepicker]="pickerDateAppearance" 
+						 placeholder="בחרו תאריך המראה" name="dateAppearance" ngModel>
 						<mat-datepicker-toggle matSuffix [for]="pickerDateAppearance"></mat-datepicker-toggle>
 						<mat-datepicker touchUi="true" #pickerDateAppearance></mat-datepicker>
 					</mat-form-field>
@@ -34,7 +43,8 @@
 			</div>
 
 		</form>
-
+		
+		<!-- <h1>{{clientInfoFormData | json}}</h1> -->
 		<!-- <pre>{{ simAcriveFrom.value | json }}</pre> -->
 
 	</div>
