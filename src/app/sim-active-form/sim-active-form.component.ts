@@ -13,13 +13,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 export class SimActiveFormComponent implements OnInit {
 
 	minDate = new Date(); //today
-
 	daydiff(first, second) {
 	    return Math.round((second-first)/(1000*60*60*24));
 	}
-
-	name:string="Tom";
-	dataInfo:string = "col-sm-6";
 
 	@Input() clientInfoFormData: string;
 

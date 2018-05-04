@@ -2,6 +2,7 @@
 
 
 #fly-form{
+	padding-bottom: 50px;
 	h1{
 		text-align: center;
 		margin-top: 50px;
@@ -14,22 +15,35 @@
 		color: $grayDark;
 		margin-bottom: 30px;
 	}
+
+	.inputs-date-fly-form{
+
+
+		position: relative;
+		.button-load-inputs{
+			position: absolute;
+			bottom: 0;
+		}
+		.inputs-load-wrap{
+			float: right;
+		}
+	}
 }
 
 
 #add{
 	color: $grayDark;
 	text-align: right;
-	font-size: 26px;
+	font-size: 20px;
 	cursor: pointer;
 	span{
 		background: $green;
-		border-radius: 8px;
+		border-radius: 6px;
 		text-align: center;
-		font-size: 34px;
-		line-height: .9;
-		width: 32px;
-		height: 32px;
+		font-size: 26px;
+		line-height: 1;
+		width: 26px;
+		height: 26px;
 		color: $white;
 		display: inline-block;
 

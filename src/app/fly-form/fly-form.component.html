@@ -1,58 +1,78 @@
-<section id="fly-form">
+<section id="fly-form" class="gray-background">
 	<div class="container">
 		<h1>לאן טסים?</h1>
 		<h3>אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
 		
-		<form #FlyForm="ngForm" (ngSubmit)="onSubmit(FlyForm)">
+		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)">
 			
 			<div class="row">
 				<div class="col-sm-12">
 
 					<mat-form-field>
-					    <mat-select placeholder="בחרו את העיד:" name="country" ngModel>
-					    	<mat-option value="{{ option['viewValue'] }}" *ngFor="let option of foods">{{ option['viewValue' ]}}</mat-option>
+					    <mat-select placeholder="בחרו את העיד:" 
+					    name="country" 
+					    required 
+					    ngModel>
+					    	<mat-option value="{{ country['country'] }}" 
+					    	*ngFor="let country of countries">
+					    		{{ country['country'] }}
+					    	</mat-option>
 					    </mat-select>
 					 </mat-form-field>
 				</div>
 			</div>
 			
+			<div class="row inputs-date-fly-form">
 
-			<div class="row">
-
-				<div class="col-sm-4">
-					<button mat-button class="bg-button">!יאללה ממריאים</button>
+				<div class="col-sm-4 button-load-inputs">
+					<button mat-button class="bg-button" 
+					[disabled]="!flyForm.valid">!יאללה ממריאים</button>
 				</div>
+				
+				<div *ngFor="let newDate of DateId" class="col-sm-8 inputs-load-wrap">
+					
+					<!-- <pre>{{ newDate | json }}</pre> -->
+					<!-- <pre>{{ newDate['nameDate1'] }}</pre> -->
+					<div class="row">
+						<div class="col-sm-6">
+							<mat-form-field>
+								<input matInput 
+								 required 
+								 [min]="minDate" 
+								 [matDatepicker]="picker1"
+								 placeholder=":בחרו תאריך המראה"
+								 name="{{ newDate['nameDate1'] }}"
+								 ngModel>
+								<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+								<mat-datepicker touchUi="true" #picker1 ></mat-datepicker>
+								<!-- #picker1 -->
+							</mat-form-field>
+						</div>
 
-				<div class="col-sm-4">
-					<mat-form-field>
-						<input matInput [matDatepicker]="picker1" placeholder=":בחרו תאריך המראה" name="date1" ngModel>
-						<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-						<mat-datepicker touchUi="true" #picker1></mat-datepicker>
-					</mat-form-field>
-				</div>
-
-				<div class="col-sm-4">
-					<mat-form-field>
-						<input matInput [matDatepicker]="picker2" placeholder=":בחרו תאריך המראה" name="date2" ngModel>
-						<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-						<mat-datepicker touchUi="true" #picker2></mat-datepicker>
-					</mat-form-field>
+						<div class="col-sm-6">
+							<mat-form-field>
+								<input matInput
+								required
+								[matDatepicker]="picker2"
+								[min]="getObjectValue(flyForm.value, newDate['nameDate1'])"
+								placeholder=":בחרו תאריך המראה"
+								name="{{ newDate['nameDate2'] }}"
+								ngModel>
+								<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+								<mat-datepicker touchUi="true" #picker2></mat-datepicker>
+							</mat-form-field>
+						</div>
+					</div>
 				</div>
 			</div>
 
 
-			<div id="add">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת <span>+</span></div>
+			<div id="add" 
+			(click)="addDateInputs()" 
+			*ngIf="index < 3">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת <span>+</span>
+			</div>
 
 		</form>
 		
-		<br>
-		<br>
-		<br>
-		<br>
-		<pre>{{ FlyForm.value | json }}</pre>
-
-		
-		
-
 	</div>
 </section>
