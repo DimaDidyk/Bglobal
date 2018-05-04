@@ -12,7 +12,16 @@
 				<div class="row form-inputs">
 					<div class="col-md-2" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
 						<mat-form-field class="cvv-input">
-							<input matInput required placeholder="CVV" pattern="[0-9]{3}"  maxlength="3" minlength="3" name="cvv" ngModel />
+							<input matInput 
+							required 
+							placeholder="CVV"
+							maxlength="3" 
+							minlength="3"
+							(keypress)="CVV_keyPress($event)" 
+							#cvv 
+							name="cvv" 
+							ngModel>
+							<mat-hint align="end">{{cvv.value?.length || 0}}/3</mat-hint>
 						</mat-form-field>
 					</div>
 					<div class="col-md-4">
@@ -24,7 +33,16 @@
 					</div>
 					<div class="col-md-6">
 						<mat-form-field>
-							<input matInput required placeholder="מספר כרטיס אשראי" name="number_card" ngModel>
+							<input matInput 
+							required 
+							placeholder="מספר כרטיס אשראי" 
+							minlength="16" 
+							maxlength="16" 
+							(keypress)="numberCard_keyPress($event)" 
+							#numberCard 
+							name="numberCard" 
+							ngModel>
+							<mat-hint align="end">{{numberCard.value?.length || 0}}/16</mat-hint>
 						</mat-form-field>
 					</div>
 				</div>
