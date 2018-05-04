@@ -18,6 +18,17 @@ export class ClientInfoComponent implements OnInit {
 	@Input() formSimData: string;
 
 	emailPattern = "[^ @]*@[^ @]*";
+
+	numberTel_keyPress(event: any) {
+	    const pattern = /[0-9/+/ /(/)/]/;
+	    let inputChar = String.fromCharCode(event.charCode);
+
+	    if (!pattern.test(inputChar)) {
+	      // invalid character, prevent input
+	      event.preventDefault();
+	    }
+	}
+
 	isChecked:boolean = false;
 
 	onSubmit(clientInfoForm: NgForm) {

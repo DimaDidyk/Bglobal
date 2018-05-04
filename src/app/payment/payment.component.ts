@@ -16,25 +16,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 export class PaymentComponent implements OnInit {
 
 	toptilCVV = "CVV is an anti-fraud security feature to help verify that you are in possession of your credit card. On most credit cards (including Visa and Mastercard), the three-digit CVV number is printed on the signature panel on the back of the card immediately after the card's account number. On American Express credit cards, the four-digit CVV number is printed on the front of the card above the card’s account number.";
-	
-
 
 	onSubmit(PaymentForm: NgForm) {
 		console.log( PaymentForm );
-
 	}
 
-	numberCard_keyPress(event: any) {
-	    const pattern = /[0-9\+\-\ ]/;
-	    let inputChar = String.fromCharCode(event.charCode);
-
-	    if (!pattern.test(inputChar)) {
-	      // invalid character, prevent input
-	      event.preventDefault();
-	    }
-	}
-
-	CVV_keyPress(event: any) {
+	number_keyPress(event: any) {
 	    const pattern = /[0-9]/;
 	    let inputChar = String.fromCharCode(event.charCode);
 
@@ -43,7 +30,6 @@ export class PaymentComponent implements OnInit {
 	      event.preventDefault();
 	    }
 	}
-
 	
 	constructor() { }
 

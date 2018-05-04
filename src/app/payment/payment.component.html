@@ -17,7 +17,7 @@
 							placeholder="CVV"
 							maxlength="3" 
 							minlength="3"
-							(keypress)="CVV_keyPress($event)" 
+							(keypress)="number_keyPress($event)" 
 							#cvv 
 							name="cvv" 
 							ngModel>
@@ -38,7 +38,7 @@
 							placeholder="מספר כרטיס אשראי" 
 							minlength="16" 
 							maxlength="16" 
-							(keypress)="numberCard_keyPress($event)" 
+							(keypress)="number_keyPress($event)" 
 							#numberCard 
 							name="numberCard" 
 							ngModel>
@@ -47,7 +47,7 @@
 					</div>
 				</div>
 			</div>
-
+			
 			<div class="row">
 			<div class="row">
 				<div class="col-sm-4">
@@ -63,7 +63,7 @@
 			</div>
 			</div>
 
-			<button mat-button class="bg-button">הזמן כטיס </button>
+			<button mat-button class="bg-button" [disabled]="!PaymentForm.valid">הזמן כטיס </button>
 		</form>
 		
 		<!-- <pre>{{ PaymentForm.value | json }}</pre> -->
