@@ -235,8 +235,12 @@ input:-webkit-autofill {
 	border-radius: 5px;
 }
 
-// md tooltip
+// mat hint
+.mat-form-field-hint-wrapper{
+	margin-top: 20px;
+}
 
+// mat tooltip
 .mat-tooltip-panel{
 	border-radius: 10px;
 	// padding: 30px !important;
@@ -280,6 +284,13 @@ input{
   -moz-appearance: textfield;
 }
 
+// input sidable
+button{
+	transition: opacity 1s;
+}
+button:disabled{
+	opacity: .5;
+}
 
 
 
