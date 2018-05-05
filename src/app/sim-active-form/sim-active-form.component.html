@@ -4,7 +4,6 @@
 		<h1>מועד הפעלת הכרטיס</h1>
 		<form #simAcriveFrom="ngForm" (ngSubmit)="onSubmit(simAcriveFrom)">
 			<div class="row">
-			<div class="row">
 				<div class="col-sm-2">
 					<b class="days-travel"
 					*ngIf="simAcriveFrom.value.dateLanding && simAcriveFrom.value.dateAppearance; else showInfo">
@@ -33,7 +32,6 @@
 						<mat-datepicker touchUi="true" #pickerDateAppearance></mat-datepicker>
 					</mat-form-field>
 				</div>
-			</div>
 			</div>
 
 			<div class="row">

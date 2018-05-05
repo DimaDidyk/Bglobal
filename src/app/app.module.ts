@@ -47,6 +47,7 @@ import { ClientInfoComponent } from './client-info/client-info.component';
 import { SimActiveFormComponent } from './sim-active-form/sim-active-form.component';
 import { HomaPageComponent } from './homa-page/homa-page.component';
 import { SimOrderPageComponent } from './sim-order-page/sim-order-page.component';
+import { PromotionComponent } from './promotion/promotion.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -69,7 +70,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ClientInfoComponent,
     SimActiveFormComponent,
     HomaPageComponent,
-    SimOrderPageComponent
+    SimOrderPageComponent,
+    PromotionComponent
   ],
   imports: [
     BrowserModule,

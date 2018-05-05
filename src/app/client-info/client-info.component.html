@@ -1,9 +1,7 @@
 <section id="client-info" class="gradient-background">
 	<div class="container">
-
 		<h1>פרטי לקוח</h1>
 		<form #clientInfoForm="ngForm" (ngSubmit)="onSubmit(clientInfoForm)">
-			<div class="row">
 			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
@@ -16,9 +14,7 @@
 					</mat-form-field>
 				</div>
 			</div>
-			</div>
 			
-			<div class="row">
 			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
@@ -36,9 +32,7 @@
 					</mat-form-field>
 				</div>
 			</div>
-			</div>
 
-			<div class="row">
 			<div class="row">
 				<div class="col-sm-12 checked-wrapper">
 					<mat-checkbox name="checked" [ngModel]="isChecked">מאשר קבלת דיוור למייל</mat-checkbox>
@@ -48,8 +42,6 @@
 					[disabled]="!clientInfoForm.valid">המשך</button>
 				</div>
 			</div>
-			</div>
-
 		</form>
 		
 		<!-- <h1>{{formSimData | json}}</h1> -->
@@ -59,7 +51,6 @@
 
 	</div>
 </section>
-
 
 <app-sim-active-form
 	[clientInfoFormData]="clientInfoForm.value" 

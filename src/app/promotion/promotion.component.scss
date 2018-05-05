@@ -1,0 +1,72 @@
+@import '../assets/scss/typography.scss';
+
+#promotion{
+	@include gradient-background-purple-inverse();
+	color: $white;
+	padding-top: 60px;
+	text-align: right;
+	img{
+		max-width: 100%;
+	}
+	.title{
+		font-size: 80px;
+		color: $white;
+		line-height: 1.112;
+		b{
+			font-weight: 900;
+		}
+	}
+	.list{
+		padding-top: 20px;
+		padding-bottom: 30px;
+		.list-item{
+			font-size: 26px;
+			&:after{
+				content: '';
+				width: 16px;
+				height: 16px;
+				display: inline-block;
+				border-radius: 50%;
+				border: 2px solid $purpleExtraDark;
+				margin: 2px 0;
+				margin-left: 20px;
+			}
+		}
+
+	}
+	button{
+		@include gradient-background-blue();
+		width: 100%;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	#promotion{
+		.title{
+			font-size: 40px;
+		}
+		.list{
+			.list-item{
+				font-size: 20px;
+			}
+		}
+		button{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#promotion{
+		img{
+			max-width: 320px;
+			display: block;
+			margin: 0 auto;
+		}
+		.title{
+		}
+	}
+}

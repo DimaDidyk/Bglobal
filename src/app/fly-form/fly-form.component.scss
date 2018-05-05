@@ -1,6 +1,5 @@
 @import '../assets/scss/typography.scss';
 
-
 #fly-form{
 	padding-bottom: 50px;
 	h1{
@@ -17,8 +16,6 @@
 	}
 
 	.inputs-date-fly-form{
-
-
 		position: relative;
 		.button-load-inputs{
 			position: absolute;
@@ -28,24 +25,41 @@
 			float: right;
 		}
 	}
+
+	#add{
+		color: $grayDark;
+		text-align: right;
+		font-size: 20px;
+		cursor: pointer;
+		span{
+			background: $green;
+			border-radius: 6px;
+			text-align: center;
+			font-size: 26px;
+			line-height: 1;
+			width: 26px;
+			height: 26px;
+			color: $white;
+			display: inline-block;
+
+		}
+	}
+
 }
 
-
-#add{
-	color: $grayDark;
-	text-align: right;
-	font-size: 20px;
-	cursor: pointer;
-	span{
-		background: $green;
-		border-radius: 6px;
-		text-align: center;
-		font-size: 26px;
-		line-height: 1;
-		width: 26px;
-		height: 26px;
-		color: $white;
-		display: inline-block;
-
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#fly-form{
+		.inputs-date-fly-form{
+			.button-load-inputs{
+				position: static;
+			}
+			.inputs-load-wrap{
+				float: none;
+			}
+		}
+		#add{
+			font-size: 18px;
+		}
 	}
 }

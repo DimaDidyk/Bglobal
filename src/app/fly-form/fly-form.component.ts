@@ -6,14 +6,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 
+import { PromotionComponent } from '../promotion/promotion.component';
+
 @Component({
 	selector: 'app-fly-form',
 	templateUrl: './fly-form.component.html',
 	styleUrls: ['./fly-form.component.scss']
 })
-
-
-
 
 export class FlyFormComponent implements OnInit {
 	countries = [
