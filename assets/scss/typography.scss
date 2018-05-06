@@ -8,27 +8,44 @@ $grayLight: rgb(149, 149, 149);
 $purple: rgb(115, 48, 113);
 $purple-light: rgba(119, 38, 112, 0.902);
 $purpleDark: rgb(74, 48, 130);
+$purpleExtraDark: #4b0049;
 $red: #9d205e;
 $green: #019b94;
 $orange: #fcb30e;
 
-@mixin gradient-background(){
+
+@mixin gradient-background-blue-dark(){
+    background: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
+}
+@mixin gradient-background-blue(){
+    background: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);
+}
+@mixin gradient-background-orange(){
+    background: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
+}
+@mixin gradient-background-purple(){
     background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
+@mixin gradient-background-purple-inverse(){
+    background: linear-gradient(186deg, transparent 67%, #731f5f 50%), linear-gradient(150deg, #982167 0%, #8b256c 75%, #8b256c 100%);
+}
 .gradient-background{
-	@include gradient-background();
+	@include gradient-background-purple();
 	.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
 		color: $white;
 	}
 }
-
+.gray-background{
+	background: $mainBackground;
+}
 
 // headlines
 h1, h2, h3, h4, h5, h6{
 	margin: 10px 0;
 }
 h1{
-	font-size: 23px;
+	font-size: 26px;
+	font-weight: 900;
 }
 h2{
 	font-size: 20px;
@@ -48,7 +65,10 @@ label{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 170px;
+    min-height: max-content;
+	h1{
+		font-weight: 900;
+	}
 }
 
 
@@ -186,7 +206,7 @@ input:-webkit-autofill {
 	width: 100%;
 	font-size: 22px;
 	height: 50px;
-	@include gradient-background();
+	@include gradient-background-purple();
 }
 // green button
 .bg-button.bg-green-button{
