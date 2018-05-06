@@ -1,0 +1,32 @@
+@import '../assets/scss/typography.scss';
+
+#details-form{
+	background: $mainBackground;
+	.hedline{
+		@include gradient-background-orange();
+		color: $white;
+		height: 100px;
+	}
+	.form{
+		padding-top: 30px;
+		padding-bottom: 60px;
+		button{
+			max-width: 720px;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+	
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	
+}

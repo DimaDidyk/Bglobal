@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { NgForm, FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -33,14 +33,12 @@ export class FlyFormComponent implements OnInit {
 	index = -1;
 	addDateInputs(newInputs) {
 		if( this.index < 3 ){
-
 			newInputs = [
 				{ nameDate1: "dateLanding2", nameDate2: "dateAppearance2"},
 				{ nameDate1: "dateLanding3", nameDate2: "dateAppearance3"},
 				{ nameDate1: "dateLanding4", nameDate2: "dateAppearance4"},
 				{ nameDate1: "dateLanding5", nameDate2: "dateAppearance5"},
 			];
-
 			this.index = this.index + 1;
 		    if (newInputs) {
 		  		this.DateId.push( newInputs[this.index] );
@@ -51,7 +49,6 @@ export class FlyFormComponent implements OnInit {
 	getObjectValue(formObject:object, valueObject:string){
 		return formObject[valueObject];
 	}
-
 
 	onSubmit(flyForm: NgForm) {
 		console.log('test');

@@ -1,0 +1,45 @@
+<section id="details-form">
+
+	<div class="hedline">
+		<div class="container">
+			<h1>...רוצים לשמוע עוד</h1>
+			<h3>השאירו פרטים ונציגנו יחזרו אליכם בהקדם</h3>
+		</div>
+	</div>
+
+	<div class="container">
+		
+		<form #detailsForm="ngForm" (ngSubmit)="onSubmit(detailsForm)" class="form">
+			<div class="row">
+				<div class="col-sm-4">
+					<mat-form-field>
+						<input matInput required placeholder="טלפון" name="tel" 
+						(keypress)="numberTel_keyPress($event)"
+						ngModel />
+					</mat-form-field>
+				</div>
+				<div class="col-sm-4">
+					<mat-form-field>
+						<input matInput name="email" placeholder="דוא״ל"
+						required
+						[pattern]="emailPattern"
+						ngModel/>
+					</mat-form-field>
+				</div>
+				<div class="col-sm-4">
+					<mat-form-field>
+						<input matInput required placeholder="שם מלא" name="name" ngModel />
+					</mat-form-field>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<button mat-button class="bg-button" 
+					[disabled]="!detailsForm.valid">המשך</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</section>

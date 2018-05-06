@@ -17,6 +17,9 @@ $orange: #fcb30e;
 @mixin gradient-background-blue(){
     background: linear-gradient(to right, #019b94 0%, #019b94 20%, #0178b1 100%);
 }
+@mixin gradient-background-orange(){
+    background: linear-gradient(to right, #fec80a 0%, #ed2c26 100%);
+}
 @mixin gradient-background-purple(){
     background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
@@ -58,6 +61,10 @@ label{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+    min-height: max-content;
+	h1{
+		font-weight: 900;
+	}
 }
 
 
