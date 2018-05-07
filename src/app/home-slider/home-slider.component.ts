@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-home-slider',
@@ -13,8 +14,8 @@ export class HomeSliderComponent implements OnInit {
   index = 0;
   public config: SwiperConfigInterface = {
     direction: 'horizontal',
-    slidesPerView: 1,
-    keyboard: true,
+    slidesPerView: 2,
+    keyboard: false,
     mousewheel: false,
     scrollbar: false,
     navigation: false,

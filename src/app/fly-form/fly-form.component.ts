@@ -7,6 +7,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 
 import { PromotionComponent } from '../promotion/promotion.component';
+import { OffersComponent } from '../offers/offers.component';
+
 
 @Component({
 	selector: 'app-fly-form',

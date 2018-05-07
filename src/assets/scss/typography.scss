@@ -13,13 +13,18 @@ $red: #9d205e;
 $green: #019b94;
 $orange: #fcb30e;
 
+$gradient-background-blue-dark: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
+$gradient-background-orange: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
 
+// @mixin gradient-background-blue-dark(){
+//     background: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
+// }
 @mixin gradient-background-blue(){
-    background: linear-gradient(to right, #019b94 0%, #019b94 20%, #0178b1 100%);
+    background: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);
 }
-@mixin gradient-background-orange(){
-    background: linear-gradient(to right, #fec80a 0%, #ed2c26 100%);
-}
+// @mixin gradient-background-orange(){
+//     background: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
+// }
 @mixin gradient-background-purple(){
     background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
@@ -41,7 +46,8 @@ h1, h2, h3, h4, h5, h6{
 	margin: 10px 0;
 }
 h1{
-	font-size: 23px;
+	font-size: 26px;
+	font-weight: 900;
 }
 h2{
 	font-size: 20px;

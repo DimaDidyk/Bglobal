@@ -3,7 +3,7 @@
 #details-form{
 	background: $mainBackground;
 	.hedline{
-		@include gradient-background-orange();
+		background: $gradient-background-orange;
 		color: $white;
 		height: 100px;
 	}
@@ -20,11 +20,6 @@
 
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-
-
-}
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
