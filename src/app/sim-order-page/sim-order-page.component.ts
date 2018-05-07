@@ -8,7 +8,6 @@ import { AdditionallyComponent } from '../additionally/additionally.component';
 import { TotalComponent } from '../total/total.component';
 import { PaymentComponent } from '../payment/payment.component';
 
-
 @Component({
   selector: 'app-sim-order-page',
   templateUrl: './sim-order-page.component.html',

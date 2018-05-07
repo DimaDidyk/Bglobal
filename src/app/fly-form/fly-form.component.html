@@ -30,6 +30,7 @@
 								<input matInput 
 								 required 
 								 [min]="minDate" 
+								 [max]="getObjectValue(flyForm.value, newDate['nameDate2'])"
 								 [matDatepicker]="picker1"
 								 placeholder=":בחרו תאריך המראה"
 								 name="{{ newDate['nameDate1'] }}"
@@ -57,7 +58,8 @@
 
 				<div class="col-sm-4 col-xs-12 button-load-inputs">
 					<button mat-button class="bg-button" 
-					[disabled]="!flyForm.valid">!יאללה ממריאים</button>
+					[disabled]="!flyForm.valid"
+					(click)="isShow='show'" (click)="isHide='hide'">!יאללה ממריאים</button>
 				</div>
 			</div>
 
@@ -70,7 +72,13 @@
 	</div>
 </section>
 
-<app-offers></app-offers>
 
-<app-promotion></app-promotion>
 
+
+<div [@toggleHeight]="isShow">
+	<app-offers></app-offers>
+</div>
+
+<div [@toggleHeight]="isHide">
+	<app-promotion></app-promotion>
+</div>

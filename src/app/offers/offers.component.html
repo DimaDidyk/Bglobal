@@ -5,8 +5,7 @@
 		
 		<div class="flex-center-bertical">
 			<!-- slider -->
-			<swiper [config]="config" [(index)]="index" 
-			(click)="onIndexChange($event)">
+			<swiper [config]="config" [(index)]="index">
 				<div class="swiper-slide" *ngFor="let slide of sliderItems">
 					<div class="slide-header">
 						<h1>{{ slide['title'] }}</h1>
@@ -16,9 +15,7 @@
 						<div class="price">₪ {{ slide['price'] }}</div>
 						<div class="days">( {{ slide['days'] }} )</div>
 						<div class="slide-content">{{ slide['info'] }}</div>
-						<button mat-button class="bg-button"
-						(click)="usefulSwiper.swiper.createLoop()"
-						>!הזמינו עכשיו</button>
+						<button mat-button class="bg-button">!הזמינו עכשיו</button>
 					</div>
 				</div>
 			</swiper><!-- #slider -->

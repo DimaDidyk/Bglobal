@@ -1,24 +1,28 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { NgForm, FormControl, Validators } from '@angular/forms';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 
+import { toggleHeight } from '../animation';
 import { ClientInfoComponent } from '../client-info/client-info.component';
 
 
 @Component({
-  selector: 'app-form-sim',
-  templateUrl: './form-sim.component.html',
-  styleUrls: ['./form-sim.component.scss']
+	selector: 'app-form-sim',
+	templateUrl: './form-sim.component.html',
+	animations: [
+		toggleHeight
+	],
+	styleUrls: ['./form-sim.component.scss']
 })
 
 
 export class FormSimComponent implements OnInit {
+	isShow = 'hide';
 
 	simcards = [
 		{value: 'כרטיס סים כלשהו'},
@@ -27,13 +31,15 @@ export class FormSimComponent implements OnInit {
 	];
 
 	onSubmit(formSim: NgForm) {
-		console.log( formSim );
+		if( formSim.valid && formSim.submitted ){
+			this.isShow = 'show';
+			console.log( this.isShow );
+		}
 	}
 
 	constructor() { }
 
 	ngOnInit() {
 	}
-
 
 }

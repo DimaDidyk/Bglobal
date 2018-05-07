@@ -41,8 +41,8 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<button type="submit" mat-button class="bg-button bg-green-button"
-					 [disabled]="!formSim.valid" >המשך</button>
-					<!-- *ngIf="!formSim.submitted" -->
+					 [disabled]="!formSim.valid" 
+					 (click)="isShow='show'">המשך</button>
 				</div>
 			</div>
 		</form>
@@ -53,7 +53,7 @@
 	</div>
 </section>
 
-<app-client-info 
-	[formSimData]="formSim.value" 
-	*ngIf="formSim.submitted && formSim.valid">
-</app-client-info>
+<div [@toggleHeight]="isShow">
+	<app-client-info [formSimData]="formSim.value">
+	</app-client-info>
+</div>

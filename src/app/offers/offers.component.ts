@@ -32,22 +32,13 @@ export class OffersComponent implements OnInit {
 	@ViewChild(SwiperComponent) componentRef: SwiperComponent;
 	@ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
-	public onIndexChange(index: number): void {
-		console.log('Swiper index: ', index);
-		// index = 5;
-		// this.componentRef.directiveRef.nextSlide(100);
-
-	}
+	
 	public nextSlide(speed: number): void{
 		this.componentRef.directiveRef.nextSlide(speed);
 	}
 	public prevSlide(speed: number): void{
 		this.componentRef.directiveRef.prevSlide(speed);
 	}
-
-	
-
-	// componentRef.slidePrev();
 
 	// slider content
 	sliderItems = [

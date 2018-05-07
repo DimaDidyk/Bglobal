@@ -4,12 +4,16 @@ import { NgForm, FormsModule, FormControl, Validators, PatternValidator } from '
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
+import { toggleHeight } from '../animation';
 import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.component';
 
 @Component({
-  selector: 'app-client-info',
-  templateUrl: './client-info.component.html',
-  styleUrls: ['./client-info.component.scss']
+	selector: 'app-client-info',
+	templateUrl: './client-info.component.html',
+	animations: [
+		toggleHeight
+	],
+	styleUrls: ['./client-info.component.scss'],
 })
 
 
@@ -31,8 +35,10 @@ export class ClientInfoComponent implements OnInit {
 
 	isChecked:boolean = false;
 
+	isShow = 'hide';
 	onSubmit(clientInfoForm: NgForm) {
-		console.log(clientInfoForm);
+		this.isShow = 'show';
+		console.log(this.isShow);
 	}
 
 	constructor() { }

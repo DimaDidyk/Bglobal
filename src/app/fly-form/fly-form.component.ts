@@ -8,11 +8,15 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { PromotionComponent } from '../promotion/promotion.component';
 import { OffersComponent } from '../offers/offers.component';
+import { toggleHeight } from '../animation';
 
 
 @Component({
 	selector: 'app-fly-form',
 	templateUrl: './fly-form.component.html',
+	animations: [
+		toggleHeight
+	],
 	styleUrls: ['./fly-form.component.scss']
 })
 
@@ -52,8 +56,13 @@ export class FlyFormComponent implements OnInit {
 		return formObject[valueObject];
 	}
 
+	isShow = 'hide';
+	isHide = 'show';
 	onSubmit(flyForm: NgForm) {
-		console.log('test');
+		this.isShow = 'show';
+		this.isHide = 'hide';
+
+		console.log(this.isShow);
 	}
 
 	constructor() { 

@@ -39,20 +39,18 @@
 				</div>
 				<div class="col-sm-12">
 					<button mat-button class="bg-button bg-green-button" 
-					[disabled]="!clientInfoForm.valid">המשך</button>
+					[disabled]="!clientInfoForm.valid"
+					(click)="isShow='show'">המשך</button>
 				</div>
 			</div>
 		</form>
-		
-		<!-- <h1>{{formSimData | json}}</h1> -->
-		<!-- <pre>{{ clientInfoForm.value | json }}</pre> -->
-		<!-- <pre>{{ clientInfoForm.value.name | json }}</pre> -->
-		<!-- <pre>{{ clientInfoForm.valid | json }}</pre> -->
-
 	</div>
 </section>
 
-<app-sim-active-form
-	[clientInfoFormData]="clientInfoForm.value" 
-	*ngIf="clientInfoForm.submitted && clientInfoForm.valid">
-</app-sim-active-form>
+
+
+<div [@toggleHeight]="isShow">
+	<app-sim-active-form
+		[clientInfoFormData]="clientInfoForm.value">
+	</app-sim-active-form>
+</div>
