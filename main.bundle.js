@@ -67,6 +67,30 @@ var AdditionallyComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/animation.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return toggleHeight; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+
+var toggleHeight = Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_27" /* trigger */])('toggleHeight', [
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* state */])('hide', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_25" /* style */])({
+        height: '0px',
+        opacity: '0',
+        overflow: 'hidden',
+    })),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* state */])('show', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_25" /* style */])({
+        height: '*',
+        opacity: '1',
+    })),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* transition */])('hide => show', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* animate */])('400ms 400ms ease-in')),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* transition */])('show => hide', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* animate */])('400ms ease-out'))
+]);
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -350,7 +374,7 @@ var BannerComponent = /** @class */ (function () {
 /***/ "./src/app/client-info/client-info.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"client-info\" class=\"gradient-background\">\n\t<div class=\"container\">\n\t\t<h1>פרטי לקוח</h1>\n\t\t<form #clientInfoForm=\"ngForm\" (ngSubmit)=\"onSubmit(clientInfoForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם משפחה\" name=\"soname\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם פרטי\" name=\"name\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput name=\"email\" placeholder=\"דוא״ל לקבלת חשבונית\"\n\t\t\t\t\t\trequired\n\t\t\t\t\t\t[pattern]=\"emailPattern\"\n\t\t\t\t\t\tngModel/>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"טלפון נייד\" name=\"tel\" \n\t\t\t\t\t\t(keypress)=\"numberTel_keyPress($event)\"\n\t\t\t\t\t\tngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12 checked-wrapper\">\n\t\t\t\t\t<mat-checkbox name=\"checked\" [ngModel]=\"isChecked\">מאשר קבלת דיוור למייל</mat-checkbox>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \n\t\t\t\t\t[disabled]=\"!clientInfoForm.valid\">המשך</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t\t\n\t\t<!-- <h1>{{formSimData | json}}</h1> -->\n\t\t<!-- <pre>{{ clientInfoForm.value | json }}</pre> -->\n\t\t<!-- <pre>{{ clientInfoForm.value.name | json }}</pre> -->\n\t\t<!-- <pre>{{ clientInfoForm.valid | json }}</pre> -->\n\n\t</div>\n</section>\n\n<app-sim-active-form\n\t[clientInfoFormData]=\"clientInfoForm.value\" \n\t*ngIf=\"clientInfoForm.submitted && clientInfoForm.valid\">\n</app-sim-active-form>"
+module.exports = "<section id=\"client-info\" class=\"gradient-background\">\n\t<div class=\"container\">\n\t\t<h1>פרטי לקוח</h1>\n\t\t<form #clientInfoForm=\"ngForm\" (ngSubmit)=\"onSubmit(clientInfoForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם משפחה\" name=\"soname\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם פרטי\" name=\"name\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput name=\"email\" placeholder=\"דוא״ל לקבלת חשבונית\"\n\t\t\t\t\t\trequired\n\t\t\t\t\t\t[pattern]=\"emailPattern\"\n\t\t\t\t\t\tngModel/>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"טלפון נייד\" name=\"tel\" \n\t\t\t\t\t\t(keypress)=\"numberTel_keyPress($event)\"\n\t\t\t\t\t\tngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12 checked-wrapper\">\n\t\t\t\t\t<mat-checkbox name=\"checked\" [ngModel]=\"isChecked\">מאשר קבלת דיוור למייל</mat-checkbox>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \n\t\t\t\t\t[disabled]=\"!clientInfoForm.valid\"\n\t\t\t\t\t(click)=\"isShow='show'\">המשך</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</section>\n\n\n\n<div [@toggleHeight]=\"isShow\">\n\t<app-sim-active-form\n\t\t[clientInfoFormData]=\"clientInfoForm.value\">\n\t</app-sim-active-form>\n</div>"
 
 /***/ }),
 
@@ -367,6 +391,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientInfoComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation__ = __webpack_require__("./src/app/animation.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -377,10 +402,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ClientInfoComponent = /** @class */ (function () {
     function ClientInfoComponent() {
         this.emailPattern = "[^ @]*@[^ @]*";
         this.isChecked = false;
+        this.isShow = 'hide';
     }
     ClientInfoComponent.prototype.numberTel_keyPress = function (event) {
         var pattern = /[0-9/+/ /(/)/]/;
@@ -391,7 +418,8 @@ var ClientInfoComponent = /** @class */ (function () {
         }
     };
     ClientInfoComponent.prototype.onSubmit = function (clientInfoForm) {
-        console.log(clientInfoForm);
+        this.isShow = 'show';
+        console.log(this.isShow);
     };
     ClientInfoComponent.prototype.ngOnInit = function () {
     };
@@ -403,7 +431,10 @@ var ClientInfoComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-client-info',
             template: __webpack_require__("./src/app/client-info/client-info.component.html"),
-            styles: [__webpack_require__("./src/app/client-info/client-info.component.scss")]
+            animations: [
+                __WEBPACK_IMPORTED_MODULE_1__animation__["a" /* toggleHeight */]
+            ],
+            styles: [__webpack_require__("./src/app/client-info/client-info.component.scss")],
         }),
         __metadata("design:paramtypes", [])
     ], ClientInfoComponent);
@@ -479,7 +510,7 @@ var DetailsFormComponent = /** @class */ (function () {
 /***/ "./src/app/fly-form/fly-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"fly-form\" class=\"gray-background\">\n\t<div class=\"container\">\n\t\t<h1>לאן טסים?</h1>\n\t\t<h3>אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>\n\t\t\n\t\t<form #flyForm=\"ngForm\" (ngSubmit)=\"onSubmit(flyForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t    <mat-select placeholder=\"בחרו את העיד:\" \n\t\t\t\t\t    name=\"country\" \n\t\t\t\t\t    required \n\t\t\t\t\t    ngModel>\n\t\t\t\t\t    \t<mat-option value=\"{{ country['country'] }}\" \n\t\t\t\t\t    \t*ngFor=\"let country of countries\">\n\t\t\t\t\t    \t\t{{ country['country'] }}\n\t\t\t\t\t    \t</mat-option>\n\t\t\t\t\t    </mat-select>\n\t\t\t\t\t </mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t\n\t\t\t\t<div *ngFor=\"let newDate of DateId\" class=\"col-sm-8  col-xs-12 inputs-load-wrap\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t required \n\t\t\t\t\t\t\t\t [min]=\"minDate\" \n\t\t\t\t\t\t\t\t [matDatepicker]=\"picker1\"\n\t\t\t\t\t\t\t\t placeholder=\":בחרו תאריך המראה\"\n\t\t\t\t\t\t\t\t name=\"{{ newDate['nameDate1'] }}\"\n\t\t\t\t\t\t\t\t ngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker1\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker1></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput\n\t\t\t\t\t\t\t\trequired\n\t\t\t\t\t\t\t\t[matDatepicker]=\"picker2\"\n\t\t\t\t\t\t\t\t[min]=\"getObjectValue(flyForm.value, newDate['nameDate1'])\"\n\t\t\t\t\t\t\t\tplaceholder=\":בחרו תאריך המראה\"\n\t\t\t\t\t\t\t\tname=\"{{ newDate['nameDate2'] }}\"\n\t\t\t\t\t\t\t\tngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker2></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-4 col-xs-12 button-load-inputs\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" \n\t\t\t\t\t[disabled]=\"!flyForm.valid\">!יאללה ממריאים</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div id=\"add\" \n\t\t\t(click)=\"addDateInputs()\" \n\t\t\t*ngIf=\"index < 3\">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת <span>+</span>\n\t\t\t</div>\n\t\t</form>\n\t\t<!-- <pre>{{  flyForm.value |json }}</pre> -->\n\t</div>\n</section>\n\n<app-offers></app-offers>\n\n<app-promotion></app-promotion>\n\n"
+module.exports = "<section id=\"fly-form\" class=\"gray-background\">\n\t<div class=\"container\">\n\t\t<h1>לאן טסים?</h1>\n\t\t<h3>אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>\n\t\t\n\t\t<form #flyForm=\"ngForm\" (ngSubmit)=\"onSubmit(flyForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t    <mat-select placeholder=\"בחרו את העיד:\" \n\t\t\t\t\t    name=\"country\" \n\t\t\t\t\t    required \n\t\t\t\t\t    ngModel>\n\t\t\t\t\t    \t<mat-option value=\"{{ country['country'] }}\" \n\t\t\t\t\t    \t*ngFor=\"let country of countries\">\n\t\t\t\t\t    \t\t{{ country['country'] }}\n\t\t\t\t\t    \t</mat-option>\n\t\t\t\t\t    </mat-select>\n\t\t\t\t\t </mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t\n\t\t\t\t<div *ngFor=\"let newDate of DateId\" class=\"col-sm-8  col-xs-12 inputs-load-wrap\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t required \n\t\t\t\t\t\t\t\t [min]=\"minDate\" \n\t\t\t\t\t\t\t\t [max]=\"getObjectValue(flyForm.value, newDate['nameDate2'])\"\n\t\t\t\t\t\t\t\t [matDatepicker]=\"picker1\"\n\t\t\t\t\t\t\t\t placeholder=\":בחרו תאריך המראה\"\n\t\t\t\t\t\t\t\t name=\"{{ newDate['nameDate1'] }}\"\n\t\t\t\t\t\t\t\t ngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker1\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker1></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput\n\t\t\t\t\t\t\t\trequired\n\t\t\t\t\t\t\t\t[matDatepicker]=\"picker2\"\n\t\t\t\t\t\t\t\t[min]=\"getObjectValue(flyForm.value, newDate['nameDate1'])\"\n\t\t\t\t\t\t\t\tplaceholder=\":בחרו תאריך המראה\"\n\t\t\t\t\t\t\t\tname=\"{{ newDate['nameDate2'] }}\"\n\t\t\t\t\t\t\t\tngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker2></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-4 col-xs-12 button-load-inputs\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" \n\t\t\t\t\t[disabled]=\"!flyForm.valid\"\n\t\t\t\t\t(click)=\"isShow='show'\" (click)=\"isHide='hide'\">!יאללה ממריאים</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div id=\"add\" \n\t\t\t(click)=\"addDateInputs()\" \n\t\t\t*ngIf=\"index < 3\">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת <span>+</span>\n\t\t\t</div>\n\t\t</form>\n\t\t<!-- <pre>{{  flyForm.value |json }}</pre> -->\n\t</div>\n</section>\n\n\n\n\n<div [@toggleHeight]=\"isShow\">\n\t<app-offers></app-offers>\n</div>\n\n<div [@toggleHeight]=\"isHide\">\n\t<app-promotion></app-promotion>\n</div>"
 
 /***/ }),
 
@@ -496,6 +527,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlyFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation__ = __webpack_require__("./src/app/animation.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -505,6 +537,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 var FlyFormComponent = /** @class */ (function () {
     function FlyFormComponent() {
@@ -518,6 +551,8 @@ var FlyFormComponent = /** @class */ (function () {
             { nameDate1: "dateLanding", nameDate2: "dateAppearance" },
         ];
         this.index = -1;
+        this.isShow = 'hide';
+        this.isHide = 'show';
     }
     FlyFormComponent.prototype.daydiff = function (first, second) {
         return Math.round((second - first) / (1000 * 60 * 60 * 24));
@@ -540,7 +575,9 @@ var FlyFormComponent = /** @class */ (function () {
         return formObject[valueObject];
     };
     FlyFormComponent.prototype.onSubmit = function (flyForm) {
-        console.log('test');
+        this.isShow = 'show';
+        this.isHide = 'hide';
+        console.log(this.isShow);
     };
     FlyFormComponent.prototype.ngOnInit = function () {
     };
@@ -548,6 +585,9 @@ var FlyFormComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-fly-form',
             template: __webpack_require__("./src/app/fly-form/fly-form.component.html"),
+            animations: [
+                __WEBPACK_IMPORTED_MODULE_1__animation__["a" /* toggleHeight */]
+            ],
             styles: [__webpack_require__("./src/app/fly-form/fly-form.component.scss")]
         }),
         __metadata("design:paramtypes", [])
@@ -612,7 +652,7 @@ var FooterComponent = /** @class */ (function () {
 /***/ "./src/app/form-sim/form-sim.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"form-sim\">\n\t<div class=\"container\">\n\t\t\n\t\t<form #formSim=\"ngForm\" (ngSubmit)=\"onSubmit(formSim)\">\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>בחר בסים המבוקש</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t    <mat-select placeholder=\"כרטיס סים כלשהו\" required name=\"SIM\" ngModel>\n\t\t\t\t\t\t    \t<mat-option value=\"{{ sim['value'] }}\" *ngFor=\"let sim of simcards\">{{ sim['value' ]}}</mat-option>\n\t\t\t\t\t\t    </mat-select>\n\t\t\t\t\t\t </mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>מלא פרטי משווק</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"כרטיס מועדון\" name=\"club-card\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"נציג\" name=\"representative\" #representative ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"סניף\" name=\"branch\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button type=\"submit\" mat-button class=\"bg-button bg-green-button\"\n\t\t\t\t\t [disabled]=\"!formSim.valid\" >המשך</button>\n\t\t\t\t\t<!-- *ngIf=\"!formSim.submitted\" -->\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\n\t\t<!-- <pre>{{ formSim.valid | json }}</pre> -->\n\t\t<!-- <pre>{{ formSim.submitted | json }}</pre> -->\n\n\t</div>\n</section>\n\n<app-client-info \n\t[formSimData]=\"formSim.value\" \n\t*ngIf=\"formSim.submitted && formSim.valid\">\n</app-client-info>"
+module.exports = "<section id=\"form-sim\">\n\t<div class=\"container\">\n\t\t\n\t\t<form #formSim=\"ngForm\" (ngSubmit)=\"onSubmit(formSim)\">\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>בחר בסים המבוקש</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t    <mat-select placeholder=\"כרטיס סים כלשהו\" required name=\"SIM\" ngModel>\n\t\t\t\t\t\t    \t<mat-option value=\"{{ sim['value'] }}\" *ngFor=\"let sim of simcards\">{{ sim['value' ]}}</mat-option>\n\t\t\t\t\t\t    </mat-select>\n\t\t\t\t\t\t </mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>מלא פרטי משווק</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"כרטיס מועדון\" name=\"club-card\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"נציג\" name=\"representative\" #representative ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"סניף\" name=\"branch\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button type=\"submit\" mat-button class=\"bg-button bg-green-button\"\n\t\t\t\t\t [disabled]=\"!formSim.valid\" \n\t\t\t\t\t (click)=\"isShow='show'\">המשך</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\n\t\t<!-- <pre>{{ formSim.valid | json }}</pre> -->\n\t\t<!-- <pre>{{ formSim.submitted | json }}</pre> -->\n\n\t</div>\n</section>\n\n<div [@toggleHeight]=\"isShow\">\n\t<app-client-info [formSimData]=\"formSim.value\">\n\t</app-client-info>\n</div>"
 
 /***/ }),
 
@@ -629,6 +669,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormSimComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation__ = __webpack_require__("./src/app/animation.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -639,8 +680,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var FormSimComponent = /** @class */ (function () {
     function FormSimComponent() {
+        this.isShow = 'hide';
         this.simcards = [
             { value: 'כרטיס סים כלשהו' },
             { value: 'כרטיס סים כלשהו' },
@@ -648,7 +691,10 @@ var FormSimComponent = /** @class */ (function () {
         ];
     }
     FormSimComponent.prototype.onSubmit = function (formSim) {
-        console.log(formSim);
+        if (formSim.valid && formSim.submitted) {
+            this.isShow = 'show';
+            console.log(this.isShow);
+        }
     };
     FormSimComponent.prototype.ngOnInit = function () {
     };
@@ -656,6 +702,9 @@ var FormSimComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-form-sim',
             template: __webpack_require__("./src/app/form-sim/form-sim.component.html"),
+            animations: [
+                __WEBPACK_IMPORTED_MODULE_1__animation__["a" /* toggleHeight */]
+            ],
             styles: [__webpack_require__("./src/app/form-sim/form-sim.component.scss")]
         }),
         __metadata("design:paramtypes", [])
@@ -859,7 +908,7 @@ var HomeSliderComponent = /** @class */ (function () {
 /***/ "./src/app/offers/offers.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"offers\">\n\t<div class=\"container\">\n\t\t<h1>?טוסים לספרד</h1>\n\t\t<h3>אלה החבילות שהכי מתאימות לכם</h3>\n\t\t\n\t\t<div class=\"flex-center-bertical\">\n\t\t\t<!-- slider -->\n\t\t\t<swiper [config]=\"config\" [(index)]=\"index\" \n\t\t\t(click)=\"onIndexChange($event)\">\n\t\t\t\t<div class=\"swiper-slide\" *ngFor=\"let slide of sliderItems\">\n\t\t\t\t\t<div class=\"slide-header\">\n\t\t\t\t\t\t<h1>{{ slide['title'] }}</h1>\n\t\t\t\t\t\t<h3>{{ slide['sub-title'] }}</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t<div class=\"price\">₪ {{ slide['price'] }}</div>\n\t\t\t\t\t\t<div class=\"days\">( {{ slide['days'] }} )</div>\n\t\t\t\t\t\t<div class=\"slide-content\">{{ slide['info'] }}</div>\n\t\t\t\t\t\t<button mat-button class=\"bg-button\"\n\t\t\t\t\t\t(click)=\"usefulSwiper.swiper.createLoop()\"\n\t\t\t\t\t\t>!הזמינו עכשיו</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</swiper><!-- #slider -->\n\n\n\t\t\t<div class=\"custome-navigate-slider\">\n\t\t\t\t<div class=\"back nav-arrow\" (click)=\"prevSlide(600)\">\n\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_left</i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"next nav-arrow\" (click)=\"nextSlide(600)\">\n\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_right</i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n</section>"
+module.exports = "<section id=\"offers\">\n\t<div class=\"container\">\n\t\t<h1>?טוסים לספרד</h1>\n\t\t<h3>אלה החבילות שהכי מתאימות לכם</h3>\n\t\t\n\t\t<div class=\"flex-center-bertical\">\n\t\t\t<!-- slider -->\n\t\t\t<swiper [config]=\"config\" [(index)]=\"index\">\n\t\t\t\t<div class=\"swiper-slide\" *ngFor=\"let slide of sliderItems\">\n\t\t\t\t\t<div class=\"slide-header\">\n\t\t\t\t\t\t<h1>{{ slide['title'] }}</h1>\n\t\t\t\t\t\t<h3>{{ slide['sub-title'] }}</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t<div class=\"price\">₪ {{ slide['price'] }}</div>\n\t\t\t\t\t\t<div class=\"days\">( {{ slide['days'] }} )</div>\n\t\t\t\t\t\t<div class=\"slide-content\">{{ slide['info'] }}</div>\n\t\t\t\t\t\t<button mat-button class=\"bg-button\">!הזמינו עכשיו</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</swiper><!-- #slider -->\n\n\n\t\t\t<div class=\"custome-navigate-slider\">\n\t\t\t\t<div class=\"back nav-arrow\" (click)=\"prevSlide(600)\">\n\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_left</i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"next nav-arrow\" (click)=\"nextSlide(600)\">\n\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_right</i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n</section>"
 
 /***/ }),
 
@@ -907,7 +956,6 @@ var OffersComponent = /** @class */ (function () {
             }
             // navigation: true,
         };
-        // componentRef.slidePrev();
         // slider content
         this.sliderItems = [
             {
@@ -954,11 +1002,6 @@ var OffersComponent = /** @class */ (function () {
             },
         ];
     }
-    OffersComponent.prototype.onIndexChange = function (index) {
-        console.log('Swiper index: ', index);
-        // index = 5;
-        // this.componentRef.directiveRef.nextSlide(100);
-    };
     OffersComponent.prototype.nextSlide = function (speed) {
         this.componentRef.directiveRef.nextSlide(speed);
     };
@@ -1112,7 +1155,7 @@ module.exports = "<section id=\"sim-active-form\">\n\t<div class=\"container\">\
 /***/ "./src/app/sim-active-form/sim-active-form.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".gradient-background {\n  background: -webkit-gradient(linear, left top, right top, from(#512e7f), color-stop(80%, #a5196a), to(#a5196a));\n  background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%); }\n  .gradient-background .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\n    color: #fff; }\n  .gray-background {\n  background: #f1f1f1; }\n  h1, h2, h3, h4, h5, h6 {\n  margin: 10px 0; }\n  h1 {\n  font-size: 26px;\n  font-weight: 900; }\n  h2 {\n  font-size: 20px; }\n  h3 {\n  font-size: 18px; }\n  label {\n  font-weight: 400; }\n  .hedline {\n  text-align: center;\n  -webkit-box-shadow: 0px 6px 11.52px 0.48px rgba(0, 0, 0, 0.25);\n          box-shadow: 0px 6px 11.52px 0.48px rgba(0, 0, 0, 0.25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  min-height: -webkit-max-content;\n  min-height: -moz-max-content;\n  min-height: max-content; }\n  .hedline h1 {\n    font-weight: 900; }\n  a {\n  color: #000; }\n  a:hover {\n  text-decoration: none; }\n  swiper > .swiper.s-wrapper .swiper-pagination .swiper-pagination-handle {\n  margin: 8px; }\n  .swiper-pagination-handle .swiper-pagination-bullet {\n  width: 15px;\n  height: 15px;\n  opacity: 1;\n  border: 2px solid #fff !important;\n  background: #fff; }\n  .swiper-pagination-handle .swiper-pagination-bullet-active {\n  background: transparent;\n  border: 2px solid #fff !important;\n  margin: 0 !important; }\n  input:-webkit-autofill {\n  -webkit-text-fill-color: #000 !important; }\n  input:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0 30px white inset; }\n  .mat-menu-panel {\n  width: 220px;\n  margin-top: 38px;\n  margin-left: -52px; }\n  .mat-elevation-z2 {\n  -webkit-box-shadow: none !important;\n          box-shadow: none !important; }\n  .mat-button-focus-overlay {\n  background-color: transparent !important; }\n  .mat-menu-panel button {\n  text-align: right;\n  font-size: 20px;\n  height: 34px;\n  line-height: 1;\n  padding: 0 20px; }\n  .mat-menu-content {\n  padding: 10px 0 !important; }\n  .mat-input-wrapper,\n.bg-button {\n  border-radius: 12px;\n  margin-bottom: 26px;\n  font-weight: 100;\n  font-size: 18px;\n  height: 50px; }\n  .mat-form-field-infix {\n  border: 0;\n  height: 50px;\n  line-height: 1.8;\n  padding-right: 10px; }\n  .mat-form-field {\n  max-width: 100%;\n  width: 100%; }\n  .mat-input-wrapper {\n  background: #fff;\n  color: #757575;\n  text-align: right;\n  padding-right: 30px; }\n  .mat-form-field-suffix {\n  position: absolute;\n  border-radius: 0;\n  width: 100%;\n  height: 100%; }\n  .mat-datepicker-toggle .mat-icon-button {\n  width: 100%;\n  height: 100%;\n  text-align: right;\n  padding-right: 10px; }\n  .mat-select-value {\n  padding-right: 24px; }\n  .mat-select-arrow-wrapper {\n  position: relative;\n  right: -12px; }\n  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {\n  color: #733071; }\n  .mat-form-field-underline {\n  display: none; }\n  .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {\n  height: 50px; }\n  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\n  margin-top: -8px;\n  line-height: 2;\n  color: #000; }\n  .bg-button {\n  color: #fff !important;\n  border-radius: 12px;\n  width: 100%;\n  font-size: 22px;\n  height: 50px;\n  background: -webkit-gradient(linear, left top, right top, from(#512e7f), color-stop(80%, #a5196a), to(#a5196a));\n  background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%); }\n  .bg-button.bg-green-button {\n  background: #019b94;\n  max-width: 260px;\n  margin: 0 auto;\n  display: block; }\n  .bg-button.bg-orange-button {\n  background: #fcb30e;\n  margin: 0 auto;\n  margin: 20px auto;\n  display: block;\n  width: 180px; }\n  .mat-checkbox-inner-container,\n.mat-checkbox-frame {\n  width: 20px !important;\n  height: 20px !important;\n  border-radius: 5px !important;\n  padding-left: 10px; }\n  .mat-checkbox {\n  color: #000;\n  font-size: 20px !important;\n  font-weight: 200 !important; }\n  .mat-checkbox-layout {\n  width: 100% !important; }\n  .mat-checkbox-layout .mat-checkbox-label {\n  width: 100%;\n  text-align: right;\n  white-space: pre-line; }\n  .mat-checkbox-checked.mat-accent .mat-checkbox-background,\n.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {\n  background: #019b94;\n  border-radius: 5px; }\n  .mat-form-field-hint-wrapper {\n  margin-top: 20px; }\n  .mat-tooltip-panel {\n  border-radius: 10px; }\n  .mat-tooltip {\n  background-color: #019b94;\n  font-size: 12px;\n  border-radius: 10px;\n  padding: 10px 20px !important;\n  font-weight: 200;\n  max-width: 310px !important; }\n  @media screen and (-ms-high-contrast: active) {\n  .mat-tooltip {\n    outline: solid 0px; } }\n  .mat-tooltip-handset {\n  margin: 24px;\n  padding-left: 16px;\n  padding-right: 16px; }\n  .example-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n  .example-container > * {\n  width: 100%; }\n  .example-right-align {\n  text-align: right; }\n  input::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  display: none; }\n  input {\n  -moz-appearance: textfield; }\n  button {\n  -webkit-transition: opacity 1s;\n  transition: opacity 1s; }\n  button:disabled {\n  opacity: .5; }\n  /* Large devices (large desktops, 1200px and up) */\n  @media only screen and (max-width: 1200px) {\n  #page-banner .banner-content .banner-text {\n    font-size: 80px;\n    max-width: 400px; } }\n  /* Medium devices (desktops, 992px and up) */\n  /* Small devices (tablets, 768px and up) */\n  #sim-active-form {\n  padding-bottom: 104px;\n  padding-top: 20px; }\n  #sim-active-form h1 {\n    text-align: center;\n    margin-top: 70px;\n    color: #4a3082;\n    margin-bottom: 66px; }\n  #sim-active-form .days-travel {\n    color: #019b94;\n    font-size: 22px;\n    line-height: 2; }\n  #sim-active-form .bg-button {\n    margin-top: 30px; }\n"
+module.exports = ".gradient-background {\n  background: -webkit-gradient(linear, left top, right top, from(#512e7f), color-stop(80%, #a5196a), to(#a5196a));\n  background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%); }\n  .gradient-background .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\n    color: #fff; }\n  .gray-background {\n  background: #f1f1f1; }\n  h1, h2, h3, h4, h5, h6 {\n  margin: 10px 0; }\n  h1 {\n  font-size: 26px;\n  font-weight: 900; }\n  h2 {\n  font-size: 20px; }\n  h3 {\n  font-size: 18px; }\n  label {\n  font-weight: 400; }\n  .hedline {\n  text-align: center;\n  -webkit-box-shadow: 0px 6px 11.52px 0.48px rgba(0, 0, 0, 0.25);\n          box-shadow: 0px 6px 11.52px 0.48px rgba(0, 0, 0, 0.25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  min-height: -webkit-max-content;\n  min-height: -moz-max-content;\n  min-height: max-content; }\n  .hedline h1 {\n    font-weight: 900; }\n  a {\n  color: #000; }\n  a:hover {\n  text-decoration: none; }\n  swiper > .swiper.s-wrapper .swiper-pagination .swiper-pagination-handle {\n  margin: 8px; }\n  .swiper-pagination-handle .swiper-pagination-bullet {\n  width: 15px;\n  height: 15px;\n  opacity: 1;\n  border: 2px solid #fff !important;\n  background: #fff; }\n  .swiper-pagination-handle .swiper-pagination-bullet-active {\n  background: transparent;\n  border: 2px solid #fff !important;\n  margin: 0 !important; }\n  input:-webkit-autofill {\n  -webkit-text-fill-color: #000 !important; }\n  input:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0 30px white inset; }\n  .mat-menu-panel {\n  width: 220px;\n  margin-top: 38px;\n  margin-left: -52px; }\n  .mat-elevation-z2 {\n  -webkit-box-shadow: none !important;\n          box-shadow: none !important; }\n  .mat-button-focus-overlay {\n  background-color: transparent !important; }\n  .mat-menu-panel button {\n  text-align: right;\n  font-size: 20px;\n  height: 34px;\n  line-height: 1;\n  padding: 0 20px; }\n  .mat-menu-content {\n  padding: 10px 0 !important; }\n  .mat-input-wrapper,\n.bg-button {\n  border-radius: 12px;\n  margin-bottom: 26px;\n  font-weight: 100;\n  font-size: 18px;\n  height: 50px; }\n  .mat-form-field-infix {\n  border: 0;\n  height: 50px;\n  line-height: 1.8;\n  padding-right: 10px; }\n  .mat-form-field {\n  max-width: 100%;\n  width: 100%; }\n  .mat-input-wrapper {\n  background: #fff;\n  color: #757575;\n  text-align: right;\n  padding-right: 30px; }\n  .mat-form-field-suffix {\n  position: absolute;\n  border-radius: 0;\n  width: 100%;\n  height: 100%; }\n  .mat-datepicker-toggle .mat-icon-button {\n  width: 100%;\n  height: 100%;\n  text-align: right;\n  padding-right: 10px; }\n  .mat-select-value {\n  padding-right: 24px; }\n  .mat-select-arrow-wrapper {\n  position: relative;\n  right: -12px; }\n  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {\n  color: #733071; }\n  .mat-form-field-underline {\n  display: none; }\n  .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {\n  height: 50px; }\n  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\n  margin-top: -8px;\n  line-height: 2;\n  color: #000; }\n  .bg-button {\n  color: #fff !important;\n  border-radius: 12px;\n  width: 100%;\n  font-size: 22px;\n  height: 50px;\n  background: -webkit-gradient(linear, left top, right top, from(#512e7f), color-stop(80%, #a5196a), to(#a5196a));\n  background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%); }\n  .bg-button.bg-green-button {\n  background: #019b94;\n  max-width: 260px;\n  margin: 0 auto;\n  display: block; }\n  .bg-button.bg-orange-button {\n  background: #fcb30e;\n  margin: 0 auto;\n  margin: 20px auto;\n  display: block;\n  width: 180px; }\n  .mat-checkbox-inner-container,\n.mat-checkbox-frame {\n  width: 20px !important;\n  height: 20px !important;\n  border-radius: 5px !important;\n  padding-left: 10px; }\n  .mat-checkbox {\n  color: #000;\n  font-size: 20px !important;\n  font-weight: 200 !important; }\n  .mat-checkbox-layout {\n  width: 100% !important; }\n  .mat-checkbox-layout .mat-checkbox-label {\n  width: 100%;\n  text-align: right;\n  white-space: pre-line; }\n  .mat-checkbox-checked.mat-accent .mat-checkbox-background,\n.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {\n  background: #019b94;\n  border-radius: 5px; }\n  .mat-form-field-hint-wrapper {\n  margin-top: 20px; }\n  .mat-tooltip-panel {\n  border-radius: 10px; }\n  .mat-tooltip {\n  background-color: #019b94;\n  font-size: 12px;\n  border-radius: 10px;\n  padding: 10px 20px !important;\n  font-weight: 200;\n  max-width: 310px !important; }\n  @media screen and (-ms-high-contrast: active) {\n  .mat-tooltip {\n    outline: solid 0px; } }\n  .mat-tooltip-handset {\n  margin: 24px;\n  padding-left: 16px;\n  padding-right: 16px; }\n  .example-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n  .example-container > * {\n  width: 100%; }\n  .example-right-align {\n  text-align: right; }\n  input::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  display: none; }\n  input {\n  -moz-appearance: textfield; }\n  button {\n  -webkit-transition: opacity 1s;\n  transition: opacity 1s; }\n  button:disabled {\n  opacity: .5; }\n  /* Large devices (large desktops, 1200px and up) */\n  @media only screen and (max-width: 1200px) {\n  #page-banner .banner-content .banner-text {\n    font-size: 80px;\n    max-width: 400px; } }\n  /* Medium devices (desktops, 992px and up) */\n  /* Small devices (tablets, 768px and up) */\n  #sim-active-form {\n  padding-bottom: 104px;\n  padding-top: 20px; }\n  #sim-active-form h1 {\n    text-align: center;\n    margin-top: 70px;\n    color: #4a3082;\n    margin-bottom: 66px; }\n  #sim-active-form .days-travel {\n    color: #019b94;\n    font-size: 20px;\n    line-height: 42px; }\n  #sim-active-form .bg-button {\n    margin-top: 30px; }\n"
 
 /***/ }),
 
@@ -1296,7 +1339,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
