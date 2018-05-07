@@ -13,16 +13,18 @@ $red: #9d205e;
 $green: #019b94;
 $orange: #fcb30e;
 
+$gradient-background-blue-dark: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
+$gradient-background-orange: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
 
-@mixin gradient-background-blue-dark(){
-    background: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
-}
+// @mixin gradient-background-blue-dark(){
+//     background: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
+// }
 @mixin gradient-background-blue(){
     background: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);
 }
-@mixin gradient-background-orange(){
-    background: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
-}
+// @mixin gradient-background-orange(){
+//     background: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
+// }
 @mixin gradient-background-purple(){
     background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
