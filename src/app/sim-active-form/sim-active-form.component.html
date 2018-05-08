@@ -7,7 +7,7 @@
 				<div class="col-sm-2">
 					<b class="days-travel"
 					*ngIf="simAcriveFrom.value.dateLanding && simAcriveFrom.value.dateAppearance; else showInfo">
-					{{ daydiff(simAcriveFrom.value.dateLanding, simAcriveFrom.value.dateAppearance) }}
+					{{ daydiff( simAcriveFrom.value.dateAppearance, simAcriveFrom.value.dateLanding) }}
 					 ימי נסיעה</b>
 					<ng-template #showInfo><b class="days-travel">הזן את התאריך</b></ng-template>
 				</div>
@@ -15,7 +15,7 @@
 				<div class="col-sm-5">
 					<mat-form-field>
 						<input matInput 
-						[min]="minDate" 
+						[min]="simAcriveFrom.value.dateAppearance"
 						[matDatepicker]="pickerDateLanding" 
 						placeholder="בחרו תאריך נחיתה" name="dateLanding" ngModel>
 						<mat-datepicker-toggle matSuffix [for]="pickerDateLanding"></mat-datepicker-toggle>
@@ -25,7 +25,8 @@
 				<div class="col-sm-5">
 					<mat-form-field>
 						<input matInput 
-						 [min]="simAcriveFrom.value.dateLanding"
+						 [min]="minDate"
+						 [max]="simAcriveFrom.value.dateLanding"
 						 [matDatepicker]="pickerDateAppearance" 
 						 placeholder="בחרו תאריך המראה" name="dateAppearance" ngModel>
 						<mat-datepicker-toggle matSuffix [for]="pickerDateAppearance"></mat-datepicker-toggle>
@@ -37,14 +38,23 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<button mat-button class="bg-button bg-green-button"
-					[disabled]="!simAcriveFrom.valid">המשך</button>
+					[disabled]="!simAcriveFrom.valid"
+					(click)="scrollAnimate(appAdditionally)"
+					(click)="isShow='show'">המשך</button>
 				</div>
 			</div>
 
 		</form>
 		
-		<!-- <h1>{{clientInfoFormData | json}}</h1> -->
-		<!-- <pre>{{ simAcriveFrom.value | json }}</pre> -->
-
 	</div>
 </section>
+
+<!--  -->
+<!-- <pre>{{ clientInfoFormData | json}}</pre> -->
+<!--  -->
+
+<div [@toggleHeight]="isShow" #appAdditionally>
+	<app-additionally
+		[simAcriveFromData]="simAcriveFrom.value">
+	</app-additionally>
+</div>

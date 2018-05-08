@@ -40,6 +40,7 @@
 				<div class="col-sm-12">
 					<button mat-button class="bg-button bg-green-button" 
 					[disabled]="!clientInfoForm.valid"
+					(click)="scrollAnimate(simactiveform)"
 					(click)="isShow='show'">המשך</button>
 				</div>
 			</div>
@@ -47,9 +48,13 @@
 	</div>
 </section>
 
+<!--  -->
+<!-- <pre>{{ formSimData | json }}</pre> -->
+<!--  -->
 
 
-<div [@toggleHeight]="isShow">
+
+<div [@toggleHeight]="isShow" #simactiveform>
 	<app-sim-active-form
 		[clientInfoFormData]="clientInfoForm.value">
 	</app-sim-active-form>

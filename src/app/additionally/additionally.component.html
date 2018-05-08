@@ -3,37 +3,52 @@
 		<h1>תוספות</h1>
 		<h3>באפשרותך להחור תוספת לשירות , במידה ואינך מעוניין , לחץ המשך</h3>
 		
-
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="options">
-					<div class="option-item option-item-blue">
-						<div class="option-content">
-							<span>שיחות</span>
-							<b>₪ 59</b>
-							<span>UNLIMITED</span>
+		<form #additionallyFrom="ngForm" (ngSubmit)="onSubmit(additionallyFrom)">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="options">
+						<div class="option-item option-item-blue">
+							<div class="option-content">
+								<span>שיחות</span>
+								<b>₪ 59</b>
+								<span>UNLIMITED</span>
+							</div>
+							<button mat-button class="bg-button bg-orange-button"
+							(click)="scrollAnimate(appTotal)"
+							(click)="isShow='show'">המשך</button>
 						</div>
-						<button mat-button class="bg-button bg-orange-button">המשך</button>
-					</div>
-					
-					<div class="option-item option-item-orange">
-						<div class="option-content">
-							<span>שיחות</span>
-							<b>₪ 29</b>
-							<span>60 דק׳</span>
+						
+						<div class="option-item option-item-orange">
+							<div class="option-content">
+								<span>שיחות</span>
+								<b>₪ 29</b>
+								<span>60 דק׳</span>
+							</div>
+							<button mat-button class="bg-button bg-orange-button"
+							(click)="scrollAnimate(appTotal)"
+							(click)="isShow='show'">המשך</button>
 						</div>
-						<button mat-button class="bg-button bg-orange-button">המשך</button>
 					</div>
-				</div>
-			</div>	
-		</div>
-
-
-		<div class="row">
-			<div class="col-sm-12">
-				<button mat-button class="bg-button bg-green-button">המשך</button>
+				</div>	
 			</div>
-		</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<button mat-button class="bg-button bg-green-button"
+					(click)="scrollAnimate(appTotal)"
+					(click)="isShow='show'">המשך</button>
+				</div>
+			</div>
+		</form>
 
 	</div>
 </section>
+
+<!--  -->
+<!-- <pre>{{ simAcriveFromData | json }}</pre> -->
+<!--  -->
+
+<div [@toggleHeight]="isShow" #appTotal>
+	<app-total [additionallyFromData]="additionallyFrom.value">
+	</app-total>
+</div>

@@ -4,7 +4,7 @@
 			<div class="col-sm-6 input-box">
 				<h1>סה״כ לתשלום</h1>
 				<!-- <h2>יש לך קוד קופון</h2> -->
-				<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
+				<form #totalForm="ngForm" (ngSubmit)="onSubmit(totalForm)">
 					<mat-form-field>
 						<input matInput placeholder="הזן קוד קופון" name="coupon" ngModel/>
 					</mat-form-field>
@@ -44,11 +44,20 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3>
-				<button mat-button class="bg-button bg-green-button">המשך</button>
+				<button mat-button class="bg-button bg-green-button"
+				(click)="scrollAnimate(appPayment)"
+				(click)="isShow='show'">המשך</button>
 				<hr>
 			</div>
 		</div>
 	</div>
-
-
 </section>
+
+<!--  -->
+<!-- <pre>{{ additionallyFromData | json }}</pre> -->
+<!--  -->
+
+<div [@toggleHeight]="isShow" #appPayment>
+	<app-payment [totalFormData]="totalForm.value">
+	</app-payment>
+</div>

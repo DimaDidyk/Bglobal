@@ -21,6 +21,8 @@ import { toggleHeight } from '../animation';
 })
 
 export class FlyFormComponent implements OnInit {
+
+	// select list
 	countries = [
 		{country: 'Israil'},
 		{country: 'America'},
@@ -36,11 +38,18 @@ export class FlyFormComponent implements OnInit {
 		{country: 'Canada'},
 	];
 
+	// min date validation
 	minDate = new Date(); //today
 	daydiff(first, second) {
 	    return Math.round((second-first)/(1000*60*60*24));
 	}
-	
+
+	// geyObject
+	getObjectValue(formObject:object, valueObject:string){
+		return formObject[valueObject];
+	}
+
+	// add new date inputs
 	DateId = [
 		{ nameDate1: "dateLanding", nameDate2: "dateAppearance"},
 	];
@@ -61,10 +70,13 @@ export class FlyFormComponent implements OnInit {
 		}
 	}
 
-	getObjectValue(formObject:object, valueObject:string){
-		return formObject[valueObject];
+	// scroll animate
+	scrollAnimate(element) {
+		element.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 
+
+	// animate show and hide
 	isShow = 'hide';
 	isHide = 'show';
 	onSubmit(flyForm: NgForm) {
@@ -72,16 +84,10 @@ export class FlyFormComponent implements OnInit {
 		this.isHide = 'hide';
 	}
 
-	scroll(element) {
-	    element.scrollIntoView({ behavior: "smooth", block: "start" });
-	}
-
 	constructor() { 
-		
 	}
 
 	ngOnInit() {
-
 	}
 
 }

@@ -33,10 +33,16 @@ export class FormSimComponent implements OnInit {
 	onSubmit(formSim: NgForm) {
 		if( formSim.valid && formSim.submitted ){
 			this.isShow = 'show';
-			console.log( this.isShow );
 		}
 	}
 
+	// scroll animate
+	scrollAnimate(element) {
+		setTimeout(function(){
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		}, 250)
+	}
+	
 	constructor() { }
 
 	ngOnInit() {

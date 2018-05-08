@@ -1,14 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 
 import { NgForm, FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
+import { toggleHeight } from '../animation';
+
+
 @Component({
-  selector: 'app-sim-active-form',
-  templateUrl: './sim-active-form.component.html',
-  styleUrls: ['./sim-active-form.component.scss']
+	selector: 'app-sim-active-form',
+	templateUrl: './sim-active-form.component.html',
+	animations: [
+		toggleHeight
+	],
+	styleUrls: ['./sim-active-form.component.scss']
 })
 export class SimActiveFormComponent implements OnInit {
 
@@ -19,10 +25,24 @@ export class SimActiveFormComponent implements OnInit {
 
 	@Input() clientInfoFormData: string;
 
+
+	// show animation
+	isShow = 'hide';
 	onSubmit(simAcriveFrom: NgForm) {
-		console.log('test');
+		this.isShow = 'show';
+		console.log(this.isShow);
 	}
-	constructor() { }
+
+	// scroll animate
+	scrollAnimate(element) {
+		setTimeout(function(){
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		}, 250)
+	}
+
+	constructor() {
+
+	}
 
 	ngOnInit() {
 	}

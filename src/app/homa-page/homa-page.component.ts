@@ -10,7 +10,7 @@ import { DetailsFormComponent } from '../details-form/details-form.component';
   styleUrls: ['./homa-page.component.scss']
 })
 export class HomaPageComponent implements OnInit {
-
+	
   constructor() { }
 
   ngOnInit() {

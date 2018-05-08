@@ -57,7 +57,7 @@
 				<div class="col-sm-4 col-xs-12 button-load-inputs">
 					<button mat-button class="bg-button" 
 					[disabled]="!flyForm.valid"
-					(click)="isShow='show'" (click)="isHide='hide'" (click)="scroll(appofferswrap)">!יאללה ממריאים</button>
+					(click)="isShow='show'" (click)="isHide='hide'" (click)="scrollAnimate(appofferswrap)">!יאללה ממריאים</button>
 				</div>
 			</div>
 
@@ -66,10 +66,8 @@
 			*ngIf="index < 3">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת <span>+</span>
 			</div>
 		</form>
-		<!-- <pre>{{  flyForm.value |json }}</pre> -->
 	</div>
 </section>
-
 
 
 <div [@toggleHeight]="isShow" #appofferswrap>

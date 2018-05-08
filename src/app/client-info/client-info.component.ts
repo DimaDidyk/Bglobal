@@ -19,6 +19,7 @@ import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.componen
 
 export class ClientInfoComponent implements OnInit {
 
+	// get data from Sim
 	@Input() formSimData: string;
 
 	emailPattern = "[^ @]*@[^ @]*";
@@ -35,10 +36,18 @@ export class ClientInfoComponent implements OnInit {
 
 	isChecked:boolean = false;
 
+	// show animation
 	isShow = 'hide';
 	onSubmit(clientInfoForm: NgForm) {
 		this.isShow = 'show';
 		console.log(this.isShow);
+	}
+	
+	// scroll animate
+	scrollAnimate(element) {
+		setTimeout(function(){
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		}, 250)
 	}
 
 	constructor() { }
