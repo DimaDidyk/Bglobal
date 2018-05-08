@@ -12,9 +12,9 @@ import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
 
 
 const routes: Routes = [
-  // { path: 'sim-order', redirectTo: '/', pathMatch: 'full'},
-  { path: 'sim-order', component: SimOrderPageComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '', component:  HomaPageComponent },
+  { path: 'sim-order', component: SimOrderPageComponent },
   { path: 'user/sim', component:  UserPageSimComponent },
 ];
 

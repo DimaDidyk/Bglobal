@@ -22,6 +22,7 @@ header{
 	    position: relative;
 	    width: 90%;
 	}
+	
 }
 
 // Header menu
@@ -32,15 +33,12 @@ header{
     padding-left: 300px;
     max-width: 100%;
     text-align: right;
-    
 	.main-manu-item{
 		display: inline-block;
 		font-size: 18px;
 		margin-left: 16px;
 	}
-	.bold{
-		font-weight: 600;
-	}
+	
 	#sign-in{
 		color: $purple;
 		padding-right: 20px;
@@ -59,6 +57,9 @@ header{
 	}
 }
 
+.active-link{
+	font-weight: 600;
+}
 
 // sabdwich
 #sandwich {

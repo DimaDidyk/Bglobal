@@ -13,27 +13,28 @@
 
 		<div id="main-menu" 
 		 (click)="clickSendwich()" 
-		 [ngClass]="status ? 'active' : '' ">
-			
+		 [ngClass]="status ? 'active' : '' "
+		 >
 			<button mat-button class="main-manu-item"
 			[matMenuTriggerFor]="logInMenu" 
 			(mouseenter)="openMenu()" 
 			#notificationMenuBtn>
-				<a routerLink="/" id="sign-in">כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></a>
+				<a id="sign-in">כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></a>
 			</button>
 			
 			<mat-menu #logInMenu="matMenu">
-			  <button mat-menu-item routerLink="/user/sim">כרטיס סים שלי</button>
-			  <button mat-menu-item>מצב החבילה עדכני</button>
-			  <button mat-menu-item>פרטים אישיים</button>
-			  <button mat-menu-item>יציאה</button>
+			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/user/sim" >כרטיס סים שלי</button>
+			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t">מצב החבילה עדכני</button>
+			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t">פרטים אישיים</button>
+			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t">יציאה</button>
 			</mat-menu>
-
-			<a routerLink="/sim-order" class="main-manu-item">צור קשר</a>
-			<a routerLink="/" class="main-manu-item">הפעלת/טעינת כרטיס</a>
-			<a routerLink="/" class="main-manu-item">שאלות נפוצות</a>
-			<a routerLink="/" class="main-manu-item">רשימת מדינות נתמכות</a>
-			<a routerLink="/" class="main-manu-item bold">דף הבית</a>
+			
+			<a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/sim-order"  class="main-manu-item">צור קשר</a>
+			<a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t"  class="main-manu-item">הפעלת/טעינת כרטיס</a>
+			<a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t"  class="main-manu-item">שאלות נפוצות</a>
+			<a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t"  class="main-manu-item">רשימת מדינות נתמכות</a>
+			<a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/"  class="main-manu-item">דף הבית</a>
 		</div>
 	</div>
 </header>
+
