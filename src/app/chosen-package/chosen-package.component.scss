@@ -1,0 +1,42 @@
+@import '../assets/scss/typography.scss';
+
+#chosen-package{
+	background: $gradient-background-purple;
+	position: relative;
+	z-index: 5;
+	color: $white;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	table{
+		td{
+			border: none;
+			text-align: right;
+			font-size: 18px;
+		}
+	}
+	img{
+		float: right;
+	}
+	p{
+		text-align: center;
+		font-size: 18px;
+		text-decoration: underline;
+	}
+	
+	.bg-button{
+		margin-top: 40px;
+		margin-bottom: 20px;
+		width: 260px;
+	}
+	.bg-button.bg-green-button{
+		margin-right: 0;
+	}
+	.bg-button.bg-orange-button{
+		margin-left: 0;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}

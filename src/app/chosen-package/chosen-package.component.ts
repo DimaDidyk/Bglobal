@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { toggleHeight } from '../animation';
+
 
 @Component({
   selector: 'app-chosen-package',
