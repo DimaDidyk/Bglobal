@@ -121,6 +121,9 @@ input:-webkit-autofill {
 .mat-elevation-z2{
 	box-shadow: none !important;
 }
+.mat-button-wrapper{
+	pointer-events: none;
+}
 .mat-button-focus-overlay{
 	background-color: transparent !important;
 }

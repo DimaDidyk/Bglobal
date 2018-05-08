@@ -50,6 +50,8 @@ import { SimOrderPageComponent } from './sim-order-page/sim-order-page.component
 import { PromotionComponent } from './promotion/promotion.component';
 import { DetailsFormComponent } from './details-form/details-form.component';
 import { OffersComponent } from './offers/offers.component';
+import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
+import { ChosenPackageComponent } from './chosen-package/chosen-package.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -75,7 +77,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SimOrderPageComponent,
     PromotionComponent,
     DetailsFormComponent,
-    OffersComponent
+    OffersComponent,
+    UserPageSimComponent,
+    ChosenPackageComponent
   ],
   imports: [
     BrowserModule,

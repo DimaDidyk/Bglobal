@@ -21,7 +21,7 @@ export class HomeSliderComponent implements OnInit {
     pagination: true,
     effect: 'fade',
     autoplay: {
-      delay: 60000,
+      delay: 2000,
     },
   };
 
