@@ -15,16 +15,11 @@ $orange: #fcb30e;
 
 $gradient-background-blue-dark: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
 $gradient-background-orange: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
+$gradient-background-purple: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 
-// @mixin gradient-background-blue-dark(){
-//     background: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
-// }
 @mixin gradient-background-blue(){
     background: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);
 }
-// @mixin gradient-background-orange(){
-//     background: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
-// }
 @mixin gradient-background-purple(){
     background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 }
@@ -121,6 +116,12 @@ input:-webkit-autofill {
 .mat-elevation-z2{
 	box-shadow: none !important;
 }
+.mat-button{
+    font-family: 'Open Sans Hebrew', sans-serif;
+	font-weight: 600;
+	font-size: 18px;
+	height: 50px;
+}
 .mat-button-wrapper{
 	pointer-events: none;
 }
@@ -148,6 +149,7 @@ input:-webkit-autofill {
 	font-weight: 100;
 	font-size: 18px;
 	height: 50px;
+    font-weight: 600
 }
 .mat-form-field-infix{
 	border: 0;
@@ -209,9 +211,8 @@ input:-webkit-autofill {
 	color: $white !important;
 	border-radius: 12px;
 	width: 100%;
-	font-size: 22px;
 	height: 50px;
-	@include gradient-background-purple();
+	background: $gradient-background-purple;
 }
 // green button
 .bg-button.bg-green-button{
