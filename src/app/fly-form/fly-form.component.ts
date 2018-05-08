@@ -25,6 +25,15 @@ export class FlyFormComponent implements OnInit {
 		{country: 'Israil'},
 		{country: 'America'},
 		{country: 'Canada'},
+		{country: 'Israil'},
+		{country: 'America'},
+		{country: 'Canada'},
+		{country: 'Israil'},
+		{country: 'America'},
+		{country: 'Canada'},
+		{country: 'Israil'},
+		{country: 'America'},
+		{country: 'Canada'},
 	];
 
 	minDate = new Date(); //today
@@ -61,8 +70,10 @@ export class FlyFormComponent implements OnInit {
 	onSubmit(flyForm: NgForm) {
 		this.isShow = 'show';
 		this.isHide = 'hide';
+	}
 
-		console.log(this.isShow);
+	scroll(element) {
+	    element.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 
 	constructor() { 

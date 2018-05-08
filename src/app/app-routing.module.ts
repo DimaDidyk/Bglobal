@@ -12,8 +12,8 @@ import { HomaPageComponent } from './homa-page/homa-page.component';
 
 const routes: Routes = [
   // { path: 'sim-order', redirectTo: '/', pathMatch: 'full'},
-  { path: '', component: SimOrderPageComponent },
-  { path: 'sim-order', component:  HomaPageComponent },
+  { path: 'sim-order', component: SimOrderPageComponent },
+  { path: '', component:  HomaPageComponent },
   // { path: 'sim-order/', component:  HomaPageComponent },
 ];
 

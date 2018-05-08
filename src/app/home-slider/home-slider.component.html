@@ -1,10 +1,13 @@
 <section id="home-slider">
 	<!-- slider -->
-	<swiper [config]="config" [(index)]="index">
+	<swiper [config]="config" [(index)]="index" (slideChange)="textAnimate(selector='banner-text')">
 		<div class="swiper-slide" *ngFor="let slide of sliderItems">
 			<img src="{{slide['url-image']}}" alt="banner">
 			<div class="container">
-				<div class="banner-text">{{slide['text-slide']}}</div>
+
+				<div class="banner-text"
+
+				>{{slide['text-slide']}}</div>
 			</div>
 		</div>
 	</swiper><!-- #slider -->

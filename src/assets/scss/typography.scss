@@ -114,10 +114,9 @@ input:-webkit-autofill {
 	// width: 100%;
 }
 .mat-menu-panel{
-    width: 220px;
+    width: 200px;
     margin-top: 38px;
-    margin-left: -52px;
-
+    margin-left: -30px;
 }
 .mat-elevation-z2{
 	box-shadow: none !important;
@@ -127,10 +126,11 @@ input:-webkit-autofill {
 }
 .mat-menu-panel button{
 	text-align: right;
-	font-size: 20px;
-    height: 34px;
+	font-size: 18px;
+    height: 30px;
     line-height: 1;
     padding: 0 20px;
+    font-family: 'Open Sans Hebrew', sans-serif;
 }
 .mat-menu-content{
 	padding: 10px 0 !important;

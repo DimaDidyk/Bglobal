@@ -27,30 +27,28 @@
 					<div class="row">
 						<div class="col-sm-6 col-xs-12">
 							<mat-form-field>
-								<input matInput 
-								 required 
-								 [min]="minDate" 
-								 [max]="getObjectValue(flyForm.value, newDate['nameDate2'])"
-								 [matDatepicker]="picker1"
-								 placeholder=":בחרו תאריך המראה"
-								 name="{{ newDate['nameDate1'] }}"
-								 ngModel>
-								<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-								<mat-datepicker touchUi="true" #picker1></mat-datepicker>
+								<input matInput
+								[matDatepicker]="picker2"
+								[min]="getObjectValue(flyForm.value, newDate['nameDate1'])"
+								placeholder=":בחרו תאריך המראה  "
+								name="{{ newDate['nameDate2'] }}"
+								ngModel>
+								<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+								<mat-datepicker touchUi="true" #picker2></mat-datepicker>
 							</mat-form-field>
 						</div>
 
 						<div class="col-sm-6 col-xs-12">
 							<mat-form-field>
-								<input matInput
-								required
-								[matDatepicker]="picker2"
-								[min]="getObjectValue(flyForm.value, newDate['nameDate1'])"
-								placeholder=":בחרו תאריך המראה"
-								name="{{ newDate['nameDate2'] }}"
-								ngModel>
-								<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-								<mat-datepicker touchUi="true" #picker2></mat-datepicker>
+								<input matInput 
+								 [min]="minDate" 
+								 [max]="getObjectValue(flyForm.value, newDate['nameDate2'])"
+								 [matDatepicker]="picker1"
+								 placeholder=":בחרו תאריך המראה  "
+								 name="{{ newDate['nameDate1'] }}"
+								 ngModel>
+								<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+								<mat-datepicker touchUi="true" #picker1></mat-datepicker>
 							</mat-form-field>
 						</div>
 					</div>
@@ -59,7 +57,7 @@
 				<div class="col-sm-4 col-xs-12 button-load-inputs">
 					<button mat-button class="bg-button" 
 					[disabled]="!flyForm.valid"
-					(click)="isShow='show'" (click)="isHide='hide'">!יאללה ממריאים</button>
+					(click)="isShow='show'" (click)="isHide='hide'" (click)="scroll(appofferswrap)">!יאללה ממריאים</button>
 				</div>
 			</div>
 
@@ -74,8 +72,7 @@
 
 
 
-
-<div [@toggleHeight]="isShow">
+<div [@toggleHeight]="isShow" #appofferswrap>
 	<app-offers></app-offers>
 </div>
 
