@@ -1,13 +1,16 @@
 <section id="page-banner">
+
 	<div class="banner-content">
-		<img src="{{urlImage}}" alt="banner">
+		<img src="{{ getCurrentData()['urlImage'] }}" alt="banner">
 		<div class="container">
-			<div class="banner-text">{{bannerText}}</div>
+
+			<div class="banner-text">{{ getCurrentData()['bannerText'] }}</div>
 		</div>
 	</div>
 	<div class="hedline">
 		<div class="container">
-			<h1>{{headlineTitle}}</h1>
+			<h1>{{ getCurrentData()['headlineTitle'] }}</h1>
 		</div>
 	</div>
+
 </section>

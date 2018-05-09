@@ -9,6 +9,7 @@ import { toggleHeight } from '../animation';
   templateUrl: './chosen-package.component.html',
   styleUrls: ['./chosen-package.component.scss']
 })
+
 export class ChosenPackageComponent implements OnInit {
 
   constructor() { }
