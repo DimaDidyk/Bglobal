@@ -3,33 +3,41 @@
 		<h1>?טוסים לספרד</h1>
 		<h3>אלה החבילות שהכי מתאימות לכם</h3>
 		
-		<div class="flex-center-bertical">
-			<!-- slider -->
-			<swiper [config]="config" [(index)]="index">
-				<div class="swiper-slide" *ngFor="let slide of sliderItems">
-					<div class="slide-header">
-						<h1>{{ slide['title'] }}</h1>
-						<h3>{{ slide['sub-title'] }}</h3>
+		<!-- <form #offersForm="ngForm" (ngSubmit)="onSubmit(offersForm)"> -->
+			<div class="flex-center-bertical">
+				<!-- slider -->
+				<swiper [config]="config" [(index)]="index">
+					<div class="swiper-slide" *ngFor="let slide of sliderItems">
+						<div class="slide-header">
+							<h1>{{ slide['title'] }}</h1>
+							<h3>{{ slide['sub-title'] }}</h3>
+						</div>
+						<div class="slide-content">
+							<div class="price">₪ {{ slide['price'] }}</div>
+							<div class="days">( {{ slide['days'] }} )</div>
+							<div class="slide-content">{{ slide['info'] }}</div>
+							<button type="submit"
+							(click)="routPackage(slide)"
+							mat-button class="bg-button"
+							>!הזמינו עכשיו  </button>
+							<!-- routerLink="{{ slide['rout'] }}" -->
+						</div>
 					</div>
-					<div class="slide-content">
-						<div class="price">₪ {{ slide['price'] }}</div>
-						<div class="days">( {{ slide['days'] }} )</div>
-						<div class="slide-content">{{ slide['info'] }}</div>
-						<button mat-button class="bg-button">!הזמינו עכשיו  </button>
-					</div>
-				</div>
-			</swiper><!-- #slider -->
- 
+				</swiper><!-- #slider -->
+	 
 
-			<div class="custome-navigate-slider">
-				<div class="back nav-arrow" (click)="prevSlide(600)">
-					<i class="material-icons">keyboard_arrow_left</i>
-				</div>
-				<div class="next nav-arrow" (click)="nextSlide(600)">
-					<i class="material-icons">keyboard_arrow_right</i>
+				<div class="custome-navigate-slider">
+					<div class="back nav-arrow" (click)="prevSlide(600)">
+						<i class="material-icons">keyboard_arrow_left</i>
+					</div>
+					<div class="next nav-arrow" (click)="nextSlide(600)">
+						<i class="material-icons">keyboard_arrow_right</i>
+					</div>
 				</div>
 			</div>
-		</div>
+		<!-- </form> -->
 
 	</div>
 </section>
+
+<pre>{{ sliderItems[0][''] }}</pre>

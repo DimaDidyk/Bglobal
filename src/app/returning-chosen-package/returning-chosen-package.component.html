@@ -1,0 +1,33 @@
+<section id="returning-chosen-package">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 content">
+				<h3>{{ getSlidePackgeData['title'] }}</h3>
+				<ul>
+					<li *ngFor="let option of getSlidePackgeData['options']">
+						{{ option }}
+					</li>
+				</ul>
+				<p>{{ getSlidePackgeData['desc'] }}</p>
+
+				<span class="another-program">
+					לבחירת תוכנית אחרת
+				</span>
+			</div>
+			<div class="col-sm-4">
+
+				<div class="package">
+					<div class="package-header {{ getSlidePackgeData['color'] }}">
+						<h1>{{ getSlidePackgeData['title'] }}</h1>
+						<h3>{{ getSlidePackgeData['sub-title'] }}</h3>
+					</div>
+					<div class="package-content {{ getSlidePackgeData['color'] }}">
+						<div class="price">{{ getSlidePackgeData['price'] }}</div>
+						<div class="days">({{ getSlidePackgeData['days'] }})</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>

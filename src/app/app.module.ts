@@ -52,6 +52,9 @@ import { DetailsFormComponent } from './details-form/details-form.component';
 import { OffersComponent } from './offers/offers.component';
 import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
 import { ChosenPackageComponent } from './chosen-package/chosen-package.component';
+import { ReturningCustomerPageComponent } from './returning-customer-page/returning-customer-page.component';
+import { ReturningChosenPackageComponent } from './returning-chosen-package/returning-chosen-package.component';
+import { DeliveryComponent } from './delivery/delivery.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -79,7 +82,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DetailsFormComponent,
     OffersComponent,
     UserPageSimComponent,
-    ChosenPackageComponent
+    ChosenPackageComponent,
+    ReturningCustomerPageComponent,
+    ReturningChosenPackageComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +110,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
-    }
+    },
+    OffersComponent,
   ],
   bootstrap: [AppComponent]
 })

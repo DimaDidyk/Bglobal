@@ -9,22 +9,27 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class BannerComponent implements OnInit {
 
-	constructor( public route: ActivatedRoute ) {
-	    console.log(route.pathFromRoot[1].snapshot.url[0].path);
-	    console.log(route.pathFromRoot[1].snapshot.routeConfig.path);
-	}
+	constructor( public route: ActivatedRoute ) {}
 
 	routeCurrent = this.route.pathFromRoot[1].snapshot.routeConfig.path;
 
 	routeData = [
-		{route: "sim-order",
+		{
+		  route: "sim-order",
 		  bannerText: 'סים אחד לכל החיים  ',
 		  headlineTitle: 'בחירת כרטיס סים  ',
 		  urlImage: './assets/img/page-banner.jpg'
 		},
-		{route: "user/sim",
+		{
+		  route: "user/sim",
 		  bannerText: 'סים אחד לכל החיים  ',
 		  headlineTitle: 'כרטיסי סים שלי  ',
+		  urlImage: './assets/img/page-banner.jpg'
+		},
+		{
+		  route: "sim-order/:package",
+		  bannerText: 'סים אחד לכל החיים  ',
+		  headlineTitle: 'פרטי החבילה שבחרת  ',
 		  urlImage: './assets/img/page-banner.jpg'
 		},
 	]

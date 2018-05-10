@@ -1,17 +1,21 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Injectable, ViewChild } from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
-import { MatButtonModule } from '@angular/material/button';
-import { NgForm, FormControl } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+// import { NgForm } from '@angular/forms';
+import { Router, Resolve, RouterStateSnapshot,
+  ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss']
 })
+
+@Injectable()
 export class OffersComponent implements OnInit {
-	
+
+	constructor(private router: Router) {}
+
 	// slider config
 	index = 0;
 	public config: SwiperConfigInterface = {
@@ -44,50 +48,78 @@ export class OffersComponent implements OnInit {
 	// slider content
 	sliderItems = [
 		{ 
-			'title': '8GB',
+			'rout':      'returning-customer-test',
+			'color':     'blue',
+			'title':     '8GB',
 			'sub-title': 'גלישה ושיחות',
-			'price': '189',
-			'days': '30 ימים',
-			'info': 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי'
+			'price':     '189',
+			'days':      '30 ימים',
+			'info'     : 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
+			'name':      'חבילת גלישה לספרד  ',
+			'options': [
+				'ניתן לטעינות חוזרת בכל עת  ',
+				'גלישה במהירות מירבית  ',
+				'ים אחד לכל החיים!  ',
+			],
+			'desc'     : 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
 		},
 		{ 
-			'title': 'UNLIMITED',
+			'rout':      'returning-customer',
+			'color':     'orange',
+			'title':     'UNLIMITED',
 			'sub-title': 'גלישה ושיחות',
-			'price': '29',
-			'days': 'ליום',
-			'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
+			'price':     '29',
+			'days':      'ליום',
+			'info': '     !ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים',
+			'name': 'ח     בילת גלישה לספרד  ',
+			'options': [
+				'ניתן לטעינות חוזרת בכל עת  ',
+				'גלישה במהירות מירבית  ',
+				'ים אחד לכל החיים!  ',
+			],
+			'desc': '     חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
 		},
 		{ 
-			'title': '1GB',
+			'rout':      'returning-customer-test2',
+			'color':     'blue',
+			'title':     '1GB',
 			'sub-title': 'גלישה ושיחות',
-			'price': '99',
-			'days': '30 ימים',
-			'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
+			'price':     '99',
+			'days':      '30 ימים',
+			'info':      '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים',
+			'name':      'חבילת גלישה לספרד  ',
+			'options': [
+				'ניתן לטעינות חוזרת בכל עת  ',
+				'גלישה במהירות מירבית  ',
+				'ים אחד לכל החיים!  ',
+			],
+			'desc':      'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
 		},
 		{ 
-			'title': '8GB',
+			'rout':      'returning-customer-test3',
+			'color':     'blue',
+			'title':     '8GB',
 			'sub-title': 'גלישה ושיחות',
-			'price': '189',
-			'days': '30 ימים',
-			'info': 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי'
-		},
-		{ 
-			'title': 'UNLIMITED',
-			'sub-title': 'גלישה ושיחות',
-			'price': '29',
-			'days': 'ליום',
-			'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
-		},
-		{ 
-			'title': '1GB',
-			'sub-title': 'גלישה ושיחות',
-			'price': '99',
-			'days': '30 ימים',
-			'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
+			'price':     '189',
+			'days':      '30 ימים',
+			'info'     : 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
+			'name':      'חבילת גלישה לספרד  ',
+			'options': [
+				'ניתן לטעינות חוזרת בכל עת  ',
+				'גלישה במהירות מירבית  ',
+				'ים אחד לכל החיים!  ',
+			],
+			'desc'     : 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
 		},
 	];
 
-	constructor() { }
+	getSlideData(rout:string){
+		return this.sliderItems.find(x => x.rout == rout);
+	}
+
+	routPackage(slideData:object){
+		this.router.navigate( ['sim-order', slideData['rout'] ] );
+	}
 
 	ngOnInit() {
 

@@ -9,6 +9,7 @@ import { BannerComponent } from './banner/banner.component';
 import { HomaPageComponent } from './homa-page/homa-page.component';
 import { SimOrderPageComponent } from './sim-order-page/sim-order-page.component';
 import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
+import { ReturningCustomerPageComponent } from './returning-customer-page/returning-customer-page.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: '', component:  HomaPageComponent },
   { path: 'sim-order', component: SimOrderPageComponent },
   { path: 'user/sim', component:  UserPageSimComponent },
+  { path: 'sim-order/:package', component:  ReturningCustomerPageComponent },
+  // { path: 'sim-order/returning-customer', component:  ReturningCustomerPageComponent },
 ];
 
 @NgModule({
