@@ -12,10 +12,14 @@ $purpleExtraDark: #4b0049;
 $red: #9d205e;
 $green: #019b94;
 $orange: #fcb30e;
+$orangeDark: #f04a20;
+$blue: #038ed8;
 
+// gradient
 $gradient-background-blue-dark: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3,142,216) 100%);
 $gradient-background-orange: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
 $gradient-background-purple: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
+$gradient-background-blue: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);
 
 @mixin gradient-background-blue(){
     background: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);

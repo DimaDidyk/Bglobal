@@ -122,6 +122,7 @@ var toggleHeight = Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_27" /* t
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__homa_page_homa_page_component__ = __webpack_require__("./src/app/homa-page/homa-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sim_order_page_sim_order_page_component__ = __webpack_require__("./src/app/sim-order-page/sim-order-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_page_sim_user_page_sim_component__ = __webpack_require__("./src/app/user-page-sim/user-page-sim.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__returning_customer_page_returning_customer_page_component__ = __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -133,11 +134,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: '', component: __WEBPACK_IMPORTED_MODULE_2__homa_page_homa_page_component__["a" /* HomaPageComponent */] },
     { path: 'sim-order', component: __WEBPACK_IMPORTED_MODULE_3__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */] },
     { path: 'user/sim', component: __WEBPACK_IMPORTED_MODULE_4__user_page_sim_user_page_sim_component__["a" /* UserPageSimComponent */] },
+    { path: 'sim-order/:package', component: __WEBPACK_IMPORTED_MODULE_5__returning_customer_page_returning_customer_page_component__["a" /* ReturningCustomerPageComponent */] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -145,10 +148,10 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* NgModule */])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(routes)
+                __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forRoot(routes)
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]
+                __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */]
             ],
             declarations: []
         })
@@ -244,6 +247,9 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__offers_offers_component__ = __webpack_require__("./src/app/offers/offers.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__user_page_sim_user_page_sim_component__ = __webpack_require__("./src/app/user-page-sim/user-page-sim.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__chosen_package_chosen_package_component__ = __webpack_require__("./src/app/chosen-package/chosen-package.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__returning_customer_page_returning_customer_page_component__ = __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__returning_chosen_package_returning_chosen_package_component__ = __webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__delivery_delivery_component__ = __webpack_require__("./src/app/delivery/delivery.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -265,6 +271,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // routing
+
+
+
 
 
 
@@ -310,7 +319,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_22__details_form_details_form_component__["a" /* DetailsFormComponent */],
                 __WEBPACK_IMPORTED_MODULE_23__offers_offers_component__["a" /* OffersComponent */],
                 __WEBPACK_IMPORTED_MODULE_24__user_page_sim_user_page_sim_component__["a" /* UserPageSimComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__chosen_package_chosen_package_component__["a" /* ChosenPackageComponent */]
+                __WEBPACK_IMPORTED_MODULE_25__chosen_package_chosen_package_component__["a" /* ChosenPackageComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__returning_customer_page_returning_customer_page_component__["a" /* ReturningCustomerPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__returning_chosen_package_returning_chosen_package_component__["a" /* ReturningChosenPackageComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__delivery_delivery_component__["a" /* DeliveryComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -335,7 +347,8 @@ var AppModule = /** @class */ (function () {
                 {
                     provide: __WEBPACK_IMPORTED_MODULE_8_ngx_swiper_wrapper__["a" /* SWIPER_CONFIG */],
                     useValue: DEFAULT_SWIPER_CONFIG
-                }
+                },
+                __WEBPACK_IMPORTED_MODULE_23__offers_offers_component__["a" /* OffersComponent */],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
@@ -350,7 +363,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/banner/banner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"page-banner\">\n\t<div class=\"banner-content\">\n\t\t<img src=\"{{urlImage}}\" alt=\"banner\">\n\t\t<div class=\"container\">\n\t\t\t<div class=\"banner-text\">{{bannerText}}</div>\n\t\t</div>\n\t</div>\n\t<div class=\"hedline\">\n\t\t<div class=\"container\">\n\t\t\t<h1>{{headlineTitle}}</h1>\n\t\t</div>\n\t</div>\n</section>"
+module.exports = "<section id=\"page-banner\">\n\n\t<div class=\"banner-content\">\n\t\t<img src=\"{{ getCurrentData()['urlImage'] }}\" alt=\"banner\">\n\t\t<div class=\"container\">\n\t\t\t<div class=\"banner-text\">{{ getCurrentData()['bannerText'] }}</div>\n\t\t</div>\n\t</div>\n\t<div class=\"hedline\">\n\t\t<div class=\"container\">\n\t\t\t<h1>{{ getCurrentData()['headlineTitle'] }}</h1>\n\t\t</div>\n\t</div>\n\n</section>\n"
 
 /***/ }),
 
@@ -367,6 +380,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BannerComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -377,13 +391,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var BannerComponent = /** @class */ (function () {
-    function BannerComponent() {
-        this.urlImage = './assets/img/page-banner.jpg';
-        this.bannerText = 'סים אחד לכל החיים';
-        // headline
-        this.headlineTitle = 'בחירת כרטיס סים';
+    function BannerComponent(route) {
+        this.route = route;
+        this.routeCurrent = this.route.pathFromRoot[1].snapshot.routeConfig.path;
+        this.routeData = [
+            {
+                route: "sim-order",
+                bannerText: 'סים אחד לכל החיים  ',
+                headlineTitle: 'בחירת כרטיס סים  ',
+                urlImage: './assets/img/page-banner.jpg'
+            },
+            {
+                route: "user/sim",
+                bannerText: 'סים אחד לכל החיים  ',
+                headlineTitle: 'כרטיסי סים שלי  ',
+                urlImage: './assets/img/page-banner.jpg'
+            },
+            {
+                route: "sim-order/:package",
+                bannerText: 'סים אחד לכל החיים  ',
+                headlineTitle: 'פרטי החבילה שבחרת  ',
+                urlImage: './assets/img/page-banner.jpg'
+            },
+        ];
     }
+    BannerComponent.prototype.getCurrentData = function () {
+        for (var i = this.routeData.length - 1; i >= 0; i--) {
+            if (this.routeData[i].route == this.routeCurrent) {
+                return this.routeData[i];
+            }
+        }
+    };
     BannerComponent.prototype.ngOnInit = function () {
     };
     BannerComponent = __decorate([
@@ -392,7 +432,7 @@ var BannerComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/banner/banner.component.html"),
             styles: [__webpack_require__("./src/app/banner/banner.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
     ], BannerComponent);
     return BannerComponent;
 }());
@@ -404,7 +444,7 @@ var BannerComponent = /** @class */ (function () {
 /***/ "./src/app/chosen-package/chosen-package.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"chosen-package\">\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<table class=\"table\">\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>סים אחד לכל החיים </td>\n\t\t\t\t\t\t\t<td><b>סוג כרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>פעיל  </td>\n\t\t\t\t\t\t\t<td><b>סמצב הכרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>כרטיס בדרך לנקודת איסוף </td>\n\t\t\t\t\t\t\t<td><b>סמצב הכרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>להפעלת כרטיס </td>\n\t\t\t\t\t\t\t<td><b>סמצב הכרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<img src=\"./assets/img/sim.png\" alt=\"Bglobal sim\" class=\"sim-img\">\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<button mat-button class=\"bg-button bg-green-button\">עינת כרטיס  |בדיקת חבילה  </button>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<button mat-button class=\"bg-button bg-orange-button\">לרכישת כרטיס סים נוסף   </button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<p>דיווח על אובדן של כרטיס סים</p>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>"
+module.exports = "<section id=\"chosen-package\">\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<table class=\"table\">\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>סים אחד לכל החיים </td>\n\t\t\t\t\t\t\t<td><b>סוג כרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>פעיל  </td>\n\t\t\t\t\t\t\t<td><b>סמצב הכרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>כרטיס בדרך לנקודת איסוף </td>\n\t\t\t\t\t\t\t<td><b>סמצב הכרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>להפעלת כרטיס </td>\n\t\t\t\t\t\t\t<td><b>סמצב הכרטיס: </b></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<img src=\"./assets/img/sim.png\" alt=\"Bglobal sim\" class=\"sim-img\">\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<button mat-button class=\"bg-button bg-green-button\">עינת כרטיס   |בדיקת חבילה  </button>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t<button mat-button class=\"bg-button bg-orange-button\">לרכישת כרטיס סים נוסף   </button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<p>דיווח על אובדן של כרטיס סים</p>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>"
 
 /***/ }),
 
@@ -526,6 +566,56 @@ var ClientInfoComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ClientInfoComponent);
     return ClientInfoComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/delivery/delivery.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  delivery works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/delivery/delivery.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/delivery/delivery.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeliveryComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DeliveryComponent = /** @class */ (function () {
+    function DeliveryComponent() {
+    }
+    DeliveryComponent.prototype.ngOnInit = function () {
+    };
+    DeliveryComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-delivery',
+            template: __webpack_require__("./src/app/delivery/delivery.component.html"),
+            styles: [__webpack_require__("./src/app/delivery/delivery.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], DeliveryComponent);
+    return DeliveryComponent;
 }());
 
 
@@ -756,7 +846,7 @@ var FooterComponent = /** @class */ (function () {
 /***/ "./src/app/form-sim/form-sim.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"form-sim\">\n\t<div class=\"container\">\n\t\t\n\t\t<form #formSim=\"ngForm\" (ngSubmit)=\"onSubmit(formSim)\">\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>בחר בסים המבוקש</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t    <mat-select placeholder=\"כרטיס סים כלשהו\" required name=\"SIM\" ngModel>\n\t\t\t\t\t\t    \t<mat-option value=\"{{ sim['value'] }}\" *ngFor=\"let sim of simcards\">{{ sim['value' ]}}</mat-option>\n\t\t\t\t\t\t    </mat-select>\n\t\t\t\t\t\t </mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>מלא פרטי משווק</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput placeholder=\"כרטיס מועדון\" name=\"club-card\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"נציג\" name=\"representative\" #representative ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"סניף\" name=\"branch\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button type=\"submit\" mat-button class=\"bg-button bg-green-button\"\n\t\t\t\t\t [disabled]=\"!formSim.valid\" \n\t\t\t\t\t (click)=\"scrollAnimate(appClientInfo)\"\n\t\t\t\t\t (click)=\"isShow='show'\">המשך</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\n\t\t<!-- <pre>{{ formSim.valid | json }}</pre> -->\n\t\t<!-- <pre>{{ formSim.submitted | json }}</pre> -->\n\n\t</div>\n</section>\n\n<div [@toggleHeight]=\"isShow\" #appClientInfo>\n\t<app-client-info [formSimData]=\"formSim.value\">\n\t</app-client-info>\n</div>"
+module.exports = "<section id=\"form-sim\">\n\t<div class=\"container\">\n\t\t\n\t\t<form #formSim=\"ngForm\" (ngSubmit)=\"onSubmit(formSim)\">\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>בחר בסים המבוקש</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t    <mat-select placeholder=\"כרטיס סים כלשהו\" required name=\"SIM\" ngModel>\n\t\t\t\t\t\t    \t<mat-option value=\"{{ sim['value'] }}\" *ngFor=\"let sim of simcards\">{{ sim['value' ]}}</mat-option>\n\t\t\t\t\t\t    </mat-select>\n\t\t\t\t\t\t </mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<h3>מלא פרטי משווק</h3>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput placeholder=\"כרטיס מועדון\" name=\"club-card\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"נציג\" name=\"representative\" #representative ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t<input matInput required placeholder=\"סניף\" name=\"branch\" ngModel/>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button type=\"submit\" mat-button class=\"bg-button bg-green-button\"\n\t\t\t\t\t [disabled]=\"!formSim.valid\"\n\t\t\t\t\t (click)=\"scrollAnimate(appClientInfo)\"\n\t\t\t\t\t (click)=\"isShow='show'\">המשך</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\n\t\t<!-- <pre>{{ formSim.valid | json }}</pre> -->\n\t\t<!-- <pre>{{ formSim.submitted | json }}</pre> -->\n\n\t</div>\n</section>\n\n<div [@toggleHeight]=\"isShow\" #appClientInfo>\n\t<app-client-info [formSimData]=\"formSim.value\">\n\t</app-client-info>\n</div>"
 
 /***/ }),
 
@@ -828,7 +918,7 @@ var FormSimComponent = /** @class */ (function () {
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header >\n\t<div class=\"container\">\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\n\n\t\t<!-- mobile sandwich -->\n\t\t<div id=\"sandwich\"\n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t<div class=\"sw sw-topper\"></div>\n\t\t\t<div class=\"sw sw-bottom\"></div>\n\t\t\t<div class=\"sw sw-footer\"></div>\n\t\t</div>\n\n\t\t<div id=\"main-menu\" \n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \"\n\t\t >\n\t\t\t<button mat-button class=\"main-manu-item\"\n\t\t\t[matMenuTriggerFor]=\"logInMenu\" \n\t\t\t(mouseenter)=\"openMenu()\" \n\t\t\t#notificationMenuBtn>\n\t\t\t\t<a id=\"sign-in\">כניסה למנויים <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i></a>\n\t\t\t</button>\n\t\t\t\n\t\t\t<mat-menu #logInMenu=\"matMenu\">\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/user/sim\" >כרטיס סים שלי</button>\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\">מצב החבילה עדכני</button>\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\">פרטים אישיים</button>\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\">יציאה</button>\n\t\t\t</mat-menu>\n\t\t\t\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/sim-order\"  class=\"main-manu-item\">צור קשר</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\"  class=\"main-manu-item\">הפעלת/טעינת כרטיס</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\"  class=\"main-manu-item\">שאלות נפוצות</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\"  class=\"main-manu-item\">רשימת מדינות נתמכות</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/\"  class=\"main-manu-item\">דף הבית</a>\n\t\t</div>\n\t</div>\n</header>\n\n"
+module.exports = "<header >\n\t<div class=\"container\">\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\n\n\t\t<!-- mobile sandwich -->\n\t\t<div id=\"sandwich\"\n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t<div class=\"sw sw-topper\"></div>\n\t\t\t<div class=\"sw sw-bottom\"></div>\n\t\t\t<div class=\"sw sw-footer\"></div>\n\t\t</div>\n\n\t\t<div id=\"main-menu\" \n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \"\n\t\t >\n\t\t\t<button mat-button class=\"main-manu-item\"\n\t\t\t[matMenuTriggerFor]=\"logInMenu\" \n\t\t\t(mouseenter)=\"openMenu()\" \n\t\t\t#notificationMenuBtn>\n\t\t\t\t<a id=\"sign-in\">כניסה למנויים <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i></a>\n\t\t\t</button>\n\t\t\t\n\t\t\t<mat-menu #logInMenu=\"matMenu\">\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/user/sim\" >כרטיס סים שלי</button>\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\">מצב החבילה עדכני</button>\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\">פרטים אישיים</button>\n\t\t\t  <button mat-menu-item [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\">יציאה</button>\n\t\t\t</mat-menu>\n\t\t\t\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/sim-order\"  class=\"main-manu-item\">צור קשר</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/sim-order/returning-customer\"  class=\"main-manu-item\">הפעלת/טעינת כרטיס</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\"  class=\"main-manu-item\">שאלות נפוצות</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/t\"  class=\"main-manu-item\">רשימת מדינות נתמכות</a>\n\t\t\t<a [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/\"  class=\"main-manu-item\">דף הבית</a>\n\t\t</div>\n\t</div>\n</header>\n\n"
 
 /***/ }),
 
@@ -856,7 +946,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-// import { MatMenuModule } from '@angular/material/menu';
 
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
@@ -1038,7 +1127,7 @@ var HomeSliderComponent = /** @class */ (function () {
 /***/ "./src/app/offers/offers.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"offers\">\n\t<div class=\"container\">\n\t\t<h1>?טוסים לספרד</h1>\n\t\t<h3>אלה החבילות שהכי מתאימות לכם</h3>\n\t\t\n\t\t<div class=\"flex-center-bertical\">\n\t\t\t<!-- slider -->\n\t\t\t<swiper [config]=\"config\" [(index)]=\"index\">\n\t\t\t\t<div class=\"swiper-slide\" *ngFor=\"let slide of sliderItems\">\n\t\t\t\t\t<div class=\"slide-header\">\n\t\t\t\t\t\t<h1>{{ slide['title'] }}</h1>\n\t\t\t\t\t\t<h3>{{ slide['sub-title'] }}</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t<div class=\"price\">₪ {{ slide['price'] }}</div>\n\t\t\t\t\t\t<div class=\"days\">( {{ slide['days'] }} )</div>\n\t\t\t\t\t\t<div class=\"slide-content\">{{ slide['info'] }}</div>\n\t\t\t\t\t\t<button mat-button class=\"bg-button\">!הזמינו עכשיו  </button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</swiper><!-- #slider -->\n \n\n\t\t\t<div class=\"custome-navigate-slider\">\n\t\t\t\t<div class=\"back nav-arrow\" (click)=\"prevSlide(600)\">\n\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_left</i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"next nav-arrow\" (click)=\"nextSlide(600)\">\n\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_right</i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n</section>"
+module.exports = "<section id=\"offers\">\n\t<div class=\"container\">\n\t\t<h1>?טוסים לספרד</h1>\n\t\t<h3>אלה החבילות שהכי מתאימות לכם</h3>\n\t\t\n\t\t<!-- <form #offersForm=\"ngForm\" (ngSubmit)=\"onSubmit(offersForm)\"> -->\n\t\t\t<div class=\"flex-center-bertical\">\n\t\t\t\t<!-- slider -->\n\t\t\t\t<swiper [config]=\"config\" [(index)]=\"index\">\n\t\t\t\t\t<div class=\"swiper-slide\" *ngFor=\"let slide of sliderItems\">\n\t\t\t\t\t\t<div class=\"slide-header\">\n\t\t\t\t\t\t\t<h1>{{ slide['title'] }}</h1>\n\t\t\t\t\t\t\t<h3>{{ slide['sub-title'] }}</h3>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"price\">₪ {{ slide['price'] }}</div>\n\t\t\t\t\t\t\t<div class=\"days\">( {{ slide['days'] }} )</div>\n\t\t\t\t\t\t\t<div class=\"slide-content\">{{ slide['info'] }}</div>\n\t\t\t\t\t\t\t<button type=\"submit\"\n\t\t\t\t\t\t\t(click)=\"routPackage(slide)\"\n\t\t\t\t\t\t\tmat-button class=\"bg-button\"\n\t\t\t\t\t\t\t>!הזמינו עכשיו  </button>\n\t\t\t\t\t\t\t<!-- routerLink=\"{{ slide['rout'] }}\" -->\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</swiper><!-- #slider -->\n\t \n\n\t\t\t\t<div class=\"custome-navigate-slider\">\n\t\t\t\t\t<div class=\"back nav-arrow\" (click)=\"prevSlide(600)\">\n\t\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_left</i>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"next nav-arrow\" (click)=\"nextSlide(600)\">\n\t\t\t\t\t\t<i class=\"material-icons\">keyboard_arrow_right</i>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t<!-- </form> -->\n\n\t</div>\n</section>\n\n<pre>{{ sliderItems[0][''] }}</pre>"
 
 /***/ }),
 
@@ -1056,6 +1145,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OffersComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__ = __webpack_require__("./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1067,8 +1157,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+// import { NgForm } from '@angular/forms';
+
 var OffersComponent = /** @class */ (function () {
-    function OffersComponent() {
+    function OffersComponent(router) {
+        this.router = router;
         // slider config
         this.index = 0;
         this.config = {
@@ -1089,46 +1182,68 @@ var OffersComponent = /** @class */ (function () {
         // slider content
         this.sliderItems = [
             {
+                'rout': 'returning-customer-test',
+                'color': 'blue',
                 'title': '8GB',
                 'sub-title': 'גלישה ושיחות',
                 'price': '189',
                 'days': '30 ימים',
-                'info': 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי'
+                'info': 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
+                'name': 'חבילת גלישה לספרד  ',
+                'options': [
+                    'ניתן לטעינות חוזרת בכל עת  ',
+                    'גלישה במהירות מירבית  ',
+                    'ים אחד לכל החיים!  ',
+                ],
+                'desc': 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
             },
             {
+                'rout': 'returning-customer',
+                'color': 'orange',
                 'title': 'UNLIMITED',
                 'sub-title': 'גלישה ושיחות',
                 'price': '29',
                 'days': 'ליום',
-                'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
+                'info': '     !ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים',
+                'name': 'ח     בילת גלישה לספרד  ',
+                'options': [
+                    'ניתן לטעינות חוזרת בכל עת  ',
+                    'גלישה במהירות מירבית  ',
+                    'ים אחד לכל החיים!  ',
+                ],
+                'desc': '     חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
             },
             {
+                'rout': 'returning-customer-test2',
+                'color': 'blue',
                 'title': '1GB',
                 'sub-title': 'גלישה ושיחות',
                 'price': '99',
                 'days': '30 ימים',
-                'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
+                'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים',
+                'name': 'חבילת גלישה לספרד  ',
+                'options': [
+                    'ניתן לטעינות חוזרת בכל עת  ',
+                    'גלישה במהירות מירבית  ',
+                    'ים אחד לכל החיים!  ',
+                ],
+                'desc': 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
             },
             {
+                'rout': 'returning-customer-test3',
+                'color': 'blue',
                 'title': '8GB',
                 'sub-title': 'גלישה ושיחות',
                 'price': '189',
                 'days': '30 ימים',
-                'info': 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי'
-            },
-            {
-                'title': 'UNLIMITED',
-                'sub-title': 'גלישה ושיחות',
-                'price': '29',
-                'days': 'ליום',
-                'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
-            },
-            {
-                'title': '1GB',
-                'sub-title': 'גלישה ושיחות',
-                'price': '99',
-                'days': '30 ימים',
-                'info': '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים'
+                'info': 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
+                'name': 'חבילת גלישה לספרד  ',
+                'options': [
+                    'ניתן לטעינות חוזרת בכל עת  ',
+                    'גלישה במהירות מירבית  ',
+                    'ים אחד לכל החיים!  ',
+                ],
+                'desc': 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
             },
         ];
     }
@@ -1137,6 +1252,12 @@ var OffersComponent = /** @class */ (function () {
     };
     OffersComponent.prototype.prevSlide = function (speed) {
         this.componentRef.directiveRef.prevSlide(speed);
+    };
+    OffersComponent.prototype.getSlideData = function (rout) {
+        return this.sliderItems.find(function (x) { return x.rout == rout; });
+    };
+    OffersComponent.prototype.routPackage = function (slideData) {
+        this.router.navigate(['sim-order', slideData['rout']]);
     };
     OffersComponent.prototype.ngOnInit = function () {
     };
@@ -1154,7 +1275,8 @@ var OffersComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/offers/offers.component.html"),
             styles: [__webpack_require__("./src/app/offers/offers.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
     ], OffersComponent);
     return OffersComponent;
 }());
@@ -1282,6 +1404,128 @@ var PromotionComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], PromotionComponent);
     return PromotionComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/returning-chosen-package/returning-chosen-package.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"returning-chosen-package\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-8 content\">\n\t\t\t\t<h3>{{ getSlidePackgeData['title'] }}</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li *ngFor=\"let option of getSlidePackgeData['options']\">\n\t\t\t\t\t\t{{ option }}\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>{{ getSlidePackgeData['desc'] }}</p>\n\n\t\t\t\t<span class=\"another-program\">\n\t\t\t\t\tלבחירת תוכנית אחרת\n\t\t\t\t</span>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-4\">\n\n\t\t\t\t<div class=\"package\">\n\t\t\t\t\t<div class=\"package-header {{ getSlidePackgeData['color'] }}\">\n\t\t\t\t\t\t<h1>{{ getSlidePackgeData['title'] }}</h1>\n\t\t\t\t\t\t<h3>{{ getSlidePackgeData['sub-title'] }}</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"package-content {{ getSlidePackgeData['color'] }}\">\n\t\t\t\t\t\t<div class=\"price\">{{ getSlidePackgeData['price'] }}</div>\n\t\t\t\t\t\t<div class=\"days\">({{ getSlidePackgeData['days'] }})</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>\n"
+
+/***/ }),
+
+/***/ "./src/app/returning-chosen-package/returning-chosen-package.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ".gradient-background {\n  background: -webkit-gradient(linear, left top, right top, from(#512e7f), color-stop(80%, #a5196a), to(#a5196a));\n  background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%); }\n  .gradient-background .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\n    color: #fff; }\n  .gray-background {\n  background: #f1f1f1; }\n  h1, h2, h3, h4, h5, h6 {\n  margin: 10px 0; }\n  h1 {\n  font-size: 26px;\n  font-weight: 900; }\n  h2 {\n  font-size: 20px; }\n  h3 {\n  font-size: 18px; }\n  label {\n  font-weight: 400; }\n  .hedline {\n  text-align: center;\n  -webkit-box-shadow: 0px 6px 11.52px 0.48px rgba(0, 0, 0, 0.25);\n          box-shadow: 0px 6px 11.52px 0.48px rgba(0, 0, 0, 0.25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  min-height: -webkit-max-content;\n  min-height: -moz-max-content;\n  min-height: max-content; }\n  .hedline h1 {\n    font-weight: 900; }\n  a {\n  color: #000; }\n  a:hover {\n  text-decoration: none; }\n  swiper > .swiper.s-wrapper .swiper-pagination .swiper-pagination-handle {\n  margin: 8px; }\n  .swiper-pagination-handle .swiper-pagination-bullet {\n  width: 15px;\n  height: 15px;\n  opacity: 1;\n  border: 2px solid #fff !important;\n  background: #fff; }\n  .swiper-pagination-handle .swiper-pagination-bullet-active {\n  background: transparent;\n  border: 2px solid #fff !important;\n  margin: 0 !important; }\n  input:-webkit-autofill {\n  -webkit-text-fill-color: #000 !important; }\n  input:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0 30px white inset; }\n  .mat-menu-panel {\n  width: 200px;\n  margin-top: 38px;\n  margin-left: -30px; }\n  .mat-elevation-z2 {\n  -webkit-box-shadow: none !important;\n          box-shadow: none !important; }\n  .mat-button {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  font-weight: 600;\n  font-size: 18px;\n  height: 50px; }\n  .mat-button-wrapper {\n  pointer-events: none; }\n  .mat-button-focus-overlay {\n  background-color: transparent !important; }\n  .mat-menu-panel button {\n  text-align: right;\n  font-size: 18px;\n  height: 30px;\n  line-height: 1;\n  padding: 0 20px;\n  font-family: 'Open Sans Hebrew', sans-serif; }\n  .mat-menu-content {\n  padding: 10px 0 !important; }\n  .mat-input-wrapper,\n.bg-button {\n  border-radius: 12px;\n  margin-bottom: 26px;\n  font-weight: 100;\n  font-size: 18px;\n  height: 50px;\n  font-weight: 600; }\n  .mat-form-field-infix {\n  border: 0;\n  height: 50px;\n  line-height: 1.8;\n  padding-right: 10px; }\n  .mat-form-field {\n  max-width: 100%;\n  width: 100%; }\n  .mat-input-wrapper {\n  background: #fff;\n  color: #757575;\n  text-align: right;\n  padding-right: 30px; }\n  .mat-form-field-suffix {\n  position: absolute;\n  border-radius: 0;\n  width: 100%;\n  height: 100%; }\n  .mat-datepicker-toggle .mat-icon-button {\n  width: 100%;\n  height: 100%;\n  text-align: right;\n  padding-right: 10px; }\n  .mat-select-value {\n  padding-right: 24px; }\n  .mat-select-arrow-wrapper {\n  position: relative;\n  right: -12px; }\n  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {\n  color: #733071; }\n  .mat-form-field-underline {\n  display: none; }\n  .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {\n  height: 50px; }\n  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {\n  margin-top: -8px;\n  line-height: 2;\n  color: #000; }\n  .bg-button {\n  color: #fff !important;\n  border-radius: 12px;\n  width: 100%;\n  height: 50px;\n  background: -webkit-gradient(linear, left top, right top, from(#512e7f), color-stop(80%, #a5196a), to(#a5196a));\n  background: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%); }\n  .bg-button.bg-green-button {\n  background: #019b94;\n  max-width: 260px;\n  margin: 0 auto;\n  display: block; }\n  .bg-button.bg-orange-button {\n  background: #fcb30e;\n  margin: 0 auto;\n  margin: 20px auto;\n  display: block;\n  width: 180px; }\n  .mat-checkbox-inner-container,\n.mat-checkbox-frame {\n  width: 20px !important;\n  height: 20px !important;\n  border-radius: 5px !important;\n  padding-left: 10px; }\n  .mat-checkbox {\n  color: #000;\n  font-size: 20px !important;\n  font-weight: 200 !important; }\n  .mat-checkbox-layout {\n  width: 100% !important; }\n  .mat-checkbox-layout .mat-checkbox-label {\n  width: 100%;\n  text-align: right;\n  white-space: pre-line; }\n  .mat-checkbox-checked.mat-accent .mat-checkbox-background,\n.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {\n  background: #019b94;\n  border-radius: 5px; }\n  .mat-form-field-hint-wrapper {\n  margin-top: 20px; }\n  .mat-tooltip-panel {\n  border-radius: 10px; }\n  .mat-tooltip {\n  background-color: #019b94;\n  font-size: 12px;\n  border-radius: 10px;\n  padding: 10px 20px !important;\n  font-weight: 200;\n  max-width: 310px !important; }\n  @media screen and (-ms-high-contrast: active) {\n  .mat-tooltip {\n    outline: solid 0px; } }\n  .mat-tooltip-handset {\n  margin: 24px;\n  padding-left: 16px;\n  padding-right: 16px; }\n  .example-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n  .example-container > * {\n  width: 100%; }\n  .example-right-align {\n  text-align: right; }\n  input::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  display: none; }\n  input {\n  -moz-appearance: textfield; }\n  button {\n  -webkit-transition: opacity 1s;\n  transition: opacity 1s; }\n  button:disabled {\n  opacity: .5; }\n  /* Large devices (large desktops, 1200px and up) */\n  @media only screen and (max-width: 1200px) {\n  #page-banner .banner-content .banner-text {\n    font-size: 80px;\n    max-width: 400px; } }\n  /* Medium devices (desktops, 992px and up) */\n  /* Small devices (tablets, 768px and up) */\n  #returning-chosen-package {\n  padding-top: 30px;\n  padding-bottom: 30px; }\n  #returning-chosen-package .content {\n    text-align: right;\n    cursor: default; }\n  #returning-chosen-package .content h3 {\n      font-weight: 600;\n      color: #733071;\n      font-size: 20px;\n      margin-bottom: 20px; }\n  #returning-chosen-package .content ul {\n      padding: 0;\n      padding-right: 20px; }\n  #returning-chosen-package .content ul li {\n        direction: rtl;\n        font-size: 20px; }\n  #returning-chosen-package .content p {\n      font-size: 20px; }\n  #returning-chosen-package .content span.another-program {\n      color: #019b94;\n      text-align: left;\n      font-size: 20px;\n      font-weight: 600;\n      display: block;\n      text-decoration: underline;\n      margin-top: 60px;\n      cursor: pointer; }\n  #returning-chosen-package .package {\n    background: #f1f1f1;\n    cursor: default;\n    border-radius: 6px;\n    overflow: hidden;\n    -webkit-box-shadow: 0px 3px 12.74px 0.26px rgba(0, 0, 0, 0.16);\n            box-shadow: 0px 3px 12.74px 0.26px rgba(0, 0, 0, 0.16); }\n  #returning-chosen-package .package .package-header {\n      padding: 1px;\n      text-align: center;\n      color: #fff; }\n  #returning-chosen-package .package .package-header.blue {\n        background: linear-gradient(37deg, #473284 0%, #038ed8 100%); }\n  #returning-chosen-package .package .package-header.orange {\n        background: linear-gradient(37deg, #fec80a 0%, #ed2b26 100%); }\n  #returning-chosen-package .package .package-header h1 {\n        font-size: 40px; }\n  #returning-chosen-package .package .package-header h3 {\n        font-size: 26px;\n        font-weight: 600; }\n  #returning-chosen-package .package .package-content {\n      color: #f04a20;\n      padding-top: 20px;\n      padding-bottom: 30px; }\n  #returning-chosen-package .package .package-content.blue {\n        color: #038ed8; }\n  #returning-chosen-package .package .package-content.orange {\n        color: #f04a20; }\n  #returning-chosen-package .package .package-content .price {\n        font-size: 86px;\n        text-align: center;\n        font-weight: 900;\n        line-height: 1.2; }\n  #returning-chosen-package .package .package-content .days {\n        font-size: 26px;\n        padding-left: 70px;\n        font-weight: 600; }\n  /* Small devices (tablets, 768px and up) */\n"
+
+/***/ }),
+
+/***/ "./src/app/returning-chosen-package/returning-chosen-package.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReturningChosenPackageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__offers_offers_component__ = __webpack_require__("./src/app/offers/offers.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ReturningChosenPackageComponent = /** @class */ (function () {
+    function ReturningChosenPackageComponent(router, offersComponent, activatedRoute) {
+        this.router = router;
+        this.offersComponent = offersComponent;
+        this.activatedRoute = activatedRoute;
+        // get all Slider Data
+        this.offersComponentPackageData = this.offersComponent.sliderItems;
+        // get active route
+        this.routSnapshotPackage = this.activatedRoute.snapshot.params['package'];
+        // get active package (slide) Data
+        this.getSlidePackgeData = this.offersComponent.getSlideData(this.routSnapshotPackage);
+    }
+    ReturningChosenPackageComponent.prototype.ngOnInit = function () {
+        // scroll Top
+        this.router.events.subscribe(function (evt) {
+            if (!(evt instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */])) {
+                return;
+            }
+            window.scrollTo(0, 0);
+        });
+    };
+    ReturningChosenPackageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-returning-chosen-package',
+            template: __webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.html"),
+            styles: [__webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__offers_offers_component__["a" /* OffersComponent */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
+    ], ReturningChosenPackageComponent);
+    return ReturningChosenPackageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/returning-customer-page/returning-customer-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-banner></app-banner>\n\n<app-returning-chosen-package></app-returning-chosen-package>\n\n<app-client-info></app-client-info>"
+
+/***/ }),
+
+/***/ "./src/app/returning-customer-page/returning-customer-page.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/returning-customer-page/returning-customer-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReturningCustomerPageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ReturningCustomerPageComponent = /** @class */ (function () {
+    function ReturningCustomerPageComponent() {
+    }
+    ReturningCustomerPageComponent.prototype.ngOnInit = function () {
+    };
+    ReturningCustomerPageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-returning-customer-page',
+            template: __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.html"),
+            styles: [__webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ReturningCustomerPageComponent);
+    return ReturningCustomerPageComponent;
 }());
 
 
