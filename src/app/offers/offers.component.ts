@@ -48,7 +48,7 @@ export class OffersComponent implements OnInit {
 	// slider content
 	sliderItems = [
 		{ 
-			'rout':      'returning-customer-test',
+			'rout':      'package-USA',
 			'color':     'blue',
 			'title':     '8GB',
 			'sub-title': 'גלישה ושיחות',
