@@ -15,7 +15,14 @@
 	.bg-purple{
 		background: $purpleDark;
 	}
-	
+	.radio-fields{
+		padding-top: 0;
+		padding-bottom: 20px;
+		font-size: 18px;
+		text-align: right;
+		color: $black;
+		user-select: none;
+	}
 
 	
 }

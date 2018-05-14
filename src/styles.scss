@@ -20,6 +20,8 @@ body{
 	font-weight: 400;
 	background: $white;
 	// background: $mainBackground;
+  user-select: none;
+  cursor: default;  
 }
 
 .container{
