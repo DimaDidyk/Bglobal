@@ -14,17 +14,17 @@ export class ReturningChosenPackageComponent implements OnInit {
 	constructor(private router: Router,
 	 private offersComponent: OffersComponent,
 	 private activatedRoute: ActivatedRoute,
-	 ){}
+	){}
 
 	ngOnInit() {
-		// scroll Top
-		this.router.events.subscribe((evt) => {
+		// scroll to top
+        this.router.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {
                 return;
             }
             window.scrollTo(0, 0)
         });
-	}
+    }
 
 	// get all Slider Data
 	offersComponentPackageData = this.offersComponent.sliderItems;

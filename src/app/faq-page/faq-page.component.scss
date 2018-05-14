@@ -1,0 +1,15 @@
+@import '../assets/scss/typography';
+
+#faq-page{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	mat-tab{
+		text-align: right;
+	}
+	
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	
+}

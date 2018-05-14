@@ -11,6 +11,7 @@ import { SimOrderPageComponent } from './sim-order-page/sim-order-page.component
 import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
 import { ReturningCustomerPageComponent } from './returning-customer-page/returning-customer-page.component';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+import { FaqPageComponent } from './faq-page/faq-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'sim-order', component: SimOrderPageComponent },
   { path: 'sim-order/:package', component:  ReturningCustomerPageComponent },
   { path: 'about-us', component:  AboutUsPageComponent },
-  // { path: 'sim-order/returning-customer', component:  ReturningCustomerPageComponent },
+  { path: 'faq', component:  FaqPageComponent },
 ];
 
 @NgModule({

@@ -47,6 +47,13 @@ export class BannerComponent implements OnInit {
 		  headlineTitle: 'עמוד תוכן  ',
 		  urlImage: './assets/img/page-banner.jpg'
 		},
+		{
+		  route: "faq",
+		  bannerText: `סים אחד 
+		  לכל החיים  `,
+		  headlineTitle: 'שאלות ותשובות  ',
+		  urlImage: './assets/img/page-banner.jpg'
+		},
 		
 	]
 

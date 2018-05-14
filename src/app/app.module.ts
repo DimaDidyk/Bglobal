@@ -16,6 +16,8 @@ import {
  MatNativeDateModule,
  MatDatepickerModule,
  MatInputModule,
+ MatTabsModule,
+ MatExpansionModule,
  MatFormFieldModule } from '@angular/material';
 
 
@@ -57,6 +59,7 @@ import { ReturningChosenPackageComponent } from './returning-chosen-package/retu
 import { DeliveryComponent } from './delivery/delivery.component';
 import { SearchAddressPipe } from './search-address.pipe';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+import { FaqPageComponent } from './faq-page/faq-page.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -89,7 +92,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ReturningChosenPackageComponent,
     DeliveryComponent,
     SearchAddressPipe,
-    AboutUsPageComponent
+    AboutUsPageComponent,
+    FaqPageComponent
   ],
   imports: [
     BrowserModule,
@@ -109,6 +113,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatRadioModule,
     MatTooltipModule,
     MatMenuModule,
+    MatExpansionModule,
+    MatTabsModule,
   ],
   providers: [
     {
