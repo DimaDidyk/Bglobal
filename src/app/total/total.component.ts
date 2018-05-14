@@ -16,6 +16,7 @@ import { toggleHeight } from '../animation';
 export class TotalComponent implements OnInit {
 
 	@Input() additionallyFromData: string;
+	@Input() deliveryFormData: string;
 
 	// show animation
 	isShow = 'hide';

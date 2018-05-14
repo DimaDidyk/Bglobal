@@ -15,8 +15,8 @@ import { ReturningCustomerPageComponent } from './returning-customer-page/return
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '', component:  HomaPageComponent },
-  { path: 'sim-order', component: SimOrderPageComponent },
   { path: 'user/sim', component:  UserPageSimComponent },
+  { path: 'sim-order', component: SimOrderPageComponent },
   { path: 'sim-order/:package', component:  ReturningCustomerPageComponent },
   // { path: 'sim-order/returning-customer', component:  ReturningCustomerPageComponent },
 ];
@@ -26,7 +26,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   exports: [ 
-  	RouterModule
+    RouterModule
   ],
   declarations: []
 

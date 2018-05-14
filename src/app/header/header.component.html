@@ -15,11 +15,11 @@
 		 (click)="clickSendwich()" 
 		 [ngClass]="status ? 'active' : '' "
 		 >
-			<button mat-button class="main-manu-item"
+			<button id="sign-in" mat-button class="main-manu-item"
 			[matMenuTriggerFor]="logInMenu" 
 			(mouseenter)="openMenu()" 
 			#notificationMenuBtn>
-				<a id="sign-in">כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></a>
+				<a>כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></a>
 			</button>
 			
 			<mat-menu #logInMenu="matMenu">

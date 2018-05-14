@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { NgForm, FormsModule, FormControl, Validators, PatternValidator } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +20,8 @@ import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.componen
 
 
 export class ClientInfoComponent implements OnInit {
+
+	constructor( public route: ActivatedRoute, private router: Router ) {}
 
 	// get data from Sim
 	@Input() formSimData: string;
@@ -40,19 +44,22 @@ export class ClientInfoComponent implements OnInit {
 	isShow = 'hide';
 	onSubmit(clientInfoForm: NgForm) {
 		this.isShow = 'show';
-		console.log(this.isShow);
 	}
 	
+	// curentPath
+	routeCurentPath = this.route.snapshot.routeConfig.path;
+
 	// scroll animate
 	scrollAnimate(element) {
-		setTimeout(function(){
-			element.scrollIntoView({ behavior: "smooth", block: "start" });
-		}, 250)
+		if(element){
+			setTimeout(function(){
+				element.scrollIntoView({ behavior: "smooth", block: "start" });
+			}, 250);
+		}
 	}
-
-	constructor() { }
-
+	
 	ngOnInit() {
+		// console.log( this.route.snapshot.routeConfig.path );
 	}
 
 }

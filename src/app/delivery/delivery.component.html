@@ -1,3 +1,36 @@
-<p>
-  delivery works!
-</p>
+<section id="delivery">
+	<div class="container">
+
+		<h1>כתובת למשלוח  </h1>
+		<h3>אנא בחרו היכן תרצו לאסוף את כרטיס הסים  </h3>
+		<form #deliveryForm="ngForm" (ngSubmit)="onSubmit(deliveryForm)">
+			<div class="row">
+				<div class="col-sm-2">
+					<button mat-button class="bg-button bg-purple">חפש  </button>
+				</div>
+				<div class="col-sm-10">
+					<mat-form-field>
+						<input matInput required placeholder="שם פרטי" name="name" ngModel />
+					</mat-form-field>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<button mat-button class="bg-button bg-green-button" 
+					[disabled]="!deliveryForm.valid"
+					(click)="scrollAnimate(appTotal)"
+					(click)="isShow='show'">המשך</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
+
+
+
+<div [@toggleHeight]="isShow" #appTotal>
+	<app-total
+		[deliveryFormData]="deliveryForm.value">
+	</app-total>
+</div>

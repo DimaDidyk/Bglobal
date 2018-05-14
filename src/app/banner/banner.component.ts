@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class BannerComponent implements OnInit {
 
-	constructor( public route: ActivatedRoute ) {}
+	constructor( public route: ActivatedRoute, private router: Router ) {}
 
 
 	routeData = [
@@ -46,7 +46,7 @@ export class BannerComponent implements OnInit {
 	// get current route path (sim-order/:package)
 	routeCurrent = this.route.pathFromRoot[1].snapshot.routeConfig.path;
 	// get current route path (sim-order/package-USA)
-	routeCurrentParams = this.route.pathFromRoot[1].snapshot._routerState.url.substr(1);
+	routeCurrentParams = this.router.routerState.snapshot.url.substr(1);
 
 	getCurrentData(){
 		for (var i = this.routeData.length - 1; i >= 0; i--) {

@@ -40,8 +40,9 @@
 				<div class="col-sm-12">
 					<button mat-button class="bg-button bg-green-button" 
 					[disabled]="!clientInfoForm.valid"
+					(click)="scrollAnimate(delivery)"
 					(click)="scrollAnimate(simactiveform)"
-					(click)="isShow='show'">המשך</button>
+					(click)="isShow='show'">המשך  </button>
 				</div>
 			</div>
 		</form>
@@ -53,9 +54,21 @@
 <!--  -->
 
 
-
+<!-- app-sim-active-form -->
 <div [@toggleHeight]="isShow" #simactiveform>
 	<app-sim-active-form
+	    *ngIf="routeCurentPath == 'sim-order' "
 		[clientInfoFormData]="clientInfoForm.value">
 	</app-sim-active-form>
 </div>
+
+<!-- app-delivery -->
+<div [@toggleHeight]="isShow" #delivery>
+	<app-delivery
+	    *ngIf="routeCurentPath == 'sim-order/:package' "
+		[clientInfoFormData]="clientInfoForm.value">
+	</app-delivery>
+</div>
+
+
+
