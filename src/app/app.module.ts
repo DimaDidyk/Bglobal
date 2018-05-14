@@ -56,6 +56,7 @@ import { ReturningCustomerPageComponent } from './returning-customer-page/return
 import { ReturningChosenPackageComponent } from './returning-chosen-package/returning-chosen-package.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { SearchAddressPipe } from './search-address.pipe';
+import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -87,7 +88,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ReturningCustomerPageComponent,
     ReturningChosenPackageComponent,
     DeliveryComponent,
-    SearchAddressPipe
+    SearchAddressPipe,
+    AboutUsPageComponent
   ],
   imports: [
     BrowserModule,

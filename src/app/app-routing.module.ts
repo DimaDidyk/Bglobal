@@ -10,7 +10,7 @@ import { HomaPageComponent } from './homa-page/homa-page.component';
 import { SimOrderPageComponent } from './sim-order-page/sim-order-page.component';
 import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
 import { ReturningCustomerPageComponent } from './returning-customer-page/returning-customer-page.component';
-
+import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'user/sim', component:  UserPageSimComponent },
   { path: 'sim-order', component: SimOrderPageComponent },
   { path: 'sim-order/:package', component:  ReturningCustomerPageComponent },
+  { path: 'about-us', component:  AboutUsPageComponent },
   // { path: 'sim-order/returning-customer', component:  ReturningCustomerPageComponent },
 ];
 
