@@ -1,0 +1,51 @@
+<app-banner></app-banner>
+
+<section id="contact-us-page">
+	<div class="container">
+		<div class="col-sm-6">
+			<h3>מוקד תמיכה טכנית 24/7 לסים נטען  </h3>
+			<a href="tel:073-705137">
+				<p><i class="fa fa-phone" aria-hidden="true"></i> 073-7051375 </p>
+			</a>
+			<a href="tel:054-9918008">
+				<p><i class="fa fa-whatsapp" aria-hidden="true"></i> 054-9918008</p>
+			</a>
+			<br>
+			<h3>שמוקד שירות ומכירות   </h3>
+			<p><i class="fa fa-clock-o" aria-hidden="true"></i>שעות פעילות המוקד : </p>
+			<p>א-ה 09:00-23:00 </p>
+			<p>שישי 9:00-14:00 </p>
+			<br>
+			<br>
+			<a href="tel:03-372303">
+				<p><i class="fa fa-phone" aria-hidden="true"></i> 03-3723030 </p>
+			</a>
+			<p><i class="fa fa-globe" aria-hidden="true"></i> www.Bglobal.co.il</p>
+			<p><i class="fa fa-facebook" aria-hidden="true"></i> Bglobal.global</p>
+		</div>
+		<div class="col-sm-6">
+			<h3>שלחו הודעה ונציג יחזור עלכם  </h3>
+			<form #contactUsForm="ngForm" (ngSubmit)="onSubmit(contactUsForm)">
+						
+				<mat-form-field>
+					<input matInput required placeholder="שם מלא  " name="name" ngModel>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="טלפון נייד  " name="tel" ngModel (keypress)="numberTel_keyPress($event)">
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="דוא״ל  " name="mail" ngModel [pattern]="emailPattern">
+				</mat-form-field>
+				<mat-form-field class="textarea">
+					<textarea matInput placeholder="הודעה " cols="6" name="post" ngModel></textarea>
+				</mat-form-field>
+
+				<button type="submit" mat-button class="bg-button"
+				 [disabled]="!contactUsForm.valid">שלח  </button>
+
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- <pre>{{ contactUsForm.value | json }}</pre> -->

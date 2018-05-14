@@ -54,6 +54,13 @@ export class BannerComponent implements OnInit {
 		  headlineTitle: 'שאלות ותשובות  ',
 		  urlImage: './assets/img/page-banner.jpg'
 		},
+		{
+		  route: "contact-us",
+		  bannerText: `סדברו איתנו
+		  ממכל מקום בעולם  `,
+		  headlineTitle: 'שצור קשר   ',
+		  urlImage: './assets/img/contact-us.jpg'
+		},
 		
 	]
 

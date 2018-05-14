@@ -60,6 +60,7 @@ import { DeliveryComponent } from './delivery/delivery.component';
 import { SearchAddressPipe } from './search-address.pipe';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { FaqPageComponent } from './faq-page/faq-page.component';
+import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -93,7 +94,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DeliveryComponent,
     SearchAddressPipe,
     AboutUsPageComponent,
-    FaqPageComponent
+    FaqPageComponent,
+    ContactUsPageComponent
   ],
   imports: [
     BrowserModule,

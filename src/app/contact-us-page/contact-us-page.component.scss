@@ -1,0 +1,43 @@
+@import '../assets/scss/typography';
+
+#contact-us-page{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	direction: rtl;
+	h3{
+		font-size: 16px;
+		font-weight: 900;
+		margin-bottom: 20px;
+	}
+	p{
+		padding-right: 36px;
+		position: relative;
+		font-size: 16px;
+
+		i{
+			position: absolute;
+			right: 0;
+			font-size: 22px;
+			&.fa-phone{
+				color: #019995;
+			}
+			&.fa-whatsapp{
+				color: #21a049;
+			}
+			&.fa-clock-o{
+				color: #5a2c7d;
+			}
+			&.fa-globe{
+				color: #0a84c2;
+			}
+			&.fa-facebook{
+				color: #0a84c2;
+			}
+		}
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	
+}
