@@ -61,6 +61,13 @@ export class BannerComponent implements OnInit {
 		  headlineTitle: 'שצור קשר   ',
 		  urlImage: './assets/img/contact-us.jpg'
 		},
+		{
+		  route: "thank-you",
+		  bannerText: `תודה על רכישתך  `,
+		  color: 'white',
+		  headlineTitle: '  BGLOBAL  ברוכים הבאים למשפחת   ',
+		  urlImage: './assets/img/thank-you.jpg'
+		},
 		
 	]
 

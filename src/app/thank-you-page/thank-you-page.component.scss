@@ -1,0 +1,73 @@
+@import '../assets/scss/typography';
+
+#thank-you-page{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	direction: rtl;
+	.col-sm-6:nth-child(2n){
+		padding-left: 50px;
+	}
+	h2{
+		color: $purple;
+		font-weight: 600;
+		font-size: 26px;
+    	margin-bottom: 20px;
+    	margin-top: 20px;
+	}
+	p{
+		font-size: 16px;
+		white-space: pre-line;
+		margin-bottom: 10px;
+	}
+	span{
+		color: $green;
+		cursor: pointer;
+	}
+	table{
+		direction: ltr;
+		tr{
+			td{
+				border: none;
+				padding: 0;
+				line-height: 1.6;
+			}
+			td:nth-child(2){
+				text-align: right;
+			}
+		}
+	}
+
+	.contact{
+	    margin-bottom: 50px;
+		p{
+			padding-right: 36px;
+			position: relative;
+			i{
+				position: absolute;
+				right: 0;
+				font-size: 22px;
+				&.fa-phone{
+					color: #019995;
+				}
+				&.fa-whatsapp{
+					color: #21a049;
+				}
+			}
+		}
+	}
+
+	.bg-green-button{
+	    margin-top: 40px;
+ 		max-width: 100%;
+	}
+	
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#thank-you-page{
+		.col-sm-6:nth-child(2n){
+			padding-left: 15px;
+		}
+	}
+}

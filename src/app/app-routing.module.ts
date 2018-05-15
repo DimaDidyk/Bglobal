@@ -13,6 +13,7 @@ import { ReturningCustomerPageComponent } from './returning-customer-page/return
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { FaqPageComponent } from './faq-page/faq-page.component';
 import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
+import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'about-us', component:  AboutUsPageComponent },
   { path: 'faq', component:  FaqPageComponent },
   { path: 'contact-us', component:  ContactUsPageComponent },
+  { path: 'thank-you', component:  ThankYouPageComponent },
 ];
 
 @NgModule({

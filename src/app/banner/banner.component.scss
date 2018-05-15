@@ -30,6 +30,9 @@
 			margin-left: auto;
 			line-height: 1;
 			cursor: pointer;
+			&.white{
+				color: $white;
+			}
 		}
 
 	}
