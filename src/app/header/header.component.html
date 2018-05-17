@@ -18,21 +18,42 @@
 			<button id="sign-in" mat-button class="main-manu-item"
 			[matMenuTriggerFor]="logInMenu" 
 			(mouseenter)="openMenu()" 
+			
 			#notificationMenuBtn>
 				<p>כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></p>
 			</button>
 			
+			<!-- User menu -->
 			<mat-menu #logInMenu="matMenu">
-			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/user/sim" >כרטיס סים שלי</button>
-			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t">מצב החבילה עדכני</button>
-			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t">פרטים אישיים</button>
-			  <button mat-menu-item [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/t">יציאה</button>
+			  <button mat-menu-item 
+			  [routerLinkActiveOptions]="{exact: true}" 
+			  routerLinkActive="active-link" 
+			  routerLink="/user/sim" >כרטיס סים שלי</button>
+
+			  <button mat-menu-item 
+			  [routerLinkActiveOptions]="{exact: true}" 
+			  routerLinkActive="active-link" 
+			  routerLink="/">מצב החבילה עדכני</button>
+
+			  <button mat-menu-item 
+			  [routerLinkActiveOptions]="{exact: true}" 
+			  routerLinkActive="active-link" 
+			  routerLink="/">פרטים אישיים</button>
+
+			  <button mat-menu-item 
+			  [routerLinkActiveOptions]="{exact: true}" 
+			  routerLinkActive="active-link" 
+			  routerLink="/">יציאה</button>
+
+			  <button mat-menu-item 
+			  (click)="openDialog()" 
+			  routerLink="/"> sign in dialog </button>
 			</mat-menu>
 			
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/contact-us"  class="main-manu-item">צור קשר  </p>
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/thank-you"  class="main-manu-item">הפעלת/טעינת כרטיס  </p>
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/faq"  class="main-manu-item">שאלות נפוצות  </p>
-			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/sim-order"  class="main-manu-item">רשימת מדינות נתמכות  </p>
+			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/available-countries"  class="main-manu-item">רשימת מדינות נתמכות  </p>
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/"  class="main-manu-item">דף הבית  </p>
 		</div>
 	</div>

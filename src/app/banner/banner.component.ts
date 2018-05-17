@@ -13,7 +13,7 @@ export class BannerComponent implements OnInit {
 
 	routeData = [
 		{
-		  route: "sim-order",
+		  route: "distributors",
 		  bannerText: `סים אחד 
 		  לכל החיים  `,
 		  headlineTitle: 'בחירת כרטיס סים  ',
@@ -66,6 +66,13 @@ export class BannerComponent implements OnInit {
 		  color: 'white',
 		  headlineTitle: '  BGLOBAL  ברוכים הבאים למשפחת   ',
 		  urlImage: './assets/img/thank-you.jpg'
+		},
+		{
+		  route: "available-countries",
+		  bannerText: `סים אחד 
+		  לכל החיים  `,
+		  headlineTitle: 'בחירת כרטיס סים  ',
+		  urlImage: './assets/img/page-banner.jpg'
 		},
 		
 	]

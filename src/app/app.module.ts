@@ -26,7 +26,7 @@ import { NgForm } from '@angular/forms';
 
 // main componenrts
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent, DialogSignIn } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 // ngx-swiper-wrapper
@@ -62,6 +62,7 @@ import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { FaqPageComponent } from './faq-page/faq-page.component';
 import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
+import { AvailableCountriesComponent } from './available-countries/available-countries.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -73,6 +74,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   declarations: [
     AppComponent,
     HeaderComponent,
+    DialogSignIn,
     FooterComponent,
     HomeSliderComponent,
     FlyFormComponent,
@@ -97,7 +99,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AboutUsPageComponent,
     FaqPageComponent,
     ContactUsPageComponent,
-    ThankYouPageComponent
+    ThankYouPageComponent,
+    AvailableCountriesComponent
   ],
   imports: [
     BrowserModule,
@@ -120,6 +123,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatExpansionModule,
     MatTabsModule,
   ],
+  entryComponents: [HeaderComponent, DialogSignIn],
   providers: [
     {
       provide: SWIPER_CONFIG,

@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
-import { MatMenuTrigger, MatMenuModule } from '@angular/material/';
+import { Component, OnInit, ViewChild, Inject, Input,
+	ElementRef, Renderer, HostListener } from '@angular/core';
+import { MatMenuTrigger, MatMenuModule, MatDialog, MAT_DIALOG_DATA } from '@angular/material/';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +10,8 @@ import { MatMenuTrigger, MatMenuModule } from '@angular/material/';
 })
 
 export class HeaderComponent implements OnInit {
+
+	constructor(public dialog: MatDialog) {}
 
 	// 
 	@ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
@@ -24,9 +28,31 @@ export class HeaderComponent implements OnInit {
 	    this.status = !this.status;       
 	}
 
-	constructor() { }
+	
+	
+	// open sign in dialog
+	openDialog() {
+	    this.dialog.open(DialogSignIn);
+	}
 
+	// On init 
 	ngOnInit() {
 	}
 
+}
+
+// Sign in form dialog
+@Component({
+	selector: 'dialog-sign-in',
+	templateUrl: 'dialog-sign-in.html',
+	styleUrls: ['./dialog-sign-in.scss']
+})
+export class DialogSignIn {
+
+	// submit Sign in form
+	onSubmit(signInForm: NgForm) {
+		console.log( this );
+	}
+
+	constructor() {}
 }

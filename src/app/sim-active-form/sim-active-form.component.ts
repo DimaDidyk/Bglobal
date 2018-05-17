@@ -25,7 +25,6 @@ export class SimActiveFormComponent implements OnInit {
 
 	@Input() clientInfoFormData: string;
 
-
 	// show animation
 	isShow = 'hide';
 	onSubmit(simAcriveFrom: NgForm) {

@@ -1,0 +1,23 @@
+<div id="sign-in-dialog" class="gradient-background">
+  <h1 mat-dialog-title>כניסה לאזור אישי  </h1>
+  <hr>
+  <div mat-dialog-content>
+
+    <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
+
+      <mat-form-field>
+        <input matInput placeholder="דואר אלקטרוני  " name="login" ngModel/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="סיסמה  " name="password" ngModel/>
+      </mat-form-field>
+
+      <button mat-button class="bg-button bg-green-button"
+      [disabled]="!signInForm.valid"> אישור  </button>
+      
+      <p>שכחתי סיסמא  </p>
+    </form>
+
+  </div>
+
+</div>
