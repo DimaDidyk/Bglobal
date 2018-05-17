@@ -2,6 +2,16 @@
 
 <section id="available-countries">
 	<div class="container">
-		
+		<table class="table">
+		  <tbody>
+		    <tr *ngFor="let country of countries">
+				<td>{{ country }}</td>
+				<td>
+					<i class="material-icons i-done">done</i> 
+					<i class="material-icons i-clear">clear</i>
+				</td>
+		    </tr>
+		  </tbody>
+		</table>
 	</div>
 </section>
