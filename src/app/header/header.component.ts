@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild, Inject, Input,
-	ElementRef, Renderer, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger, MatMenuModule, MatDialog, MAT_DIALOG_DATA } from '@angular/material/';
 import { NgForm } from '@angular/forms';
-
+ 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -44,6 +43,7 @@ export class HeaderComponent implements OnInit {
 	templateUrl: 'dialog-sign-in.html',
 	styleUrls: ['./dialog-sign-in.scss']
 })
+
 export class DialogSignIn {
 
 	// submit Sign in form

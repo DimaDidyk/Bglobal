@@ -1,0 +1,38 @@
+<div id="dialog-update-info" class="gradient-background">
+  
+  <h1 mat-dialog-title> עדכן פרטים אישיים  </h1>
+
+  <div mat-dialog-content>
+
+    <form #updateInfoForm="ngForm" (ngSubmit)="onSubmit(updateInfoForm)">
+
+      <mat-form-field>
+        <input matInput placeholder="name" name="name" ngModel/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="last name" name="lastName" ngModel/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="054-5886818" name="tel" ngModel/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="email@" name="email" ngModel/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="address" name="address" ngModel/>
+      </mat-form-field>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <button mat-button class="bg-button bg-red-button"
+          (click)="closeDialog()"> ביטול   </button>
+        </div>
+        <div class="col-sm-6">
+          <button mat-button class="bg-button bg-green-button"
+          [disabled]="!updateInfoForm.valid"> עדכן פרטים   </button>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+</div>

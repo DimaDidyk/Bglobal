@@ -6,10 +6,10 @@
     <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
 
       <mat-form-field>
-        <input matInput placeholder="דואר אלקטרוני  " name="login" ngModel/>
+        <input matInput required placeholder="דואר אלקטרוני  " name="login" ngModel/>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="סיסמה  " name="password" ngModel/>
+        <input matInput required placeholder="סיסמה  " name="password" ngModel/>
       </mat-form-field>
 
       <button mat-button class="bg-button bg-green-button"

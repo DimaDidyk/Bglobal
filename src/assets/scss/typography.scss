@@ -281,6 +281,9 @@ input:-webkit-autofill {
 	display: block;
 	width: 180px;
 }
+.bg-button.bg-red-button{
+	background: $red;
+}
 
 //  checkbox
 .mat-checkbox-inner-container,
@@ -470,6 +473,10 @@ button:disabled{
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
 	
+	// mat dialog
+	.cdk-overlay-pane{
+		max-width: 90% !important;
+	}
 	// md input
 	.mat-input-wrapper,
 	.mat-form-field-infix{
