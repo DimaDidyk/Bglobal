@@ -74,7 +74,13 @@ export class BannerComponent implements OnInit {
 		  headlineTitle: 'בחירת כרטיס סים  ',
 		  urlImage: './assets/img/page-banner.jpg'
 		},
-		
+		{
+		  route: "info",
+		  bannerText: `סים אחד 
+		  לכל החיים  `,
+		  headlineTitle: ' פרטים אישיים  ',
+		  urlImage: './assets/img/page-banner.jpg'
+		},
 	]
 
 	// get current route path (sim-order/:package)

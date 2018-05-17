@@ -63,6 +63,7 @@ import { FaqPageComponent } from './faq-page/faq-page.component';
 import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 import { AvailableCountriesComponent } from './available-countries/available-countries.component';
+import { InfoPageComponent } from './info-page/info-page.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -100,7 +101,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FaqPageComponent,
     ContactUsPageComponent,
     ThankYouPageComponent,
-    AvailableCountriesComponent
+    AvailableCountriesComponent,
+    InfoPageComponent
   ],
   imports: [
     BrowserModule,

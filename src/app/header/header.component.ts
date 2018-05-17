@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
 	constructor(public dialog: MatDialog) {}
 
-	// 
+	// open and close menu
 	@ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 	openMenu() {
 		this.trigger.openMenu();
@@ -28,8 +28,6 @@ export class HeaderComponent implements OnInit {
 	    this.status = !this.status;       
 	}
 
-	
-	
 	// open sign in dialog
 	openDialog() {
 	    this.dialog.open(DialogSignIn);
@@ -38,7 +36,6 @@ export class HeaderComponent implements OnInit {
 	// On init 
 	ngOnInit() {
 	}
-
 }
 
 // Sign in form dialog

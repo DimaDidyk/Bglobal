@@ -1,0 +1,77 @@
+@import '../assets/scss/typography.scss';
+
+
+#info-page{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	direction: rtl;
+	
+	h2{
+		color: $purple;
+		font-weight: 600;
+		font-size: 26px;
+    	margin-bottom: 20px;
+    	margin-top: 40px;
+	}
+	p{
+		font-size: 16px;
+		white-space: pre-line;
+		margin-bottom: 10px;
+	}
+	
+	table{
+		direction: ltr;
+		tr{
+			&:nth-child(1){
+				td{
+					border: none;
+				}
+			}
+			td{
+				padding: 0;
+				line-height: 1.6;
+				font-size: 16px;
+				direction: rtl;
+				text-align: left;
+			}
+			td:nth-child(2){
+				text-align: right;
+			}
+		}
+		i{
+			color: #a3196a;
+			font-size: 22px;
+			margin-right: 20px;
+			position: relative;
+			top: 4px;
+			cursor: pointer;
+		}
+		span{
+			padding-left: 20px;
+		}
+	}
+
+	.contact{
+	    margin-bottom: 50px;
+		p{
+			padding-right: 36px;
+			position: relative;
+			
+		}
+	}
+
+	.bg-green-button{
+		width: max-content;
+		margin-right: 0;
+	}
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#info-page table tr td{
+		span{
+			display: block;
+		}
+	}
+}

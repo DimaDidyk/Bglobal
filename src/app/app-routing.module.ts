@@ -15,6 +15,7 @@ import { FaqPageComponent } from './faq-page/faq-page.component';
 import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 import { AvailableCountriesComponent } from './available-countries/available-countries.component';
+import { InfoPageComponent } from './info-page/info-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'contact-us', component:  ContactUsPageComponent },
   { path: 'thank-you', component:  ThankYouPageComponent },
   { path: 'available-countries', component:  AvailableCountriesComponent },
+  { path: 'info', component:  InfoPageComponent },
 ];
 
 @NgModule({
