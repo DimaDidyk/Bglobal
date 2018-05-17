@@ -13,6 +13,7 @@ header{
 		max-width: 220px;
 		position: absolute;
 		cursor: pointer;
+		outline: none;
 	}
 	.container{
 		display: flex;
@@ -37,6 +38,8 @@ header{
 		display: inline-block;
 		font-size: 18px;
 		margin-left: 16px;
+		cursor: pointer;
+		outline: none;
 	}
 	
 	#sign-in{

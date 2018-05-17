@@ -11,7 +11,6 @@ export class BannerComponent implements OnInit {
 
 	constructor( public route: ActivatedRoute, private router: Router ) {}
 
-
 	routeData = [
 		{
 		  route: "sim-order",
@@ -56,8 +55,8 @@ export class BannerComponent implements OnInit {
 		},
 		{
 		  route: "contact-us",
-		  bannerText: `סדברו איתנו
-		  ממכל מקום בעולם  `,
+		  bannerText: `דברו איתנו
+		  מכל מקום בעולם  `,
 		  headlineTitle: 'שצור קשר   ',
 		  urlImage: './assets/img/contact-us.jpg'
 		},

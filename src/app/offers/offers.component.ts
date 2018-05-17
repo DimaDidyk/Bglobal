@@ -1,8 +1,8 @@
 import { Component, OnInit, Injectable, ViewChild } from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
-// import { NgForm } from '@angular/forms';
-import { Router, Resolve, RouterStateSnapshot,
+
+import { Router, NavigationEnd, Resolve, RouterStateSnapshot,
   ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
@@ -122,7 +122,13 @@ export class OffersComponent implements OnInit {
 	}
 
 	ngOnInit() {
-
+		// scroll to top
+	    this.router.events.subscribe((evt) => {
+	        if (!(evt instanceof NavigationEnd)) {
+	            return;
+	        }
+	        window.scrollTo(0, 0)
+	    });
 	}
 
 }

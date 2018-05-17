@@ -7,7 +7,9 @@
 			<div class="flex-center-bertical">
 				<!-- slider -->
 				<swiper [config]="config" [(index)]="index">
-					<div class="swiper-slide" *ngFor="let slide of sliderItems">
+					<div class="swiper-slide" 
+					(click)="routPackage(slide)"
+					*ngFor="let slide of sliderItems">
 						<div class="slide-header">
 							<h1>{{ slide['title'] }}</h1>
 							<h3>{{ slide['sub-title'] }}</h3>
@@ -17,10 +19,8 @@
 							<div class="days">( {{ slide['days'] }} )</div>
 							<div class="slide-content">{{ slide['info'] }}</div>
 							<button type="submit"
-							(click)="routPackage(slide)"
 							mat-button class="bg-button"
 							>!הזמינו עכשיו  </button>
-							<!-- routerLink="{{ slide['rout'] }}" -->
 						</div>
 					</div>
 				</swiper><!-- #slider -->

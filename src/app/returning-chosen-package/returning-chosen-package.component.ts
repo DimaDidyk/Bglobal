@@ -17,20 +17,20 @@ export class ReturningChosenPackageComponent implements OnInit {
 	){}
 
 	ngOnInit() {
-		// scroll to top
-        this.router.events.subscribe((evt) => {
-            if (!(evt instanceof NavigationEnd)) {
-                return;
-            }
-            window.scrollTo(0, 0)
-        });
-    }
+    // scroll to top
+    this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0)
+    });
+  }
 
 	// get all Slider Data
 	offersComponentPackageData = this.offersComponent.sliderItems;
 	// get active route
-    routSnapshotPackage = this.activatedRoute.snapshot.params['package'];
-    // get active package (slide) Data
-    getSlidePackgeData = this.offersComponent.getSlideData(this.routSnapshotPackage);
+  routSnapshotPackage = this.activatedRoute.snapshot.params['package'];
+  // get active package (slide) Data
+  getSlidePackgeData = this.offersComponent.getSlideData(this.routSnapshotPackage);
 
 }

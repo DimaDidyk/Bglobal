@@ -40,9 +40,12 @@ $gradient-background-blue: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,
 	background: $mainBackground;
 }
 
+body{
+}
 // headlines
 h1, h2, h3, h4, h5, h6{
 	margin: 10px 0;
+	direction: rtl;
 }
 h1{
 	font-size: 26px;
