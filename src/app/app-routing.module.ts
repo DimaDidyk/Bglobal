@@ -16,13 +16,18 @@ import { ContactUsPageComponent } from './contact-us-page/contact-us-page.compon
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 import { AvailableCountriesComponent } from './available-countries/available-countries.component';
 import { InfoPageComponent } from './info-page/info-page.component';
+import { ClientInfoComponent } from './client-info/client-info.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '', component:  HomaPageComponent },
   { path: 'user/sim', component:  UserPageSimComponent },
   { path: 'distributors', component: SimOrderPageComponent },
-  { path: 'sim-order/:package', component:  ReturningCustomerPageComponent },
+  { path: 'sim-order/:package', component:  ReturningCustomerPageComponent,
+    children: [
+      { path: '', component:  ClientInfoComponent },
+      { path: 'change-package', component: FlyFormComponent },
+    ]},
   { path: 'about-us', component:  AboutUsPageComponent },
   { path: 'faq', component:  FaqPageComponent },
   { path: 'contact-us', component:  ContactUsPageComponent },

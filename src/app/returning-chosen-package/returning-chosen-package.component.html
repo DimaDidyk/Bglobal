@@ -24,10 +24,13 @@
 					</li>
 				</ul>
 				<p>{{ getSlidePackgeData['desc'] }}</p>
-
-				<span class="another-program" routerLink="/">
+				
+				<span class="another-program"
+				*ngIf="getActiveChangePacckage()"
+				(click)="changePackageLink()">
 					לבחירת תוכנית אחרת
 				</span>
+				
 			</div>
 
 		</div>
