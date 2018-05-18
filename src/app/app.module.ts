@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // materual
 import { 
+ MatProgressBarModule,
  MatMenuTrigger,
  MatMenuModule,
  MatTooltipModule,
@@ -64,6 +65,9 @@ import { ContactUsPageComponent } from './contact-us-page/contact-us-page.compon
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 import { AvailableCountriesComponent } from './available-countries/available-countries.component';
 import { InfoPageComponent, DialogUpdateInfo } from './info-page/info-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { UsageLogComponent } from './usage-log/usage-log.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -104,6 +108,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AvailableCountriesComponent,
     InfoPageComponent,
     DialogUpdateInfo,
+    UserPageComponent,
+    PersonalDetailsComponent,
+    UsageLogComponent,
   ],
   imports: [
     BrowserModule,
@@ -125,6 +132,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatMenuModule,
     MatExpansionModule,
     MatTabsModule,
+    MatProgressBarModule,
   ],
   entryComponents: [
       HeaderComponent, 

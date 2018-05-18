@@ -17,11 +17,11 @@ import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component
 import { AvailableCountriesComponent } from './available-countries/available-countries.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '', component:  HomaPageComponent },
-  { path: 'user/sim', component:  UserPageSimComponent },
   { path: 'distributors', component: SimOrderPageComponent },
   { path: 'sim-order/:package', component:  ReturningCustomerPageComponent,
     children: [
@@ -33,7 +33,9 @@ const routes: Routes = [
   { path: 'contact-us', component:  ContactUsPageComponent },
   { path: 'thank-you', component:  ThankYouPageComponent },
   { path: 'available-countries', component:  AvailableCountriesComponent },
-  { path: 'info', component:  InfoPageComponent },
+  { path: 'user/sim', component:  UserPageSimComponent },
+  { path: 'user/info', component:  InfoPageComponent },
+  { path: 'user', component:  UserPageComponent },
 ];
 
 @NgModule({

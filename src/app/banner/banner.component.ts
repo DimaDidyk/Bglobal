@@ -75,10 +75,17 @@ export class BannerComponent implements OnInit {
 		  urlImage: './assets/img/page-banner.jpg'
 		},
 		{
-		  route: "info",
+		  route: "user/info",
 		  bannerText: `סים אחד 
 		  לכל החיים  `,
 		  headlineTitle: ' פרטים אישיים  ',
+		  urlImage: './assets/img/page-banner.jpg'
+		},
+		{
+		  route: "user",
+		  bannerText: `סים אחד 
+		  לכל החיים  `,
+		  headlineTitle: ' פרטי החבילה שבחרת   ',
 		  urlImage: './assets/img/page-banner.jpg'
 		},
 	]

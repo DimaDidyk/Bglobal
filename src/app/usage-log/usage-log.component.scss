@@ -1,0 +1,40 @@
+@import '../assets/scss/typography';
+
+#usage-log{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	h1{
+		text-align: center;
+		color: $purpleDark;
+		margin-bottom: 20px;
+	}
+	h3{
+		text-align: center;
+		color: $grayDark;
+		margin-bottom: 30px;
+	}
+	table{
+		thead{
+			td{
+				color: $purpleDark;
+				font-weight: 600;
+			}
+		}
+		td{
+			font-size: 16px;
+			direction: rtl;
+			img{
+				max-width: 30px;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
