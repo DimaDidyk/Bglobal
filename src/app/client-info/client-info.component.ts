@@ -48,6 +48,8 @@ export class ClientInfoComponent implements OnInit {
 	
 	// curentPath
 	routeCurentPath = this.route.snapshot.routeConfig.path;
+	// if not empty package
+	routePackage = this.route.snapshot.params.package;
 
 	// scroll animate
 	scrollAnimate(element) {
@@ -59,7 +61,9 @@ export class ClientInfoComponent implements OnInit {
 	}
 	
 	ngOnInit() {
-		// console.log( this.route.snapshot.routeConfig.path );
+		// console.log( this.routeCurentPath );
+		// console.log( this.routePackage );
+		// console.log( this.route );
 	}
 
 }

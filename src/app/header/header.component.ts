@@ -1,24 +1,28 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatMenuTrigger, MatMenuModule, MatDialog, MAT_DIALOG_DATA } from '@angular/material/';
+import { BrowserModule }    from '@angular/platform-browser';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/';
 import { NgForm } from '@angular/forms';
- 
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 
 export class HeaderComponent implements OnInit {
 
-	constructor(public dialog: MatDialog) {}
+	constructor(public dialog: MatDialog, private http: HttpClient) {}
+
+
 
 	// open and close menu
-	@ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+	userMenuStaus = "hide";
 	openMenu() {
-		this.trigger.openMenu();
+		this.userMenuStaus = "show";
 	}
 	closeMenu() {
-		this.trigger.closeMenu();
+		this.userMenuStaus = "hide";
 	}
 
 	// header mobile menu
@@ -48,7 +52,7 @@ export class DialogSignIn {
 
 	// submit Sign in form
 	onSubmit(signInForm: NgForm) {
-		console.log( this );
+		console.log( signInForm.value );
 	}
 
 	constructor() {}

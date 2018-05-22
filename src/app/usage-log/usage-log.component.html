@@ -12,40 +12,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>200MB</td>
-					<td><img src="./assets/img/USA-flag.png" alt="USA flag">אנגליה	</td>
-					<td>12.04.2018</td>
-				</tr>
-				<tr>
-					<td>200MB</td>
-					<td><img src="./assets/img/USA-flag.png" alt="USA flag">אנגליה	</td>
-					<td>12.04.2018</td>
-				</tr>
-				<tr>
-					<td>200MB</td>
-					<td><img src="./assets/img/USA-flag.png" alt="USA flag">אנגליה	</td>
-					<td>12.04.2018</td>
-				</tr>
-				<tr>
-					<td>200MB</td>
-					<td><img src="./assets/img/USA-flag.png" alt="USA flag">אנגליה	</td>
-					<td>12.04.2018</td>
-				</tr>
-				<tr>
-					<td>200MB</td>
-					<td><img src="./assets/img/USA-flag.png" alt="USA flag">אנגליה	</td>
-					<td>12.04.2018</td>
-				</tr>
-				<tr>
-					<td>200MB</td>
-					<td><img src="./assets/img/USA-flag.png" alt="USA flag">אנגליה	</td>
-					<td>12.04.2018</td>
-				</tr>
-				<tr>
-					<td>200MB</td>
-					<td><img src="./assets/img/USA-flag.png" alt="USA flag">אנגליה	</td>
-					<td>12.04.2018</td>
+				<tr *ngFor="let usageLogItem of usageLog">
+					<td>{{ usageLogItem['mb'] }}</td>
+					<td>
+						<img src="./assets/img/USA-flag.png" alt="USA flag">
+						{{ usageLogItem['country'] }}
+					</td>
+					<td>{{ usageLogItem['date'] }}</td>
 				</tr>
 			</tbody>
 		</table>

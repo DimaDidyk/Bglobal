@@ -30,6 +30,19 @@ export class InfoPageComponent implements OnInit {
 export class DialogUpdateInfo {
 	constructor( public dialogRef: MatDialogRef<DialogUpdateInfo> ) { }
 
+	// validation
+	emailPattern = "[^ @]*@[^ @]*";
+
+	numberTel_keyPress(event: any) {
+	    const pattern = /[0-9/+/ /(/)/]/;
+	    let inputChar = String.fromCharCode(event.charCode);
+
+	    if (!pattern.test(inputChar)) {
+	      // invalid character, prevent input
+	      event.preventDefault();
+	    }
+	}
+
 	// close update info dialog
 	closeDialog() {
 	    this.dialogRef.close();
@@ -38,5 +51,6 @@ export class DialogUpdateInfo {
 	// submit Sign in form
 	onSubmit(updateInfoForm: NgForm) {
 		console.log( updateInfoForm.value );
+		this.closeDialog();
 	}
 }

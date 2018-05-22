@@ -21,6 +21,8 @@ import {
  MatExpansionModule,
  MatFormFieldModule } from '@angular/material';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
@@ -133,12 +135,13 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatExpansionModule,
     MatTabsModule,
     MatProgressBarModule,
+    HttpClientModule,
   ],
   entryComponents: [
-      HeaderComponent, 
-      DialogSignIn,
-      InfoPageComponent,
-      DialogUpdateInfo,
+    HeaderComponent, 
+    DialogSignIn,
+    InfoPageComponent,
+    DialogUpdateInfo,
   ],
   providers: [
     {

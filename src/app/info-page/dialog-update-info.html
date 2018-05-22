@@ -13,10 +13,14 @@
         <input matInput placeholder="last name" name="lastName" ngModel/>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="054-5886818" name="tel" ngModel/>
+        <input matInput placeholder="054-5886818" name="tel" 
+        (keypress)="numberTel_keyPress($event)"
+        ngModel/>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="email@" name="email" ngModel/>
+        <input matInput placeholder="email@" name="email"
+        [pattern]="emailPattern"
+        ngModel/>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="address" name="address" ngModel/>

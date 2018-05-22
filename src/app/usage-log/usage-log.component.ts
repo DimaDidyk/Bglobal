@@ -8,9 +8,37 @@ import { CdkTableModule } from '@angular/cdk/table';
 })
 export class UsageLogComponent implements OnInit {
 
-  constructor() { }
+	usageLog = [
+		{
+			'mb':       '200MB',
+			'country':  'אנגליה	 ',
+			'date':     '12.04.2018',
+		},
+		{
+			'mb':       '200MB',
+			'country':  'אנגליה	 ',
+			'date':     '12.04.2018',
+		},
+		{
+			'mb':       '200MB',
+			'country':  'אנגליה	 ',
+			'date':     '12.04.2018',
+		},
+		{
+			'mb':       '200MB',
+			'country':  'אנגליה	 ',
+			'date':     '12.04.2018',
+		},
+		{
+			'mb':       '200MB',
+			'country':  'אנגליה	 ',
+			'date':     '12.04.2018',
+		}
+	]
 
-  ngOnInit() {
-  }
+	constructor() { }
+
+	ngOnInit() {
+	}
 
 }

@@ -31,10 +31,16 @@
 					<input matInput required placeholder="שם מלא  " name="name" ngModel>
 				</mat-form-field>
 				<mat-form-field>
-					<input matInput required placeholder="טלפון נייד  " name="tel" ngModel (keypress)="numberTel_keyPress($event)">
+					<input matInput required placeholder="טלפון נייד  " 
+					name="tel" 
+					ngModel 
+					(keypress)="numberTel_keyPress($event)">
 				</mat-form-field>
 				<mat-form-field>
-					<input matInput placeholder="דוא״ל  " name="mail" ngModel [pattern]="emailPattern">
+					<input matInput placeholder="דוא״ל  " 
+					name="mail" 
+					ngModel 
+					[pattern]="emailPattern">
 				</mat-form-field>
 				<mat-form-field class="textarea">
 					<textarea matInput placeholder="הודעה " cols="6" name="post" ngModel></textarea>

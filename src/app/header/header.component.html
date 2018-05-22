@@ -4,7 +4,7 @@
 
 		<!-- mobile sandwich -->
 		<div id="sandwich"
-		 (click)="clickSendwich()" 
+		 (click)="clickSendwich()"  
 		 [ngClass]="status ? 'active' : '' ">
 			<div class="sw sw-topper"></div>
 			<div class="sw sw-bottom"></div>
@@ -15,39 +15,41 @@
 		 (click)="clickSendwich()" 
 		 [ngClass]="status ? 'active' : '' "
 		 >
-			<button id="sign-in" mat-button class="main-manu-item"
-			[matMenuTriggerFor]="logInMenu" 
-			(mouseenter)="openMenu()" 
-			
-			#notificationMenuBtn>
-				<p>כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i></p>
-			</button>
-			
-			<!-- User menu -->
-			<mat-menu #logInMenu="matMenu">
-			  <button mat-menu-item 
-			  [routerLinkActiveOptions]="{exact: true}" 
-			  routerLinkActive="active-link" 
-			  routerLink="/user/sim" >כרטיס סים שלי</button>
+			<div id="sign-in" class="main-manu-item"
+			(mouseenter)="openMenu()"
+			(mouseleave)="closeMenu()">
+				
+				<p routerLink="/user">
+					כניסה למנויים <i class="fa fa-user-o" aria-hidden="true"></i>
+				</p>
 
-			  <button mat-menu-item 
-			  [routerLinkActiveOptions]="{exact: true}" 
-			  routerLinkActive="active-link" 
-			  routerLink="/user">מצב החבילה עדכני</button>
+				<!-- User menu -->
+				<div id="user-menu" class="{{ userMenuStaus }}">
+				  <div class="user-menu-item" 
+				  [routerLinkActiveOptions]="{exact: true}" 
+				  routerLinkActive="active-link" 
+				  routerLink="/user/sim" >כרטיס סים שלי</div>
 
-			  <button mat-menu-item 
-			  [routerLinkActiveOptions]="{exact: true}" 
-			  routerLinkActive="active-link" 
-			  routerLink="/user/info">פרטים אישיים</button>
+				  <div class="user-menu-item" 
+				  [routerLinkActiveOptions]="{exact: true}" 
+				  routerLinkActive="active-link" 
+				  routerLink="/user">מצב החבילה עדכני</div>
 
-			  <button mat-menu-item 
-			  [routerLinkActiveOptions]="{exact: true}" 
-			  routerLinkActive="active-link" 
-			  routerLink="/">יציאה</button>
+				  <div class="user-menu-item" 
+				  [routerLinkActiveOptions]="{exact: true}" 
+				  routerLinkActive="active-link" 
+				  routerLink="/user/info">פרטים אישיים</div>
 
-			  <button mat-menu-item 
-			  (click)="openDialog()"> sign in dialog </button>
-			</mat-menu>
+				  <div class="user-menu-item" 
+				  [routerLinkActiveOptions]="{exact: true}" 
+				  routerLinkActive="active-link" 
+				  routerLink="/">יציאה</div>
+
+				  <div class="user-menu-item" 
+				  (click)="openDialog()"> sign in dialog </div>
+				</div>
+
+			</div>
 			
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/contact-us"  class="main-manu-item">צור קשר  </p>
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/thank-you"  class="main-manu-item">הפעלת/טעינת כרטיס  </p>
@@ -57,4 +59,3 @@
 		</div>
 	</div>
 </header>
-

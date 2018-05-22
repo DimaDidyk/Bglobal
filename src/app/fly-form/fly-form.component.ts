@@ -1,14 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,  Injectable } from '@angular/core';
 
 import { NgForm, FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { PromotionComponent } from '../promotion/promotion.component';
 import { OffersComponent } from '../offers/offers.component';
 import { toggleHeight } from '../animation';
+import { Сountries } from './countries';
 
 
 @Component({
@@ -20,7 +23,23 @@ import { toggleHeight } from '../animation';
 	styleUrls: ['./fly-form.component.scss']
 })
 
+@Injectable()
 export class FlyFormComponent implements OnInit {
+
+	constructor( private http: HttpClient ) {}
+
+	getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
+
+	getConfig(): Observable<Сountries[]> {
+	    return this.http.get<Сountries[]>(this.getCountriesUrl);
+	}
+
+	public countriess = [];
+	ngOnInit() {
+		this.getConfig().
+		subscribe(data => this.countriess = data );
+	}
+
 
 	// select list
 	countries = [
@@ -60,8 +79,6 @@ export class FlyFormComponent implements OnInit {
 			newInputs = [
 				{ nameDate1: "dateLanding2", nameDate2: "dateAppearance2"},
 				{ nameDate1: "dateLanding3", nameDate2: "dateAppearance3"},
-				{ nameDate1: "dateLanding4", nameDate2: "dateAppearance4"},
-				{ nameDate1: "dateLanding5", nameDate2: "dateAppearance5"},
 			];
 			this.index = this.index + 1;
 		    if (newInputs) {
@@ -84,10 +101,7 @@ export class FlyFormComponent implements OnInit {
 		this.isHide = 'hide';
 	}
 
-	constructor() { 
-	}
+	
 
-	ngOnInit() {
-	}
 
 }

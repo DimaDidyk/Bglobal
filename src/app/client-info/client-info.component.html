@@ -51,6 +51,8 @@
 
 <!--  -->
 <!-- <pre>{{ formSimData | json }}</pre> -->
+<!-- <pre>{{ routeCurentPath | json }}</pre> -->
+<!-- <pre>{{ routePackage | json }}</pre> -->
 <!--  -->
 
 
@@ -65,7 +67,7 @@
 <!-- app-delivery -->
 <div [@toggleHeight]="isShow" #delivery>
 	<app-delivery
-	    *ngIf="routeCurentPath == 'sim-order/:package' "
+	    *ngIf="routePackage != undefined "
 		[clientInfoFormData]="clientInfoForm.value">
 	</app-delivery>
 </div>
