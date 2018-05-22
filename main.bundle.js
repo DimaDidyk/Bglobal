@@ -304,41 +304,42 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_swiper_wrapper__ = __webpack_require__("./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__home_slider_home_slider_component__ = __webpack_require__("./src/app/home-slider/home-slider.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__fly_form_fly_form_component__ = __webpack_require__("./src/app/fly-form/fly-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__banner_banner_component__ = __webpack_require__("./src/app/banner/banner.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__payment_payment_component__ = __webpack_require__("./src/app/payment/payment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__total_total_component__ = __webpack_require__("./src/app/total/total.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__additionally_additionally_component__ = __webpack_require__("./src/app/additionally/additionally.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__form_sim_form_sim_component__ = __webpack_require__("./src/app/form-sim/form-sim.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__client_info_client_info_component__ = __webpack_require__("./src/app/client-info/client-info.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__sim_active_form_sim_active_form_component__ = __webpack_require__("./src/app/sim-active-form/sim-active-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__homa_page_homa_page_component__ = __webpack_require__("./src/app/homa-page/homa-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__sim_order_page_sim_order_page_component__ = __webpack_require__("./src/app/sim-order-page/sim-order-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__promotion_promotion_component__ = __webpack_require__("./src/app/promotion/promotion.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__details_form_details_form_component__ = __webpack_require__("./src/app/details-form/details-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__offers_offers_component__ = __webpack_require__("./src/app/offers/offers.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__user_page_sim_user_page_sim_component__ = __webpack_require__("./src/app/user-page-sim/user-page-sim.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__chosen_package_chosen_package_component__ = __webpack_require__("./src/app/chosen-package/chosen-package.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__returning_customer_page_returning_customer_page_component__ = __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__returning_chosen_package_returning_chosen_package_component__ = __webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__delivery_delivery_component__ = __webpack_require__("./src/app/delivery/delivery.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__search_address_pipe__ = __webpack_require__("./src/app/search-address.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__about_us_page_about_us_page_component__ = __webpack_require__("./src/app/about-us-page/about-us-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__faq_page_faq_page_component__ = __webpack_require__("./src/app/faq-page/faq-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__contact_us_page_contact_us_page_component__ = __webpack_require__("./src/app/contact-us-page/contact-us-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__thank_you_page_thank_you_page_component__ = __webpack_require__("./src/app/thank-you-page/thank-you-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__available_countries_available_countries_component__ = __webpack_require__("./src/app/available-countries/available-countries.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__info_page_info_page_component__ = __webpack_require__("./src/app/info-page/info-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__user_page_user_page_component__ = __webpack_require__("./src/app/user-page/user-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__personal_details_personal_details_component__ = __webpack_require__("./src/app/personal-details/personal-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__usage_log_usage_log_component__ = __webpack_require__("./src/app/usage-log/usage-log.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_swiper_wrapper__ = __webpack_require__("./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__home_slider_home_slider_component__ = __webpack_require__("./src/app/home-slider/home-slider.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__fly_form_fly_form_component__ = __webpack_require__("./src/app/fly-form/fly-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__banner_banner_component__ = __webpack_require__("./src/app/banner/banner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__payment_payment_component__ = __webpack_require__("./src/app/payment/payment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__total_total_component__ = __webpack_require__("./src/app/total/total.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__additionally_additionally_component__ = __webpack_require__("./src/app/additionally/additionally.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__form_sim_form_sim_component__ = __webpack_require__("./src/app/form-sim/form-sim.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__client_info_client_info_component__ = __webpack_require__("./src/app/client-info/client-info.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__sim_active_form_sim_active_form_component__ = __webpack_require__("./src/app/sim-active-form/sim-active-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__homa_page_homa_page_component__ = __webpack_require__("./src/app/homa-page/homa-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__sim_order_page_sim_order_page_component__ = __webpack_require__("./src/app/sim-order-page/sim-order-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__promotion_promotion_component__ = __webpack_require__("./src/app/promotion/promotion.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__details_form_details_form_component__ = __webpack_require__("./src/app/details-form/details-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__offers_offers_component__ = __webpack_require__("./src/app/offers/offers.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__user_page_sim_user_page_sim_component__ = __webpack_require__("./src/app/user-page-sim/user-page-sim.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__chosen_package_chosen_package_component__ = __webpack_require__("./src/app/chosen-package/chosen-package.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__returning_customer_page_returning_customer_page_component__ = __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__returning_chosen_package_returning_chosen_package_component__ = __webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__delivery_delivery_component__ = __webpack_require__("./src/app/delivery/delivery.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__search_address_pipe__ = __webpack_require__("./src/app/search-address.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__about_us_page_about_us_page_component__ = __webpack_require__("./src/app/about-us-page/about-us-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__faq_page_faq_page_component__ = __webpack_require__("./src/app/faq-page/faq-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__contact_us_page_contact_us_page_component__ = __webpack_require__("./src/app/contact-us-page/contact-us-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__thank_you_page_thank_you_page_component__ = __webpack_require__("./src/app/thank-you-page/thank-you-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__available_countries_available_countries_component__ = __webpack_require__("./src/app/available-countries/available-countries.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__info_page_info_page_component__ = __webpack_require__("./src/app/info-page/info-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__user_page_user_page_component__ = __webpack_require__("./src/app/user-page/user-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__personal_details_personal_details_component__ = __webpack_require__("./src/app/personal-details/personal-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__usage_log_usage_log_component__ = __webpack_require__("./src/app/usage-log/usage-log.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -350,6 +351,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // anumation
 
 // materual
+
 
 
 // main componenrts
@@ -400,44 +402,44 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__header_header_component__["b" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* DialogSignIn */],
-                __WEBPACK_IMPORTED_MODULE_7__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__home_slider_home_slider_component__["a" /* HomeSliderComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__fly_form_fly_form_component__["a" /* FlyFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__banner_banner_component__["a" /* BannerComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__payment_payment_component__["a" /* PaymentComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__total_total_component__["a" /* TotalComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__additionally_additionally_component__["a" /* AdditionallyComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__form_sim_form_sim_component__["a" /* FormSimComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__client_info_client_info_component__["a" /* ClientInfoComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__sim_active_form_sim_active_form_component__["a" /* SimActiveFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__homa_page_homa_page_component__["a" /* HomaPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__promotion_promotion_component__["a" /* PromotionComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__details_form_details_form_component__["a" /* DetailsFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__offers_offers_component__["a" /* OffersComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__user_page_sim_user_page_sim_component__["a" /* UserPageSimComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__chosen_package_chosen_package_component__["a" /* ChosenPackageComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__returning_customer_page_returning_customer_page_component__["a" /* ReturningCustomerPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__returning_chosen_package_returning_chosen_package_component__["a" /* ReturningChosenPackageComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__delivery_delivery_component__["a" /* DeliveryComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__search_address_pipe__["a" /* SearchAddressPipe */],
-                __WEBPACK_IMPORTED_MODULE_30__about_us_page_about_us_page_component__["a" /* AboutUsPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__faq_page_faq_page_component__["a" /* FaqPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__contact_us_page_contact_us_page_component__["a" /* ContactUsPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__thank_you_page_thank_you_page_component__["a" /* ThankYouPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__available_countries_available_countries_component__["a" /* AvailableCountriesComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__info_page_info_page_component__["b" /* InfoPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__info_page_info_page_component__["a" /* DialogUpdateInfo */],
-                __WEBPACK_IMPORTED_MODULE_36__user_page_user_page_component__["a" /* UserPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__personal_details_personal_details_component__["a" /* PersonalDetailsComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__usage_log_usage_log_component__["a" /* UsageLogComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["b" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["a" /* DialogSignIn */],
+                __WEBPACK_IMPORTED_MODULE_8__footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__home_slider_home_slider_component__["a" /* HomeSliderComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__fly_form_fly_form_component__["a" /* FlyFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__banner_banner_component__["a" /* BannerComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__payment_payment_component__["a" /* PaymentComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__total_total_component__["a" /* TotalComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__additionally_additionally_component__["a" /* AdditionallyComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__form_sim_form_sim_component__["a" /* FormSimComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__client_info_client_info_component__["a" /* ClientInfoComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__sim_active_form_sim_active_form_component__["a" /* SimActiveFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__homa_page_homa_page_component__["a" /* HomaPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__promotion_promotion_component__["a" /* PromotionComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__details_form_details_form_component__["a" /* DetailsFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__offers_offers_component__["a" /* OffersComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__user_page_sim_user_page_sim_component__["a" /* UserPageSimComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__chosen_package_chosen_package_component__["a" /* ChosenPackageComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__returning_customer_page_returning_customer_page_component__["a" /* ReturningCustomerPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__returning_chosen_package_returning_chosen_package_component__["a" /* ReturningChosenPackageComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__delivery_delivery_component__["a" /* DeliveryComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__search_address_pipe__["a" /* SearchAddressPipe */],
+                __WEBPACK_IMPORTED_MODULE_31__about_us_page_about_us_page_component__["a" /* AboutUsPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__faq_page_faq_page_component__["a" /* FaqPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__contact_us_page_contact_us_page_component__["a" /* ContactUsPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__thank_you_page_thank_you_page_component__["a" /* ThankYouPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__available_countries_available_countries_component__["a" /* AvailableCountriesComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__info_page_info_page_component__["b" /* InfoPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__info_page_info_page_component__["a" /* DialogUpdateInfo */],
+                __WEBPACK_IMPORTED_MODULE_37__user_page_user_page_component__["a" /* UserPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__personal_details_personal_details_component__["a" /* PersonalDetailsComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__usage_log_usage_log_component__["a" /* UsageLogComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_8_ngx_swiper_wrapper__["d" /* SwiperModule */],
+                __WEBPACK_IMPORTED_MODULE_9_ngx_swiper_wrapper__["d" /* SwiperModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MatButtonModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MatCheckboxModule */],
@@ -447,30 +449,31 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatInputModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["g" /* MatFormFieldModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["h" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_9__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["m" /* MatRadioModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatTooltipModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["j" /* MatMenuModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["f" /* MatExpansionModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["o" /* MatTabsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["l" /* MatProgressBarModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_6__header_header_component__["b" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* DialogSignIn */],
-                __WEBPACK_IMPORTED_MODULE_35__info_page_info_page_component__["b" /* InfoPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__info_page_info_page_component__["a" /* DialogUpdateInfo */],
+                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["b" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["a" /* DialogSignIn */],
+                __WEBPACK_IMPORTED_MODULE_36__info_page_info_page_component__["b" /* InfoPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__info_page_info_page_component__["a" /* DialogUpdateInfo */],
             ],
             providers: [
                 {
-                    provide: __WEBPACK_IMPORTED_MODULE_8_ngx_swiper_wrapper__["a" /* SWIPER_CONFIG */],
+                    provide: __WEBPACK_IMPORTED_MODULE_9_ngx_swiper_wrapper__["a" /* SWIPER_CONFIG */],
                     useValue: DEFAULT_SWIPER_CONFIG
                 },
-                __WEBPACK_IMPORTED_MODULE_23__offers_offers_component__["a" /* OffersComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__offers_offers_component__["a" /* OffersComponent */],
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -723,7 +726,7 @@ var ChosenPackageComponent = /** @class */ (function () {
 /***/ "./src/app/client-info/client-info.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"client-info\" class=\"gradient-background\">\n\t<div class=\"container\">\n\t\t<h1>פרטי לקוח</h1>\n\t\t<form #clientInfoForm=\"ngForm\" (ngSubmit)=\"onSubmit(clientInfoForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם משפחה\" name=\"soname\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם פרטי\" name=\"name\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput name=\"email\" placeholder=\"דוא״ל לקבלת חשבונית\"\n\t\t\t\t\t\trequired\n\t\t\t\t\t\t[pattern]=\"emailPattern\"\n\t\t\t\t\t\tngModel/>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"טלפון נייד\" name=\"tel\" \n\t\t\t\t\t\t(keypress)=\"numberTel_keyPress($event)\"\n\t\t\t\t\t\tngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12 checked-wrapper\">\n\t\t\t\t\t<mat-checkbox [align]=\"true\" name=\"checked\" [ngModel]=\"isChecked\">מאשר קבלת דיוור למייל</mat-checkbox>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \n\t\t\t\t\t[disabled]=\"!clientInfoForm.valid\"\n\t\t\t\t\t(click)=\"scrollAnimate(delivery)\"\n\t\t\t\t\t(click)=\"scrollAnimate(simactiveform)\"\n\t\t\t\t\t(click)=\"isShow='show'\">המשך  </button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</section>\n\n<!--  -->\n<!-- <pre>{{ formSimData | json }}</pre> -->\n<!--  -->\n\n\n<!-- app-sim-active-form -->\n<div [@toggleHeight]=\"isShow\" #simactiveform>\n\t<app-sim-active-form\n\t    *ngIf=\"routeCurentPath == 'distributors' \"\n\t\t[clientInfoFormData]=\"clientInfoForm.value\">\n\t</app-sim-active-form>\n</div>\n\n<!-- app-delivery -->\n<div [@toggleHeight]=\"isShow\" #delivery>\n\t<app-delivery\n\t    *ngIf=\"routeCurentPath == 'sim-order/:package' \"\n\t\t[clientInfoFormData]=\"clientInfoForm.value\">\n\t</app-delivery>\n</div>\n\n\n\n"
+module.exports = "<section id=\"client-info\" class=\"gradient-background\">\n\t<div class=\"container\">\n\t\t<h1>פרטי לקוח</h1>\n\t\t<form #clientInfoForm=\"ngForm\" (ngSubmit)=\"onSubmit(clientInfoForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם משפחה\" name=\"soname\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם פרטי\" name=\"name\" ngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput name=\"email\" placeholder=\"דוא״ל לקבלת חשבונית\"\n\t\t\t\t\t\trequired\n\t\t\t\t\t\t[pattern]=\"emailPattern\"\n\t\t\t\t\t\tngModel/>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"טלפון נייד\" name=\"tel\" \n\t\t\t\t\t\t(keypress)=\"numberTel_keyPress($event)\"\n\t\t\t\t\t\tngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12 checked-wrapper\">\n\t\t\t\t\t<mat-checkbox [align]=\"true\" name=\"checked\" [ngModel]=\"isChecked\">מאשר קבלת דיוור למייל</mat-checkbox>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \n\t\t\t\t\t[disabled]=\"!clientInfoForm.valid\"\n\t\t\t\t\t(click)=\"scrollAnimate(delivery)\"\n\t\t\t\t\t(click)=\"scrollAnimate(simactiveform)\"\n\t\t\t\t\t(click)=\"isShow='show'\">המשך  </button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</section>\n\n<!--  -->\n<!-- <pre>{{ formSimData | json }}</pre> -->\n<!-- <pre>{{ routeCurentPath | json }}</pre> -->\n<!-- <pre>{{ routePackage | json }}</pre> -->\n<!--  -->\n\n\n<!-- app-sim-active-form -->\n<div [@toggleHeight]=\"isShow\" #simactiveform>\n\t<app-sim-active-form\n\t    *ngIf=\"routeCurentPath == 'distributors' \"\n\t\t[clientInfoFormData]=\"clientInfoForm.value\">\n\t</app-sim-active-form>\n</div>\n\n<!-- app-delivery -->\n<div [@toggleHeight]=\"isShow\" #delivery>\n\t<app-delivery\n\t    *ngIf=\"routePackage != undefined \"\n\t\t[clientInfoFormData]=\"clientInfoForm.value\">\n\t</app-delivery>\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -764,6 +767,8 @@ var ClientInfoComponent = /** @class */ (function () {
         this.isShow = 'hide';
         // curentPath
         this.routeCurentPath = this.route.snapshot.routeConfig.path;
+        // if not empty package
+        this.routePackage = this.route.snapshot.params.package;
     }
     ClientInfoComponent.prototype.numberTel_keyPress = function (event) {
         var pattern = /[0-9/+/ /(/)/]/;
@@ -785,7 +790,9 @@ var ClientInfoComponent = /** @class */ (function () {
         }
     };
     ClientInfoComponent.prototype.ngOnInit = function () {
-        // console.log( this.route.snapshot.routeConfig.path );
+        // console.log( this.routeCurentPath );
+        // console.log( this.routePackage );
+        // console.log( this.route );
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
@@ -1076,7 +1083,7 @@ var FaqPageComponent = /** @class */ (function () {
 /***/ "./src/app/fly-form/fly-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"fly-form\" class=\"gray-background\">\n\t<div class=\"container\">\n\t\t<h1>לאן טסים?</h1>\n\t\t<h3>אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>\n\t\t\n\t\t<form #flyForm=\"ngForm\" (ngSubmit)=\"onSubmit(flyForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t    <mat-select placeholder=\":בחרו את העיד  \" \n\t\t\t\t\t    name=\"country\" \n\t\t\t\t\t    required \n\t\t\t\t\t    ngModel>\n\t\t\t\t\t    \t<mat-option value=\"{{ country['country'] }}\" \n\t\t\t\t\t    \t*ngFor=\"let country of countries\">\n\t\t\t\t\t    \t\t{{ country['country'] }}\n\t\t\t\t\t    \t</mat-option>\n\t\t\t\t\t    </mat-select>\n\t\t\t\t\t </mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t\n\t\t\t\t<div *ngFor=\"let newDate of DateId\" class=\"col-sm-8  col-xs-12 inputs-load-wrap\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput\n\t\t\t\t\t\t\t\t[matDatepicker]=\"picker2\"\n\t\t\t\t\t\t\t\t[min]=\"getObjectValue(flyForm.value, newDate['nameDate1'])\"\n\t\t\t\t\t\t\t\tplaceholder=\":בחרו תאריך המראה  \"\n\t\t\t\t\t\t\t\tname=\"{{ newDate['nameDate2'] }}\"\n\t\t\t\t\t\t\t\tngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker2></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t [min]=\"minDate\" \n\t\t\t\t\t\t\t\t [max]=\"getObjectValue(flyForm.value, newDate['nameDate2'])\"\n\t\t\t\t\t\t\t\t [matDatepicker]=\"picker1\"\n\t\t\t\t\t\t\t\t placeholder=\":בחרו תאריך המראה  \"\n\t\t\t\t\t\t\t\t name=\"{{ newDate['nameDate1'] }}\"\n\t\t\t\t\t\t\t\t ngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker1\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker1></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-4 col-xs-12 button-load-inputs\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" \n\t\t\t\t\t[disabled]=\"!flyForm.valid\"\n\t\t\t\t\t(click)=\"isShow='show'\" (click)=\"isHide='hide'\" (click)=\"scrollAnimate(appofferswrap)\">!יאללה ממריאים</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div id=\"add\" \n\t\t\t(click)=\"addDateInputs()\" \n\t\t\t*ngIf=\"index < 3\">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת <span>+</span>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</section>\n\n\n<div [@toggleHeight]=\"isShow\" #appofferswrap>\n\t<app-offers></app-offers>\n</div>\n\n<div [@toggleHeight]=\"isHide\">\n\t<app-promotion></app-promotion>\n</div>"
+module.exports = "<!-- <pre>{{ countriess | json }}</pre> -->\n\n<section id=\"fly-form\" class=\"gray-background\">\n\t<div class=\"container\">\n\t\t<h1>לאן טסים?</h1>\n\t\t<h3>אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>\n\t\t\n\t\t<form #flyForm=\"ngForm\" (ngSubmit)=\"onSubmit(flyForm)\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t    <mat-select placeholder=\":בחרו את העיד  \" \n\t\t\t\t\t    name=\"country\" \n\t\t\t\t\t    required \n\t\t\t\t\t    ngModel>\n\t\t\t\t\t    \t<mat-option value=\"{{ country['country'] }}\" \n\t\t\t\t\t    \t*ngFor=\"let country of countries\">\n\t\t\t\t\t    \t\t{{ country['country'] }}\n\t\t\t\t\t    \t</mat-option>\n\t\t\t\t\t    </mat-select>\n\t\t\t\t\t </mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t\n\t\t\t\t<div *ngFor=\"let newDate of DateId\" class=\"col-sm-8  col-xs-12 inputs-load-wrap\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput\n\t\t\t\t\t\t\t\t[matDatepicker]=\"picker2\"\n\t\t\t\t\t\t\t\t[min]=\"getObjectValue(flyForm.value, newDate['nameDate1'])\"\n\t\t\t\t\t\t\t\tplaceholder=\":בחרו תאריך המראה  \"\n\t\t\t\t\t\t\t\tname=\"{{ newDate['nameDate2'] }}\"\n\t\t\t\t\t\t\t\tngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker2></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t [min]=\"minDate\" \n\t\t\t\t\t\t\t\t [max]=\"getObjectValue(flyForm.value, newDate['nameDate2'])\"\n\t\t\t\t\t\t\t\t [matDatepicker]=\"picker1\"\n\t\t\t\t\t\t\t\t placeholder=\":בחרו תאריך המראה  \"\n\t\t\t\t\t\t\t\t name=\"{{ newDate['nameDate1'] }}\"\n\t\t\t\t\t\t\t\t ngModel>\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker1\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker1></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-4 col-xs-12 button-load-inputs\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" \n\t\t\t\t\t[disabled]=\"!flyForm.valid\"\n\t\t\t\t\t(click)=\"isShow='show'\" (click)=\"isHide='hide'\" (click)=\"scrollAnimate(appofferswrap)\">!יאללה ממריאים</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div id=\"add\" \n\t\t\t(click)=\"addDateInputs()\" \n\t\t\t*ngIf=\"index < 3\">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת <span>+</span>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</section>\n\n\n<div [@toggleHeight]=\"isShow\" #appofferswrap>\n\t<app-offers></app-offers>\n</div>\n\n<div [@toggleHeight]=\"isHide\">\n\t<app-promotion></app-promotion>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1093,7 +1100,8 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlyFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation__ = __webpack_require__("./src/app/animation.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation__ = __webpack_require__("./src/app/animation.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1105,8 +1113,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var FlyFormComponent = /** @class */ (function () {
-    function FlyFormComponent() {
+    function FlyFormComponent(http) {
+        this.http = http;
+        this.getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
+        this.countriess = [];
         // select list
         this.countries = [
             { country: 'Israil' },
@@ -1133,6 +1145,14 @@ var FlyFormComponent = /** @class */ (function () {
         this.isShow = 'hide';
         this.isHide = 'show';
     }
+    FlyFormComponent.prototype.getConfig = function () {
+        return this.http.get(this.getCountriesUrl);
+    };
+    FlyFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.getConfig().
+            subscribe(function (data) { return _this.countriess = data; });
+    };
     FlyFormComponent.prototype.daydiff = function (first, second) {
         return Math.round((second - first) / (1000 * 60 * 60 * 24));
     };
@@ -1145,8 +1165,6 @@ var FlyFormComponent = /** @class */ (function () {
             newInputs = [
                 { nameDate1: "dateLanding2", nameDate2: "dateAppearance2" },
                 { nameDate1: "dateLanding3", nameDate2: "dateAppearance3" },
-                { nameDate1: "dateLanding4", nameDate2: "dateAppearance4" },
-                { nameDate1: "dateLanding5", nameDate2: "dateAppearance5" },
             ];
             this.index = this.index + 1;
             if (newInputs) {
@@ -1162,18 +1180,17 @@ var FlyFormComponent = /** @class */ (function () {
         this.isShow = 'show';
         this.isHide = 'hide';
     };
-    FlyFormComponent.prototype.ngOnInit = function () {
-    };
     FlyFormComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-fly-form',
             template: __webpack_require__("./src/app/fly-form/fly-form.component.html"),
             animations: [
-                __WEBPACK_IMPORTED_MODULE_1__animation__["a" /* toggleHeight */]
+                __WEBPACK_IMPORTED_MODULE_2__animation__["a" /* toggleHeight */]
             ],
             styles: [__webpack_require__("./src/app/fly-form/fly-form.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], FlyFormComponent);
     return FlyFormComponent;
 }());
@@ -1321,7 +1338,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n\t<div class=\"container\">\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\n\n\t\t<!-- mobile sandwich -->\n\t\t<div id=\"sandwich\"\n\t\t (click)=\"clickSendwich()\"  \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t<div class=\"sw sw-topper\"></div>\n\t\t\t<div class=\"sw sw-bottom\"></div>\n\t\t\t<div class=\"sw sw-footer\"></div>\n\t\t</div>\n\n\t\t<div id=\"main-menu\" \n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \"\n\t\t >\n\t\t\t<div id=\"sign-in\" class=\"main-manu-item\"\n\t\t\t(mouseenter)=\"openMenu()\"\n\t\t\t(mouseleave)=\"closeMenu()\">\n\t\t\t\t\n\t\t\t\t<p routerLink=\"/user\">\n\t\t\t\t\tכניסה למנויים <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i>\n\t\t\t\t</p>\n\n\t\t\t\t<!-- User menu -->\n\t\t\t\t<div id=\"user-menu\" class=\"{{ userMenuStaus }}\">\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/user/sim\" >כרטיס סים שלי</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/user\">מצב החבילה עדכני</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/user/info\">פרטים אישיים</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/\">יציאה</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  (click)=\"openDialog()\"> sign in dialog </div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t\t\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/contact-us\"  class=\"main-manu-item\">צור קשר  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/thank-you\"  class=\"main-manu-item\">הפעלת/טעינת כרטיס  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/faq\"  class=\"main-manu-item\">שאלות נפוצות  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/available-countries\"  class=\"main-manu-item\">רשימת מדינות נתמכות  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/\"  class=\"main-manu-item\">דף הבית  </p>\n\t\t</div>\n\t</div>\n</header>\n\n"
+module.exports = "<header>\n\t<div class=\"container\">\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\n\n\t\t<!-- mobile sandwich -->\n\t\t<div id=\"sandwich\"\n\t\t (click)=\"clickSendwich()\"  \n\t\t [ngClass]=\"status ? 'active' : '' \">\n\t\t\t<div class=\"sw sw-topper\"></div>\n\t\t\t<div class=\"sw sw-bottom\"></div>\n\t\t\t<div class=\"sw sw-footer\"></div>\n\t\t</div>\n\n\t\t<div id=\"main-menu\" \n\t\t (click)=\"clickSendwich()\" \n\t\t [ngClass]=\"status ? 'active' : '' \"\n\t\t >\n\t\t\t<div id=\"sign-in\" class=\"main-manu-item\"\n\t\t\t(mouseenter)=\"openMenu()\"\n\t\t\t(mouseleave)=\"closeMenu()\">\n\t\t\t\t\n\t\t\t\t<p routerLink=\"/user\">\n\t\t\t\t\tכניסה למנויים <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i>\n\t\t\t\t</p>\n\n\t\t\t\t<!-- User menu -->\n\t\t\t\t<div id=\"user-menu\" class=\"{{ userMenuStaus }}\">\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/user/sim\" >כרטיס סים שלי</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/user\">מצב החבילה עדכני</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/user/info\">פרטים אישיים</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \n\t\t\t\t  routerLinkActive=\"active-link\" \n\t\t\t\t  routerLink=\"/\">יציאה</div>\n\n\t\t\t\t  <div class=\"user-menu-item\" \n\t\t\t\t  (click)=\"openDialog()\"> sign in dialog </div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t\t\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/contact-us\"  class=\"main-manu-item\">צור קשר  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/thank-you\"  class=\"main-manu-item\">הפעלת/טעינת כרטיס  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/faq\"  class=\"main-manu-item\">שאלות נפוצות  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/available-countries\"  class=\"main-manu-item\">רשימת מדינות נתמכות  </p>\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/\"  class=\"main-manu-item\">דף הבית  </p>\n\t\t</div>\n\t</div>\n</header>\n"
 
 /***/ }),
 
@@ -1340,6 +1357,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogSignIn; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material___ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1351,21 +1369,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(dialog) {
+    function HeaderComponent(dialog, http) {
         this.dialog = dialog;
+        this.http = http;
         // open and close menu
         this.userMenuStaus = "hide";
         // header mobile menu
         this.status = false;
     }
     HeaderComponent.prototype.openMenu = function () {
-        console.log('openMenu');
         this.userMenuStaus = "show";
     };
     HeaderComponent.prototype.closeMenu = function () {
         this.userMenuStaus = "hide";
-        console.log('closeMenu');
     };
     HeaderComponent.prototype.clickSendwich = function () {
         this.status = !this.status;
@@ -1381,9 +1399,9 @@ var HeaderComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-header',
             template: __webpack_require__("./src/app/header/header.component.html"),
-            styles: [__webpack_require__("./src/app/header/header.component.scss")]
+            styles: [__webpack_require__("./src/app/header/header.component.scss")],
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material___["d" /* MatDialog */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material___["d" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
     ], HeaderComponent);
     return HeaderComponent;
 }());
@@ -1394,7 +1412,7 @@ var DialogSignIn = /** @class */ (function () {
     }
     // submit Sign in form
     DialogSignIn.prototype.onSubmit = function (signInForm) {
-        console.log(this);
+        console.log(signInForm.value);
     };
     DialogSignIn = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
