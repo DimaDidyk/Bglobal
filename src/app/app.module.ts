@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // materual
 import { 
+ MatAutocompleteModule,
  MatProgressBarModule,
  MatMenuTrigger,
  MatMenuModule,
@@ -134,6 +135,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatMenuModule,
     MatExpansionModule,
     MatTabsModule,
+    MatAutocompleteModule,
     MatProgressBarModule,
     HttpClientModule,
   ],

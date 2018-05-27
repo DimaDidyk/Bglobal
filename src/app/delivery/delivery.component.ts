@@ -57,7 +57,6 @@ export class DeliveryComponent implements OnInit {
 		'תובת כשלהי, עיר  ',
 	]
 
-
 	constructor() { }
 
 	ngOnInit() {

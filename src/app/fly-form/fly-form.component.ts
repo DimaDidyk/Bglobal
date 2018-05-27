@@ -3,6 +3,7 @@ import { Component, OnInit, Input,  Injectable } from '@angular/core';
 import { NgForm, FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -12,6 +13,9 @@ import { PromotionComponent } from '../promotion/promotion.component';
 import { OffersComponent } from '../offers/offers.component';
 import { toggleHeight } from '../animation';
 import { Сountries } from './countries';
+
+
+import {map, startWith} from 'rxjs/operators';
 
 
 @Component({
@@ -24,6 +28,7 @@ import { Сountries } from './countries';
 })
 
 @Injectable()
+
 export class FlyFormComponent implements OnInit {
 
 	constructor( private http: HttpClient ) {}
@@ -34,28 +39,22 @@ export class FlyFormComponent implements OnInit {
 	    return this.http.get<Сountries[]>(this.getCountriesUrl);
 	}
 
-	public countriess = [];
+	public countries = [];
+ 	optionss = [
+	    'One',
+	    'Two',
+	    'Three'
+	];
 	ngOnInit() {
 		this.getConfig().
-		subscribe(data => this.countriess = data );
+		subscribe(data => this.countries = data );
 	}
 
+	// get arrey Names
+	getNamesCountryArray() {
+		return this.countries.map((country) => country.Name);
+	}
 
-	// select list
-	countries = [
-		{country: 'Israil'},
-		{country: 'America'},
-		{country: 'Canada'},
-		{country: 'Israil'},
-		{country: 'America'},
-		{country: 'Canada'},
-		{country: 'Israil'},
-		{country: 'America'},
-		{country: 'Canada'},
-		{country: 'Israil'},
-		{country: 'America'},
-		{country: 'Canada'},
-	];
 
 	// min date validation
 	minDate = new Date(); //today
@@ -70,18 +69,18 @@ export class FlyFormComponent implements OnInit {
 
 	// add new date inputs
 	DateId = [
-		{ nameDate1: "dateLanding", nameDate2: "dateAppearance"},
+		{ nameSalect: "country", nameDate1: "dateLanding", nameDate2: "dateAppearance"},
 	];
 
 	index = -1;
 	addDateInputs(newInputs) {
-		if( this.index < 3 ){
+		if( this.index < 1 ){
 			newInputs = [
-				{ nameDate1: "dateLanding2", nameDate2: "dateAppearance2"},
-				{ nameDate1: "dateLanding3", nameDate2: "dateAppearance3"},
+				{ nameSalect: "country2", nameDate1: "dateLanding2", nameDate2: "dateAppearance2"},
+				{ nameSalect: "country3", nameDate1: "dateLanding3", nameDate2: "dateAppearance3"},
 			];
 			this.index = this.index + 1;
-		    if (newInputs) {
+		    if ( newInputs ) {
 		  		this.DateId.push( newInputs[this.index] );
 			}
 		}

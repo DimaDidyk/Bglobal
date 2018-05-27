@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
 	constructor(public dialog: MatDialog, private http: HttpClient) {}
 
 
-
 	// open and close menu
 	userMenuStaus = "hide";
 	openMenu() {
