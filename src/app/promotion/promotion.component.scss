@@ -37,6 +37,7 @@
 	button{
 		@include gradient-background-blue();
 		width: 100%;
+	    direction: rtl;
 	}
 }
 

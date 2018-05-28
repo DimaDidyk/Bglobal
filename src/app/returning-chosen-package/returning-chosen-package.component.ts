@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 import { OffersComponent } from '../offers/offers.component';
@@ -10,24 +10,25 @@ import { OffersComponent } from '../offers/offers.component';
 })
 
 export class ReturningChosenPackageComponent implements OnInit {
+  @ViewChild("returning", {read: ElementRef}) returning: ElementRef;
 
 	constructor(private router: Router,
 	 private offersComponent: OffersComponent,
 	 private activatedRoute: ActivatedRoute,
 	){
-     // override the route reuse strategy
-     this.router.routeReuseStrategy.shouldReuseRoute = function(){
-        return false;
-     }
+    // override the route reuse strategy
+    // this.router.routeReuseStrategy.shouldReuseRoute = function(){
+    //   return false;
+    // }
 
-     this.router.events.subscribe((evt) => {
-        if (evt instanceof NavigationEnd) {
-           // trick the Router into believing it's last link wasn't previously loaded
-           this.router.navigated = false;
-           // if you need to scroll back to top, here is the right place
-           window.scrollTo(0, 0);
-        }
-    });
+    // this.router.events.subscribe((evt) => {
+    //   if (evt instanceof NavigationEnd) {
+    //     // trick the Router into believing it's last link wasn't previously loaded
+    //     this.router.navigated = false;
+    //     // if you need to scroll back to top, here is the right place
+    //     this.returning.nativeElement.scrollTo(0, 0);
+    //   }
+    // });
   }
 
 	// get all Slider Data
@@ -49,7 +50,8 @@ export class ReturningChosenPackageComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // scroll animate
+    this.returning.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   // link to the page change package

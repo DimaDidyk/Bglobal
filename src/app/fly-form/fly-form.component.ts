@@ -1,5 +1,4 @@
-import { Component, OnInit, Input,  Injectable } from '@angular/core';
-
+import { Component, OnInit, Input, Inject, Injectable } from '@angular/core';
 import { NgForm, FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -40,11 +39,6 @@ export class FlyFormComponent implements OnInit {
 	}
 
 	public countries = [];
- 	optionss = [
-	    'One',
-	    'Two',
-	    'Three'
-	];
 	ngOnInit() {
 		this.getConfig().
 		subscribe(data => this.countries = data );
@@ -55,6 +49,25 @@ export class FlyFormComponent implements OnInit {
 		return this.countries.map((country) => country.Name);
 	}
 
+	// get Id County by name
+	getIdCountryByName(countryName: string) {
+		// return array.filter( countries => countries.Name === "אנגולה ");
+		let CurrentArray = this.countries.filter(
+  		countries => countries.Name === countryName);
+		return CurrentArray[0]['Id'];
+	}
+	// get name County by ID
+	getNameCountryById(Id: any) {
+		// return array.filter( countries => countries.Name === "אנגולה ");
+		let CurrentArray = this.countries.filter(
+  		countries => countries.Id == Id);
+		return CurrentArray[0]['Name'];
+	}
+
+	/*displayFn(country: any){
+		country = this.getNameCountryById(country);
+		return country;
+	}*/
 
 	// min date validation
 	minDate = new Date(); //today
@@ -71,7 +84,6 @@ export class FlyFormComponent implements OnInit {
 	DateId = [
 		{ nameSalect: "country", nameDate1: "dateLanding", nameDate2: "dateAppearance"},
 	];
-
 	index = -1;
 	addDateInputs(newInputs) {
 		if( this.index < 1 ){
@@ -99,8 +111,5 @@ export class FlyFormComponent implements OnInit {
 		this.isShow = 'show';
 		this.isHide = 'hide';
 	}
-
-	
-
 
 }

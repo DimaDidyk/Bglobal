@@ -35,9 +35,23 @@
 			}
 		}
 	}
+
+	.col-info{
+		float: left;
+	}
+	.col-form{
+		float: right;
+	}
 }
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-	
+	#contact-us-page{
+		.col-info{
+			float: right;
+		}
+		.col-form{
+			float: left;
+		}
+	}
 }

@@ -1,25 +1,13 @@
 <!-- <pre>{{ countries | json }}</pre> -->
-<!-- <pre>{{ countries['Name'] | json }}</pre> -->
+<!-- <pre>{{ getNameCountryById(1) | json }}</pre> -->
 
 
-<section id="fly-form" class="gray-background">
+<section id="fly-form" class="gray-background" #FlyForm>
 	<div class="container">
 		<h1>לאן טסים?</h1>
 		<h3 (click)="getValues(countries)">אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
 		
 		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)">
-
-	<!-- 	  <mat-form-field class="example-full-width">
-		    <input type="text" placeholder="Pick one" aria-label="Number" matInput 
-		    name="myControl" ngModel
-		     [matAutocomplete]="auto">
-		    <mat-autocomplete #auto="matAutocomplete">
-		      <mat-option *ngFor="let option of options | searchAddress:flyForm.value.myControl " [value]="option">
-		        {{ option }}
-		      </mat-option>
-		    </mat-autocomplete>
-		  </mat-form-field> באהמס    -->
-
 
 			<div *ngFor="let newDate of DateId">
 
@@ -32,9 +20,10 @@
 						    aria-label="Number" 
 						    matInput 
 						    [matAutocomplete]="auto">
-						    <mat-autocomplete #auto="matAutocomplete" >
+						    <mat-autocomplete #auto="matAutocomplete"><!-- [displayWith]="displayFn" -->
 						        <mat-option value="{{ country }}" 
-						    	*ngFor="let country of getNamesCountryArray() | searchAddress:getObjectValue(flyForm.value, newDate['nameSalect'])" >
+						    	*ngFor="let country of getNamesCountryArray() 
+						    	| searchAddress:getObjectValue(flyForm.value, newDate['nameSalect'])" >
 						    		{{ country }}
 						    	</mat-option>
 						    </mat-autocomplete>
@@ -93,15 +82,15 @@
 	</div>
 </section>
 
-<pre>{{ flyForm.value | json }}</pre>
-<pre>{{ getNamesCountryArray() | json }}</pre>
+<!-- <pre>{{ flyForm.value | json }}</pre> -->
+<!-- <pre>{{ getNamesCountryArray() | json }}</pre> -->
 
 <div [@toggleHeight]="isShow" #appofferswrap>
 	<app-offers></app-offers>
 </div>
 
 <div [@toggleHeight]="isHide">
-	<app-promotion></app-promotion>
+	<app-promotion [FlyForm]="FlyForm"></app-promotion>
 </div>
 
 

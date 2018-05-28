@@ -38,7 +38,7 @@ export class ClientInfoComponent implements OnInit {
 	    }
 	}
 
-	isChecked:boolean = false;
+	isChecked:boolean = true;
 
 	// show animation
 	isShow = 'hide';

@@ -30,19 +30,25 @@ export class OffersComponent implements OnInit {
 			992: {
 			  slidesPerView: 2,
 			},
-		}
+		},
 		// navigation: true,
 	};
 
 	@ViewChild(SwiperComponent) componentRef: SwiperComponent;
 	@ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
-	
+
+	hideNext = true;
+	hidePrev = false;
 	public nextSlide(speed: number): void{
 		this.componentRef.directiveRef.nextSlide(speed);
+		this.hideNext = !this.componentRef.directiveRef.swiper().isEnd;
+		this.hidePrev = !this.componentRef.directiveRef.swiper().isBeginning;
 	}
 	public prevSlide(speed: number): void{
 		this.componentRef.directiveRef.prevSlide(speed);
+		this.hideNext = !this.componentRef.directiveRef.swiper().isEnd;
+		this.hidePrev = !this.componentRef.directiveRef.swiper().isBeginning;
 	}
 
 	// slider content
@@ -54,7 +60,7 @@ export class OffersComponent implements OnInit {
 			'sub-title': 'גלישה ושיחות',
 			'price':     '189',
 			'days':      '30 ימים',
-			'info'     : 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
+			'info':      'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
 			'name':      'חבילת גלישה לספרד  ',
 			'options': [
 				'ניתן לטעינות חוזרת בכל עת  ',
@@ -70,8 +76,10 @@ export class OffersComponent implements OnInit {
 			'sub-title': 'גלישה ושיחות',
 			'price':     '29',
 			'days':      'ליום',
-			'info': '     !ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים',
-			'name': 'ח     בילת גלישה לספרד  ',
+			'info':      '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים',
+			'name':      'ח  בילת גלישה לספרד  ',
+			'popular':   true,
+			'economic':  false,
 			'options': [
 				'ניתן לטעינות חוזרת בכל עת  ',
 				'גלישה במהירות מירבית  ',
@@ -88,6 +96,7 @@ export class OffersComponent implements OnInit {
 			'days':      '30 ימים',
 			'info':      '!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים',
 			'name':      'חבילת גלישה לספרד  ',
+			'economic':  true,
 			'options': [
 				'ניתן לטעינות חוזרת בכל עת  ',
 				'גלישה במהירות מירבית  ',
@@ -114,7 +123,7 @@ export class OffersComponent implements OnInit {
 	];
 
 	getSlideData(rout:string){
-		return this.sliderItems.find(x => x.rout == rout);
+		return this.sliderItems.find(sliderItems => sliderItems.rout == rout);
 	}
 
 	routPackage(slideData:object){
@@ -122,13 +131,6 @@ export class OffersComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// scroll to top
-	    // this.router.events.subscribe((evt) => {
-	    //     if (!(evt instanceof NavigationEnd)) {
-	    //         return;
-	    //     }
-	    //     window.scrollTo(0, 0)
-	    // });
 	}
 
 }

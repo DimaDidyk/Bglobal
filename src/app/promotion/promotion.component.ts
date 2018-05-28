@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -6,11 +6,17 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './promotion.component.html',
   styleUrls: ['./promotion.component.scss']
 })
+
 export class PromotionComponent implements OnInit {
 
-  constructor() { }
+	@Input() FlyForm: string;
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
+
+	scrollAnimate(element) {
+		element.scrollIntoView({ behavior: "smooth", block: "start" });
+	}
 
 }

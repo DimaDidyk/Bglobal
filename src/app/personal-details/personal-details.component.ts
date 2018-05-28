@@ -8,9 +8,18 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 })
 export class PersonalDetailsComponent implements OnInit {
 
-  constructor() { }
+	valueProgress:number = 55;
+	colorProgress:string = "green";
 
-  ngOnInit() {
-  }
+	constructor() { }
+
+	ngOnInit() {
+		if( this.valueProgress <= 75 ){
+			this.colorProgress = "orange";
+		}
+		if( this.valueProgress <= 50 ){
+			this.colorProgress = "red";
+		}
+	}
 
 }
