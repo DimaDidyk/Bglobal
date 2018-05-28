@@ -98,11 +98,16 @@ a:hover{
     .mat-progress-bar-buffer{
 		background: $white;
     }
-    .mat-progress-bar-fill::after{
-    	background: $green;
-    }
 }
-
+ .green .mat-progress-bar-fill::after{
+	background: $green;
+}
+.orange .mat-progress-bar-fill::after{
+	background: $orange;
+}
+.red .mat-progress-bar-fill::after{
+	background: $red;
+}
 
 //  mat dialog
 .mat-dialog-container{
@@ -206,6 +211,9 @@ input:-webkit-autofill {
 	font-size: 18px;
 	height: 50px;
     font-weight: 600;
+}
+.mat-input-container{
+    direction: rtl;
 }
 .textarea .mat-input-wrapper{
 	height: initial !important;
