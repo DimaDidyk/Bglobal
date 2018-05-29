@@ -27,7 +27,6 @@ import {map, startWith} from 'rxjs/operators';
 })
 
 @Injectable()
-
 export class FlyFormComponent implements OnInit {
 
 	constructor( private http: HttpClient ) {}
@@ -81,19 +80,19 @@ export class FlyFormComponent implements OnInit {
 	}
 
 	// add new date inputs
-	DateId = [
-		{ nameSalect: "country", nameDate1: "dateLanding", nameDate2: "dateAppearance"},
+	CountryIdName = [
+		{ nameSalect: "country"},
 	];
 	index = -1;
-	addDateInputs(newInputs) {
+	addCountryNameInputs(newInputs) {
 		if( this.index < 1 ){
 			newInputs = [
-				{ nameSalect: "country2", nameDate1: "dateLanding2", nameDate2: "dateAppearance2"},
-				{ nameSalect: "country3", nameDate1: "dateLanding3", nameDate2: "dateAppearance3"},
+				{ nameSalect: "country2"},
+				{ nameSalect: "country3"},
 			];
 			this.index = this.index + 1;
 		    if ( newInputs ) {
-		  		this.DateId.push( newInputs[this.index] );
+		  		this.CountryIdName.push( newInputs[this.index] );
 			}
 		}
 	}

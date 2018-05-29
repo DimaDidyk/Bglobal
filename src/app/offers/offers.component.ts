@@ -1,8 +1,8 @@
-import { Component, OnInit, Injectable, ViewChild } from '@angular/core';
+import { Component, OnInit, Input ,Injectable, ViewChild } from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
 
-import { Router, NavigationEnd, Resolve, RouterStateSnapshot,
+import { Router, ActivatedRoute, NavigationEnd, Resolve, RouterStateSnapshot,
   ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
@@ -14,7 +14,11 @@ import { Router, NavigationEnd, Resolve, RouterStateSnapshot,
 @Injectable()
 export class OffersComponent implements OnInit {
 
-	constructor(private router: Router) {}
+	constructor(private route: ActivatedRoute, private router: Router) {
+		this.route.params.subscribe( params => console.log(params) );
+	}
+
+	@Input() flyFormValue: string;
 
 	// slider config
 	index = 0;
@@ -126,11 +130,27 @@ export class OffersComponent implements OnInit {
 		return this.sliderItems.find(sliderItems => sliderItems.rout == rout);
 	}
 
+	getActiveFromData(){
+		this.flyFormValue;
+	}
+
 	routPackage(slideData:object){
-		this.router.navigate( ['sim-order', slideData['rout'] ] );
+		this.router.navigate( ['sim-order', slideData['rout'] ]);
+		// reload
+		this.router.routeReuseStrategy.shouldReuseRoute = function(){
+		    return false;
+		};
+		this.router.events.subscribe((evt) => {
+		    if (evt instanceof NavigationEnd) {
+		        this.router.navigated = false;
+		        window.scrollTo(0, 0);
+		    }
+		});
 	}
 
 	ngOnInit() {
+
+		console.log( this.route.queryParams );
 	}
 
 }
