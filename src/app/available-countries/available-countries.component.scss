@@ -17,6 +17,16 @@
 			&:nth-child(1){
 				td{
 					border: none;
+					font-weight: 600;
+					position: relative;
+					height: 30px;
+					p{
+					    position: absolute;
+						height: 28px;
+						direction: rtl;
+						left: 0;
+						width: 100%;
+					}
 				}
 			}
 			td{
@@ -25,8 +35,9 @@
 				font-size: 16px;
 				direction: rtl;
 				text-align: left;
+				text-align: center;
 			}
-			td:nth-child(2){
+			td:nth-child(4){
 				text-align: right;
 			}
 		}

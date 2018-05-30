@@ -15,7 +15,7 @@ import { Router, ActivatedRoute, NavigationEnd, Resolve, RouterStateSnapshot,
 export class OffersComponent implements OnInit {
 
 	constructor(private route: ActivatedRoute, private router: Router) {
-		this.route.params.subscribe( params => console.log(params) );
+		// this.route.params.subscribe( params => console.log(params) );
 	}
 
 	@Input() flyFormValue: string;
@@ -130,10 +130,6 @@ export class OffersComponent implements OnInit {
 		return this.sliderItems.find(sliderItems => sliderItems.rout == rout);
 	}
 
-	getActiveFromData(){
-		this.flyFormValue;
-	}
-
 	routPackage(slideData:object){
 		this.router.navigate( ['sim-order', slideData['rout'] ]);
 		// reload
@@ -149,8 +145,7 @@ export class OffersComponent implements OnInit {
 	}
 
 	ngOnInit() {
-
-		console.log( this.route.queryParams );
+		// console.log( this.route.queryParams );
 	}
 
 }

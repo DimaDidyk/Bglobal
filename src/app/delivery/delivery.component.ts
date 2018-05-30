@@ -27,7 +27,6 @@ export class DeliveryComponent implements OnInit {
 	isShow = 'hide';
 	onSubmit(clientInfoForm: NgForm) {
 		this.isShow = 'show';
-		console.log(this.isShow);
 	}
 	
 	// scroll animate

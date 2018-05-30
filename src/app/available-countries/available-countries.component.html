@@ -4,10 +4,21 @@
 	<div class="container">
 		<table class="table">
 		  <tbody>
+	  		<tr>
+	  			<td><p>אחד לכל החיים  </p></td>
+		  		<td><p>אמריקאי  </p></td>
+		  		<td><p>בינלאומי  </p></td>
+		  		<td><p>מדינות    </p></td>
+	  		</tr>
 		    <tr *ngFor="let country of countries">
 				<td>
-					<i class="material-icons i-done">done</i> 
 					<i class="material-icons i-clear">clear</i>
+				</td>
+				<td>
+					<i class="material-icons i-done">done</i> 
+				</td>
+				<td>
+					<i class="material-icons i-done">done</i> 
 				</td>
 				<td>{{ country }}</td>
 		    </tr>
@@ -15,3 +26,8 @@
 		</table>
 	</div>
 </section>
+
+
+
+
+

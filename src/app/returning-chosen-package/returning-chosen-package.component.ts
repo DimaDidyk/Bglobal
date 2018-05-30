@@ -20,19 +20,6 @@ export class ReturningChosenPackageComponent implements OnInit {
 	 private offersComponent: OffersComponent,
 	 private activatedRoute: ActivatedRoute,
 	){
-    // override the route reuse strategy
-    // this.router.routeReuseStrategy.shouldReuseRoute = function(){
-    //   return false;
-    // }
-
-    // this.router.events.subscribe((evt) => {
-    //   if (evt instanceof NavigationEnd) {
-    //     // trick the Router into believing it's last link wasn't previously loaded
-    //     this.router.navigated = false;
-    //     // if you need to scroll back to top, here is the right place
-    //     this.returning.nativeElement.scrollTo(0, 0);
-    //   }
-    // });
   }
 
 	// get all Slider Data
@@ -43,8 +30,6 @@ export class ReturningChosenPackageComponent implements OnInit {
   getSlidePackgeData = this.offersComponent.getSlideData(this.routSnapshotPackage);
 
   currentUrlPage = this.router.routerState.snapshot.url;
-
-  getActiveFromData = this.offersComponent.getActiveFromData();
 
   // if puth is change package == 1
   getActiveChangePacckage(){
@@ -60,13 +45,12 @@ export class ReturningChosenPackageComponent implements OnInit {
     this.returning.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  
   // link to the page change package
   changePackageLink(){
-    
     this.router.navigate( ['sim-order', this.routSnapshotPackage, 'change-package' ] );
   }
 
+  // hiden offers component
   isShow = 'hide';
   // scroll animate
   scrollAnimate(element) {

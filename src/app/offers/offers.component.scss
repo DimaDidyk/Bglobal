@@ -2,7 +2,7 @@
 
 #offers{
 	padding-top: 40px;
-	padding-bottom: 100px;
+	padding-bottom: 80px;
 	.flex-center-bertical{
 		display: flex;
 		flex-direction: column;
@@ -24,6 +24,7 @@
 	swiper{
 		display: block;
 		padding: 0 60px;
+		min-height: 560px;
 	}
 	// navigate
 	.custome-navigate-slider{
@@ -51,6 +52,7 @@
 	}
 	.swiper-slide{
 		margin-top: 30px;
+		margin-bottom: 60px;
 		background: $mainBackground;
 		border-radius: 6px;
 		cursor: pointer;
@@ -58,6 +60,7 @@
 		&:hover{
 		}
 		.slide-header{
+			transition: all .3s;
 			@include gradient-background-blue();
 			h1{
 				margin: 0;
@@ -90,6 +93,7 @@
 				background: blueviolet;
 			}
 			.price{
+				transition: all .3s;
   				font-size: 66px;
   				font-weight: 900;
   				line-height: 1;
@@ -117,6 +121,7 @@
 
 		// 1-th slider
 		&.swiper-slide-active{
+			margin-bottom: 60px;
 			.slide-header{
 				background: $gradient-background-blue-dark;
 			}
@@ -136,6 +141,7 @@
 		// 2-th slider
 		&.swiper-slide-next{
 			margin-top: 0;
+			margin-bottom: 10px;
 			.slide-header{
 				background: $gradient-background-orange;
 			}
@@ -169,6 +175,9 @@
 	#offers{
 		swiper{
 			padding: 0 20px;
+		}
+		.swiper-slide{
+			margin-bottom: 10px;
 		}
 		// navigate
 		.custome-navigate-slider{
