@@ -1808,7 +1808,7 @@ var OffersComponent = /** @class */ (function () {
                 'desc': 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
             },
         ];
-        this.route.params.subscribe(function (params) { return console.log(params); });
+        // this.route.params.subscribe( params => console.log(params) );
     }
     OffersComponent.prototype.nextSlide = function (speed) {
         this.componentRef.directiveRef.nextSlide(speed);
