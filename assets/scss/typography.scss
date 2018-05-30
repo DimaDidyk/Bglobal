@@ -213,7 +213,7 @@ input:-webkit-autofill {
     font-weight: 600;
 }
 .mat-input-container{
-    direction: rtl;
+    // direction: rtl;
 }
 .textarea .mat-input-wrapper{
 	height: initial !important;
@@ -229,10 +229,24 @@ input:-webkit-autofill {
 	line-height: 1.8;
 	padding-right: 10px;
 }
-
+.mat-datepicker-toggle{
+    display: block;
+    float: left;
+    padding-left: 50px;
+    padding-top: 12px;
+    width: 100%;
+    .mat-icon-button{
+    	width: max-content;
+    	float: left;
+    	.mat-button-wrapper{
+    		float: left;
+    	}
+    }
+}
 .mat-form-field{
 	max-width: 100%;
 	width: 100%;
+	direction: rtl;
 }
 .mat-input-wrapper{
 	background: $white;
@@ -263,7 +277,7 @@ input:-webkit-autofill {
 	text-align: right;
 }
 .mat-select-value{
-	padding-right: 24px;
+	// padding-right: 24px;
 }
 .mat-select-arrow-wrapper{
     position: relative;
@@ -356,6 +370,7 @@ input:-webkit-autofill {
 // mat hint
 .mat-form-field-hint-wrapper{
 	margin-top: 20px;
+	padding-left: 30px;
 }
 
 // mat tab
