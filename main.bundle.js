@@ -1474,7 +1474,7 @@ var DialogMessage = /** @class */ (function () {
 /***/ "./src/app/homa-page/homa-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Slider -->\n<app-home-slider></app-home-slider>\n\n<!-- Form -->\n<app-fly-form></app-fly-form>\n\n<!-- details-form -->\n<app-details-form></app-details-form>\n\n<app-total></app-total>\n"
+module.exports = "<!-- Slider -->\n<app-home-slider></app-home-slider>\n\n<!-- Form -->\n<app-fly-form></app-fly-form>\n\n<!-- details-form -->\n<app-details-form></app-details-form>\n\n<!-- <app-total></app-total> -->\n"
 
 /***/ }),
 
