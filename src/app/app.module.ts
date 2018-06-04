@@ -30,14 +30,15 @@ import { NgForm } from '@angular/forms';
 
 // main componenrts
 import { AppComponent } from './app.component';
-import { HeaderComponent, DialogSignIn } from './header/header.component';
+import { HeaderComponent, DialogSignIn, DialogMessage } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 // ngx-swiper-wrapper
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-
+// Mask input
+import {NgxMaskModule} from 'ngx-mask';
 // routing
 import { AppRoutingModule } from './/app-routing.module';
 
@@ -83,6 +84,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AppComponent,
     HeaderComponent,
     DialogSignIn,
+    DialogMessage,
     FooterComponent,
     HomeSliderComponent,
     FlyFormComponent,
@@ -137,11 +139,13 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatTabsModule,
     MatAutocompleteModule,
     MatProgressBarModule,
+    NgxMaskModule.forRoot(),
     HttpClientModule,
   ],
   entryComponents: [
     HeaderComponent, 
     DialogSignIn,
+    DialogMessage,
     InfoPageComponent,
     DialogUpdateInfo,
   ],

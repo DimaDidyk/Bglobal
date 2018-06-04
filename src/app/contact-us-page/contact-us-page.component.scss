@@ -37,6 +37,7 @@
 	}
 
 	.col-info{
+		padding-right: 100px;
 		float: left;
 	}
 	.col-form{
@@ -48,6 +49,7 @@
 @media only screen and (max-width: 768px) {
 	#contact-us-page{
 		.col-info{
+			padding-right: 15px;
 			float: right;
 		}
 		.col-form{

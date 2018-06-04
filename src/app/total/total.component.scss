@@ -8,6 +8,21 @@
 		color: $purpleDark;
 		margin-bottom: 32px;
 	}
+	.open-counpon{
+		color: $green;
+	    text-align: left;
+	    font-size: 20px;
+	    font-weight: 600;
+	    display: block;
+	    text-decoration: underline;
+	    cursor: pointer;
+        margin-bottom: 16px;
+	}
+	.invalid-coupon{
+		color: $red;
+	    margin-top: -20px;
+  		font-size: 18px;
+	}
 	h2{
   		font-size: 26px;
   		color: $black;

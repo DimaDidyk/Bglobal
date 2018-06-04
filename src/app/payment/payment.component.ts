@@ -29,13 +29,6 @@ export class PaymentComponent implements OnInit {
 		console.log(this.isShow);
 		this.router.navigate( ['thank-you'] );
 	}
-	
-	// // scroll animate
-	// scrollAnimate(element) {
-	// 	setTimeout(function(){
-	// 		element.scrollIntoView({ behavior: "smooth", block: "start" });
-	// 	}, 250)
-	// }
 
 	number_keyPress(event: any) {
 	    const pattern = /[0-9]/;

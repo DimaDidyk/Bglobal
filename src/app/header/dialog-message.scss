@@ -1,0 +1,31 @@
+@import '../assets/scss/typography';
+
+#message-dialog{
+	padding: 32px 100px;
+	width: 600px;
+    max-width: 100%;
+    position: relative;
+	.bg-button{
+		margin-top: 60px;
+	    margin-bottom: 20px;
+	}
+	.fa-times-circle{
+		color: $white;
+		position: absolute;
+		right: 14px;
+		top: 12px;
+		font-size: 28px;
+		cursor: pointer;
+		transition: all .3s;
+	}
+	.fa-times-circle:hover{
+		transform: scale(1.1);
+	}
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#message-dialog{
+	}
+}

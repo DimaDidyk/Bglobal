@@ -19,14 +19,35 @@ export class TotalComponent implements OnInit {
 	@Input() deliveryFormData: string;
 
 	// show animation
-	isShow = 'hide';
 	onSubmit(totalForm: NgForm) {
-		this.isShow = 'show';
-		console.log(this.isShow);
 	}
 	
+	showInput = 'hide';
+	showInputCoupon(){
+		this.showInput = "show";
+	}
+
+	activeCoupon:string = "test";
+	errorCoupon:string = null;
+	isActiveCoupon:boolean = false;
+	sendCoupon(coupon:string){
+		console.log( coupon );
+		if( this.activeCoupon === coupon){
+			this.isActiveCoupon = true;
+			this.errorCoupon = null;
+
+		}else{
+			this.errorCoupon = "invalid coupon";
+
+		}
+		console.log( this.errorCoupon );
+
+	}
+
 	// scroll animate
+	isShow = 'hide';
 	scrollAnimate(element) {
+		this.isShow = 'show';
 		setTimeout(function(){
 			element.scrollIntoView({ behavior: "smooth", block: "start" });
 		}, 250)
@@ -36,5 +57,4 @@ export class TotalComponent implements OnInit {
 
 	ngOnInit() {
 	}
-
 }

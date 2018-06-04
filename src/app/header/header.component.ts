@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BrowserModule }    from '@angular/platform-browser';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/';
+import { MatMenuTrigger, MatMenuModule, MatDialog, MatDialogRef } from '@angular/material/';
 import { NgForm } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 export class HeaderComponent implements OnInit {
 
-	constructor(public dialog: MatDialog, private http: HttpClient) {}
+	constructor(public dialog: MatDialog) {}
 
 
 	// open and close menu
@@ -35,6 +34,11 @@ export class HeaderComponent implements OnInit {
 	    this.dialog.open(DialogSignIn);
 	}
 
+	// open sign in dialog
+	openDialogMessage() {
+	    this.dialog.open(DialogMessage);
+	}
+
 	// On init 
 	ngOnInit() {
 	}
@@ -46,13 +50,27 @@ export class HeaderComponent implements OnInit {
 	templateUrl: 'dialog-sign-in.html',
 	styleUrls: ['./dialog-sign-in.scss']
 })
-
 export class DialogSignIn {
-
+	constructor( public dialogRef: MatDialogRef<DialogSignIn> ) { }
 	// submit Sign in form
 	onSubmit(signInForm: NgForm) {
 		console.log( signInForm.value );
 	}
+	closeDialog() {
+	    this.dialogRef.close();
+	}
+}
 
-	constructor() {}
+
+// Message dialog
+@Component({
+	selector: 'dialog-message',
+	templateUrl: 'dialog-message.html',
+	styleUrls: ['./dialog-message.scss']
+})
+export class DialogMessage {
+	constructor( public dialogRef: MatDialogRef<DialogMessage> ) { }
+	closeDialog() {
+	    this.dialogRef.close();
+	}
 }

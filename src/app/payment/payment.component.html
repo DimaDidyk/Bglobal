@@ -25,11 +25,15 @@
 					</div>
 					<div class="col-md-4">
 						<mat-form-field>
-							<input matInput required [matDatepicker]="picker1" placeholder="תוקף  :" name="date_card" ngModel>
-							<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-							<mat-datepicker touchUi="true" #picker1></mat-datepicker>
+							<input matInput required placeholder="תוקף  :" 
+							name="date_card" ngModel mask="99/99"
+							>
+							<!-- (keypress)="numberTel_keyPress($event)" -->
+							<!-- <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle> -->
+							<!-- <mat-datepicker touchUi="true" #picker1 startView="multi-year"></mat-datepicker> -->
 						</mat-form-field>
 					</div>
+
 					<div class="col-md-6">
 						<mat-form-field>
 							<input matInput 
