@@ -10,7 +10,7 @@
 		position: relative;
 	}
 	.first-country{
-		padding-right: -6px;
+		margin-right: -6px;
 	}
 	h1{
 		text-align: center;
@@ -90,10 +90,10 @@
 				font-weight: 600;
 			}
 			.most{
-				background: red;
+				background: $gradient-background-purple;
 			}
 			.economic{
-				background: blueviolet;
+				background: $gradient-background-purple;
 			}
 			.price{
 				transition: all .3s;

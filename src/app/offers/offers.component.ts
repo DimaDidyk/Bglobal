@@ -1,4 +1,4 @@
-import { Component, OnInit, Input ,Injectable, ViewChild } from '@angular/core';
+import { Component, OnInit, Input ,Injectable, ViewChild, ElementRef } from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
 
@@ -130,8 +130,10 @@ export class OffersComponent implements OnInit {
 		return this.sliderItems.find(sliderItems => sliderItems.rout == rout);
 	}
 
+	// get current counties
+	@ViewChild('flyFormCountries') flyFormCountries: ElementRef;
 	routPackage(slideData:object){
-		this.router.navigate( ['sim-order', slideData['rout'] ]);
+		this.router.navigate( ['sim-order', slideData['rout']]);
 		// reload
 		this.router.routeReuseStrategy.shouldReuseRoute = function(){
 		    return false;
@@ -146,6 +148,7 @@ export class OffersComponent implements OnInit {
 
 	ngOnInit() {
 		// console.log( this.route.queryParams );
+		console.log(  );
 	}
 
 }

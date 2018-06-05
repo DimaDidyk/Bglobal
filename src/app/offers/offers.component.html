@@ -1,13 +1,15 @@
 <section id="offers">
-
+	
 	<div class="container">
-		<h1>?טוסים ל
-			<span *ngIf="flyFormValue">
+		<h1>טוסים ל
+			<span *ngIf="flyFormValue" #flyFormCountries>
 				<span *ngIf="flyFormValue.country" class="first-country">{{flyFormValue.country}}</span>
-				<span *ngIf="flyFormValue.country2">{{ ',' + flyFormValue.country2}}</span>
-				<span *ngIf="flyFormValue.country3">{{ ',' + flyFormValue.country3}}</span>
+				<span *ngIf="flyFormValue.country2">{{ 'ו' + flyFormValue.country2}}</span>
+				<span *ngIf="flyFormValue.country3">{{ 'ו' + flyFormValue.country3}}</span>
 			</span>
+			?
 		</h1>
+
 		<h3>אלה החבילות שהכי מתאימות לכם</h3>
 		
 		<div class="flex-center-bertical">

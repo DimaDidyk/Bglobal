@@ -42,8 +42,10 @@ export class ReturningChosenPackageComponent implements OnInit {
 
   ngOnInit() {
     // scroll animate
-    this.returning.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementsByClassName('hedline')[0].scrollIntoView({ behavior: "smooth", block: "start" });
+
   }
+
 
   // link to the page change package
   changePackageLink(){

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject, Injectable } from '@angular/core';
+import { Component, OnInit, Input, Inject, Injectable, ViewChild, ElementRef } from '@angular/core';
 import { NgForm, FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -13,9 +13,9 @@ import { OffersComponent } from '../offers/offers.component';
 import { toggleHeight } from '../animation';
 import { Сountries } from './countries';
 
+import { map, startWith } from 'rxjs/operators';
 
-import {map, startWith} from 'rxjs/operators';
-
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
 	selector: 'app-fly-form',
@@ -23,13 +23,15 @@ import {map, startWith} from 'rxjs/operators';
 	animations: [
 		toggleHeight
 	],
-	styleUrls: ['./fly-form.component.scss']
+	styleUrls: ['./fly-form.component.scss'],
 })
 
 @Injectable()
 export class FlyFormComponent implements OnInit {
 
-	constructor( private http: HttpClient ) {}
+	constructor( private http: HttpClient,
+	 private adapter: DateAdapter<any>,
+	 private picker: MatDatepickerModule) {}
 
 	getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
 
@@ -38,10 +40,28 @@ export class FlyFormComponent implements OnInit {
 	}
 
 	public countries = [];
+
+	// matTfse:Inpit() matTfse: element;
+	// @ViewChild('matTfse') matTfse: ElementRef;
 	ngOnInit() {
+		this.adapter.setLocale('fr'); //date format
+
 		this.getConfig().
 		subscribe(data => this.countries = data );
+
 	}
+
+	clickPick(){
+		console.log( 'this' );
+		let classname = document.getElementsByClassName('mat-calendar-body-today');
+
+		let buttonClose = document.createElement('div');
+		buttonClose.className = "calendar-close-control";
+		buttonClose.innerHTML = 'x';
+		document.getElementsByClassName('mat-calendar-body-today')[0].appendChild(buttonClose);
+		console.log( document.getElementsByClassName('mat-calendar-body-today')[0] );
+	}
+
 
 	// get arrey Names
 	getNamesCountryArray() {
