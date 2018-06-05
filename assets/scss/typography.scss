@@ -81,7 +81,9 @@ label{
 	}
 }
 
-
+p{
+	outline: none;
+}
 // links
 a{
 	color: #000;
@@ -378,12 +380,17 @@ input:-webkit-autofill {
 	text-align: center;
 	display: inherit !important;
 	margin-bottom: 30px;
+    width: max-content;
+    margin: 0 auto;
 	.mat-tab-label .mat-tab-label-content{
 		font-family: 'Open Sans Hebrew', sans-serif;
 		font-size: 16px;
 		color: $black;
 		opacity: 1;
 		font-weight: 500;
+	}
+	.mat-tab-label{
+		float: right;
 	}
 }
 // active
@@ -479,6 +486,30 @@ div.mat-expansion-panel-content.mat-expanded{
 
 .example-right-align {
   text-align: right;
+}
+
+// close calendar
+.mat-calendar-header{
+	position: relative;
+}
+// .mat-calendar-body-today
+.calendar-close-controls{
+	content: 'x';
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 25px;
+	background: $purple;
+	color: $white;
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 13px;
+    font-size: 20px;
+    font-family: cursive;
+	cursor: pointer;
+	transform: rotate(-3deg);
 }
 
 // arrow disables
