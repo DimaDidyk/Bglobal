@@ -15,7 +15,7 @@
 		<div class="flex-center-bertical">
 			<!-- slider -->
 			<swiper [config]="config" [(index)]="index">
-				<div class="swiper-slide" 
+				<div class="swiper-slide" [ngClass]="slide['color']"
 				(click)="routPackage(slide)"
 				*ngFor="let slide of sliderItems">
 					<div class="slide-header">

@@ -40,16 +40,65 @@ export class FlyFormComponent implements OnInit {
 	}
 
 
-	// @ViewChild('matTfse') matTfse: ElementRef;
+	// add new date inputs
+	CountryIdName = [
+		{ nameSalect: "country"},
+	];
+	newInputs = [
+		{ nameSalect: "country2"},
+		{ nameSalect: "country3"},
+	];
+	index = -1;
+	addCountryNameInputs() {
+		if( this.index < 1 ){
+			this.index = this.index + 1;
+		    if ( this.newInputs ) {
+		  		this.CountryIdName.push( this.newInputs[this.index] );
+		  		console.log( this.newInputs );
+			}
+		}
+	}
+
+	flyFormStor:any;
 	public countries = [];
 	ngOnInit() {
 		this.adapter.setLocale('fr'); //date format
 		
+		// get countries
 		this.getConfig().
 		subscribe(data => this.countries = data );
+		
+		// parse storage data (form)
+		this.flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
+		
+		// if form is empty
+		if ( this.flyFormStor == null ) {
+			this.flyFormStor = "";
+		}
+		// save country2 and country3 data
+		let flyFormStorObject = new Object();
+		flyFormStorObject = this.flyFormStor;
+		for (let key in flyFormStorObject ) {
+			console.log( key );
+			if( key == "country2" ){
+				this.index = this.index + 1;
+				this.CountryIdName.push( this.newInputs[this.index] );
+			}
+			if( key == "country3" ){
+				this.index = this.index + 1;
+				this.CountryIdName.push( this.newInputs[this.index] );
+			}
+		}
+	}
 
-		console.log( this.flyFormStor );
 
+	// animate show and hide
+	isShow = 'hide';
+	isHide = 'show';
+	onSubmit(flyForm: NgForm) {
+		localStorage.setItem( 'flyFormValue', JSON.stringify(flyForm.value) );
+		this.isShow = 'show';
+		this.isHide = 'hide';
 	}
 
 	// clickPick(){
@@ -90,39 +139,10 @@ export class FlyFormComponent implements OnInit {
 		return formObject[valueObject];
 	}
 
-	// add new date inputs
-	CountryIdName = [
-		{ nameSalect: "country"},
-	];
-	index = -1;
-	addCountryNameInputs(newInputs) {
-		if( this.index < 1 ){
-			newInputs = [
-				{ nameSalect: "country2"},
-				{ nameSalect: "country3"},
-			];
-			this.index = this.index + 1;
-		    if ( newInputs ) {
-		  		this.CountryIdName.push( newInputs[this.index] );
-			}
-		}
-	}
-
 	// scroll animate
 	scrollAnimate(element) {
 		element.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 
-	// animate show and hide
-	isShow = 'hide';
-	isHide = 'show';
-	onSubmit(flyForm: NgForm) {
-		localStorage.setItem( 'flyFormValue', JSON.stringify(flyForm.value) );
-		this.isShow = 'show';
-		this.isHide = 'hide';
-	}
-
-	// get form value
-	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
 
 }

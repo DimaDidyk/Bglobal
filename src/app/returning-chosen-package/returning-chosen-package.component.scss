@@ -45,17 +45,71 @@
 		border-radius: 6px;
 		overflow: hidden;
 		box-shadow: 0px 3px 12.74px 0.26px rgba(0, 0, 0, 0.16);
+
+		// blue 
+		&.blue{
+			.package-header{
+				background: $gradient-background-blue;
+			}
+			.days,
+			.price{
+				color: rgb(1, 120, 177);
+			}
+		}
+		// blue dark 
+		&.blue-dark{
+			.package-header{
+				background: $gradient-background-blue-dark;
+			}
+			.days,
+			.price{
+				color: rgb(71, 50, 132);
+			}
+		}
+		// orange 
+		&.orange{
+			.package-header{
+				background: $gradient-background-orange;
+			}
+			.days,
+			.price{
+				color: rgb(240, 74, 32);
+			}
+		}
+		// yellow green 
+		&.yellow-green{
+			.package-header{
+				background: $gradient-background-yellow-green;
+			}
+			.days,
+			.price{
+				color: rgb(71, 50, 132);
+			}
+		}
+		// pink 
+		&.pink{
+			.package-header{
+				background: $gradient-background-pink;
+			}
+			.days,
+			.price{
+				color: rgb(240, 74, 32);
+			}
+		}
+		// purple 
+		&.purple{
+			.package-header{
+				background: $gradient-background-purple;
+			}
+			.days,
+			.price{
+				color: rgb(1, 120, 177);
+			}
+		}
 		.package-header{
 			padding: 1px;
 			text-align: center;
 			color: $white;
-
-			&.blue{
-				background: $gradient-background-blue-dark;
-			}
-			&.orange{
-				background: $gradient-background-orange;
-			}
 			h1{
 				font-size: 40px;
 			}
@@ -65,13 +119,6 @@
 			}
 		}
 		.package-content{
-			color: $orangeDark;
-			&.blue{
-				color: $blue;
-			}
-			&.orange{
-				color: $orangeDark;
-			}
 		    padding-top: 20px;
    			padding-bottom: 30px;
 			.price{

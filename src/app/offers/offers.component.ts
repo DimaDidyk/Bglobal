@@ -14,10 +14,14 @@ import { Router, ActivatedRoute, NavigationEnd, Resolve, RouterStateSnapshot,
 @Injectable()
 export class OffersComponent implements OnInit {
 
-	constructor(private route: ActivatedRoute, private router: Router) {
-		// this.route.params.subscribe( params => console.log(params) );
-	}
+	constructor(
+		private route: ActivatedRoute,
+		private router: Router
+	){}
+	@ViewChild(SwiperComponent) componentRef: SwiperComponent;
+	@ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
+	// get fly from data
 	@Input() flyFormValue: string;
 
 	// slider config
@@ -35,13 +39,10 @@ export class OffersComponent implements OnInit {
 			  slidesPerView: 2,
 			},
 		},
-		// navigation: true,
 	};
 
-	@ViewChild(SwiperComponent) componentRef: SwiperComponent;
-	@ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
-
+	// show and hide arrows slider
 	hideNext = true;
 	hidePrev = false;
 	public nextSlide(speed: number): void{
@@ -56,10 +57,11 @@ export class OffersComponent implements OnInit {
 	}
 
 	// slider content
+	// colors: blue-dark, orange, blue, yellow-green, pink, purple
 	sliderItems = [
 		{ 
 			'rout':      'package-USA',
-			'color':     'blue',
+			'color':     'blue-dark',
 			'title':     '8GB',
 			'sub-title': 'גלישה ושיחות',
 			'price':     '189',
@@ -110,7 +112,39 @@ export class OffersComponent implements OnInit {
 		},
 		{ 
 			'rout':      'returning-customer-test3',
-			'color':     'blue',
+			'color':     'yellow-green',
+			'title':     '8GB',
+			'sub-title': 'גלישה ושיחות',
+			'price':     '189',
+			'days':      '30 ימים',
+			'info'     : 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
+			'name':      'חבילת גלישה לספרד  ',
+			'options': [
+				'ניתן לטעינות חוזרת בכל עת  ',
+				'גלישה במהירות מירבית  ',
+				'ים אחד לכל החיים!  ',
+			],
+			'desc'     : 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
+		},
+		{ 
+			'rout':      'returning-customer-test4',
+			'color':     'pink',
+			'title':     '8GB',
+			'sub-title': 'גלישה ושיחות',
+			'price':     '189',
+			'days':      '30 ימים',
+			'info'     : 'רשת At&t שיחות יוצאות ונכנסות ללא הגבלה שמירה על המספר הישראלי',
+			'name':      'חבילת גלישה לספרד  ',
+			'options': [
+				'ניתן לטעינות חוזרת בכל עת  ',
+				'גלישה במהירות מירבית  ',
+				'ים אחד לכל החיים!  ',
+			],
+			'desc'     : 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
+		},
+		{ 
+			'rout':      'returning-customer-test5',
+			'color':     'purple',
 			'title':     '8GB',
 			'sub-title': 'גלישה ושיחות',
 			'price':     '189',
@@ -126,6 +160,7 @@ export class OffersComponent implements OnInit {
 		},
 	];
 
+	// get slude data
 	getSlideData(rout:string){
 		return this.sliderItems.find(sliderItems => sliderItems.rout == rout);
 	}

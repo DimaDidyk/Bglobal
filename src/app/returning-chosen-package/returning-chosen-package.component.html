@@ -3,12 +3,13 @@
 		<div class="row">
 			
 			<div class="col-sm-4 package-container">
-				<div class="package">
-					<div class="package-header {{ getSlidePackgeData['color'] }}">
+				<div class="package" 
+				[ngClass]="getSlidePackgeData['color']">
+					<div class="package-header">
 						<h1>{{ getSlidePackgeData['title'] }}</h1>
 						<h3>{{ getSlidePackgeData['sub-title'] }}</h3>
 					</div>
-					<div class="package-content {{ getSlidePackgeData['color'] }}">
+					<div class="package-content">
 						<div class="price">₪ {{ getSlidePackgeData['price'] }}</div>
 						<div class="days">({{ getSlidePackgeData['days'] }})</div>
 					</div>

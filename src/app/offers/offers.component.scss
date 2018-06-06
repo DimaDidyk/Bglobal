@@ -64,7 +64,7 @@
 		}
 		.slide-header{
 			transition: all .3s;
-			@include gradient-background-blue();
+			background: $gradient-background-blue;
 			h1{
 				margin: 0;
 				color: $white;
@@ -115,23 +115,51 @@
 				padding: 50px 20px 0;
 			}
 			button{
-				@include gradient-background-blue();
+				background: $gradient-background-blue;
 				max-width: 230px;
 				margin: 30px auto;
 				display: block;
 			}
 		}
-
 		// 1-th slider
 		&.swiper-slide-active{
 			margin-bottom: 60px;
+		}
+		// 2-th slider
+		&.swiper-slide-next{
+			margin-top: 0;
+			margin-bottom: 10px;
+			.slide-content{
+				.price{
+					margin-top: 50px;
+				}
+				.slide-content{
+					padding-bottom: 60px;
+				}
+			}
+		}
+		// blue slide
+		&.blue{
+			.slide-header{
+				background: $gradient-background-blue;
+			}
+			.slide-content{
+				.days,
+				.price{
+					color: rgb(1, 120, 177);
+				}
+				button{
+					background: $gradient-background-blue;
+				}
+			}
+		}
+		// blue dark slide
+		&.blue-dark{
 			.slide-header{
 				background: $gradient-background-blue-dark;
 			}
 			.slide-content{
-				.days{
-					color: rgb(71, 50, 132);
-				}
+				.days,
 				.price{
 					color: rgb(71, 50, 132);
 				}
@@ -140,27 +168,63 @@
 				}
 			}
 		}
-
-		// 2-th slider
-		&.swiper-slide-next{
-			margin-top: 0;
-			margin-bottom: 10px;
+		// orange slide
+		&.orange{
 			.slide-header{
 				background: $gradient-background-orange;
 			}
 			.slide-content{
-				.days{
-					color: rgb(240, 74, 32);
-				}
+				.days,
 				.price{
 					color: rgb(240, 74, 32);
-					margin-top: 50px;
-				}
-				.slide-content{
-					padding-bottom: 60px;
 				}
 				button{
 					background: $gradient-background-orange;
+				}
+			}
+		}
+		// yellow green slide
+		&.yellow-green{
+			.slide-header{
+				background: $gradient-background-yellow-green;
+			}
+			.slide-content{
+				.days,
+				.price{
+					color: rgb(71, 50, 132);
+				}
+				button{
+					background: $gradient-background-yellow-green;
+				}
+			}
+		}
+		// pink slide
+		&.pink{
+			.slide-header{
+				background: $gradient-background-pink;
+			}
+			.slide-content{
+				.days,
+				.price{
+					color: rgb(240, 74, 32);
+				}
+				button{
+					background: $gradient-background-pink;
+				}
+			}
+		}
+		// purple slide
+		&.purple{
+			.slide-header{
+				background: $gradient-background-purple;
+			}
+			.slide-content{
+				.days,
+				.price{
+					color: rgb(1, 120, 177);
+				}
+				button{
+					background: $gradient-background-purple;
 				}
 			}
 		}
