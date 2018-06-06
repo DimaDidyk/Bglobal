@@ -291,6 +291,16 @@ input:-webkit-autofill {
 .mat-form-field-underline{
 	display: none;
 }
+.mat-select-panel{
+    margin-right: -57px;
+
+}
+.mat-form-field-type-mat-select{
+	.mat-input-wrapper{
+		padding-right: 4px;
+	}
+}
+
 .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option{
 	height: 50px;
 }
