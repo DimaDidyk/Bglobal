@@ -10,43 +10,60 @@
 				<span class="form-info" (click)="tooltipCVV.show()">?</span>
 
 				<div class="row form-inputs">
-					<div class="col-md-2" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
-						<mat-form-field class="cvv-input">
-							<input matInput 
-							placeholder="CVV"
-							maxlength="4" 
-							minlength="4"
-							(keypress)="number_keyPress($event)" 
-							#cvv 
-							name="cvv" 
-							ngModel>
-							<mat-hint align="end">{{cvv.value?.length || 0}}/4</mat-hint>
-						</mat-form-field>
-					</div>
-					<div class="col-md-4">
-						<mat-form-field>
-							<input matInput required placeholder="תוקף  :" 
-							name="date_card" ngModel mask="99/99"
-							>
-							<!-- (keypress)="numberTel_keyPress($event)" -->
-							<!-- <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle> -->
-							<!-- <mat-datepicker touchUi="true" #picker1 startView="multi-year"></mat-datepicker> -->
-						</mat-form-field>
-					</div>
-
+					<!-- cvv -->
 					<div class="col-md-6">
 						<mat-form-field>
 							<input matInput 
+							required
 							placeholder="מספר כרטיס אשראי" 
-							minlength="16" 
+							minlength="8" 
 							maxlength="16" 
 							(keypress)="number_keyPress($event)" 
 							#numberCard 
 							name="numberCard" 
 							ngModel>
-							<mat-hint align="end">{{numberCard.value?.length || 0}}/16</mat-hint>
 						</mat-form-field>
 					</div>
+					
+					<!-- year -->
+					<div class="col-md-2">
+						<mat-form-field>
+							<mat-select placeholder="YYYY"
+							required ngModel name="year">
+								<mat-option *ngFor="let y of year" [value]="y">
+								{{ y }}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					
+					<!-- month -->
+					<div class="col-md-2">
+						<mat-form-field>
+							<mat-select placeholder="MM"
+							required ngModel name="month">
+								<mat-option *ngFor="let month of months" [value]="month">
+								{{ month }}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+					
+					<!-- card -->
+					<div class="col-md-2" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
+						<mat-form-field class="cvv-input">
+							<input matInput 
+							required 
+							placeholder="CVV"
+							minlength="3"
+							maxlength="4"
+							(keypress)="number_keyPress($event)" 
+							#cvv 
+							name="cvv" 
+							ngModel>
+						</mat-form-field>
+					</div>
+
 				</div>
 			</div>
 			
@@ -69,6 +86,3 @@
 	</div>
 </section>
 
-<!--  -->
-<!-- <pre>{{ totalFormData | json }}</pre> -->
-<!--  -->

@@ -11,7 +11,7 @@
 						<mat-form-field class="example-full-width">
 						    <input type="text" 
 						    placeholder="בחרו את העיד  :"
-						    name="{{ countryNameSelect['nameSalect'] }}" ngModel
+						    name="{{ countryNameSelect['nameSalect'] }}" [ngModel]="flyFormStor.country"
 						    aria-label="Number" 
 						    matInput 
 						    [matAutocomplete]="auto">
@@ -38,7 +38,7 @@
 								[min]="flyForm.value.dateLanding"
 								placeholder="בחרו תאריך המראה  :"
 								name="dateAppearance"
-								ngModel>
+								[ngModel]="flyFormStor.dateLanding">
 								<mat-datepicker-toggle #matTfse (click)="clickPick()"
 								matSuffix [for]="picker2"></mat-datepicker-toggle>
 								<mat-datepicker touchUi="true" #picker2 ></mat-datepicker>
@@ -53,7 +53,7 @@
 								 [matDatepicker]="picker1"
 								 placeholder="בחרו תאריך המראה  :"
 								 name="dateLanding"
-								 ngModel>
+								 [ngModel]="flyFormStor.dateAppearance">
 								<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
 								<mat-datepicker touchUi="true" #picker1></mat-datepicker>
 							</mat-form-field>

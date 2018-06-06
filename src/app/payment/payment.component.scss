@@ -33,13 +33,17 @@
 		margin-bottom: 12px;
 		padding-left: 60px;
 	}
-
+	.form-inputs>div{
+		float: right;
+	}
 
 	.payment-service{
 		img{
 			display: inline-block;
 			padding-right: 24px;
+    		object-fit: contain;
 			width: 68px;
+			max-height: 36px;
 		}
 	}
 

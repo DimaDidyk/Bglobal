@@ -17,24 +17,40 @@
 	}
 	.radio-fields{
 		padding-top: 0;
-		padding-bottom: 20px;
 		font-size: 18px;
 		text-align: right;
 		color: $black;
 		user-select: none;
 	}
-
+	.bg-button{
+		margin-top: 20px;
+	}
+	.checked-wrapper{
+		color: $white;
+		position: absolute;
+		z-index: 1;
+    	margin-top: 30px;
+	    width: max-content;
+		right: 0;
+		.mat-checkbox-label{
+			color: $white;
+			font-size: 18px;
+			line-height: 2.413;
+		}
+	}
 	
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-	
-}
 
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-
+	#delivery{
+		.checked-wrapper{
+			position: static;
+			width: 100%;
+			text-align: right;
+		}
+	}
 
 }

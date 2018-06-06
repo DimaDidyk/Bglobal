@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -22,6 +23,10 @@ export class PaymentComponent implements OnInit {
 
 	@Input() totalFormData: string;
 
+
+
+	
+
 	// show animation
 	isShow = 'hide';
 	onSubmit(PaymentForm: NgForm) {
@@ -39,9 +44,15 @@ export class PaymentComponent implements OnInit {
 	      event.preventDefault();
 	    }
 	}
-	
 
+	// month and year card
+	months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+	currentYear = (new Date()).getFullYear();
+	year = [];
 	ngOnInit() {
+		for (var i = 0; i < 5; i++) {
+			this.year[i] = this.currentYear++;
+		}
 	}
 
 }

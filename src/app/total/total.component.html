@@ -4,9 +4,10 @@
 			<div class="col-sm-6 input-box">
 				<h1>סה״כ לתשלום</h1>
 				<!-- <h2>יש לך קוד קופון</h2> -->
-
+				
+				<div class="total-price">₪ 117</div>
 				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()" >יש לי קופון  </span>
-
+				
 				<form #totalForm="ngForm" 
 				(ngSubmit)="onSubmit(totalForm)" 
 				class="{{showInput}}">
@@ -26,9 +27,8 @@
 							<p>{{ errorCoupon }}</p>
 						</div>
 					</div>
-					
 				</form>
-				<div class="total-price">₪ 117</div>
+				
 			</div>
 			<div class="col-sm-6 selected-services">
 				<h1>שרותים שנבחרו</h1>
@@ -57,7 +57,7 @@
 
 				    <tr *ngIf="isActiveCoupon">
 				      <td><b>-10 ₪ </b></td>
-				      <td>coupon</td> 
+				      <td>{{ totalForm.value.coupon }}</td> 
 				    </tr>
 				    
 				  </tbody>
@@ -67,8 +67,8 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				<h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3>
-				<button mat-button class="bg-button bg-green-button"
+				<!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->
+				<button mat-button class="bg-button bg-green-button main-button"
 				(click)="scrollAnimate(appPayment)"
 				(click)="isShow='show'">המשך</button>
 				<hr>

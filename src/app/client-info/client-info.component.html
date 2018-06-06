@@ -5,12 +5,12 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput required placeholder="שם משפחה" name="soname" ngModel />
+						<input matInput required placeholder="שם משפחה" name="soname" ngModel tabindex="2"/>
 					</mat-form-field>
 				</div>
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput required placeholder="שם פרטי" name="name" ngModel />
+						<input matInput required placeholder="שם פרטי" name="name" ngModel tabindex="1" />
 					</mat-form-field>
 				</div>
 			</div>
@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput name="email" placeholder="דוא״ל לקבלת חשבונית"
+						<input matInput name="email" placeholder="דוא״ל לקבלת חשבונית" tabindex="4"
 						required
 						[pattern]="emailPattern"
 						ngModel/>
@@ -26,7 +26,7 @@
 				</div>
 				<div class="col-sm-6">
 					<mat-form-field>
-						<input matInput required placeholder="טלפון נייד" name="tel" 
+						<input matInput required placeholder="טלפון נייד" name="tel" tabindex="3"
 						(keypress)="numberTel_keyPress($event)"
 						ngModel />
 					</mat-form-field>

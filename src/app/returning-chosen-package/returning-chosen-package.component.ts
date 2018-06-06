@@ -17,10 +17,9 @@ export class ReturningChosenPackageComponent implements OnInit {
   @ViewChild("returning", {read: ElementRef}) returning: ElementRef;
 
 	constructor(private router: Router,
-	 private offersComponent: OffersComponent,
-	 private activatedRoute: ActivatedRoute,
-	){
-  }
+    private offersComponent: OffersComponent,
+    private activatedRoute: ActivatedRoute,
+  ){}
 
 	// get all Slider Data
 	offersComponentPackageData = this.offersComponent.sliderItems;

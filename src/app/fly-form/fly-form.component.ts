@@ -39,28 +39,28 @@ export class FlyFormComponent implements OnInit {
 	    return this.http.get<Сountries[]>(this.getCountriesUrl);
 	}
 
-	public countries = [];
 
-	// matTfse:Inpit() matTfse: element;
 	// @ViewChild('matTfse') matTfse: ElementRef;
+	public countries = [];
 	ngOnInit() {
 		this.adapter.setLocale('fr'); //date format
-
+		
 		this.getConfig().
 		subscribe(data => this.countries = data );
 
+		console.log( this.flyFormStor );
+
 	}
 
-	clickPick(){
-		console.log( 'this' );
-		let classname = document.getElementsByClassName('mat-calendar-body-today');
-
-		let buttonClose = document.createElement('div');
-		buttonClose.className = "calendar-close-control";
-		buttonClose.innerHTML = 'x';
-		document.getElementsByClassName('mat-calendar-body-today')[0].appendChild(buttonClose);
-		console.log( document.getElementsByClassName('mat-calendar-body-today')[0] );
-	}
+	// clickPick(){
+	// 	console.log( 'this' );
+	// 	let classname = document.getElementsByClassName('mat-calendar-body-today');
+	// 	let buttonClose = document.createElement('div');
+	// 	buttonClose.className = "calendar-close-control";
+	// 	buttonClose.innerHTML = 'x';
+	// 	document.getElementsByClassName('mat-calendar-body-today')[0].appendChild(buttonClose);
+	// 	console.log( document.getElementsByClassName('mat-calendar-body-today')[0] );
+	// }
 
 
 	// get arrey Names
@@ -70,23 +70,14 @@ export class FlyFormComponent implements OnInit {
 
 	// get Id County by name
 	getIdCountryByName(countryName: string) {
-		// return array.filter( countries => countries.Name === "אנגולה ");
-		let CurrentArray = this.countries.filter(
-  		countries => countries.Name === countryName);
+		let CurrentArray = this.countries.filter( countries => countries.Name === countryName );
 		return CurrentArray[0]['Id'];
 	}
 	// get name County by ID
 	getNameCountryById(Id: any) {
-		// return array.filter( countries => countries.Name === "אנגולה ");
-		let CurrentArray = this.countries.filter(
-  		countries => countries.Id == Id);
+		let CurrentArray = this.countries.filter( countries => countries.Id == Id );
 		return CurrentArray[0]['Name'];
 	}
-
-	/*displayFn(country: any){
-		country = this.getNameCountryById(country);
-		return country;
-	}*/
 
 	// min date validation
 	minDate = new Date(); //today
@@ -122,13 +113,16 @@ export class FlyFormComponent implements OnInit {
 		element.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 
-
 	// animate show and hide
 	isShow = 'hide';
 	isHide = 'show';
 	onSubmit(flyForm: NgForm) {
+		localStorage.setItem( 'flyFormValue', JSON.stringify(flyForm.value) );
 		this.isShow = 'show';
 		this.isHide = 'hide';
 	}
+
+	// get form value
+	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
 
 }
