@@ -20,6 +20,9 @@ $gradient-background-blue-dark: linear-gradient( 37deg, rgb(71,50,132) 0%, rgb(3
 $gradient-background-orange: linear-gradient( 37deg, rgb(254,200,10) 0%, rgb(237,43,38) 100%);
 $gradient-background-purple: linear-gradient(to right, #512e7f 0%, #a5196a 80%, #a5196a 100%);
 $gradient-background-blue: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);
+$gradient-background-yellow-green: linear-gradient( 146deg, rgb(24,149,152) 0%, rgb(254,209,33) 100% );
+$gradient-background-pink: linear-gradient( 37deg, rgb(236,37,44) 0%, rgb(157,32,94) 100% );
+$gradient-background-pink: linear-gradient( 37deg, rgb(236,37,44) 0%, rgb(157,32,94) 100% );
 
 @mixin gradient-background-blue(){
     background: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,177) 100%);
@@ -31,7 +34,7 @@ $gradient-background-blue: linear-gradient( 37deg, rgb(1,155,148) 0%, rgb(1,120,
     background: linear-gradient(186deg, transparent 67%, #731f5f 50%), linear-gradient(150deg, #982167 0%, #8b256c 75%, #8b256c 100%);
 }
 .gradient-background{
-	@include gradient-background-purple();
+	background: $gradient-background-purple;
 	.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
 		color: $white;
 	}
