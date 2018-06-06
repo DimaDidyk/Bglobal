@@ -1089,7 +1089,7 @@ var FaqPageComponent = /** @class */ (function () {
 /***/ "./src/app/fly-form/fly-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"fly-form\" class=\"gray-background\" #FlyForm>\n\t<div class=\"container\">\n\t\t<h1>לאן טסים?  </h1>\n\t\t<h3 (click)=\"getValues(countries)\">אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>\n\t\t\n\t\t<form #flyForm=\"ngForm\" (ngSubmit)=\"onSubmit(flyForm)\">\n\n\t\t\t<div *ngFor=\"let countryNameSelect of CountryIdName\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t\t\t\t    <input type=\"text\" \n\t\t\t\t\t\t    placeholder=\"בחרו את העיד  :\"\n\t\t\t\t\t\t    name=\"{{ countryNameSelect['nameSalect'] }}\" [ngModel]=\"flyFormStor.country\"\n\t\t\t\t\t\t    aria-label=\"Number\" \n\t\t\t\t\t\t    matInput \n\t\t\t\t\t\t    [matAutocomplete]=\"auto\">\n\t\t\t\t\t\t    <mat-autocomplete #auto=\"matAutocomplete\"><!-- [displayWith]=\"displayFn\" -->\n\t\t\t\t\t\t        <mat-option value=\"{{ country }}\" \n\t\t\t\t\t\t    \t*ngFor=\"let country of getNamesCountryArray() \n\t\t\t\t\t\t    \t| searchAddress:getObjectValue(flyForm.value, countryNameSelect['nameSalect'])\" >\n\t\t\t\t\t\t    \t\t{{ country }}\n\t\t\t\t\t\t    \t</mat-option>\n\t\t\t\t\t\t    </mat-autocomplete>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<!-- date inputs -->\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t<div class=\"col-sm-8  col-xs-12 inputs-load-wrap\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field >\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t[matDatepicker]=\"picker2\"\n\t\t\t\t\t\t\t\t[min]=\"flyForm.value.dateLanding\"\n\t\t\t\t\t\t\t\tplaceholder=\"בחרו תאריך המראה  :\"\n\t\t\t\t\t\t\t\tname=\"dateAppearance\"\n\t\t\t\t\t\t\t\t[ngModel]=\"flyFormStor.dateLanding\">\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle #matTfse (click)=\"clickPick()\"\n\t\t\t\t\t\t\t\tmatSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker2 ></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t [min]=\"minDate\" \n\t\t\t\t\t\t\t\t [max]=\"flyForm.value.dateAppearance\"\n\t\t\t\t\t\t\t\t [matDatepicker]=\"picker1\"\n\t\t\t\t\t\t\t\t placeholder=\"בחרו תאריך המראה  :\"\n\t\t\t\t\t\t\t\t name=\"dateLanding\"\n\t\t\t\t\t\t\t\t [ngModel]=\"flyFormStor.dateAppearance\">\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker1\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker1></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><!-- #date inputs -->\n\t\t\t\n\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t<div class=\"col-sm-4 col-xs-12 button-load-inputs\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" \n\t\t\t\t\t[disabled]=\"!flyForm.valid\"\n\t\t\t\t\t(click)=\"isShow='show'\" (click)=\"isHide='hide'\" (click)=\"scrollAnimate(appofferswrap)\">!יאללה ממריאים  </button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<!-- add new select button -->\n\t\t\t<div id=\"add\" \n\t\t\t(click)=\"addCountryNameInputs()\" \n\t\t\t*ngIf=\"index < 1\">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת  <span>+</span>\n\t\t\t</div>\n\n\t\t</form>\n\t</div>\n</section>\n\n<!-- <pre>{{ flyForm.value | json }}</pre> -->\n<!-- <pre>{{ getNamesCountryArray() | json }}</pre> -->\n\n<div [@toggleHeight]=\"isShow\" #appofferswrap>\n\t<app-offers [flyFormValue]=\"flyForm.value\"></app-offers>\n</div>\n\n<div [@toggleHeight]=\"isHide\">\n\t<app-promotion [FlyForm]=\"FlyForm\"></app-promotion>\n</div>\n"
+module.exports = "<section id=\"fly-form\" class=\"gray-background\" #FlyForm>\n\t<div class=\"container\">\n\t\t<h1>לאן טסים?  </h1>\n\t\t<h3 (click)=\"getValues(countries)\">אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>\n\t\t\n\t\t<form #flyForm=\"ngForm\" (ngSubmit)=\"onSubmit(flyForm)\">\n\n\t\t\t<div *ngFor=\"let countryNameSelect of CountryIdName\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t\t\t\t    <input type=\"text\" \n\t\t\t\t\t\t    placeholder=\"בחרו את העיד  :\"\n\t\t\t\t\t\t    name=\"{{ countryNameSelect['nameSalect'] }}\" \n\t\t\t\t\t\t    [ngModel]=\"getObjectValue(flyFormStor, countryNameSelect['nameSalect'])\"\n\t\t\t\t\t\t    aria-label=\"Number\" \n\t\t\t\t\t\t    matInput \n\t\t\t\t\t\t    [matAutocomplete]=\"auto\">\n\t\t\t\t\t\t    <mat-autocomplete #auto=\"matAutocomplete\"><!-- [displayWith]=\"displayFn\" -->\n\t\t\t\t\t\t        <mat-option value=\"{{ country }}\" \n\t\t\t\t\t\t    \t*ngFor=\"let country of getNamesCountryArray() \n\t\t\t\t\t\t    \t| searchAddress:getObjectValue(flyForm.value, countryNameSelect['nameSalect'])\" >\n\t\t\t\t\t\t    \t\t{{ country }}\n\t\t\t\t\t\t    \t</mat-option>\n\t\t\t\t\t\t    </mat-autocomplete>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<!-- date inputs -->\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t<div class=\"col-sm-8  col-xs-12 inputs-load-wrap\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field >\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t[matDatepicker]=\"picker2\"\n\t\t\t\t\t\t\t\t[min]=\"flyForm.value.dateLanding\"\n\t\t\t\t\t\t\t\tplaceholder=\"בחרו תאריך המראה  :\"\n\t\t\t\t\t\t\t\tname=\"dateAppearance\"\n\t\t\t\t\t\t\t\t[ngModel]=\"flyFormStor.dateLanding\">\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle #matTfse (click)=\"clickPick()\"\n\t\t\t\t\t\t\t\tmatSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker2 ></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t\t\t<input matInput \n\t\t\t\t\t\t\t\t [min]=\"minDate\" \n\t\t\t\t\t\t\t\t [max]=\"flyForm.value.dateAppearance\"\n\t\t\t\t\t\t\t\t [matDatepicker]=\"picker1\"\n\t\t\t\t\t\t\t\t placeholder=\"בחרו תאריך המראה  :\"\n\t\t\t\t\t\t\t\t name=\"dateLanding\"\n\t\t\t\t\t\t\t\t [ngModel]=\"flyFormStor.dateAppearance\">\n\t\t\t\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker1\"></mat-datepicker-toggle>\n\t\t\t\t\t\t\t\t<mat-datepicker touchUi=\"true\" #picker1></mat-datepicker>\n\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><!-- #date inputs -->\n\t\t\t\n\n\t\t\t<div class=\"row inputs-date-fly-form\">\n\t\t\t\t<div class=\"col-sm-4 col-xs-12 button-load-inputs\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" \n\t\t\t\t\t[disabled]=\"!flyForm.valid\"\n\t\t\t\t\t(click)=\"isShow='show'\" (click)=\"isHide='hide'\" (click)=\"scrollAnimate(appofferswrap)\">!יאללה ממריאים  </button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<!-- add new select button -->\n\t\t\t<div id=\"add\" \n\t\t\t(click)=\"addCountryNameInputs()\" \n\t\t\t*ngIf=\"index < 1\">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת  <span>+</span>\n\t\t\t</div>\n\n\t\t</form>\n\t</div>\n</section>\n\n<!-- <pre>{{ flyForm.value | json }}</pre> -->\n<!-- <pre>{{ getNamesCountryArray() | json }}</pre> -->\n\n<div [@toggleHeight]=\"isShow\" #appofferswrap>\n\t<app-offers [flyFormValue]=\"flyForm.value\"></app-offers>\n</div>\n\n<div [@toggleHeight]=\"isHide\">\n\t<app-promotion [FlyForm]=\"FlyForm\"></app-promotion>\n</div>\n"
 
 /***/ }),
 
@@ -1130,30 +1130,65 @@ var FlyFormComponent = /** @class */ (function () {
         this.adapter = adapter;
         this.picker = picker;
         this.getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
-        // @ViewChild('matTfse') matTfse: ElementRef;
-        this.countries = [];
-        // min date validation
-        this.minDate = new Date(); //today
         // add new date inputs
         this.CountryIdName = [
             { nameSalect: "country" },
         ];
+        this.newInputs = [
+            { nameSalect: "country2" },
+            { nameSalect: "country3" },
+        ];
         this.index = -1;
+        this.countries = [];
         // animate show and hide
         this.isShow = 'hide';
         this.isHide = 'show';
-        // get form value
-        this.flyFormStor = JSON.parse(localStorage.getItem('flyFormValue'));
+        // min date validation
+        this.minDate = new Date(); //today
     }
     FlyFormComponent.prototype.getConfig = function () {
         return this.http.get(this.getCountriesUrl);
     };
+    FlyFormComponent.prototype.addCountryNameInputs = function () {
+        if (this.index < 1) {
+            this.index = this.index + 1;
+            if (this.newInputs) {
+                this.CountryIdName.push(this.newInputs[this.index]);
+                console.log(this.newInputs);
+            }
+        }
+    };
     FlyFormComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.adapter.setLocale('fr'); //date format
+        // get countries
         this.getConfig().
             subscribe(function (data) { return _this.countries = data; });
-        console.log(this.flyFormStor);
+        // parse storage data (form)
+        this.flyFormStor = JSON.parse(localStorage.getItem('flyFormValue'));
+        // if form is empty
+        if (this.flyFormStor == null) {
+            this.flyFormStor = "";
+        }
+        // save country2 and country3 data
+        var flyFormStorObject = new Object();
+        flyFormStorObject = this.flyFormStor;
+        for (var key in flyFormStorObject) {
+            console.log(key);
+            if (key == "country2") {
+                this.index = this.index + 1;
+                this.CountryIdName.push(this.newInputs[this.index]);
+            }
+            if (key == "country3") {
+                this.index = this.index + 1;
+                this.CountryIdName.push(this.newInputs[this.index]);
+            }
+        }
+    };
+    FlyFormComponent.prototype.onSubmit = function (flyForm) {
+        localStorage.setItem('flyFormValue', JSON.stringify(flyForm.value));
+        this.isShow = 'show';
+        this.isHide = 'hide';
     };
     // clickPick(){
     // 	console.log( 'this' );
@@ -1185,26 +1220,9 @@ var FlyFormComponent = /** @class */ (function () {
     FlyFormComponent.prototype.getObjectValue = function (formObject, valueObject) {
         return formObject[valueObject];
     };
-    FlyFormComponent.prototype.addCountryNameInputs = function (newInputs) {
-        if (this.index < 1) {
-            newInputs = [
-                { nameSalect: "country2" },
-                { nameSalect: "country3" },
-            ];
-            this.index = this.index + 1;
-            if (newInputs) {
-                this.CountryIdName.push(newInputs[this.index]);
-            }
-        }
-    };
     // scroll animate
     FlyFormComponent.prototype.scrollAnimate = function (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-    FlyFormComponent.prototype.onSubmit = function (flyForm) {
-        localStorage.setItem('flyFormValue', JSON.stringify(flyForm.value));
-        this.isShow = 'show';
-        this.isHide = 'hide';
     };
     FlyFormComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
