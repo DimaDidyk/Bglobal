@@ -68,7 +68,7 @@ import { FaqPageComponent } from './faq-page/faq-page.component';
 import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 import { AvailableCountriesComponent } from './available-countries/available-countries.component';
-import { InfoPageComponent, DialogUpdateInfo } from './info-page/info-page.component';
+import { InfoPageComponent, DialogUpdateUserInfo, DialogUpdateCardInfo } from './info-page/info-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { UsageLogComponent } from './usage-log/usage-log.component';
@@ -111,8 +111,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ContactUsPageComponent,
     ThankYouPageComponent,
     AvailableCountriesComponent,
+    DialogUpdateUserInfo,
+    DialogUpdateCardInfo,
     InfoPageComponent,
-    DialogUpdateInfo,
     UserPageComponent,
     PersonalDetailsComponent,
     UsageLogComponent,
@@ -146,8 +147,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HeaderComponent, 
     DialogSignIn,
     DialogMessage,
+    DialogUpdateUserInfo,
+    DialogUpdateCardInfo,
     InfoPageComponent,
-    DialogUpdateInfo,
   ],
   providers: [
     {

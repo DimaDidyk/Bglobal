@@ -1,0 +1,74 @@
+<div id="dialog-update-info" class="gradient-background">
+  
+  <h1 mat-dialog-title> עדכן פרטים אישיים  </h1>
+
+  <div mat-dialog-content>
+
+    <form #updateCardInfoForm="ngForm" (ngSubmit)="onSubmit(updateCardInfoForm)">
+      
+      <!-- name card -->
+      <mat-form-field>
+        <input matInput placeholder="שם בעל הכרטיס: " name="nameCard" ngModel/>
+      </mat-form-field><!-- #name card -->
+      
+      <!-- number card -->
+      <mat-form-field>
+        <input matInput 
+        required
+        placeholder="מספר כרטיס: " 
+        minlength="8" 
+        maxlength="16" 
+        (keypress)="number_keyPress($event)" 
+        #numberCard 
+        name="numberCard" 
+        ngModel>
+      </mat-form-field><!-- #number card -->
+      
+      <!-- month -->
+      <mat-form-field>
+        <mat-select placeholder="MM"
+        required ngModel name="month">
+          <mat-option *ngFor="let month of months" [value]="month">
+          {{ month }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><!-- #month -->
+      
+      <!-- year -->
+      <mat-form-field>
+        <mat-select placeholder="YYYY"
+        required ngModel name="year">
+          <mat-option *ngFor="let y of year" [value]="y">
+          {{ y }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><!-- #year -->
+
+      <!-- cvv -->
+      <mat-form-field class="cvv-input">
+        <input matInput 
+        required 
+        placeholder="CVV"
+        minlength="3"
+        maxlength="4"
+        (keypress)="number_keyPress($event)" 
+        #cvv 
+        name="cvv" 
+        ngModel>
+      </mat-form-field><!-- #cvv -->
+
+      <!-- buttons -->
+      <div class="row">
+        <div class="col-sm-6">
+          <button mat-button class="bg-button bg-red-button"
+          (click)="closeDialog()"> ביטול   </button>
+        </div>
+        <div class="col-sm-6">
+          <button mat-button class="bg-button bg-green-button"
+          [disabled]="!updateCardInfoForm.valid"> עדכן פרטים   </button>
+        </div>
+      </div><!-- #buttons -->
+      
+    </form>
+  </div>
+</div>
