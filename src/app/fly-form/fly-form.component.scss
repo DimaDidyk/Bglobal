@@ -25,11 +25,24 @@
 		}
 	}
 
+	#remove-list{
+	    position: absolute;
+	    cursor: pointer;
+	    background: $purple;
+	    text-align: center;
+	    width: 26px;
+		height: 26px;
+	    border-radius: 6px;
+	    line-height: 26px;
+	    color: #fff;
+	}
+
 	#add{
 		color: $grayDark;
 		text-align: right;
 		font-size: 18px;
 		cursor: pointer;
+		padding-left: 30px;
 		span{
 			background: $green;
 			border-radius: 6px;

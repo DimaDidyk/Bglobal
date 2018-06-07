@@ -26,6 +26,8 @@
 						</mat-form-field>
 					</div>
 				</div>
+
+
 			</div>
 			
 			<!-- date inputs -->
@@ -42,7 +44,7 @@
 								[ngModel]="flyFormStor.dateLanding">
 								<mat-datepicker-toggle #matTfse (click)="clickPick()"
 								matSuffix [for]="picker2"></mat-datepicker-toggle>
-								<mat-datepicker touchUi="true" #picker2 ></mat-datepicker>
+								<mat-datepicker touchUi="false" #picker2 ></mat-datepicker>
 							</mat-form-field>
 						</div>
 
@@ -56,7 +58,7 @@
 								 name="dateLanding"
 								 [ngModel]="flyFormStor.dateAppearance">
 								<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-								<mat-datepicker touchUi="true" #picker1></mat-datepicker>
+								<mat-datepicker touchUi="false" #picker1></mat-datepicker>
 							</mat-form-field>
 						</div>
 					</div>
@@ -72,7 +74,15 @@
 				</div>
 			</div>
 			
-			<!-- add new select button -->
+			<!-- remove list -->
+			<div id="remove-list" 
+			(click)="removeLastList()"
+			*ngIf="index >= 0">
+				<i class="fa fa-minus" aria-hidden="true"></i>
+			</div>
+			<!-- <pre>{{ index }}</pre> -->
+
+			<!-- add new list -->
 			<div id="add" 
 			(click)="addCountryNameInputs()" 
 			*ngIf="index < 1">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת  <span>+</span>

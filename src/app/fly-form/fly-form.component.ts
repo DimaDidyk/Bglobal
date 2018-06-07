@@ -54,9 +54,17 @@ export class FlyFormComponent implements OnInit {
 			this.index = this.index + 1;
 		    if ( this.newInputs ) {
 		  		this.CountryIdName.push( this.newInputs[this.index] );
-		  		console.log( this.newInputs );
 			}
 		}
+	}
+
+	// remove last county list
+	removeLastList() {
+		if( this.index >= 0 ){
+			this.CountryIdName.shift();
+			this.index = this.index - 1;
+		}
+		
 	}
 
 	flyFormStor:any;
@@ -79,7 +87,6 @@ export class FlyFormComponent implements OnInit {
 		let flyFormStorObject = new Object();
 		flyFormStorObject = this.flyFormStor;
 		for (let key in flyFormStorObject ) {
-			console.log( key );
 			if( key == "country2" ){
 				this.index = this.index + 1;
 				this.CountryIdName.push( this.newInputs[this.index] );
