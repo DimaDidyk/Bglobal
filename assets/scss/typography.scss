@@ -292,7 +292,9 @@ input:-webkit-autofill {
 	color: $purple;
 }
 .mat-form-field-underline{
-	display: none;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
 }
 .mat-select-panel{
     margin-right: -57px;
