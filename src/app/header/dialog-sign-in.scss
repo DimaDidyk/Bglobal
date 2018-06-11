@@ -3,6 +3,7 @@
 
 #sign-in-dialog{
 	padding: 24px 100px;
+	position: relative;
 	.mat-form-field{
 		width: 300px;
 		margin-left: auto;
@@ -12,6 +13,18 @@
 	.bg-button{
 		margin-top: 60px;
 		margin-bottom: 10px;
+	}
+	.fa-times-circle{
+		color: $white;
+		position: absolute;
+		right: 14px;
+		top: 12px;
+		font-size: 28px;
+		cursor: pointer;
+		transition: all .3s;
+	}
+	.fa-times-circle:hover{
+		transform: scale(1.1);
 	}
 }
 

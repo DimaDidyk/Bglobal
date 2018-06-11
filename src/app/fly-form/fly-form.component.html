@@ -4,30 +4,37 @@
 		<h3 (click)="getValues(countries)">אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
 		
 		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)">
-
-			<div *ngFor="let countryNameSelect of CountryIdName">
-				<div class="row">
-					<div class="col-sm-12">
-						<mat-form-field class="example-full-width">
-						    <input type="text" 
-						    placeholder="בחרו את העיד  :"
-						    name="{{ countryNameSelect['nameSalect'] }}" 
-						    [ngModel]="getObjectValue(flyFormStor, countryNameSelect['nameSalect'])"
-						    aria-label="Number" 
-						    matInput 
-						    [matAutocomplete]="auto">
-						    <mat-autocomplete #auto="matAutocomplete"><!-- [displayWith]="displayFn" -->
-						        <mat-option value="{{ country }}" 
-						    	*ngFor="let country of getNamesCountryArray() 
-						    	| searchAddress:getObjectValue(flyForm.value, countryNameSelect['nameSalect'])" >
-						    		{{ country }}
-						    	</mat-option>
-						    </mat-autocomplete>
-						</mat-form-field>
+			
+			<div class="select-wrapper">
+				<div *ngFor="let countryNameSelect of CountryIdName">
+					<div class="row">
+						<div class="col-sm-12">
+							<mat-form-field class="example-full-width">
+							    <input type="text" 
+							    placeholder="בחרו את העיד  :"
+							    name="{{ countryNameSelect['nameSalect'] }}" 
+							    [ngModel]="getObjectValue(flyFormStor, countryNameSelect['nameSalect'])"
+							    aria-label="Number" 
+							    matInput 
+							    [matAutocomplete]="auto">
+							    <mat-autocomplete #auto="matAutocomplete"><!-- [displayWith]="displayFn" -->
+							        <mat-option value="{{ country }}" 
+							    	*ngFor="let country of getNamesCountryArray() 
+							    	| searchAddress:getObjectValue(flyForm.value, countryNameSelect['nameSalect'])" >
+							    		{{ country }}
+							    	</mat-option>
+							    </mat-autocomplete>
+							</mat-form-field>
+						</div>
 					</div>
 				</div>
-
-
+				<!-- remove list -->
+				<div id="remove-list" 
+				(click)="removeLastList()"
+				*ngIf="index >= 0">
+					<i class="fa fa-minus" aria-hidden="true"></i>
+				</div>
+				<!-- <pre>{{ index }}</pre> -->
 			</div>
 			
 			<!-- date inputs -->
@@ -36,7 +43,7 @@
 					<div class="row">
 						<div class="col-sm-6 col-xs-12">
 							<mat-form-field >
-								<input matInput 
+								<input matInput required
 								[matDatepicker]="picker2"
 								[min]="flyForm.value.dateLanding"
 								placeholder="בחרו תאריך המראה  :"
@@ -50,7 +57,7 @@
 
 						<div class="col-sm-6 col-xs-12">
 							<mat-form-field>
-								<input matInput 
+								<input matInput required 
 								 [min]="minDate" 
 								 [max]="flyForm.value.dateAppearance"
 								 [matDatepicker]="picker1"
@@ -69,18 +76,12 @@
 			<div class="row inputs-date-fly-form">
 				<div class="col-sm-4 col-xs-12 button-load-inputs">
 					<button mat-button class="bg-button" 
-					[disabled]="!flyForm.valid"
 					(click)="isShow='show'" (click)="isHide='hide'" (click)="scrollAnimate(appofferswrap)">!יאללה ממריאים  </button>
 				</div>
+				<!-- [disabled]="!flyForm.valid" -->
 			</div>
 			
-			<!-- remove list -->
-			<div id="remove-list" 
-			(click)="removeLastList()"
-			*ngIf="index >= 0">
-				<i class="fa fa-minus" aria-hidden="true"></i>
-			</div>
-			<!-- <pre>{{ index }}</pre> -->
+			
 
 			<!-- add new list -->
 			<div id="add" 
@@ -93,10 +94,10 @@
 </section>
 
 <!-- <pre>{{ flyForm.value | json }}</pre> -->
-<!-- <pre>{{ getNamesCountryArray() | json }}</pre> -->
+<!-- <pre>{{ flyForm.valid | json }}</pre> -->
 
 <div [@toggleHeight]="isShow" #appofferswrap>
-	<app-offers [flyFormValue]="flyFormStor"></app-offers>
+	<app-offers [flyFormValue]="flyForm.value"></app-offers>
 </div>
 
 <div [@toggleHeight]="isHide">

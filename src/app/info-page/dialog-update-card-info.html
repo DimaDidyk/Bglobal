@@ -1,11 +1,11 @@
 <div id="dialog-update-info" class="gradient-background">
+  <!-- close -->
+  <i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i>
   
   <h1 mat-dialog-title> עדכן פרטים אישיים  </h1>
 
   <div mat-dialog-content>
-
     <form #updateCardInfoForm="ngForm" (ngSubmit)="onSubmit(updateCardInfoForm)">
-      
       <!-- name card -->
       <mat-form-field>
         <input matInput placeholder="שם בעל הכרטיס: " name="nameCard" ngModel/>

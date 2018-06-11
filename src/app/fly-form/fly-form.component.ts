@@ -108,17 +108,6 @@ export class FlyFormComponent implements OnInit {
 		this.isHide = 'hide';
 	}
 
-	// clickPick(){
-	// 	console.log( 'this' );
-	// 	let classname = document.getElementsByClassName('mat-calendar-body-today');
-	// 	let buttonClose = document.createElement('div');
-	// 	buttonClose.className = "calendar-close-control";
-	// 	buttonClose.innerHTML = 'x';
-	// 	document.getElementsByClassName('mat-calendar-body-today')[0].appendChild(buttonClose);
-	// 	console.log( document.getElementsByClassName('mat-calendar-body-today')[0] );
-	// }
-
-
 	// get arrey Names
 	getNamesCountryArray() {
 		return this.countries.map((country) => country.Name);
@@ -150,6 +139,5 @@ export class FlyFormComponent implements OnInit {
 	scrollAnimate(element) {
 		element.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
-
 
 }

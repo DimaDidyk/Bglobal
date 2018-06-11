@@ -24,7 +24,10 @@
 			float: right;
 		}
 	}
-
+	
+	.select-wrapper{
+		position: relative;
+	}
 	#remove-list{
 	    position: absolute;
 	    cursor: pointer;
@@ -35,6 +38,8 @@
 	    border-radius: 6px;
 	    line-height: 26px;
 	    color: #fff;
+	    bottom: 37px;
+    	left: 17px;
 	}
 
 	#add{
