@@ -9,7 +9,12 @@
 					
 					<div class="col-sm-12">
 						<mat-form-field>
-						    <mat-select placeholder="כרטיס סים כלשהו  " required name="SIM" ngModel>
+						    <mat-select 
+						    placeholder="כרטיס סים כלשהו  " 
+						    required 
+						    name="SIM" 
+						    tabindex="1" 
+						    ngModel>
 						    	<mat-option value="{{ sim['value'] }}" *ngFor="let sim of simcards">{{ sim['value' ]}}</mat-option>
 						    </mat-select>
 						 </mat-form-field>
@@ -22,17 +27,32 @@
 				<div class="row">
 					<div class="col-md-4">
 						<mat-form-field>
-							<input matInput placeholder="כרטיס מועדון" name="club-card" ngModel/>
+							<input matInput 
+							placeholder="כרטיס מועדון" 
+							name="club-card" 
+							tabindex="4" 
+							ngModel/>
 						</mat-form-field>
 					</div>
 					<div class="col-md-4">
 						<mat-form-field>
-							<input matInput required placeholder="נציג" name="representative" #representative ngModel/>
+							<input matInput 
+							required 
+							placeholder="נציג" 
+							name="representative" 
+							#representative 
+							tabindex="3" 
+							ngModel/>
 						</mat-form-field>
 					</div>
 					<div class="col-md-4">
 						<mat-form-field>
-							<input matInput required placeholder="סניף" name="branch" ngModel/>
+							<input matInput 
+							required
+							placeholder="סניף" 
+							name="branch" 
+							tabindex="2"
+							ngModel/>
 						</mat-form-field>
 					</div>
 				</div>

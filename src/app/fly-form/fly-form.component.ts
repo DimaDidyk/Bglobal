@@ -12,7 +12,7 @@ import { PromotionComponent } from '../promotion/promotion.component';
 import { OffersComponent } from '../offers/offers.component';
 import { toggleHeight } from '../animation';
 import { Сountries } from './countries';
-
+import { ActivatedRoute } from '@angular/router';
 import { map, startWith } from 'rxjs/operators';
 
 import { DateAdapter } from '@angular/material/core';
@@ -30,6 +30,7 @@ import { DateAdapter } from '@angular/material/core';
 export class FlyFormComponent implements OnInit {
 
 	constructor( private http: HttpClient,
+	 private route: ActivatedRoute,
 	 private adapter: DateAdapter<any>,
 	 private picker: MatDatepickerModule) {}
 
@@ -61,10 +62,9 @@ export class FlyFormComponent implements OnInit {
 	// remove last county list
 	removeLastList() {
 		if( this.index >= 0 ){
-			this.CountryIdName.shift();
+			this.CountryIdName.pop();
 			this.index = this.index - 1;
 		}
-		
 	}
 
 	flyFormStor:any;
@@ -96,8 +96,12 @@ export class FlyFormComponent implements OnInit {
 				this.CountryIdName.push( this.newInputs[this.index] );
 			}
 		}
-	}
 
+		// clear flyFormValue Storage if home page
+		if( this.route.snapshot.routeConfig.path == "" ){
+			localStorage.removeItem( 'flyFormValue' );
+		}
+	}
 
 	// animate show and hide
 	isShow = 'hide';

@@ -16,6 +16,7 @@
 							    [ngModel]="getObjectValue(flyFormStor, countryNameSelect['nameSalect'])"
 							    aria-label="Number" 
 							    matInput 
+							    required
 							    [matAutocomplete]="auto">
 							    <mat-autocomplete #auto="matAutocomplete"><!-- [displayWith]="displayFn" -->
 							        <mat-option value="{{ country }}" 
@@ -48,7 +49,7 @@
 								[min]="flyForm.value.dateLanding"
 								placeholder="בחרו תאריך המראה  :"
 								name="dateAppearance"
-								[ngModel]="flyFormStor.dateLanding">
+								[ngModel]="flyFormStor.dateAppearance">
 								<mat-datepicker-toggle #matTfse (click)="clickPick()"
 								matSuffix [for]="picker2"></mat-datepicker-toggle>
 								<mat-datepicker touchUi="false" #picker2 ></mat-datepicker>
@@ -63,7 +64,7 @@
 								 [matDatepicker]="picker1"
 								 placeholder="בחרו תאריך המראה  :"
 								 name="dateLanding"
-								 [ngModel]="flyFormStor.dateAppearance">
+								 [ngModel]="flyFormStor.dateLanding">
 								<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
 								<mat-datepicker touchUi="false" #picker1></mat-datepicker>
 							</mat-form-field>
@@ -76,12 +77,11 @@
 			<div class="row inputs-date-fly-form">
 				<div class="col-sm-4 col-xs-12 button-load-inputs">
 					<button mat-button class="bg-button" 
+					[disabled]="!flyForm.valid"
 					(click)="isShow='show'" (click)="isHide='hide'" (click)="scrollAnimate(appofferswrap)">!יאללה ממריאים  </button>
 				</div>
 				<!-- [disabled]="!flyForm.valid" -->
 			</div>
-			
-			
 
 			<!-- add new list -->
 			<div id="add" 

@@ -4,6 +4,7 @@ import { NgForm, FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateAdapter } from '@angular/material/core';
 
 import { toggleHeight } from '../animation';
 
@@ -39,11 +40,12 @@ export class SimActiveFormComponent implements OnInit {
 		}, 250)
 	}
 
-	constructor() {
-
-	}
+	constructor( 
+	 private adapter: DateAdapter<any>,
+	 private picker: MatDatepickerModule ) {}
 
 	ngOnInit() {
+		this.adapter.setLocale('fr'); //date format
 	}
 
 }
