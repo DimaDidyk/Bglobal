@@ -24,25 +24,31 @@
         ngModel>
       </mat-form-field><!-- #number card -->
       
-      <!-- month -->
-      <mat-form-field>
-        <mat-select placeholder="MM"
-        required ngModel name="month">
-          <mat-option *ngFor="let month of months" [value]="month">
-          {{ month }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field><!-- #month -->
-      
-      <!-- year -->
-      <mat-form-field>
-        <mat-select placeholder="YYYY"
-        required ngModel name="year">
-          <mat-option *ngFor="let y of year" [value]="y">
-          {{ y }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field><!-- #year -->
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- month -->
+          <mat-form-field>
+            <mat-select placeholder="MM"
+            required ngModel name="month">
+              <mat-option *ngFor="let month of months" [value]="month">
+              {{ month }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field><!-- #month -->
+        </div>
+
+        <div class="col-sm-6">
+          <!-- year -->
+          <mat-form-field>
+            <mat-select placeholder="YYYY"
+            required ngModel name="year">
+              <mat-option *ngFor="let y of year" [value]="y">
+              {{ y }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field><!-- #year -->
+        </div>
+      </div>
 
       <!-- cvv -->
       <mat-form-field class="cvv-input">

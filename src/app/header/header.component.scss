@@ -41,12 +41,14 @@ header{
 		margin-left: 16px;
 		cursor: pointer;
 		outline: none;
+		float: right;
 	}
 	
 	#sign-in{
 		display: inline-block;
 		padding-right: 20px;
 		font-family: 'Open Sans Hebrew', sans-serif;
+		float: none;
 		p{
 			color: $purple;
 		}
@@ -72,6 +74,7 @@ header{
 			display: block;
 			padding: 2px 20px;
 			margin: 0;
+			float: none;
 			&:hover{
 				background: rgba(0, 0, 0, .1);
 			}
@@ -201,6 +204,7 @@ header{
 			margin-top: 20px;
 			margin-right: 0;
 			padding: 0;
+			float: none;
 		}
 		#sign-in{
 			// display: none;
@@ -215,6 +219,7 @@ header{
 				.user-menu-item{
 					padding: 8px 0px;
 					padding-left: 20px;
+					float: none;
 				}
 			}
 			i{

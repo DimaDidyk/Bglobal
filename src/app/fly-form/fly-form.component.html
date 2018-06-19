@@ -3,7 +3,9 @@
 		<h1>לאן טסים?  </h1>
 		<h3 (click)="getValues(countries)">אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
 		
-		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)">
+		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)" novalidate>
+			<!-- <pre>{{ flyForm.valid }}</pre> -->
+			<!-- <pre>{{ flyForm.value | json }}</pre> -->
 			
 			<div class="select-wrapper">
 				<div *ngFor="let countryNameSelect of CountryIdName">
@@ -37,25 +39,12 @@
 				</div>
 				<!-- <pre>{{ index }}</pre> -->
 			</div>
-			
+
+
 			<!-- date inputs -->
 			<div class="row inputs-date-fly-form">
 				<div class="col-sm-8  col-xs-12 inputs-load-wrap">
 					<div class="row">
-						<div class="col-sm-6 col-xs-12">
-							<mat-form-field >
-								<input matInput required
-								[matDatepicker]="picker2"
-								[min]="flyForm.value.dateLanding"
-								placeholder="בחרו תאריך המראה  :"
-								name="dateAppearance"
-								[ngModel]="flyFormStor.dateAppearance">
-								<mat-datepicker-toggle #matTfse (click)="clickPick()"
-								matSuffix [for]="picker2"></mat-datepicker-toggle>
-								<mat-datepicker touchUi="false" #picker2 ></mat-datepicker>
-							</mat-form-field>
-						</div>
-
 						<div class="col-sm-6 col-xs-12">
 							<mat-form-field>
 								<input matInput required 
@@ -69,6 +58,20 @@
 								<mat-datepicker touchUi="false" #picker1></mat-datepicker>
 							</mat-form-field>
 						</div>
+
+						<div class="col-sm-6 col-xs-12">
+							<mat-form-field>
+								<input matInput required
+								[matDatepicker]="picker2"
+								[min]="flyForm.value.dateLanding"
+								placeholder="בחרו תאריך המראה  :"
+								name="dateAppearance"
+								[ngModel]="flyFormStor.dateAppearance">
+								<mat-datepicker-toggle #matTfse
+								matSuffix [for]="picker2"></mat-datepicker-toggle>
+								<mat-datepicker touchUi="false" #picker2></mat-datepicker>
+							</mat-form-field>
+						</div>
 					</div>
 				</div>
 			</div><!-- #date inputs -->
@@ -80,7 +83,6 @@
 					[disabled]="!flyForm.valid"
 					(click)="isShow='show'" (click)="isHide='hide'" (click)="scrollAnimate(appofferswrap)">!יאללה ממריאים  </button>
 				</div>
-				<!-- [disabled]="!flyForm.valid" -->
 			</div>
 
 			<!-- add new list -->

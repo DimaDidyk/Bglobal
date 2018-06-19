@@ -16,6 +16,9 @@
 
 	.inputs-date-fly-form{
 		position: relative;
+		.col-sm-6{
+			float: right;
+		}
 		.button-load-inputs{
 			position: absolute;
 			bottom: 0;
@@ -68,6 +71,9 @@
 @media only screen and (max-width: 768px) {
 	#fly-form{
 		.inputs-date-fly-form{
+			.col-sm-6{
+				float: none;
+			}
 			.button-load-inputs{
 				position: static;
 			}

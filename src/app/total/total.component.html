@@ -1,36 +1,8 @@
 <section id="total">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 input-box">
-				<h1>סה״כ לתשלום</h1>
-				<!-- <h2>יש לך קוד קופון</h2> -->
-				
-				<div class="total-price">₪ 117</div>
-				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()" >יש לי קופון  </span>
-				
-				<form #totalForm="ngForm" 
-				(ngSubmit)="onSubmit(totalForm)" 
-				class="{{showInput}}">
-					<div class="row">
-						<div class="col-xs-4">
-							<button mat-button class="bg-button bg-green-button" 
-							[disabled]="!totalForm.valid"
-							(click)="sendCoupon(totalForm.value.coupon)">לבדוק  </button>
-						</div>
-						<div class="col-xs-8">
-							<mat-form-field>
-								<input matInput placeholder="הזן קוד קופון" 
-								name="coupon" ngModel/>
-							</mat-form-field>
-						</div>
-						<div class="col-xs-12 invalid-coupon" *ngIf="errorCoupon">
-							<p>{{ errorCoupon }}</p>
-						</div>
-					</div>
-				</form>
-				
-			</div>
-			<div class="col-sm-6 selected-services">
+			
+			<div class="col-sm-6 selected-services float-right-sm">
 				<h1>שרותים שנבחרו</h1>
 				<table class="table">
 				  <tbody>
@@ -62,6 +34,34 @@
 				    
 				  </tbody>
 				</table>
+			</div>
+			<div class="col-sm-6 input-box float-right-sm">
+				<h1>סה״כ לתשלום</h1>
+				<!-- <h2>יש לך קוד קופון</h2> -->
+				
+				<div class="total-price">₪ 117</div>
+				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()" >יש לי קופון  </span>
+				
+				<form #totalForm="ngForm" 
+				(ngSubmit)="onSubmit(totalForm)" 
+				class="{{showInput}}">
+					<div class="row">
+						<div class="col-xs-4">
+							<button mat-button class="bg-button bg-green-button" 
+							[disabled]="!totalForm.valid"
+							(click)="sendCoupon(totalForm.value.coupon)">לבדוק  </button>
+						</div>
+						<div class="col-xs-8">
+							<mat-form-field>
+								<input matInput placeholder="הזן קוד קופון" 
+								name="coupon" ngModel/>
+							</mat-form-field>
+						</div>
+						<div class="col-xs-12 invalid-coupon" *ngIf="errorCoupon">
+							<p>{{ errorCoupon }}</p>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 

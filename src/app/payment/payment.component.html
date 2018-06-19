@@ -11,7 +11,7 @@
 
 				<div class="row form-inputs">
 					<!-- cvv -->
-					<div class="col-md-6">
+					<div class="col-md-6 col-sm-12 col-xs-12">
 						<mat-form-field>
 							<input matInput 
 							required
@@ -26,7 +26,7 @@
 					</div>
 					
 					<!-- year -->
-					<div class="col-md-2">
+					<div class="col-md-2 col-sm-4 col-xs-12">
 						<mat-form-field>
 							<mat-select placeholder="YYYY"
 							required ngModel name="year">
@@ -38,7 +38,7 @@
 					</div>
 					
 					<!-- month -->
-					<div class="col-md-2">
+					<div class="col-md-2 col-sm-4 col-xs-12">
 						<mat-form-field>
 							<mat-select placeholder="MM"
 							required ngModel name="month">
@@ -50,7 +50,7 @@
 					</div>
 					
 					<!-- card -->
-					<div class="col-md-2" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
+					<div class="col-md-2 col-sm-4 col-xs-12" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
 						<mat-form-field class="cvv-input">
 							<input matInput 
 							required 

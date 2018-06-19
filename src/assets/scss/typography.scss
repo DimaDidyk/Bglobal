@@ -95,6 +95,10 @@ a:hover{
 	text-decoration: none;
 }
 
+.float-right-md,
+.float-right-sm{
+	float: right;
+}
 
 //  mat-progress-bar
 .mat-progress-bar{
@@ -554,13 +558,17 @@ button:disabled{
 
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
-
+	.float-right-md{
+		float: none;
+	}
 
 }
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-	
+	.float-right-sm{
+		float: none;
+	}
 	// mat dialog
 	.cdk-overlay-pane{
 		max-width: 90% !important;

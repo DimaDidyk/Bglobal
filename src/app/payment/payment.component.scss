@@ -62,6 +62,10 @@
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
 	#payment-form{
+		.form-info{
+			margin-top: 84px;
+		}
+
 		.form-inputs{
 			padding-left: 0;
 		}
@@ -76,6 +80,9 @@
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
 	#payment-form{
+		.form-info{
+			margin-top: 235px;
+		}
 		.payment-service{
 			text-align: center;
 			margin-bottom: 20px;

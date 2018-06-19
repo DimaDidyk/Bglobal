@@ -16,12 +16,18 @@
 			display: block;
 		}
 	}
-	
+	.col-sm-4{
+		float: right;
+	}
 
 }
 
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-	
+	#details-form{
+		.col-sm-4{
+			float: none;
+		}
+	}
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Inject, Injectable, ViewChild, ElementRef } from '@angular/core';
-import { NgForm, FormControl } from '@angular/forms';
+import { NgForm, FormControl, NgModel } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -28,6 +28,7 @@ import { DateAdapter } from '@angular/material/core';
 
 @Injectable()
 export class FlyFormComponent implements OnInit {
+
 
 	constructor( private http: HttpClient,
 	 private route: ActivatedRoute,
@@ -70,7 +71,9 @@ export class FlyFormComponent implements OnInit {
 	flyFormStor:any;
 	public countries = [];
 	ngOnInit() {
-		this.adapter.setLocale('fr'); //date format
+
+		this.adapter.setLocale('he'); //date format
+		this.adapter.clampDate
 		
 		// get countries
 		this.getConfig().

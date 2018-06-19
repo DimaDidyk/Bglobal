@@ -17,6 +17,7 @@
 	}
 	img{
 		float: right;
+		max-width: 100%;
 	}
 	p{
 		text-align: center;
@@ -37,7 +38,21 @@
 	}
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	
+	#chosen-package{
+		.bg-button,
+		.bg-button.bg-green-button,
+		.bg-button.bg-orange-button,{
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+		}
+		img{
+			display: block;
+			float: none;
+			margin: 0 auto;
+		}
+	}
 }

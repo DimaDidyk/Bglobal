@@ -13,6 +13,12 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<mat-form-field>
+						<input matInput required placeholder="שם מלא" name="name" tabindex="1" 
+						ngModel />
+					</mat-form-field>
+				</div>
+				<div class="col-sm-4">
+					<mat-form-field>
 						<input matInput required placeholder="טלפון" name="tel" tabindex="3" 
 						(keypress)="numberTel_keyPress($event)"
 						ngModel />
@@ -24,12 +30,6 @@
 						required
 						[pattern]="emailPattern"
 						ngModel/>
-					</mat-form-field>
-				</div>
-				<div class="col-sm-4">
-					<mat-form-field>
-						<input matInput required placeholder="שם מלא" name="name" tabindex="1" 
-						ngModel />
 					</mat-form-field>
 				</div>
 			</div>

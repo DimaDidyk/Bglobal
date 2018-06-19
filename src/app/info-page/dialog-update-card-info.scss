@@ -4,14 +4,19 @@
 #dialog-update-info{
 	padding: 24px 40px;
 	position: relative;
+	max-width: 500px;
 	h1{
 		margin-bottom: 60px;
 	}
 	.mat-form-field{
 		width: 450px;
+		max-width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 		display: block;
+	}
+	.row{
+		max-width: 450px;
 	}
 	.bg-button{
 		margin-bottom: 30px;

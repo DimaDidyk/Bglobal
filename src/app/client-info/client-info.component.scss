@@ -29,6 +29,9 @@
 	#my-select .mat-checkbox-label{
 		color: $white !important;
 	}
+	.col-sm-6{
+		float: right;
+	}
 
 	
 }
@@ -40,6 +43,15 @@
 			position: static;
 			width: 100%;
 			text-align: right;
+		}
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	#client-info{
+		.col-sm-6{
+			float: none;
 		}
 	}
 }
