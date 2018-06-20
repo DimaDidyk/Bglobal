@@ -427,6 +427,25 @@ input:-webkit-autofill {
 	background: none;
 }
 
+
+// calendar content
+.mat-calendar-controls{
+	height: 30px;
+}
+.mat-calendar-previous-button{
+	position: absolute !important;
+	left: 0 !important;
+}
+.mat-calendar-next-button {
+	position: absolute !important;
+	left: 30px !important;
+}
+.mat-calendar-period-button {
+    position: absolute !important;
+    right: 0 !important;
+    margin-top: -5px !important;
+}
+
 //  mat acordion
 .mat-expansion-panel-spacing{
 	margin: 0;
@@ -547,7 +566,6 @@ button{
 button:disabled{
 	opacity: .5;
 }
-
 
 
 
