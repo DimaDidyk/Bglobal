@@ -45,7 +45,7 @@ export class SimActiveFormComponent implements OnInit {
 	 private picker: MatDatepickerModule ) {}
 
 	ngOnInit() {
-		this.adapter.setLocale('fr'); //date format
+		this.adapter.setLocale('he'); //date format
 	}
 
 }

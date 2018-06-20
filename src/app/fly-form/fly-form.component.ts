@@ -73,7 +73,6 @@ export class FlyFormComponent implements OnInit {
 	ngOnInit() {
 
 		this.adapter.setLocale('he'); //date format
-		this.adapter.clampDate
 		
 		// get countries
 		this.getConfig().
@@ -111,14 +110,15 @@ export class FlyFormComponent implements OnInit {
 	isHide = 'show';
 	onSubmit(flyForm: NgForm) {
 		localStorage.setItem( 'flyFormValue', JSON.stringify(flyForm.value) );
-		this.isShow = 'show';
-		this.isHide = 'hide';
 	}
 
 	// get arrey Names
 	getNamesCountryArray() {
 		return this.countries.map((country) => country.Name);
 	}
+
+	
+	// 
 
 	// get Id County by name
 	getIdCountryByName(countryName: string) {
@@ -142,9 +142,51 @@ export class FlyFormComponent implements OnInit {
 		return formObject[valueObject];
 	}
 
+	// check country select
+	errorSelect1 = true;
+	errorSelect2 = true;
+	errorSelect3 = true;
+	checkList(country, country2, country3){
+		let arrayCountries = this.countries.map((country) => country.Name);
+		if( country != undefined ){
+			for (var i = arrayCountries.length - 1; i >= 0; i--) {
+		    	if( country == arrayCountries[i] ){
+					this.errorSelect1 = false;
+		    	}
+		    }
+		}
+		if( country2 != undefined ){
+			this.errorSelect2 = true;
+			for (var i = arrayCountries.length - 1; i >= 0; i--) {
+		    	if( country2 == arrayCountries[i] ){
+					this.errorSelect2 = false;
+		    	}
+		    }
+		}else{
+			this.errorSelect2 = false;
+		}
+		if( country3 != undefined ){
+			this.errorSelect3 = true;
+			for (var i = arrayCountries.length - 1; i >= 0; i--) {
+		    	if( country3 == arrayCountries[i] ){
+					this.errorSelect3 = false;
+		    	}
+		    }
+		}else{
+			this.errorSelect3 = false;
+		}
+	}
+
 	// scroll animate
-	scrollAnimate(element) {
-		element.scrollIntoView({ behavior: "smooth", block: "start" });
+	scrollAnimate(element, value) {
+		let arrayCountries = this.countries.map((country) => country.Name);
+		// console.log( value );
+	    if ( this.errorSelect1 == false || this.errorSelect2 == false || this.errorSelect3 == false ) {
+	    	console.log( 'scrollAnimate' );
+			this.isShow = 'show';
+			this.isHide = 'hide';
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+	    }
 	}
 
 }

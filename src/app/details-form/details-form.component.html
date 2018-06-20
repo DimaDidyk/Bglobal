@@ -13,20 +13,20 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<mat-form-field>
-						<input matInput required placeholder="שם מלא" name="name" tabindex="1" 
+						<input matInput required placeholder="שם מלא" name="name" tabindex="11" 
 						ngModel />
 					</mat-form-field>
 				</div>
 				<div class="col-sm-4">
 					<mat-form-field>
-						<input matInput required placeholder="טלפון" name="tel" tabindex="3" 
+						<input matInput required placeholder="טלפון" name="tel" tabindex="12" 
 						(keypress)="numberTel_keyPress($event)"
 						ngModel />
 					</mat-form-field>
 				</div>
 				<div class="col-sm-4">
 					<mat-form-field>
-						<input matInput name="email" placeholder="דוא״ל" tabindex="2" 
+						<input matInput name="email" placeholder="דוא״ל" tabindex="13" 
 						required
 						[pattern]="emailPattern"
 						ngModel/>
@@ -36,7 +36,7 @@
 
 			<div class="row">
 				<div class="col-sm-12">
-					<button mat-button class="bg-button" 
+					<button mat-button class="bg-button" tabindex="15"
 					[disabled]="!detailsForm.valid">המשך</button>
 				</div>
 			</div>

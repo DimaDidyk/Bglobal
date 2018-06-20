@@ -3,9 +3,8 @@
 		<h1>לאן טסים?  </h1>
 		<h3 (click)="getValues(countries)">אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
 		
-		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)" novalidate>
-			<!-- <pre>{{ flyForm.valid }}</pre> -->
-			<!-- <pre>{{ flyForm.value | json }}</pre> -->
+		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)" novalidate 
+		(mouseover)="checkList(flyForm.value.country, flyForm.value.country2, flyForm.value.country3)">
 			
 			<div class="select-wrapper">
 				<div *ngFor="let countryNameSelect of CountryIdName">
@@ -20,7 +19,7 @@
 							    matInput 
 							    required
 							    [matAutocomplete]="auto">
-							    <mat-autocomplete #auto="matAutocomplete"><!-- [displayWith]="displayFn" -->
+							    <mat-autocomplete #auto="matAutocomplete" ><!-- [displayWith]="displayFn" -->
 							        <mat-option value="{{ country }}" 
 							    	*ngFor="let country of getNamesCountryArray() 
 							    	| searchAddress:getObjectValue(flyForm.value, countryNameSelect['nameSalect'])" >
@@ -80,23 +79,20 @@
 			<div class="row inputs-date-fly-form">
 				<div class="col-sm-4 col-xs-12 button-load-inputs">
 					<button mat-button class="bg-button" 
-					[disabled]="!flyForm.valid"
-					(click)="isShow='show'" (click)="isHide='hide'" (click)="scrollAnimate(appofferswrap)">!יאללה ממריאים  </button>
+					[disabled]="!flyForm.valid || errorSelect1 || errorSelect2 || errorSelect3"
+					(click)="scrollAnimate(appofferswrap)">!יאללה ממריאים  </button>
 				</div>
 			</div>
 
 			<!-- add new list -->
 			<div id="add" 
 			(click)="addCountryNameInputs()" 
-			*ngIf="index < 1">נוסעים ליות מיעד אחד?  הוסף פרטי טיסה נוספת  <span>+</span>
+			*ngIf="index < 1">הוסף יעד נוספים  <span>+</span>
 			</div>
 
 		</form>
 	</div>
 </section>
-
-<!-- <pre>{{ flyForm.value | json }}</pre> -->
-<!-- <pre>{{ flyForm.valid | json }}</pre> -->
 
 <div [@toggleHeight]="isShow" #appofferswrap>
 	<app-offers [flyFormValue]="flyForm.value"></app-offers>

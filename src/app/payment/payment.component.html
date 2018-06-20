@@ -7,7 +7,8 @@
 		<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
 
 			<div class="row">
-				<span class="form-info" (click)="tooltipCVV.show()">?</span>
+				<span class="form-info" (mouseover)="tooltipCVV.show()">?</span>
+				<!-- <span class="form-info" (click)="tooltipCVV.show()">?</span> -->
 
 				<div class="row form-inputs">
 					<!-- cvv -->
@@ -26,7 +27,7 @@
 					</div>
 					
 					<!-- year -->
-					<div class="col-md-2 col-sm-4 col-xs-12">
+					<div class="col-md-2 col-sm-4 col-xs-6">
 						<mat-form-field>
 							<mat-select placeholder="YYYY"
 							required ngModel name="year">
@@ -38,7 +39,7 @@
 					</div>
 					
 					<!-- month -->
-					<div class="col-md-2 col-sm-4 col-xs-12">
+					<div class="col-md-2 col-sm-4 col-xs-6">
 						<mat-form-field>
 							<mat-select placeholder="MM"
 							required ngModel name="month">
