@@ -13,7 +13,6 @@
 		color: $grayDark;
 		margin-bottom: 54px;
 	}
-	
 	.form-info{
 		display: inline-block;
 		color: $white;
@@ -36,7 +35,6 @@
 	.form-inputs>div{
 		float: right;
 	}
-
 	.payment-service{
 		img{
 			display: inline-block;
@@ -46,18 +44,12 @@
 			max-height: 36px;
 		}
 	}
-
-
 	.bg-button{
 		max-width: 500px;
 		display: block;
 		margin: 50px auto;
 	}
-
-
-
 }
-
 
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
@@ -81,7 +73,7 @@
 @media only screen and (max-width: 768px) {
 	#payment-form{
 		.form-info{
-			margin-top: 145px;
+			margin-top: 160px;
 		}
 		.payment-service{
 			text-align: center;

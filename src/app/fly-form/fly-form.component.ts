@@ -117,9 +117,6 @@ export class FlyFormComponent implements OnInit {
 		return this.countries.map((country) => country.Name);
 	}
 
-	
-	// 
-
 	// get Id County by name
 	getIdCountryByName(countryName: string) {
 		let CurrentArray = this.countries.filter( countries => countries.Name === countryName );

@@ -36,6 +36,7 @@ export class DeliveryComponent implements OnInit {
 		}, 250)
 	}
 
+	checked = true;
 	test:string = 'test';
 	addresses = [
 		'demo',

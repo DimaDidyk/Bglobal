@@ -62,7 +62,7 @@
 							<mat-form-field>
 								<input matInput required
 								[matDatepicker]="picker2"
-								[min]="flyForm.value.dateLanding"
+								[min]="flyForm.value.dateLanding || minDate"
 								placeholder="בחרו תאריך המראה  :"
 								name="dateAppearance"
 								[ngModel]="flyFormStor.dateAppearance">

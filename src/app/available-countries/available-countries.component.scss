@@ -4,6 +4,8 @@
 #available-countries{
 	padding-top: 50px;
 	padding-bottom: 40px;
+    max-width: 100%;
+    overflow: hidden;
 	h2{
 		color: $purple;
 		font-weight: 600;
@@ -60,5 +62,31 @@
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-	
+	#available-countries{
+		padding-top: 120px;
+		table{
+			tr{
+				td:nth-child(1){
+					position: static;
+				}
+				td:nth-child(4){
+					position: relative;
+				}
+				td.mobile-td p{
+					position: absolute;
+					width: 100%;
+					text-align: left;
+				}
+				td.td-1 p{
+				    top: -50px;
+				    left: 10px;
+				}
+				td.td-2 p{
+    				top: -25px;
+				}
+				td.td-3 p{
+				}
+			}
+		}
+	}
 }

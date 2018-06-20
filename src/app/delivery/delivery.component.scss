@@ -25,11 +25,18 @@
 	.bg-button{
 		margin-top: 20px;
 	}
-	.checked-wrapper{
-		color: $white;
+	
+	.checked-wrapper1{
+		font-size: 18px;
+		margin-top: 14px;
+	    text-align: right;
+	}
+	.checked-wrapper2{
+		// color: $white;
 		position: absolute;
+		font-size: 18px;
 		z-index: 1;
-    	margin-top: 30px;
+	    bottom: 0;
 	    width: max-content;
 		right: 0;
 		.mat-checkbox-label{

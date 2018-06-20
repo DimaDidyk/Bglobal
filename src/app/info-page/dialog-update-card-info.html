@@ -65,13 +65,13 @@
 
       <!-- buttons -->
       <div class="row">
-        <div class="col-sm-6">
-          <button mat-button class="bg-button bg-red-button"
-          (click)="closeDialog()"> ביטול   </button>
-        </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 float-right-sm">
           <button mat-button class="bg-button bg-green-button"
           [disabled]="!updateCardInfoForm.valid"> עדכן פרטים   </button>
+        </div>
+        <div class="col-sm-6 float-right-sm">
+          <button mat-button class="bg-button bg-red-button"
+          (click)="closeDialog()"> ביטול   </button>
         </div>
       </div><!-- #buttons -->
       
