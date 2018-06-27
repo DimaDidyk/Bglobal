@@ -24,13 +24,13 @@
     	font-size: 22px;
     	position: absolute;
     	left: 15px;
-    	margin-top: 6px;
+    	margin-top: 10px;
     	cursor: pointer;
-    	z-index: 1;
+    	z-index: 10;
 	}
 	.form-inputs{
 		margin-bottom: 12px;
-		padding-left: 60px;
+		/* padding-left: 60px; */
 	}
 	.form-inputs>div{
 		float: right;
@@ -49,18 +49,15 @@
 		display: block;
 		margin: 50px auto;
 	}
+	.cvv-input{
+		padding-left: 40px;
+		margin-bottom: 26px;
+	}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
 	#payment-form{
-		.form-info{
-			margin-top: 84px;
-		}
-
-		.form-inputs{
-			padding-left: 0;
-		}
 		.cvv-input{
 			padding-left: 40px;
 			margin-bottom: 26px;
@@ -72,12 +69,16 @@
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
 	#payment-form{
-		.form-info{
-			margin-top: 160px;
-		}
 		.payment-service{
 			text-align: center;
 			margin-bottom: 20px;
+			img{
+				display: inline-block;
+				padding-right: 4px;
+				width: 44px;
+				max-height: 36px;
+				margin-top: -124px;
+			}
 		}
 		.cvv-input{
 			padding-left: 40px;

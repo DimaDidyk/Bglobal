@@ -13,7 +13,10 @@
 		color: $grayDark;
 		margin-bottom: 30px;
 	}
-
+	
+	.non-display{
+		display: none;
+	}
 	.inputs-date-fly-form{
 		position: relative;
 		.col-sm-6{

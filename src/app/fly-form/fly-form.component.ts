@@ -72,6 +72,15 @@ export class FlyFormComponent implements OnInit {
 	public countries = [];
 	ngOnInit() {
 
+		// validate on page package
+		if( this.route.snapshot.routeConfig.path == "sim-order/:package" ){
+			// check country select
+			this.errorSelect1 = false;
+			this.errorSelect2 = false;
+			this.errorSelect3 = false;
+		}
+		
+
 		this.adapter.setLocale('he'); //date format
 		
 		// get countries
@@ -131,7 +140,9 @@ export class FlyFormComponent implements OnInit {
 	// min date validation
 	minDate = new Date(); //today
 	daydiff(first, second) {
-	    return Math.round((second-first)/(1000*60*60*24));
+		first = new Date(first);
+		second = new Date(second);
+	    return Math.round((first-second)/(1000*60*60*24));
 	}
 
 	// geyObject
@@ -146,11 +157,14 @@ export class FlyFormComponent implements OnInit {
 	checkList(country, country2, country3){
 		let arrayCountries = this.countries.map((country) => country.Name);
 		if( country != undefined ){
+			this.errorSelect1 = true;
 			for (var i = arrayCountries.length - 1; i >= 0; i--) {
 		    	if( country == arrayCountries[i] ){
 					this.errorSelect1 = false;
 		    	}
 		    }
+		}else{
+			this.errorSelect1 = false;
 		}
 		if( country2 != undefined ){
 			this.errorSelect2 = true;
@@ -179,7 +193,6 @@ export class FlyFormComponent implements OnInit {
 		let arrayCountries = this.countries.map((country) => country.Name);
 		// console.log( value );
 	    if ( this.errorSelect1 == false || this.errorSelect2 == false || this.errorSelect3 == false ) {
-	    	console.log( 'scrollAnimate' );
 			this.isShow = 'show';
 			this.isHide = 'hide';
 			element.scrollIntoView({ behavior: "smooth", block: "start" });

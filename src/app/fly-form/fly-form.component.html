@@ -1,10 +1,11 @@
-<section id="fly-form" class="gray-background" #FlyForm>
+<section id="fly-form" class="gray-background" 
+(mouseover)="checkList(flyForm.value.country, flyForm.value.country2, flyForm.value.country3)"
+#FlyForm>
 	<div class="container">
 		<h1>לאן טסים?  </h1>
-		<h3 (click)="getValues(countries)">אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
+		<h3>אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
 		
-		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)" novalidate 
-		(mouseover)="checkList(flyForm.value.country, flyForm.value.country2, flyForm.value.country3)">
+		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)">
 			
 			<div class="select-wrapper">
 				<div *ngFor="let countryNameSelect of CountryIdName">
@@ -71,6 +72,15 @@
 								<mat-datepicker touchUi="false" #picker2></mat-datepicker>
 							</mat-form-field>
 						</div>
+						
+						<div class="non-display">
+							<mat-form-field>
+								<input type="text" matInput 
+								name="countDays"
+								[ngModel]="daydiff( flyForm.value.dateAppearance, flyForm.value.dateLanding)">
+							</mat-form-field>
+						</div>
+
 					</div>
 				</div>
 			</div><!-- #date inputs -->
@@ -98,6 +108,6 @@
 	<app-offers [flyFormValue]="flyForm.value"></app-offers>
 </div>
 
-<div [@toggleHeight]="isHide">
+<div [@toggleHeight]="isHide" *ngIf="route.snapshot.routeConfig.path == ''">
 	<app-promotion [FlyForm]="FlyForm"></app-promotion>
 </div>

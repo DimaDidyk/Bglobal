@@ -11,7 +11,7 @@
 				      <td>unlimited : חבילת גלישה</td>
 				    </tr>
 				    <tr>
-				      <td><b>10 ימים</b></td>
+				      <td><b>{{ flyFormStor.countDays }} ימים</b></td>
 				      <td>סה”כ ימים </td>
 				    </tr>
 				    <tr>
@@ -26,10 +26,9 @@
 				      <td><b>₪ 29  </b></td>
 				      <td>עלות כרטיס ומשלוח (חד פעמי)</td> 
 				    </tr>
-
-				    <tr *ngIf="isActiveCoupon">
+				    <tr *ngIf="isActiveCoupon && errorCoupon == null">
 				      <td><b>- ₪10  </b></td>
-				      <td>{{ totalForm.value.coupon }}</td> 
+				      <td>{{ couponName }}</td> 
 				    </tr>
 				    
 				  </tbody>
@@ -40,7 +39,7 @@
 				<!-- <h2>יש לך קוד קופון</h2> -->
 				
 				<div class="total-price">₪ 117</div>
-				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()" >יש לי קופון  </span>
+				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()">יש לי קופון  </span>
 				
 				<form #totalForm="ngForm" 
 				(ngSubmit)="onSubmit(totalForm)" 

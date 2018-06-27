@@ -7,22 +7,45 @@
 				
 
 				<mat-radio-group name="choice" ngModel required>
-
-					<div class="col-sm-2 float-right-sm checked-wrapper1">
+					<div class="col-sm-12 checked-wrapper1">
 						<mat-radio-button [checked]="deliveryForm.value.choice == 'checked1'"
-						labelPosition="before"
-						[value]="false">text</mat-radio-button>
+						labelPosition="before" 
+
+						matTooltip="{{checked1TooltipContent}}" 
+						matTooltipPosition="above" 
+						tooltip="matTooltip" 
+						matTooltipShowDelay="100"
+						#checked1Tooltip="matTooltip"
+						(mouseover)="checked1Tooltip.hide()"
+						[value]="false"> 
+							some text
+						</mat-radio-button>
+						<span class="form-info" 
+						(click)="checked1Tooltip.show()"
+						(mouseover)="checked1Tooltip.show()"
+						>?</span>
 					</div>
 
 					<div class="col-sm-12 checked-wrapper2">
 						<mat-radio-button  
+						matTooltip="{{checked2TooltipContent}}" 
+						matTooltipPosition="above" 
+						tooltip="matTooltip" 
+						matTooltipShowDelay="100"
+						#checked2Tooltip="matTooltip"
+						(mouseover)="checked2Tooltip.hide()"
 						labelPosition="before" 
-						[value]="true">איסוף עצמי- הפנינה 2 רעננה  </mat-radio-button>
+						[value]="true">א  יסוף עצמי- הפנינה 2 רעננה  
+						</mat-radio-button>
+						<span class="form-info" 
+						(click)="checked2Tooltip.show()"
+						(mouseover)="checked2Tooltip.show()"
+						>?</span>
 					</div>
 				</mat-radio-group>
 
-				<div class="col-sm-10 float-right-sm">
-					<mat-form-field>
+				<div class="col-sm-12 float-right-sm">
+					<mat-form-field *ngIf="!deliveryForm.value.choice">
 						<input matInput placeholder="כתובת מגורים   :" 
 						[disabled]="deliveryForm.value.choice == true"
 						name="search" ngModel />

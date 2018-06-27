@@ -18,11 +18,18 @@ export class TotalComponent implements OnInit {
 	@Input() additionallyFromData: string;
 	@Input() deliveryFormData: string;
 
-	// show animation
-	onSubmit(totalForm: NgForm) {
-	}
-	
+
+	// parse storage data (form)
+	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
+
+	couponName = '';
 	showInput = 'hide';
+	onSubmit(totalForm: NgForm) {
+		this.couponName = totalForm.value.coupon;
+		totalForm.value.coupon = '';
+		// this.showInput = 'hide';
+	}
+	// show Input Coupon
 	showInputCoupon(){
 		this.showInput = "show";
 	}

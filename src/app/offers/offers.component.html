@@ -1,4 +1,5 @@
 <section id="offers">
+	<!-- (mouseup)="swiperCheckArrow()" -->
 	<div class="container">
 		<!-- <pre>{{ flyFormValue | json }}</pre> -->
 		<h1>טוסים ל
@@ -14,7 +15,7 @@
 		
 		<div class="flex-center-bertical">
 			<!-- slider -->
-			<swiper [config]="config" [(index)]="index">
+			<swiper [config]="config" [(index)]="index" (indexChange)="onIndexChange($event)">
 				<div class="swiper-slide" [ngClass]="slide['color']"
 				(click)="routPackage(slide)"
 				*ngFor="let slide of sliderItems">
@@ -39,12 +40,12 @@
  
 
 			<div class="custome-navigate-slider">
-				<div class="back nav-arrow" (click)="prevSlide(600)" 
+				<div class="back nav-arrow" 
 					*ngIf="hidePrev">
 					<i class="material-icons">keyboard_arrow_left</i>
 				</div>
 
-				<div class="next nav-arrow" (click)="nextSlide(600)" 
+				<div class="next nav-arrow"
 					*ngIf="hideNext">
 					<i class="material-icons">keyboard_arrow_right</i>
 				</div>

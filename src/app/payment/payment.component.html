@@ -7,8 +7,7 @@
 		<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
 
 			<div class="row">
-				<span class="form-info" (mouseover)="tooltipCVV.show()">?</span>
-				<!-- <span class="form-info" (click)="tooltipCVV.show()">?</span> -->
+				
 
 				<div class="row form-inputs">
 					<!-- cvv -->
@@ -51,9 +50,20 @@
 					</div>
 					
 					<!-- card -->
-					<div class="col-md-2 col-sm-4 col-xs-12" matTooltip="{{toptilCVV}}" matTooltipPosition="above" tooltip="matTooltip" matTooltipShowDelay="100" #tooltipCVV="matTooltip" (mouseover)="tooltipCVV.hide()">
+					<div class="col-md-2 col-sm-4 col-xs-6" 
+					matTooltip="{{tooltipCVVcontent}}" 
+					matTooltipPosition="above" 
+					tooltip="matTooltip" 
+					matTooltipShowDelay="100"
+					#tooltipCVV="matTooltip"
+					>
+						<span class="form-info" 
+						(click)="tooltipCVV.show()"
+						(mouseover)="tooltipCVV.show()">?</span>
 						<mat-form-field class="cvv-input">
 							<input matInput 
+							(mouseover)="tooltipCVV.hide()"
+							(click)="tooltipCVV.hide()"
 							required 
 							placeholder="CVV"
 							minlength="3"
@@ -69,7 +79,7 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-4 col-xs-6">
 					<div class="payment-service">
 						<img src="./assets/img/1-payment.png" alt="payment">
 						<img src="./assets/img/2-payment.png" alt="payment">

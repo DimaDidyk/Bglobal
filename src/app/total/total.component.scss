@@ -66,8 +66,9 @@
 				border: none;
 				padding: 9px 0px 0px 0px;
 				font-weight: normal;
-				&:nth-child(2n){
-					text-align: right;
+				text-align: right;
+				&:nth-child(1){
+					max-width: max-content;
 				}
 			}
 		}

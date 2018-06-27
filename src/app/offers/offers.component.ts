@@ -34,6 +34,7 @@ export class OffersComponent implements OnInit {
 		breakpoints:{
 			768: {
 			  slidesPerView: 1,
+			  initialSlide: 1,
 			},
 			992: {
 			  slidesPerView: 2,
@@ -41,20 +42,14 @@ export class OffersComponent implements OnInit {
 		},
 	};
 
-
 	// show and hide arrows slider
 	hideNext = true;
 	hidePrev = false;
-	public nextSlide(speed: number): void{
-		this.componentRef.directiveRef.nextSlide(speed);
+	public onIndexChange(index: number): void {
 		this.hideNext = !this.componentRef.directiveRef.swiper().isEnd;
 		this.hidePrev = !this.componentRef.directiveRef.swiper().isBeginning;
 	}
-	public prevSlide(speed: number): void{
-		this.componentRef.directiveRef.prevSlide(speed);
-		this.hideNext = !this.componentRef.directiveRef.swiper().isEnd;
-		this.hidePrev = !this.componentRef.directiveRef.swiper().isBeginning;
-	}
+	
 
 	// slider content
 	// colors: blue-dark, orange, blue, yellow-green, pink, purple
@@ -182,8 +177,6 @@ export class OffersComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// console.log( this.route.queryParams );
-		console.log(  );
 	}
 
 }

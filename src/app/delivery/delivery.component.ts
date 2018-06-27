@@ -4,6 +4,7 @@ import { NgForm, FormControl, FormsModule  } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { SearchAddressPipe } from '../search-address.pipe';
 
@@ -29,6 +30,10 @@ export class DeliveryComponent implements OnInit {
 		this.isShow = 'show';
 	}
 	
+	checked1TooltipContent = "checked1TooltipContent is an anti-fraud security feature to help verify that you are in possession of your credit card. On most credit cards (including Visa and Mastercard), the three-digit CVV number is printed on the signature panel on the back of the card immediately after the card's account number. On American Express credit cards, the four-digit CVV number is printed on the front of the card above the card’s account number.";
+	checked2TooltipContent = "checked2TooltipContent is an anti-fraud security feature to help verify that you are in possession of your credit card. On most credit cards (including Visa and Mastercard), the three-digit CVV number is printed on the signature panel on the back of the card immediately after the card's account number. On American Express credit cards, the four-digit CVV number is printed on the front of the card above the card’s account number.";
+
+
 	// scroll animate
 	scrollAnimate(element) {
 		setTimeout(function(){

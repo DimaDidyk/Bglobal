@@ -23,20 +23,22 @@
 		user-select: none;
 	}
 	.bg-button{
-		margin-top: 20px;
+		margin-top: 40px;
 	}
 	
 	.checked-wrapper1{
 		font-size: 18px;
 		margin-top: 14px;
+		float: right;
+		margin-bottom: 14px;
 	    text-align: right;
+        width: max-content;
 	}
 	.checked-wrapper2{
-		// color: $white;
 		position: absolute;
 		font-size: 18px;
 		z-index: 1;
-	    bottom: 0;
+	    bottom: 60px;
 	    width: max-content;
 		right: 0;
 		.mat-checkbox-label{
@@ -44,6 +46,24 @@
 			font-size: 18px;
 			line-height: 2.413;
 		}
+	}
+	.form-info{
+		display: inline-block;
+		color: $white;
+		background: $green;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		text-align: center;
+    	font-size: 22px;
+    	left: 15px;
+    	margin-top: 6px;
+    	cursor: pointer;
+		position: relative;
+		z-index: 10;
+		float: left;
+		margin-right: 26px;
+		margin-top: -3px;
 	}
 	
 }

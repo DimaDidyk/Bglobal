@@ -21,13 +21,14 @@
 					border: none;
 					font-weight: 600;
 					position: relative;
-					height: 30px;
 					p{
-					    position: absolute;
+					    // position: absolute;
 						height: 28px;
 						direction: rtl;
 						left: 0;
 						width: 100%;
+     					height: min-content;
+     					min-height: 30px;
 					}
 				}
 			}
@@ -66,25 +67,15 @@
 		padding-top: 120px;
 		table{
 			tr{
-				td:nth-child(1){
-					position: static;
+				td{
+				    max-width: 50px;
+     				p{
+					    position: static;
+					}
 				}
 				td:nth-child(4){
 					position: relative;
-				}
-				td.mobile-td p{
-					position: absolute;
-					width: 100%;
-					text-align: left;
-				}
-				td.td-1 p{
-				    top: -50px;
-				    left: 10px;
-				}
-				td.td-2 p{
-    				top: -25px;
-				}
-				td.td-3 p{
+					max-width: 50px;
 				}
 			}
 		}
