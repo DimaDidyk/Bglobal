@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { NgForm, FormsModule, FormControl, Validators, PatternValidator } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,6 +21,11 @@ export class DetailsFormComponent implements OnInit {
 	      // invalid character, prevent input
 	      event.preventDefault();
 	    }
+	}
+
+	@ViewChild('telInput') telInput: ElementRef;
+	tabEvent(event){
+		this.telInput.nativeElement.focus();
 	}
 
 	onSubmit( detailsForm: NgForm ) {

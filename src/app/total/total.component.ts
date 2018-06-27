@@ -38,17 +38,13 @@ export class TotalComponent implements OnInit {
 	errorCoupon:string = null;
 	isActiveCoupon:boolean = false;
 	sendCoupon(coupon:string){
-		console.log( coupon );
 		if( this.activeCoupon === coupon){
 			this.isActiveCoupon = true;
 			this.errorCoupon = null;
 
 		}else{
 			this.errorCoupon = "invalid coupon";
-
 		}
-		console.log( this.errorCoupon );
-
 	}
 
 	// scroll animate

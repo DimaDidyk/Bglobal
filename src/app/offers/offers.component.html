@@ -40,12 +40,12 @@
  
 
 			<div class="custome-navigate-slider">
-				<div class="back nav-arrow" 
+				<div class="back nav-arrow" (click)="prevSlide(600)"
 					*ngIf="hidePrev">
 					<i class="material-icons">keyboard_arrow_left</i>
 				</div>
 
-				<div class="next nav-arrow"
+				<div class="next nav-arrow" (click)="nextSlide(600)"
 					*ngIf="hideNext">
 					<i class="material-icons">keyboard_arrow_right</i>
 				</div>

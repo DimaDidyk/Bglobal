@@ -49,7 +49,13 @@ export class OffersComponent implements OnInit {
 		this.hideNext = !this.componentRef.directiveRef.swiper().isEnd;
 		this.hidePrev = !this.componentRef.directiveRef.swiper().isBeginning;
 	}
-	
+	// show and hide arrows slider
+	public nextSlide(speed: number): void{
+		this.componentRef.directiveRef.nextSlide(speed);
+	}
+	public prevSlide(speed: number): void{
+		this.componentRef.directiveRef.prevSlide(speed);
+	}
 
 	// slider content
 	// colors: blue-dark, orange, blue, yellow-green, pink, purple
