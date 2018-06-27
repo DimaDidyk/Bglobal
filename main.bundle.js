@@ -2415,7 +2415,7 @@ var ReturningChosenPackageComponent = /** @class */ (function () {
 /***/ "./src/app/returning-customer-page/returning-customer-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner></app-banner>\n\n<app-returning-chosen-package></app-returning-chosen-package>\n\n<router-outlet></router-outlet>\n\n<app-delivery></app-delivery>\n<app-total></app-total>\n<app-payment></app-payment>"
+module.exports = "<app-banner></app-banner>\n\n<app-returning-chosen-package></app-returning-chosen-package>\n\n<router-outlet></router-outlet>\n\n<!-- <app-delivery></app-delivery> -->\n<!-- <app-total></app-total> -->\n<!-- <app-payment></app-payment> -->"
 
 /***/ }),
 
