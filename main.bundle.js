@@ -262,8 +262,6 @@ module.exports = ""
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__("./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -271,19 +269,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'app';
+        this.title = "app";
     }
     AppComponent.prototype.ngOnInit = function () {
-        __WEBPACK_IMPORTED_MODULE_1_jquery__(document).ready(function () {
-            // console.log( 'test' 
-        });
+        //$(document).ready(function () {
+        //  // console.log( 'test'
+        //  //this.httpService.GetCountries();
+        //});
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-root',
+            selector: "app-root",
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.scss")]
         })
@@ -300,47 +298,48 @@ var AppComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_swiper_wrapper__ = __webpack_require__("./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_mask__ = __webpack_require__("./node_modules/ngx-mask/fesm5/ngx-mask.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__home_slider_home_slider_component__ = __webpack_require__("./src/app/home-slider/home-slider.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__fly_form_fly_form_component__ = __webpack_require__("./src/app/fly-form/fly-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__banner_banner_component__ = __webpack_require__("./src/app/banner/banner.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__payment_payment_component__ = __webpack_require__("./src/app/payment/payment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__total_total_component__ = __webpack_require__("./src/app/total/total.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__additionally_additionally_component__ = __webpack_require__("./src/app/additionally/additionally.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_sim_form_sim_component__ = __webpack_require__("./src/app/form-sim/form-sim.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__client_info_client_info_component__ = __webpack_require__("./src/app/client-info/client-info.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__sim_active_form_sim_active_form_component__ = __webpack_require__("./src/app/sim-active-form/sim-active-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__homa_page_homa_page_component__ = __webpack_require__("./src/app/homa-page/homa-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__sim_order_page_sim_order_page_component__ = __webpack_require__("./src/app/sim-order-page/sim-order-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__promotion_promotion_component__ = __webpack_require__("./src/app/promotion/promotion.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__details_form_details_form_component__ = __webpack_require__("./src/app/details-form/details-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__offers_offers_component__ = __webpack_require__("./src/app/offers/offers.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__user_page_sim_user_page_sim_component__ = __webpack_require__("./src/app/user-page-sim/user-page-sim.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__chosen_package_chosen_package_component__ = __webpack_require__("./src/app/chosen-package/chosen-package.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__returning_customer_page_returning_customer_page_component__ = __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__returning_chosen_package_returning_chosen_package_component__ = __webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__delivery_delivery_component__ = __webpack_require__("./src/app/delivery/delivery.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__search_address_pipe__ = __webpack_require__("./src/app/search-address.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__about_us_page_about_us_page_component__ = __webpack_require__("./src/app/about-us-page/about-us-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__faq_page_faq_page_component__ = __webpack_require__("./src/app/faq-page/faq-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__contact_us_page_contact_us_page_component__ = __webpack_require__("./src/app/contact-us-page/contact-us-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__thank_you_page_thank_you_page_component__ = __webpack_require__("./src/app/thank-you-page/thank-you-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__available_countries_available_countries_component__ = __webpack_require__("./src/app/available-countries/available-countries.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__info_page_info_page_component__ = __webpack_require__("./src/app/info-page/info-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__user_page_user_page_component__ = __webpack_require__("./src/app/user-page/user-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__personal_details_personal_details_component__ = __webpack_require__("./src/app/personal-details/personal-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__usage_log_usage_log_component__ = __webpack_require__("./src/app/usage-log/usage-log.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_mask__ = __webpack_require__("./node_modules/ngx-mask/fesm5/ngx-mask.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ngx_swiper_wrapper__ = __webpack_require__("./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__about_us_page_about_us_page_component__ = __webpack_require__("./src/app/about-us-page/about-us-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__additionally_additionally_component__ = __webpack_require__("./src/app/additionally/additionally.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__available_countries_available_countries_component__ = __webpack_require__("./src/app/available-countries/available-countries.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__banner_banner_component__ = __webpack_require__("./src/app/banner/banner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__chosen_package_chosen_package_component__ = __webpack_require__("./src/app/chosen-package/chosen-package.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__client_info_client_info_component__ = __webpack_require__("./src/app/client-info/client-info.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__contact_us_page_contact_us_page_component__ = __webpack_require__("./src/app/contact-us-page/contact-us-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__delivery_delivery_component__ = __webpack_require__("./src/app/delivery/delivery.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__details_form_details_form_component__ = __webpack_require__("./src/app/details-form/details-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__faq_page_faq_page_component__ = __webpack_require__("./src/app/faq-page/faq-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__fly_form_fly_form_component__ = __webpack_require__("./src/app/fly-form/fly-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__form_sim_form_sim_component__ = __webpack_require__("./src/app/form-sim/form-sim.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__homa_page_homa_page_component__ = __webpack_require__("./src/app/homa-page/homa-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__home_slider_home_slider_component__ = __webpack_require__("./src/app/home-slider/home-slider.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__info_page_info_page_component__ = __webpack_require__("./src/app/info-page/info-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__offers_offers_component__ = __webpack_require__("./src/app/offers/offers.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__payment_payment_component__ = __webpack_require__("./src/app/payment/payment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__personal_details_personal_details_component__ = __webpack_require__("./src/app/personal-details/personal-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__promotion_promotion_component__ = __webpack_require__("./src/app/promotion/promotion.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__returning_chosen_package_returning_chosen_package_component__ = __webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__returning_customer_page_returning_customer_page_component__ = __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__search_address_pipe__ = __webpack_require__("./src/app/search-address.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__services_http_service__ = __webpack_require__("./src/app/services/http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__sim_active_form_sim_active_form_component__ = __webpack_require__("./src/app/sim-active-form/sim-active-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__sim_order_page_sim_order_page_component__ = __webpack_require__("./src/app/sim-order-page/sim-order-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__thank_you_page_thank_you_page_component__ = __webpack_require__("./src/app/thank-you-page/thank-you-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__total_total_component__ = __webpack_require__("./src/app/total/total.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__usage_log_usage_log_component__ = __webpack_require__("./src/app/usage-log/usage-log.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__user_page_sim_user_page_sim_component__ = __webpack_require__("./src/app/user-page-sim/user-page-sim.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__user_page_user_page_component__ = __webpack_require__("./src/app/user-page/user-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -349,22 +348,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-// anumation
 
 // materual
+
+
+// anumation
+
+// Mask input
+
+// ngx-swiper-wrapper
+
+// routing
 
 
 
 // main componenrts
 
-
-
-// ngx-swiper-wrapper
-
-
-// Mask input
-
-// routing
 
 
 
@@ -405,47 +404,47 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["c" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["b" /* DialogSignIn */],
-                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["a" /* DialogMessage */],
-                __WEBPACK_IMPORTED_MODULE_8__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__home_slider_home_slider_component__["a" /* HomeSliderComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__fly_form_fly_form_component__["a" /* FlyFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__banner_banner_component__["a" /* BannerComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__payment_payment_component__["a" /* PaymentComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__total_total_component__["a" /* TotalComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__additionally_additionally_component__["a" /* AdditionallyComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__form_sim_form_sim_component__["a" /* FormSimComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__client_info_client_info_component__["a" /* ClientInfoComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__sim_active_form_sim_active_form_component__["a" /* SimActiveFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__homa_page_homa_page_component__["a" /* HomaPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__promotion_promotion_component__["a" /* PromotionComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__details_form_details_form_component__["a" /* DetailsFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__offers_offers_component__["a" /* OffersComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__user_page_sim_user_page_sim_component__["a" /* UserPageSimComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__chosen_package_chosen_package_component__["a" /* ChosenPackageComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__returning_customer_page_returning_customer_page_component__["a" /* ReturningCustomerPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__returning_chosen_package_returning_chosen_package_component__["a" /* ReturningChosenPackageComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__delivery_delivery_component__["a" /* DeliveryComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__search_address_pipe__["a" /* SearchAddressPipe */],
-                __WEBPACK_IMPORTED_MODULE_32__about_us_page_about_us_page_component__["a" /* AboutUsPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__faq_page_faq_page_component__["a" /* FaqPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__contact_us_page_contact_us_page_component__["a" /* ContactUsPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__thank_you_page_thank_you_page_component__["a" /* ThankYouPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__available_countries_available_countries_component__["a" /* AvailableCountriesComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__info_page_info_page_component__["b" /* DialogUpdateUserInfo */],
-                __WEBPACK_IMPORTED_MODULE_37__info_page_info_page_component__["a" /* DialogUpdateCardInfo */],
-                __WEBPACK_IMPORTED_MODULE_37__info_page_info_page_component__["c" /* InfoPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__user_page_user_page_component__["a" /* UserPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__personal_details_personal_details_component__["a" /* PersonalDetailsComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__usage_log_usage_log_component__["a" /* UsageLogComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__header_header_component__["c" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__header_header_component__["b" /* DialogSignIn */],
+                __WEBPACK_IMPORTED_MODULE_23__header_header_component__["a" /* DialogMessage */],
+                __WEBPACK_IMPORTED_MODULE_21__footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__home_slider_home_slider_component__["a" /* HomeSliderComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__fly_form_fly_form_component__["a" /* FlyFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__banner_banner_component__["a" /* BannerComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__payment_payment_component__["a" /* PaymentComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__total_total_component__["a" /* TotalComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__additionally_additionally_component__["a" /* AdditionallyComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__form_sim_form_sim_component__["a" /* FormSimComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__client_info_client_info_component__["a" /* ClientInfoComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__sim_active_form_sim_active_form_component__["a" /* SimActiveFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__homa_page_homa_page_component__["a" /* HomaPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__promotion_promotion_component__["a" /* PromotionComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__details_form_details_form_component__["a" /* DetailsFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__offers_offers_component__["a" /* OffersComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__user_page_sim_user_page_sim_component__["a" /* UserPageSimComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__chosen_package_chosen_package_component__["a" /* ChosenPackageComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__returning_customer_page_returning_customer_page_component__["a" /* ReturningCustomerPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__returning_chosen_package_returning_chosen_package_component__["a" /* ReturningChosenPackageComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__delivery_delivery_component__["a" /* DeliveryComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__search_address_pipe__["a" /* SearchAddressPipe */],
+                __WEBPACK_IMPORTED_MODULE_9__about_us_page_about_us_page_component__["a" /* AboutUsPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__faq_page_faq_page_component__["a" /* FaqPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__contact_us_page_contact_us_page_component__["a" /* ContactUsPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__thank_you_page_thank_you_page_component__["a" /* ThankYouPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__available_countries_available_countries_component__["a" /* AvailableCountriesComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__info_page_info_page_component__["b" /* DialogUpdateUserInfo */],
+                __WEBPACK_IMPORTED_MODULE_26__info_page_info_page_component__["a" /* DialogUpdateCardInfo */],
+                __WEBPACK_IMPORTED_MODULE_26__info_page_info_page_component__["c" /* InfoPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__user_page_user_page_component__["a" /* UserPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__personal_details_personal_details_component__["a" /* PersonalDetailsComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__usage_log_usage_log_component__["a" /* UsageLogComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_9_ngx_swiper_wrapper__["d" /* SwiperModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_7_ngx_swiper_wrapper__["d" /* SwiperModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MatButtonModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MatCheckboxModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["o" /* MatSelectModule */],
@@ -454,9 +453,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["j" /* MatInputModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["h" /* MatFormFieldModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_11__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["n" /* MatRadioModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatTooltipModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["k" /* MatMenuModule */],
@@ -464,25 +463,26 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatTabsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MatAutocompleteModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["m" /* MatProgressBarModule */],
-                __WEBPACK_IMPORTED_MODULE_10_ngx_mask__["a" /* NgxMaskModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_6_ngx_mask__["a" /* NgxMaskModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClientModule */],
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["c" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["b" /* DialogSignIn */],
-                __WEBPACK_IMPORTED_MODULE_7__header_header_component__["a" /* DialogMessage */],
-                __WEBPACK_IMPORTED_MODULE_37__info_page_info_page_component__["b" /* DialogUpdateUserInfo */],
-                __WEBPACK_IMPORTED_MODULE_37__info_page_info_page_component__["a" /* DialogUpdateCardInfo */],
-                __WEBPACK_IMPORTED_MODULE_37__info_page_info_page_component__["c" /* InfoPageComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__header_header_component__["c" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__header_header_component__["b" /* DialogSignIn */],
+                __WEBPACK_IMPORTED_MODULE_23__header_header_component__["a" /* DialogMessage */],
+                __WEBPACK_IMPORTED_MODULE_26__info_page_info_page_component__["b" /* DialogUpdateUserInfo */],
+                __WEBPACK_IMPORTED_MODULE_26__info_page_info_page_component__["a" /* DialogUpdateCardInfo */],
+                __WEBPACK_IMPORTED_MODULE_26__info_page_info_page_component__["c" /* InfoPageComponent */],
             ],
             providers: [
                 {
-                    provide: __WEBPACK_IMPORTED_MODULE_9_ngx_swiper_wrapper__["a" /* SWIPER_CONFIG */],
+                    provide: __WEBPACK_IMPORTED_MODULE_7_ngx_swiper_wrapper__["a" /* SWIPER_CONFIG */],
                     useValue: DEFAULT_SWIPER_CONFIG
                 },
-                __WEBPACK_IMPORTED_MODULE_25__offers_offers_component__["a" /* OffersComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__offers_offers_component__["a" /* OffersComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__services_http_service__["a" /* HttpService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -1120,9 +1120,9 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlyFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material_datepicker__ = __webpack_require__("./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animation__ = __webpack_require__("./src/app/animation.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation__ = __webpack_require__("./src/app/animation.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_http_service__ = __webpack_require__("./src/app/services/http.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material_core__ = __webpack_require__("./node_modules/@angular/material/esm5/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1140,12 +1140,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var FlyFormComponent = /** @class */ (function () {
-    function FlyFormComponent(http, route, adapter, picker) {
-        this.http = http;
+    function FlyFormComponent(//private http: HttpClient,
+        route, adapter, picker, httpService) {
         this.route = route;
         this.adapter = adapter;
         this.picker = picker;
-        this.getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
+        this.httpService = httpService;
         // add new date inputs
         this.CountryIdName = [
             { nameSalect: "country" },
@@ -1166,8 +1166,10 @@ var FlyFormComponent = /** @class */ (function () {
         this.errorSelect2 = true;
         this.errorSelect3 = true;
     }
+    //getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
     FlyFormComponent.prototype.getConfig = function () {
-        return this.http.get(this.getCountriesUrl);
+        return this.httpService.GetCountries();
+        //return this.http.get<Сountries[]>(this.getCountriesUrl);
     };
     FlyFormComponent.prototype.addCountryNameInputs = function () {
         if (this.index < 1) {
@@ -1298,15 +1300,15 @@ var FlyFormComponent = /** @class */ (function () {
             selector: 'app-fly-form',
             template: __webpack_require__("./src/app/fly-form/fly-form.component.html"),
             animations: [
-                __WEBPACK_IMPORTED_MODULE_3__animation__["a" /* toggleHeight */]
+                __WEBPACK_IMPORTED_MODULE_2__animation__["a" /* toggleHeight */]
             ],
             styles: [__webpack_require__("./src/app/fly-form/fly-form.component.scss")],
         }),
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_5__angular_material_core__["c" /* DateAdapter */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_material_datepicker__["a" /* MatDatepickerModule */]])
+            __WEBPACK_IMPORTED_MODULE_1__angular_material_datepicker__["a" /* MatDatepickerModule */],
+            __WEBPACK_IMPORTED_MODULE_4__services_http_service__["a" /* HttpService */]])
     ], FlyFormComponent);
     return FlyFormComponent;
 }());
@@ -2499,6 +2501,48 @@ var SearchAddressPipe = /** @class */ (function () {
         })
     ], SearchAddressPipe);
     return SearchAddressPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/http.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+        'Content-Type': 'application/json'
+    })
+};
+var HttpService = /** @class */ (function () {
+    function HttpService(http) {
+        this.http = http;
+        this.BaseURL = "http://api.bglobal.global/api/";
+    }
+    HttpService.prototype.GetCountries = function () {
+        return this.http.get(this.BaseURL + "Public/SimCountries", httpOptions);
+    };
+    HttpService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], HttpService);
+    return HttpService;
 }());
 
 
