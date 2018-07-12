@@ -65,7 +65,8 @@ export class BannerComponent implements OnInit {
 		  bannerText: `תודה על רכישתך  `,
 		  color: 'white',
 		  headlineTitle: '  BGLOBAL  ברוכים הבאים למשפחת   ',
-		  urlImage: './assets/img/thank-you.jpg'
+		  urlImage: './assets/img/thank-you.jpg',
+		  rightImgae: 'right-image',
 		},
 		{
 		  route: "available-countries",

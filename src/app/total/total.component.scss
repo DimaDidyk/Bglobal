@@ -59,6 +59,9 @@
 	}
 	.table{
 		position: relative;
+		.right{
+			float: right;
+		}
 		tr{
 			td{
 				font-size: 18px;
