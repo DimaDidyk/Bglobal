@@ -1,77 +1,59 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
-// anumation
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-// materual
-import { 
- MatAutocompleteModule,
- MatProgressBarModule,
- MatMenuTrigger,
- MatMenuModule,
- MatTooltipModule,
- MatRadioModule,
- MatIconModule,
- MatButtonModule,
- MatCheckboxModule,
- MatSelectModule,
- MatNativeDateModule,
- MatDatepickerModule,
- MatInputModule,
- MatTabsModule,
- MatExpansionModule,
- MatFormFieldModule } from '@angular/material';
-
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgForm } from '@angular/forms';
-
-// main componenrts
-import { AppComponent } from './app.component';
-import { HeaderComponent, DialogSignIn, DialogMessage } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-
-// ngx-swiper-wrapper
-import { SwiperModule } from 'ngx-swiper-wrapper';
-import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
-import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+// materual
+import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatNativeDateModule, MatProgressBarModule, MatRadioModule, MatSelectModule, MatTabsModule, MatTooltipModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+// anumation
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Mask input
-import {NgxMaskModule} from 'ngx-mask';
+import { NgxMaskModule } from 'ngx-mask';
+// ngx-swiper-wrapper
+import { SWIPER_CONFIG, SwiperConfigInterface, SwiperModule } from 'ngx-swiper-wrapper';
 // routing
 import { AppRoutingModule } from './/app-routing.module';
-
-
-import { HomeSliderComponent } from './home-slider/home-slider.component';
-import { FlyFormComponent } from './fly-form/fly-form.component';
-import { BannerComponent } from './banner/banner.component';
-import { PaymentComponent } from './payment/payment.component';
-import { TotalComponent } from './total/total.component';
-import { AdditionallyComponent } from './additionally/additionally.component';
-import { FormSimComponent } from './form-sim/form-sim.component';
-import { ClientInfoComponent } from './client-info/client-info.component';
-import { SimActiveFormComponent } from './sim-active-form/sim-active-form.component';
-import { HomaPageComponent } from './homa-page/homa-page.component';
-import { SimOrderPageComponent } from './sim-order-page/sim-order-page.component';
-import { PromotionComponent } from './promotion/promotion.component';
-import { DetailsFormComponent } from './details-form/details-form.component';
-import { OffersComponent } from './offers/offers.component';
-import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
-import { ChosenPackageComponent } from './chosen-package/chosen-package.component';
-import { ReturningCustomerPageComponent } from './returning-customer-page/returning-customer-page.component';
-import { ReturningChosenPackageComponent } from './returning-chosen-package/returning-chosen-package.component';
-import { DeliveryComponent } from './delivery/delivery.component';
-import { SearchAddressPipe } from './search-address.pipe';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
-import { FaqPageComponent } from './faq-page/faq-page.component';
-import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
-import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
+import { AdditionallyComponent } from './additionally/additionally.component';
+// main componenrts
+import { AppComponent } from './app.component';
 import { AvailableCountriesComponent } from './available-countries/available-countries.component';
-import { InfoPageComponent, DialogUpdateUserInfo, DialogUpdateCardInfo } from './info-page/info-page.component';
-import { UserPageComponent } from './user-page/user-page.component';
+import { BannerComponent } from './banner/banner.component';
+import { ChosenPackageComponent } from './chosen-package/chosen-package.component';
+import { ClientInfoComponent } from './client-info/client-info.component';
+import { ContactUsPageComponent } from './contact-us-page/contact-us-page.component';
+import { DeliveryComponent } from './delivery/delivery.component';
+import { DetailsFormComponent } from './details-form/details-form.component';
+import { FaqPageComponent } from './faq-page/faq-page.component';
+import { FlyFormComponent } from './fly-form/fly-form.component';
+import { FooterComponent } from './footer/footer.component';
+import { FormSimComponent } from './form-sim/form-sim.component';
+import { DialogMessage, DialogSignIn, HeaderComponent } from './header/header.component';
+import { HomaPageComponent } from './homa-page/homa-page.component';
+import { HomeSliderComponent } from './home-slider/home-slider.component';
+import { DialogUpdateCardInfo, DialogUpdateUserInfo, InfoPageComponent } from './info-page/info-page.component';
+import { OffersComponent } from './offers/offers.component';
+import { PaymentComponent } from './payment/payment.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { PromotionComponent } from './promotion/promotion.component';
+import { ReturningChosenPackageComponent } from './returning-chosen-package/returning-chosen-package.component';
+import { ReturningCustomerPageComponent } from './returning-customer-page/returning-customer-page.component';
+import { SearchAddressPipe } from './search-address.pipe';
+import { HttpService } from './services/http.service';
+import { SimActiveFormComponent } from './sim-active-form/sim-active-form.component';
+import { SimOrderPageComponent } from './sim-order-page/sim-order-page.component';
+import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
+import { TotalComponent } from './total/total.component';
 import { UsageLogComponent } from './usage-log/usage-log.component';
+import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
+import { UserPageComponent } from './user-page/user-page.component';
+
+
+
+
+
+
+
+
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -144,7 +126,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HttpClientModule,
   ],
   entryComponents: [
-    HeaderComponent, 
+    HeaderComponent,
     DialogSignIn,
     DialogMessage,
     DialogUpdateUserInfo,
@@ -157,7 +139,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     },
     OffersComponent,
+    HttpService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
