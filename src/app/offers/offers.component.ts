@@ -183,6 +183,10 @@ export class OffersComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		// arrow on mobile
+		if( window.innerWidth < 768 ){
+			this.hidePrev = true;
+		}
 	}
 
 }
