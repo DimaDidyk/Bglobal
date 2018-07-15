@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { PromotionComponent } from '../promotion/promotion.component';
 import { OffersComponent } from '../offers/offers.component';
 import { toggleHeight } from '../animation';
-import { Сountries } from './countries';
+import { Country } from "../entity/country";
 import { ActivatedRoute } from '@angular/router';
 import { map, startWith } from 'rxjs/operators';
 import { HttpService } from '../services/http.service';
@@ -39,8 +39,8 @@ export class FlyFormComponent implements OnInit {
 
   //getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
 
-  getConfig(): Observable<Сountries[]> {
-    return this.httpService.GetCountries();
+  getConfig(): Observable<Country[]> {
+    return this.httpService.getCountries();
     //return this.http.get<Сountries[]>(this.getCountriesUrl);
   }
 
