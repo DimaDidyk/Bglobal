@@ -60,7 +60,7 @@ export class OffersComponent implements OnInit {
 	// slider content
 	// colors: blue-dark, orange, blue, yellow-green, pink, purple
 	sliderItems = [
-		{ 
+		{
 			'rout':      'package-USA',
 			'color':     'blue-dark',
 			'title':     '8GB',
@@ -76,7 +76,7 @@ export class OffersComponent implements OnInit {
 			],
 			'desc'     : 'חבילה כוללת גלישה ללא הגבלה במדיונת ספרד. בשביל להפעיל את הכרטיס סים וחבילה לך למלא פרטים ולבחור כתובת לשמשוח',
 		},
-		{ 
+		{
 			'rout':      'returning-customer',
 			'color':     'orange',
 			'title':     'UNLIMITED',

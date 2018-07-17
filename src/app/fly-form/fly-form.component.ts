@@ -35,13 +35,11 @@ export class FlyFormComponent implements OnInit {
     private route: ActivatedRoute,
     private adapter: DateAdapter<any>,
     private picker: MatDatepickerModule,
-    private httpService: HttpService) { }
+    private httpService: HttpService){}
 
-  //getCountriesUrl = 'https://getsimcard.com/api/api/Account/GetCountries';
 
   getConfig(): Observable<Country[]> {
     return this.httpService.getCountries();
-    //return this.http.get<Сountries[]>(this.getCountriesUrl);
   }
 
 

@@ -1,6 +1,7 @@
 <app-banner></app-banner>
 
 <section id="available-countries">
+	<!-- <pre>{{  countriesWithCategory | json }}</pre> -->
 	<div class="container">
 		<table class="table">
 		  <tbody>
@@ -10,17 +11,21 @@
 		  		<td class="td-3 mobile-td"><p>בינלאומי  </p></td>
 		  		<td><p>מדינות    </p></td>
 	  		</tr>
-		    <tr *ngFor="let country of countries">
+
+		    <tr *ngFor="let country of countriesWithCategory">
 				<td>
-					<i class="material-icons i-clear">clear</i>
+					<i class="material-icons i-done" *ngIf="country['IsOneSimForLive']">done</i> 
+					<i class="material-icons i-clear" *ngIf="!country['IsOneSimForLive']">clear</i>
 				</td>
 				<td>
-					<i class="material-icons i-done">done</i> 
+					<i class="material-icons i-done" *ngIf="country['IsAmerican']">done</i> 
+					<i class="material-icons i-clear" *ngIf="!country['IsAmerican']">clear</i>
 				</td>
 				<td>
-					<i class="material-icons i-done">done</i> 
+					<i class="material-icons i-done" *ngIf="country['IsInternational']">done</i> 
+					<i class="material-icons i-clear" *ngIf="!country['IsInternational']">clear</i>
 				</td>
-				<td>{{ country }}</td>
+				<td>{{ country['Name'] }}</td>
 		    </tr>
 		  </tbody>
 		</table>

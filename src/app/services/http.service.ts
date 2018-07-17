@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import {Country} from "../entity/Country";
+import { Country, SimCountriesWithCategory } from "../entity/Country";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -12,13 +12,17 @@ const httpOptions = {
 @Injectable()
 export class HttpService {
 
-  baseUrl: string = "https://api.bglobal.global/api/";
+	baseUrl: string = "https://api.bglobal.global/api/";
 
-  constructor(private http: HttpClient) {
+	constructor(private http: HttpClient) {}
 
-  }
+	getCountries() : Observable<Country[]> {
+		return this.http.get<Country[]>(this.baseUrl + "Public/SimCountries", httpOptions);
+	}
 
-  getCountries() : Observable<Country[]> {
-    return this.http.get<Country[]>(this.baseUrl + "Public/SimCountries", httpOptions);
-  }
+	getSimCountriesWithCategory() : Observable<SimCountriesWithCategory[]> {
+		return this.http.get<SimCountriesWithCategory[]>(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
+	}
+
+	
 }
