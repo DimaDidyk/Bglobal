@@ -992,7 +992,7 @@ var DeliveryComponent = /** @class */ (function () {
 /***/ "./src/app/details-form/details-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"details-form\">\n\n\t<div class=\"hedline\">\n\t\t<div class=\"container\">\n\t\t\t<h1>רוצים לשמוע עוד  ...</h1>\n\t\t\t<h3>השאירו פרטים ונציגנו יחזרו אליכם בהקדם</h3>\n\t\t</div>\n\t</div>\n\n\t<div class=\"container\">\n\t\t\n\t\t<form #detailsForm=\"ngForm\" (ngSubmit)=\"onSubmit(detailsForm)\" class=\"form\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם מלא\" name=\"name\" tabindex=\"11\" \n\t\t\t\t\t\tngModel\n\t\t\t\t\t\t />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"טלפון\" name=\"tel\" tabindex=\"12\" \n\t\t\t\t\t\t(keypress)=\"numberTel_keyPress($event)\"\n\t\t\t\t\t\t#telInput\n\t\t\t\t\t\tngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput name=\"email\" placeholder=\"דוא״ל\" tabindex=\"13\"\n\t\t\t\t\t\trequired\n\t\t\t\t\t\t(keydown.Tab)=\"tabEvent($event)\"\n\t\t\t\t\t\t[pattern]=\"emailPattern\"\n\t\t\t\t\t\tngModel/>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" tabindex=\"-1\"\n\t\t\t\t\t[disabled]=\"!detailsForm.valid\">המשך</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n\n</section>"
+module.exports = "<section id=\"details-form\">\n\n\t<div class=\"hedline\">\n\t\t<div class=\"container\">\n\t\t\t<h1>רוצים לשמוע עוד  ...</h1>\n\t\t\t<h3>השאירו פרטים ונציגנו יחזרו אליכם בהקדם</h3>\n\t\t</div>\n\t</div>\n\t\n\t<div class=\"container\">\n\t\t<!-- <pre>{{ userDataLead | json }}</pre> -->\n\t\t\n\t\t<form #detailsForm=\"ngForm\" (ngSubmit)=\"onSubmit(detailsForm)\" class=\"form\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"שם מלא\" name=\"name\" tabindex=\"11\" \n\t\t\t\t\t\tngModel\n\t\t\t\t\t\t />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput required placeholder=\"טלפון\" name=\"tel\" tabindex=\"12\" \n\t\t\t\t\t\t(keypress)=\"numberTel_keyPress($event)\"\n\t\t\t\t\t\t#telInput\n\t\t\t\t\t\tngModel />\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<mat-form-field>\n\t\t\t\t\t\t<input matInput name=\"email\" placeholder=\"דוא״ל\" tabindex=\"13\"\n\t\t\t\t\t\trequired\n\t\t\t\t\t\t(keydown.Tab)=\"tabEvent($event)\"\n\t\t\t\t\t\t[pattern]=\"emailPattern\"\n\t\t\t\t\t\tngModel/>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t\t<button mat-button class=\"bg-button\" tabindex=\"-1\"\n\t\t\t\t\t[disabled]=\"!detailsForm.valid\">המשך</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n\n</section>"
 
 /***/ }),
 
@@ -1009,6 +1009,8 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_http_service__ = __webpack_require__("./src/app/services/http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entity_User__ = __webpack_require__("./src/app/entity/User.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1019,9 +1021,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+// import { HttpClient } from "@angular/common/http";
+
 var DetailsFormComponent = /** @class */ (function () {
-    function DetailsFormComponent() {
+    function DetailsFormComponent(HttpService) {
+        this.HttpService = HttpService;
         this.emailPattern = "[^ @]*@[^ @]*";
+        this.user = {
+            'Email': '',
+            'FirstName': '',
+            'LastName': '',
+            'Phone': '',
+            'Message': 'Contact me',
+            'Affiliate': 'SimSite',
+        };
+        this.userDataLead = new __WEBPACK_IMPORTED_MODULE_2__entity_User__["a" /* UserDataLead */]();
     }
     DetailsFormComponent.prototype.numberTel_keyPress = function (event) {
         var pattern = /[0-9/+/ /(/)/]/;
@@ -1036,6 +1051,14 @@ var DetailsFormComponent = /** @class */ (function () {
     };
     DetailsFormComponent.prototype.onSubmit = function (detailsForm) {
         console.log(detailsForm.value);
+        this.userDataLead = this.user;
+        this.userDataLead.Email = detailsForm.value.email;
+        this.userDataLead.FirstName = detailsForm.value.name;
+        this.userDataLead.Phone = detailsForm.value.tel;
+        this.HttpService.postData(this.userDataLead)
+            .subscribe(
+        // (data: UserDataLead) => {this.receivedUser=data},
+        function (error) { return console.log(error); });
     };
     DetailsFormComponent.prototype.ngOnInit = function () {
     };
@@ -1049,9 +1072,24 @@ var DetailsFormComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/details-form/details-form.component.html"),
             styles: [__webpack_require__("./src/app/details-form/details-form.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_http_service__["a" /* HttpService */]])
     ], DetailsFormComponent);
     return DetailsFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/entity/User.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserDataLead; });
+var UserDataLead = /** @class */ (function () {
+    function UserDataLead() {
+    }
+    return UserDataLead;
 }());
 
 
@@ -2547,6 +2585,17 @@ var HttpService = /** @class */ (function () {
     };
     HttpService.prototype.getSimCountriesWithCategory = function () {
         return this.http.get(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
+    };
+    HttpService.prototype.postData = function (user) {
+        var body = {
+            Email: user.Email,
+            FirstName: user.FirstName,
+            LastName: user.LastName,
+            Phone: user.Phone,
+            Message: user.Message,
+            Affiliate: user.Affiliate,
+        };
+        return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body);
     };
     HttpService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
