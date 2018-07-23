@@ -1,14 +1,18 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
 import { NgForm, FormsModule, FormControl, Validators, PatternValidator } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+
+import { HttpService } from '../services/http.service';
+// import { HttpClient } from "@angular/common/http";
+import { UserDataLead } from "../entity/User";
 
 @Component({
   selector: 'app-details-form',
   templateUrl: './details-form.component.html',
   styleUrls: ['./details-form.component.scss']
 })
+
 export class DetailsFormComponent implements OnInit {
 
 	emailPattern = "[^ @]*@[^ @]*";
@@ -28,11 +32,37 @@ export class DetailsFormComponent implements OnInit {
 		this.telInput.nativeElement.focus();
 	}
 
-	onSubmit( detailsForm: NgForm ) {
-		console.log( detailsForm.value );
-	}
+	constructor( private HttpService: HttpService ){}
 
-	constructor() { }
+	
+	user = {
+	    'Email': '',
+	    'FirstName': '',
+	    'LastName': '',
+	    'Phone': '',
+	    'Message': 'Contact me',
+	    'Affiliate': 'SimSite',
+    };
+
+	userDataLead:UserDataLead = new UserDataLead();
+
+	receivedUser: UserDataLead;
+
+    onSubmit( detailsForm: NgForm ) {
+		console.log( detailsForm.value );
+
+		this.userDataLead = this.user;
+		this.userDataLead.Email = detailsForm.value.email;
+		this.userDataLead.FirstName = detailsForm.value.name;
+		this.userDataLead.Phone = detailsForm.value.tel;
+
+		this.HttpService.postData(this.userDataLead)
+            .subscribe(
+                // (data: UserDataLead) => {this.receivedUser=data},
+                error => console.log(error),
+            );
+	}
+	
 
 	ngOnInit() {
 	}

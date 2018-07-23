@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Country, SimCountriesWithCategory } from "../entity/Country";
+import { UserDataLead } from "../entity/User";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -23,6 +24,19 @@ export class HttpService {
 	getSimCountriesWithCategory() : Observable<SimCountriesWithCategory[]> {
 		return this.http.get<SimCountriesWithCategory[]>(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
 	}
+
+	postData(user: UserDataLead){
+        const body = {
+        	Email: user.Email,
+        	FirstName: user.FirstName,
+        	LastName: user.LastName,
+        	Phone: user.Phone,
+        	Message: user.Message,
+        	Affiliate: user.Affiliate,
+        	UserName: user.UserName,
+        };
+        return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body); 
+    }
 
 	
 }
