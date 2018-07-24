@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Country, SimCountriesWithCategory } from "../entity/Country";
+import { Country, SimCountriesWithCategory, SimPackages } from "../entity/Country";
 import { UserDataLead } from "../entity/User";
 
 const httpOptions = {
@@ -33,9 +33,16 @@ export class HttpService {
         	Phone: user.Phone,
         	Message: user.Message,
         	Affiliate: user.Affiliate,
-        	UserName: user.UserName,
         };
         return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body); 
+    }
+
+    postDataSimPackages(SimPackages: SimPackages){
+        const body = {
+            Countries: SimPackages.Countries,
+            TotalDays: SimPackages.TotalDays,
+        };
+        return this.http.post(this.baseUrl + "Public/SimPackagesByCountries", body); 
     }
 
 	

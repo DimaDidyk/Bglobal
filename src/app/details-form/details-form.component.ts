@@ -43,10 +43,7 @@ export class DetailsFormComponent implements OnInit {
 	    'Message': 'Contact me',
 	    'Affiliate': 'SimSite',
     };
-
 	userDataLead:UserDataLead = new UserDataLead();
-
-	receivedUser: UserDataLead;
 
     onSubmit( detailsForm: NgForm ) {
 		console.log( detailsForm.value );
@@ -58,12 +55,10 @@ export class DetailsFormComponent implements OnInit {
 
 		this.HttpService.postData(this.userDataLead)
             .subscribe(
-                // (data: UserDataLead) => {this.receivedUser=data},
                 error => console.log(error),
             );
 	}
 	
-
 	ngOnInit() {
 	}
 

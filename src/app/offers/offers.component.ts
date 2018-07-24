@@ -22,7 +22,7 @@ export class OffersComponent implements OnInit {
 	@ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
 	// get fly from data
-	@Input() flyFormValue: string;
+	@Input() packagesResponse: string;
 
 	// slider config
 	index = 0;

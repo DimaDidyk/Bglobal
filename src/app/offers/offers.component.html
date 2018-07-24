@@ -1,7 +1,6 @@
 <section id="offers">
-	<!-- (mouseup)="swiperCheckArrow()" -->
 	<div class="container">
-		<!-- <pre>{{ flyFormValue | json }}</pre> -->
+		<pre>{{ packagesResponse | json }}</pre>
 		<h1>טוסים ל
 			<span *ngIf="flyFormValue" #flyFormCountries>
 				<span *ngIf="flyFormValue.country" class="first-country">{{flyFormValue.country}}</span>

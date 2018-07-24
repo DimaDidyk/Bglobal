@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { PromotionComponent } from '../promotion/promotion.component';
 import { OffersComponent } from '../offers/offers.component';
 import { toggleHeight } from '../animation';
-import { Country } from "../entity/country";
+import { Country, SimPackages, PackagesResponse } from "../entity/country";
 import { ActivatedRoute } from '@angular/router';
 import { map, startWith } from 'rxjs/operators';
 import { HttpService } from '../services/http.service';
@@ -115,11 +115,30 @@ export class FlyFormComponent implements OnInit {
     }
   }
 
+
+  // SimPackages
+  simPackages:SimPackages = new SimPackages();
+  packagesResponse:PackagesResponse = new PackagesResponse();
+
   // animate show and hide
   isShow = 'hide';
   isHide = 'show';
   onSubmit(flyForm: NgForm) {
     localStorage.setItem('flyFormValue', JSON.stringify(flyForm.value));
+
+    // data to send
+    this.simPackages.Countries = [
+      this.getIdCountryByName(flyForm.value.country),
+      this.getIdCountryByName(flyForm.value.country2),
+      this.getIdCountryByName(flyForm.value.country3),
+    ];
+    this.simPackages.TotalDays = flyForm.value.countDays;
+
+    this.httpService.postDataSimPackages(this.simPackages).subscribe(
+      (data: PackagesResponse) => { this.packagesResponse = data; },
+      // (data) => { console.log(data) },
+      // error => console.log(error),
+    );
   }
 
   // get arrey Names
@@ -130,6 +149,9 @@ export class FlyFormComponent implements OnInit {
   // get Id County by name
   getIdCountryByName(countryName: string) {
     let CurrentArray = this.countries.filter(countries => countries.Name === countryName);
+    if( countryName == undefined ){
+      return 0;
+    }
     return CurrentArray[0]['Id'];
   }
   // get name County by ID
