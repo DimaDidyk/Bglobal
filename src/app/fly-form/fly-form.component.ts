@@ -11,7 +11,9 @@ import { Observable } from 'rxjs';
 import { PromotionComponent } from '../promotion/promotion.component';
 import { OffersComponent } from '../offers/offers.component';
 import { toggleHeight } from '../animation';
-import { Country, SimPackages, PackagesResponse } from "../entity/country";
+import { Country } from "../entity/country";
+import { SimPackages, PackagesResponse } from "../entity/package";
+
 import { ActivatedRoute } from '@angular/router';
 import { map, startWith } from 'rxjs/operators';
 import { HttpService } from '../services/http.service';
@@ -118,7 +120,7 @@ export class FlyFormComponent implements OnInit {
 
   // SimPackages
   simPackages:SimPackages = new SimPackages();
-  packagesResponse:PackagesResponse = new PackagesResponse();
+  packagesResponse;
 
   // animate show and hide
   isShow = 'hide';
@@ -135,16 +137,20 @@ export class FlyFormComponent implements OnInit {
     this.simPackages.TotalDays = flyForm.value.countDays;
 
     this.httpService.postDataSimPackages(this.simPackages).subscribe(
-      (data: PackagesResponse) => { this.packagesResponse = data; },
-      // (data) => { console.log(data) },
-      // error => console.log(error),
+      (data) => {
+        this.packagesResponse = data;
+        // console.log( data );
+      },
     );
   }
+
+
 
   // get arrey Names
   getNamesCountryArray() {
     return this.countries.map((country) => country.Name);
   }
+  
 
   // get Id County by name
   getIdCountryByName(countryName: string) {
@@ -212,9 +218,8 @@ export class FlyFormComponent implements OnInit {
   }
 
   // scroll animate
-  scrollAnimate(element, value) {
+  scrollAnimate(element) {
     let arrayCountries = this.countries.map((country) => country.Name);
-    // console.log( value );
     if (this.errorSelect1 == false || this.errorSelect2 == false || this.errorSelect3 == false) {
       this.isShow = 'show';
       this.isHide = 'hide';

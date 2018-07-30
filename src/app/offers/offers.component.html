@@ -1,8 +1,12 @@
-<section id="offers">
+<section id="offers" (mousemove)="initSlider()">
 	<div class="container">
-		<pre>{{ packagesResponse | json }}</pre>
+		
+		<!-- *ngIf="packagesResponse.lenth != 0" -->
+		<!-- <pre>{{ packagesResponse | json }}</pre> -->
+		
+
 		<h1>טוסים ל
-			<span *ngIf="flyFormValue" #flyFormCountries>
+			<span *ngIf="flyFormValue" #flyFormCountries (click)="initSlider()">
 				<span *ngIf="flyFormValue.country" class="first-country">{{flyFormValue.country}}</span>
 				<span *ngIf="flyFormValue.country2">{{ 'ו' + flyFormValue.country2}}</span>
 				<span *ngIf="flyFormValue.country3">{{ 'ו' + flyFormValue.country3}}</span>
@@ -15,21 +19,21 @@
 		<div class="flex-center-bertical">
 			<!-- slider -->
 			<swiper [config]="config" [(index)]="index" (indexChange)="onIndexChange($event)">
-				<div class="swiper-slide" [ngClass]="slide['color']"
-				(click)="routPackage(slide)"
-				*ngFor="let slide of sliderItems">
+				<div class="swiper-slide"
+				(click)="routPackage( replaceSpace(slide['Name']) )"
+				*ngFor="let slide of packagesResponse">
 					<div class="slide-header">
-						<h1>{{ slide['title'] }}</h1>
-						<h3>{{ slide['sub-title'] }}</h3>
+						<h1>{{ slide['Name'] }}</h1>
+						<h3>{{ slide['Type'] }}</h3>
 					</div>
 					<div class="slide-content">
 						<div class="most popular" 
-						*ngIf="slide['popular']">Most popular</div>
+						*ngIf="slide == packagesResponse[1]">Most popular</div>
 						<div class="most economic" 
-						*ngIf="slide['economic']">Most economic</div>
-						<div class="price">₪ {{ slide['price'] }}</div>
-						<div class="days">( {{ slide['days'] }} )</div>
-						<div class="slide-content">{{ slide['info'] }}</div>
+						*ngIf="slide == packagesResponse[2]">Most economic</div>
+						<div class="price">₪ {{ slide['SimPrice'] }}</div>
+						<div class="days">( {{ slide['DaysExpired'] }} ימים'  )</div>
+						<div class="slide-content">{{ slide['Description'] }}</div>
 						<button type="submit"
 						mat-button class="bg-button"
 						>!הזמינו עכשיו  </button>

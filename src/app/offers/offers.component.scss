@@ -81,7 +81,7 @@
 			text-align: center;
 			.most{
 				position: absolute;
-				top: 69px;
+				top: 50px;
 				right: 0;
 				color: #fff;
 				padding: 4px 20px 4px 35px;
@@ -139,7 +139,7 @@
 			}
 		}
 		// blue slide
-		&.blue{
+		&:nth-child(6n-5){
 			.slide-header{
 				background: $gradient-background-blue;
 			}
@@ -154,7 +154,7 @@
 			}
 		}
 		// blue dark slide
-		&.blue-dark{
+		&:nth-child(6n-4){
 			.slide-header{
 				background: $gradient-background-blue-dark;
 			}
@@ -169,7 +169,7 @@
 			}
 		}
 		// orange slide
-		&.orange{
+		&:nth-child(6n-3){
 			.slide-header{
 				background: $gradient-background-orange;
 			}
@@ -184,7 +184,7 @@
 			}
 		}
 		// yellow green slide
-		&.yellow-green{
+		&:nth-child(6n-2){
 			.slide-header{
 				background: $gradient-background-yellow-green;
 			}
@@ -199,7 +199,7 @@
 			}
 		}
 		// pink slide
-		&.pink{
+		&:nth-child(6n-1){
 			.slide-header{
 				background: $gradient-background-pink;
 			}
@@ -214,7 +214,7 @@
 			}
 		}
 		// purple slide
-		&.purple{
+		&:nth-child(6n){
 			.slide-header{
 				background: $gradient-background-purple;
 			}

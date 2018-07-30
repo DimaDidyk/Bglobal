@@ -4,14 +4,19 @@ import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
 
 import { Router, ActivatedRoute, NavigationEnd, Resolve, RouterStateSnapshot,
   ActivatedRouteSnapshot } from '@angular/router';
+import { PackagesResponse } from "../entity/package";
+
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
-  styleUrls: ['./offers.component.scss']
+  styleUrls: ['./offers.component.scss'],
 })
 
 @Injectable()
+
+
 export class OffersComponent implements OnInit {
 
 	constructor(
@@ -22,12 +27,14 @@ export class OffersComponent implements OnInit {
 	@ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
 	// get fly from data
-	@Input() packagesResponse: string;
+	@Input() packagesResponse:PackagesResponse;
 
 	// slider config
 	index = 0;
 	public config: SwiperConfigInterface = {
 		direction: 'horizontal',
+		initialSlide: 1,
+		// init: false,
 		slidesPerView: 3,
 		spaceBetween: 30,
 		keyboard: true,
@@ -48,6 +55,7 @@ export class OffersComponent implements OnInit {
 	public onIndexChange(index: number): void {
 		this.hideNext = !this.componentRef.directiveRef.swiper().isEnd;
 		this.hidePrev = !this.componentRef.directiveRef.swiper().isBeginning;
+		console.log( index );
 	}
 	// show and hide arrows slider
 	public nextSlide(speed: number): void{
@@ -161,15 +169,21 @@ export class OffersComponent implements OnInit {
 		},
 	];
 
-	// get slude data
+	// get slide data
 	getSlideData(rout:string){
 		return this.sliderItems.find(sliderItems => sliderItems.rout == rout);
 	}
 
+	replaceSpace(str) {
+		str = str.replace(/ /ig, '-');
+		return str;
+	}
+
 	// get current counties
 	@ViewChild('flyFormCountries') flyFormCountries: ElementRef;
-	routPackage(slideData:object){
-		this.router.navigate( ['sim-order', slideData['rout']]);
+	routPackage( packageName ){
+		console.log( packageName );
+		this.router.navigate([ 'sim-order', packageName ]);
 		// reload
 		this.router.routeReuseStrategy.shouldReuseRoute = function(){
 		    return false;
@@ -181,6 +195,11 @@ export class OffersComponent implements OnInit {
 		    }
 		});
 	}
+	
+	initSlider(){
+  		this.componentRef.directiveRef.update();
+  		// console.log( 'this' );
+	}
 
 	ngOnInit() {
 		// arrow on mobile
@@ -188,5 +207,4 @@ export class OffersComponent implements OnInit {
 			this.hidePrev = true;
 		}
 	}
-
 }

@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Country, SimCountriesWithCategory, SimPackages } from "../entity/Country";
+import { Country, SimCountriesWithCategory } from "../entity/Country";
+import { SimPackages } from "../entity/Package";
 import { UserDataLead } from "../entity/User";
 
 const httpOptions = {

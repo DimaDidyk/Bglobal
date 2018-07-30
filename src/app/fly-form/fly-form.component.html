@@ -9,7 +9,9 @@
 		<h1>לאן טסים?  </h1>
 		<h3>אנא בחרו את היעד המבוקש ותאריכי טיסה</h3>
 		
-		<form #flyForm="ngForm" (ngSubmit)="onSubmit(flyForm)">
+		<form #flyForm="ngForm" 
+		(ngSubmit)="onSubmit(flyForm)"
+		(ngSubmit)="scrollAnimate(appofferswrap)">
 			
 			<div class="select-wrapper">
 				<div *ngFor="let countryNameSelect of CountryIdName">
@@ -43,7 +45,6 @@
 				</div>
 				<!-- <pre>{{ index }}</pre> -->
 			</div>
-
 
 			<!-- date inputs -->
 			<div class="row inputs-date-fly-form">
@@ -89,12 +90,11 @@
 				</div>
 			</div><!-- #date inputs -->
 			
-
 			<div class="row inputs-date-fly-form">
 				<div class="col-sm-4 col-xs-12 button-load-inputs">
 					<button mat-button class="bg-button" 
 					[disabled]="!flyForm.valid || errorSelect1 || errorSelect2 || errorSelect3"
-					(click)="scrollAnimate(appofferswrap)">!יאללה ממריאים  </button>
+					>!יאללה ממריאים  </button>
 				</div>
 			</div>
 
