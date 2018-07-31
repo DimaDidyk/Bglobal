@@ -4,7 +4,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
 import { HttpService } from '../services/http.service';
-// import { HttpClient } from "@angular/common/http";
 import { UserDataLead } from "../entity/User";
 
 @Component({
@@ -32,7 +31,7 @@ export class DetailsFormComponent implements OnInit {
 		this.telInput.nativeElement.focus();
 	}
 
-	constructor( private HttpService: HttpService ){}
+	constructor( private httpService: HttpService ){}
 
 	
 	user = {
@@ -53,7 +52,7 @@ export class DetailsFormComponent implements OnInit {
 		this.userDataLead.FirstName = detailsForm.value.name;
 		this.userDataLead.Phone = detailsForm.value.tel;
 
-		this.HttpService.postData(this.userDataLead)
+		this.httpService.postDataCreateSaleLead(this.userDataLead)
             .subscribe(
                 error => console.log(error),
             );

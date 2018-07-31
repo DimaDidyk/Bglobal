@@ -1,29 +1,31 @@
 <section id="returning-chosen-package" #returning>
 	<div class="container">
 		<div class="row">
-			
 			<div class="col-sm-4 package-container">
-				<div class="package" 
-				[ngClass]="getSlidePackgeData['color']">
+				<div class="package blue">
 					<div class="package-header">
-						<h1>{{ getSlidePackgeData['title'] }}</h1>
-						<h3>{{ getSlidePackgeData['sub-title'] }}</h3>
+						<h1>{{ getSlidePackgeData['Name'] }}</h1>
+						<h3>{{ getSlidePackgeData['Type'] }}</h3>
 					</div>
 					<div class="package-content">
-						<div class="price">₪ {{ getSlidePackgeData['price'] }}</div>
-						<div class="days">({{ getSlidePackgeData['days'] }})</div>
+						<div class="price">₪ 
+							{{ getSlidePackgeData['SimPrice'] + getSlidePackgeData['PackagePrice'] }}
+						</div>
+						<div class="days">
+							( {{ getSlidePackgeData['DaysExpired'] }}  ימים' )
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-sm-8 content">
-				<h3>{{ getSlidePackgeData['title'] }}</h3>
+				<h3>{{ getSlidePackgeData['Name'] }}</h3>
 				<ul>
-					<li *ngFor="let option of getSlidePackgeData['options']">
+					<li *ngFor="let option of getSlidePackgeData['Details']">
 						{{ option }}
 					</li>
 				</ul>
-				<p>{{ getSlidePackgeData['desc'] }}</p>
+				<p>{{ getSlidePackgeData['Description'] }}</p>
 				
 				<span class="another-program"
 				*ngIf="getActiveChangePacckage()"

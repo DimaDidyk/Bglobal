@@ -6,3 +6,16 @@ export class UserDataLead{
     Message: string;
     Affiliate: string;
 }
+
+export class UserDataRegister{
+    Email: string;
+    Password: string;
+    ConfirmPassword: string; 
+    FirstName: string;
+    LastName: string;
+    Phone: string;
+    Prefix: string;
+    Affiliate: string;
+    AllowSendMail: boolean;
+}
+

@@ -1,13 +1,14 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { NgForm, FormsModule, FormControl, Validators, PatternValidator } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
 import { toggleHeight } from '../animation';
 import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.component';
+
+import { HttpService } from '../services/http.service';
+import { UserDataRegister } from "../entity/User";
 
 @Component({
 	selector: 'app-client-info',
@@ -21,7 +22,11 @@ import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.componen
 
 export class ClientInfoComponent implements OnInit {
 
-	constructor( public route: ActivatedRoute, private router: Router ) {}
+	constructor( 
+		public route: ActivatedRoute,
+		private router: Router,
+		private httpService: HttpService,
+	) {}
 
 	// get data from Sim
 	@Input() formSimData: string;
@@ -37,13 +42,36 @@ export class ClientInfoComponent implements OnInit {
 	      event.preventDefault();
 	    }
 	}
-
 	isChecked:boolean = false;
+
+
+	userDataLead:UserDataRegister = new UserDataRegister();
 
 	// show animation
 	isShow = 'hide';
 	onSubmit(clientInfoForm: NgForm) {
 		this.isShow = 'show';
+
+		this.userDataLead.Email = clientInfoForm.value.email;
+
+		this.userDataLead.Password = clientInfoForm.value.tel;
+		this.userDataLead.ConfirmPassword = clientInfoForm.value.tel;
+
+		this.userDataLead.FirstName = clientInfoForm.value.name;
+		this.userDataLead.LastName = clientInfoForm.value.name;
+
+		this.userDataLead.Phone = clientInfoForm.value.tel;
+		this.userDataLead.Prefix = clientInfoForm.value.tel;
+
+		this.userDataLead.Affiliate = clientInfoForm.value.name;
+
+		this.userDataLead.AllowSendMail = clientInfoForm.value.checked;
+
+		this.httpService.postDataRegister(this.userDataLead)
+            .subscribe(
+                error => console.log(error),
+                data => console.log(data),
+            );
 	}
 	
 	// curentPath

@@ -3,7 +3,7 @@ import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Country, SimCountriesWithCategory } from "../entity/Country";
 import { SimPackages } from "../entity/Package";
-import { UserDataLead } from "../entity/User";
+import { UserDataLead, UserDataRegister } from "../entity/User";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -26,7 +26,7 @@ export class HttpService {
 		return this.http.get<SimCountriesWithCategory[]>(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
 	}
 
-	postData(user: UserDataLead){
+	postDataCreateSaleLead(user: UserDataLead){
         const body = {
         	Email: user.Email,
         	FirstName: user.FirstName,
@@ -37,6 +37,22 @@ export class HttpService {
         };
         return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body); 
     }
+
+    postDataRegister(user: UserDataRegister){
+        const body = {
+            Email: user.Email,
+            Password: user.Password,
+            ConfirmPassword: user.ConfirmPassword,
+            FirstName: user.FirstName,
+            LastName: user.LastName,
+            Phone: user.Phone,
+            Prefix: user.Prefix,
+            Affiliate: user.Affiliate,
+            AllowSendMail: user.AllowSendMail,
+        };
+        return this.http.post(this.baseUrl + "Account/Register", body); 
+    }
+
 
     postDataSimPackages(SimPackages: SimPackages){
         const body = {

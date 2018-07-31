@@ -16,19 +16,21 @@ import { toggleHeight } from '../animation';
 export class ReturningChosenPackageComponent implements OnInit {
   @ViewChild("returning", {read: ElementRef}) returning: ElementRef;
 
-	constructor(private router: Router,
-    private offersComponent: OffersComponent,
+	constructor(
+    private router: Router,
     private activatedRoute: ActivatedRoute,
+    private offersComponent: OffersComponent,
   ){}
 
-	// get all Slider Data
-	offersComponentPackageData = this.offersComponent.sliderItems;
 	// get active route
   routSnapshotPackage = this.activatedRoute.snapshot.params['package'];
   // get active package (slide) Data
-  getSlidePackgeData = this.offersComponent.getSlideData(this.routSnapshotPackage);
+  getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
 
   currentUrlPage = this.router.routerState.snapshot.url;
+
+  packageRouteName = this.activatedRoute.snapshot.params['package'];
+
 
   // if puth is change package == 1
   getActiveChangePacckage(){
@@ -43,6 +45,13 @@ export class ReturningChosenPackageComponent implements OnInit {
     // scroll animate
     document.getElementsByClassName('hedline')[0].scrollIntoView({ behavior: "smooth", block: "start" });
 
+    // go home if data invalid
+    if( 
+      this.getSlidePackgeData == undefined || 
+      this.offersComponent.replaceSpace( this.getSlidePackgeData['Name']) != this.packageRouteName
+    ){
+      this.router.navigate( [''] );
+    }
   }
 
 
