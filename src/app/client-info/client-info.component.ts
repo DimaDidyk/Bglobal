@@ -43,31 +43,31 @@ export class ClientInfoComponent implements OnInit {
 	    }
 	}
 	isChecked:boolean = false;
+	telPrefix:string = '972';
 
 
-	userDataLead:UserDataRegister = new UserDataRegister();
+	userDataRegister:UserDataRegister = new UserDataRegister();
 
 	// show animation
 	isShow = 'hide';
 	onSubmit(clientInfoForm: NgForm) {
 		this.isShow = 'show';
 
-		this.userDataLead.Email = clientInfoForm.value.email;
+		this.userDataRegister.Email = clientInfoForm.value.email;
 
-		this.userDataLead.Password = clientInfoForm.value.tel;
-		this.userDataLead.ConfirmPassword = clientInfoForm.value.tel;
+		this.userDataRegister.Password = clientInfoForm.value.tel.slice(-7);
+		this.userDataRegister.ConfirmPassword = clientInfoForm.value.tel.slice(-7);
 
-		this.userDataLead.FirstName = clientInfoForm.value.name;
-		this.userDataLead.LastName = clientInfoForm.value.name;
+		this.userDataRegister.FirstName = clientInfoForm.value.name;
+		this.userDataRegister.LastName = clientInfoForm.value.name;
+		this.userDataRegister.Phone = clientInfoForm.value.tel;
+		this.userDataRegister.Prefix = this.telPrefix;
+		this.userDataRegister.AllowSendMail = clientInfoForm.value.checked;
+		this.userDataRegister.Affiliate = 'string';
 
-		this.userDataLead.Phone = clientInfoForm.value.tel;
-		this.userDataLead.Prefix = clientInfoForm.value.tel;
+		console.log( this.userDataRegister );
 
-		this.userDataLead.Affiliate = clientInfoForm.value.name;
-
-		this.userDataLead.AllowSendMail = clientInfoForm.value.checked;
-
-		this.httpService.postDataRegister(this.userDataLead)
+		this.httpService.postDataRegister(this.userDataRegister)
             .subscribe(
                 error => console.log(error),
                 data => console.log(data),

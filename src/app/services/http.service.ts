@@ -26,29 +26,29 @@ export class HttpService {
 		return this.http.get<SimCountriesWithCategory[]>(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
 	}
 
-	postDataCreateSaleLead(user: UserDataLead){
+	postDataCreateSaleLead(userDataLead: UserDataLead){
         const body = {
-        	Email: user.Email,
-        	FirstName: user.FirstName,
-        	LastName: user.LastName,
-        	Phone: user.Phone,
-        	Message: user.Message,
-        	Affiliate: user.Affiliate,
+        	Email: userDataLead.Email,
+        	FirstName: userDataLead.FirstName,
+        	LastName: userDataLead.LastName,
+        	Phone: userDataLead.Phone,
+        	Message: userDataLead.Message,
+        	Affiliate: userDataLead.Affiliate,
         };
         return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body); 
     }
 
-    postDataRegister(user: UserDataRegister){
+    postDataRegister(userDataRegister: UserDataRegister){
         const body = {
-            Email: user.Email,
-            Password: user.Password,
-            ConfirmPassword: user.ConfirmPassword,
-            FirstName: user.FirstName,
-            LastName: user.LastName,
-            Phone: user.Phone,
-            Prefix: user.Prefix,
-            Affiliate: user.Affiliate,
-            AllowSendMail: user.AllowSendMail,
+            Email: userDataRegister.Email,
+            Password: userDataRegister.Password,
+            ConfirmPassword: userDataRegister.ConfirmPassword,
+            FirstName: userDataRegister.FirstName,
+            LastName: userDataRegister.LastName,
+            Phone: userDataRegister.Phone,
+            Prefix: userDataRegister.Prefix,
+            Affiliate: userDataRegister.Affiliate,
+            AllowSendMail: userDataRegister.AllowSendMail,
         };
         return this.http.post(this.baseUrl + "Account/Register", body); 
     }
