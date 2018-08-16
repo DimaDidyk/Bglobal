@@ -37,8 +37,9 @@ export class FlyFormComponent implements OnInit {
     private route: ActivatedRoute,
     private adapter: DateAdapter<any>,
     private picker: MatDatepickerModule,
-    private httpService: HttpService){}
-
+    private httpService: HttpService,
+    private OffersComponent: OffersComponent,
+  ){}
 
   getConfig(): Observable<Country[]> {
     return this.httpService.getCountries();
@@ -121,7 +122,7 @@ export class FlyFormComponent implements OnInit {
   // SimPackages
   simPackages:SimPackages = new SimPackages();
   packagesResponse;
-
+  packagesResponseLength;
   // animate show and hide
   isShow = 'hide';
   isHide = 'show';
@@ -139,20 +140,21 @@ export class FlyFormComponent implements OnInit {
     this.httpService.postDataSimPackages(this.simPackages).subscribe(
       (data) => {
         this.packagesResponse = data;
-        // console.log( data );
+        this.packagesResponseLength = this.packagesResponse.length;
+        console.log( data );
+        console.log( this.packagesResponseLength );
+        // this.OffersComponent.text = 'text';
       },
     );
+    // this.OffersComponent.getSliderData();
   }
-
-
 
   // get arrey Names
   getNamesCountryArray() {
     return this.countries.map((country) => country.Name);
   }
   
-
-  // get Id County by name
+  // // get Id County by name
   getIdCountryByName(countryName: string) {
     let CurrentArray = this.countries.filter(countries => countries.Name === countryName);
     if( countryName == undefined ){
@@ -160,6 +162,7 @@ export class FlyFormComponent implements OnInit {
     }
     return CurrentArray[0]['Id'];
   }
+
   // get name County by ID
   getNameCountryById(Id: any) {
     let CurrentArray = this.countries.filter(countries => countries.Id == Id);

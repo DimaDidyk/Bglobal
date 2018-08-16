@@ -59,7 +59,7 @@ export class ClientInfoComponent implements OnInit {
 		this.userDataRegister.ConfirmPassword = clientInfoForm.value.tel.slice(-7);
 
 		this.userDataRegister.FirstName = clientInfoForm.value.name;
-		this.userDataRegister.LastName = clientInfoForm.value.name;
+		this.userDataRegister.LastName = clientInfoForm.value.soname;
 		this.userDataRegister.Phone = clientInfoForm.value.tel;
 		this.userDataRegister.Prefix = this.telPrefix;
 		this.userDataRegister.AllowSendMail = clientInfoForm.value.checked;

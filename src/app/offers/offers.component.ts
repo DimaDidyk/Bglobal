@@ -28,6 +28,7 @@ export class OffersComponent implements OnInit {
 
 	// get fly from data
 	@Input() packagesResponse:PackagesResponse;
+	@Input() packagesResponseLength;
 
 	// slider config
 	index = 0;
@@ -55,7 +56,7 @@ export class OffersComponent implements OnInit {
 	public onIndexChange(index: number): void {
 		this.hideNext = !this.componentRef.directiveRef.swiper().isEnd;
 		this.hidePrev = !this.componentRef.directiveRef.swiper().isBeginning;
-		console.log( index );
+		// console.log( index );
 	}
 	// show and hide arrows slider
 	public nextSlide(speed: number): void{
@@ -79,8 +80,6 @@ export class OffersComponent implements OnInit {
     	localStorage.setItem('packageData', JSON.stringify(packageData));
     	
     	// this.flyFormStor = JSON.parse(localStorage.getItem('flyFormValue'));
-
-
 		this.router.navigate([ 'sim-order', this.replaceSpace( packageData['Name'] ) ]);
 		// reload
 		this.router.routeReuseStrategy.shouldReuseRoute = function(){
@@ -95,8 +94,11 @@ export class OffersComponent implements OnInit {
 	}
 	
 	initSlider(){
-  		this.componentRef.directiveRef.update();
+  		// this.componentRef.directiveRef.update();
   		// console.log( 'this' );
+  		if( this.packagesResponseLength != 0 ){
+			this.componentRef.directiveRef.update();
+  		}
 	}
 
 	ngOnInit() {
@@ -104,5 +106,7 @@ export class OffersComponent implements OnInit {
 		if( window.innerWidth < 768 ){
 			this.hidePrev = true;
 		}
+		// setInterval(function(){
+		// }, 100);
 	}
 }

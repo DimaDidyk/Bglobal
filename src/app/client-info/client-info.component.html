@@ -21,7 +21,7 @@
 						<input matInput required placeholder="טלפון נייד" name="tel" tabindex="7"
 						(keypress)="numberTel_keyPress($event)"
 						ngModel />
-						<span matPrefix>{{ telPrefix }}</span>
+						<span matSuffix class="matSuffix">{{ telPrefix }}</span>
 					</mat-form-field>
 				</div>
 				<div class="col-sm-6">
@@ -51,7 +51,7 @@
 </section>
 
 <!--  -->
-<!-- <pre>{{ formSimData | json }}</pre> -->
+<pre>{{ userDataRegister | json }}</pre>
 <!-- <pre>{{ routeCurentPath | json }}</pre> -->
 <!-- <pre>{{ routePackage | json }}</pre> -->
 <!--  -->

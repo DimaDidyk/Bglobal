@@ -3,7 +3,6 @@
 #FlyForm>
 <!-- <pre>{{done | json}}</pre> -->
 <!-- <pre>{{countries | json}}</pre> -->
-<!-- <pre>{{packagesResponse | json}}</pre> -->
 
 	<div class="container">
 		<h1>לאן טסים?  </h1>
@@ -109,7 +108,9 @@
 </section>
 
 <div [@toggleHeight]="isShow" #appofferswrap>
-	<app-offers [packagesResponse]="packagesResponse"></app-offers>
+	<app-offers 
+	[packagesResponse]="packagesResponse" 
+	[packagesResponseLength]="packagesResponseLength"></app-offers>
 </div>
 
 <div [@toggleHeight]="isHide" *ngIf="route.snapshot.routeConfig.path == ''">

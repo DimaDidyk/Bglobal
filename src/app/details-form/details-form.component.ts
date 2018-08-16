@@ -44,6 +44,9 @@ export class DetailsFormComponent implements OnInit {
     };
 	userDataLead:UserDataLead = new UserDataLead();
 
+	message:boolean = false;
+	leadID;
+
     onSubmit( detailsForm: NgForm ) {
 		console.log( detailsForm.value );
 
@@ -54,7 +57,13 @@ export class DetailsFormComponent implements OnInit {
 
 		this.httpService.postDataCreateSaleLead(this.userDataLead)
             .subscribe(
-                error => console.log(error),
+                error => {
+                	this.message = true;
+                	this.leadID = error;
+                	console.log( this.message );
+                	console.log( this.leadID );
+                },
+                data => console.log( data ),
             );
 	}
 	
