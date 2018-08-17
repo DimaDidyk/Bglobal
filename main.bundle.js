@@ -53,7 +53,7 @@ var AboutUsPageComponent = /** @class */ (function () {
     AboutUsPageComponent.prototype.ngOnInit = function () {
     };
     AboutUsPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-about-us-page',
             template: __webpack_require__("./src/app/about-us-page/about-us-page.component.html"),
             styles: [__webpack_require__("./src/app/about-us-page/about-us-page.component.scss")]
@@ -117,11 +117,11 @@ var AdditionallyComponent = /** @class */ (function () {
     AdditionallyComponent.prototype.ngOnInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], AdditionallyComponent.prototype, "simAcriveFromData", void 0);
     AdditionallyComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-additionally',
             template: __webpack_require__("./src/app/additionally/additionally.component.html"),
             animations: [
@@ -145,18 +145,18 @@ var AdditionallyComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return toggleHeight; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 
-var toggleHeight = Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_27" /* trigger */])('toggleHeight', [
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* state */])('hide', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_25" /* style */])({
+var toggleHeight = Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["trigger"])('toggleHeight', [
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["state"])('hide', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({
         height: '0px',
         opacity: '0',
         overflow: 'hidden',
     })),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* state */])('show', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_25" /* style */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["state"])('show', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({
         height: '*',
         opacity: '1',
     })),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* transition */])('hide => show', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* animate */])('200ms 50ms ease-in')),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_26" /* transition */])('show => hide', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* animate */])('200ms ease-out'))
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('hide => show', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('200ms 50ms ease-in')),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('show => hide', Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('200ms ease-out'))
 ]);
 
 
@@ -225,7 +225,7 @@ var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forRoot(routes)
             ],
@@ -280,7 +280,7 @@ var AppComponent = /** @class */ (function () {
         //});
     };
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: "app-root",
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.scss")]
@@ -340,6 +340,8 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__usage_log_usage_log_component__ = __webpack_require__("./src/app/usage-log/usage-log.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__user_page_sim_user_page_sim_component__ = __webpack_require__("./src/app/user-page-sim/user-page-sim.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__user_page_user_page_component__ = __webpack_require__("./src/app/user-page/user-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42_ngx_google_places_autocomplete__ = __webpack_require__("./node_modules/ngx-google-places-autocomplete/bundles/ngx-google-places-autocomplete.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42_ngx_google_places_autocomplete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_42_ngx_google_places_autocomplete__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -394,6 +396,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var DEFAULT_SWIPER_CONFIG = {
     direction: 'horizontal',
     slidesPerView: 'auto'
@@ -402,7 +405,7 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_23__header_header_component__["c" /* HeaderComponent */],
@@ -465,6 +468,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["m" /* MatProgressBarModule */],
                 __WEBPACK_IMPORTED_MODULE_6_ngx_mask__["a" /* NgxMaskModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_42_ngx_google_places_autocomplete__["GooglePlaceModule"],
+                __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
             ],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_23__header_header_component__["c" /* HeaderComponent */],
@@ -538,7 +544,7 @@ var AvailableCountriesComponent = /** @class */ (function () {
         this.getConfig().subscribe(function (data) { return _this.countriesWithCategory = data; });
     };
     AvailableCountriesComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-available-countries',
             template: __webpack_require__("./src/app/available-countries/available-countries.component.html"),
             styles: [__webpack_require__("./src/app/available-countries/available-countries.component.scss")]
@@ -678,7 +684,7 @@ var BannerComponent = /** @class */ (function () {
     BannerComponent.prototype.ngOnInit = function () {
     };
     BannerComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-banner',
             template: __webpack_require__("./src/app/banner/banner.component.html"),
             styles: [__webpack_require__("./src/app/banner/banner.component.scss")]
@@ -728,7 +734,7 @@ var ChosenPackageComponent = /** @class */ (function () {
     ChosenPackageComponent.prototype.ngOnInit = function () {
     };
     ChosenPackageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-chosen-package',
             template: __webpack_require__("./src/app/chosen-package/chosen-package.component.html"),
             styles: [__webpack_require__("./src/app/chosen-package/chosen-package.component.scss")]
@@ -833,11 +839,11 @@ var ClientInfoComponent = /** @class */ (function () {
         // console.log( this.route );
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], ClientInfoComponent.prototype, "formSimData", void 0);
     ClientInfoComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-client-info',
             template: __webpack_require__("./src/app/client-info/client-info.component.html"),
             animations: [
@@ -904,7 +910,7 @@ var ContactUsPageComponent = /** @class */ (function () {
     ContactUsPageComponent.prototype.ngOnInit = function () {
     };
     ContactUsPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-contact-us-page',
             template: __webpack_require__("./src/app/contact-us-page/contact-us-page.component.html"),
             styles: [__webpack_require__("./src/app/contact-us-page/contact-us-page.component.scss")]
@@ -921,7 +927,7 @@ var ContactUsPageComponent = /** @class */ (function () {
 /***/ "./src/app/delivery/delivery.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"delivery\">\r\n\t<div class=\"container\">\r\n\t\t<h1>כתובת למשלוח  </h1>\r\n\t\t<h3>אנא בחרו היכן תרצו לאסוף את כרטיס הסים  </h3>\r\n\t\t<form #deliveryForm=\"ngForm\" (ngSubmit)=\"onSubmit(deliveryForm)\">\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t\r\n\r\n\t\t\t\t<mat-radio-group name=\"choice\" ngModel required>\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper1\">\r\n\t\t\t\t\t\t<mat-radio-button [checked]=\"deliveryForm.value.choice == 'checked1'\"\r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"false\">משלוח ups לנקודת איסוף\r\n\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\tmatTooltip=\"{{checked1TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked1Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t(click)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper2\">\r\n\t\t\t\t\t\t<mat-radio-button  \r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"true\">א  יסוף עצמי- הפנינה 2 רעננה  \r\n\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\t(click)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\tmatTooltip=\"{{checked2TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked2Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</mat-radio-group>\r\n\r\n\t\t\t\t<div class=\"col-sm-12 float-right-sm\" *ngIf=\"!deliveryForm.value.choice\">\r\n\t\t\t\t\t<mat-form-field *ngIf=\"!deliveryForm.value.choice\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"כתובת מגורים   :\" \r\n\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t[disabled]=\"deliveryForm.value.choice == true\"\r\n\t\t\t\t\t\tname=\"search\" ngModel />\r\n\t\t\t\t\t</mat-form-field>\r\n\r\n\t\t\t\t\t<div class=\"row radio-fields\" *ngIf=\"!deliveryForm.value.checked\">\r\n\t\t\t\t\t\t<mat-radio-group name=\"address\" ngModel \r\n\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t*ngIf=\"deliveryForm.value.search\">\r\n\t\t\t\t\t\t\t<div class=\"col-sm-6\"\r\n\t\t\t\t\t\t\t*ngFor=\"let adress of addresses | \r\n\t\t\t\t\t\t\tsearchAddress:deliveryForm.value.search | \r\n\t\t\t\t\t\t\tslice:0:6 \">\r\n\t\t\t\t\t\t\t\t<mat-radio-button \r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ adress }}\">\r\n\t\t\t\t\t\t\t\t\t{{ adress }}\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</mat-radio-group>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t[disabled]=\"!deliveryForm.valid\"\r\n\t\t\t\t\t(click)=\"scrollAnimate(appTotal)\"\r\n\t\t\t\t\t(click)=\"isShow='show'\">המשך  </button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</section>\r\n\r\n<!-- <pre>{{ deliveryForm.value | json }}</pre> -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appTotal>\r\n\t<app-total\r\n\t\t[deliveryFormData]=\"deliveryForm.value\">\r\n\t</app-total>\r\n</div>"
+module.exports = "<section id=\"delivery\">\r\n\t<div class=\"container\">\r\n\t\t<h1>כתובת למשלוח  </h1>\r\n\t\t<h3>אנא בחרו היכן תרצו לאסוף את כרטיס הסים  </h3>\r\n\t\t<form #deliveryForm=\"ngForm\" (ngSubmit)=\"onSubmit(deliveryForm)\">\r\n\t\t\t<div class=\"row\">\r\n\r\n<!-- <input ngx-google-places-autocomplete [options]=\"{\r\n    types: [],\r\n    componentRestrictions: { country: 'UA' }\r\n    }\"\r\n     #placesRef=\"ngx-places\" (onAddressChange)=\"handleAddressChange($event)\"/> -->\r\n\r\n     <input ngx-google-places-autocomplete [options]='options' #placesRef=\"ngx-places\" (onAddressChange)=\"handleAddressChange($event)\"/>\r\n\r\n\r\n\r\n\t\t\t\t<mat-radio-group name=\"choice\" ngModel required>\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper1\">\r\n\t\t\t\t\t\t<mat-radio-button [checked]=\"deliveryForm.value.choice == 'checked1'\"\r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"false\">משלוח ups לנקודת איסוף\r\n\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\tmatTooltip=\"{{checked1TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked1Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t(click)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper2\">\r\n\t\t\t\t\t\t<mat-radio-button  \r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"true\">א  יסוף עצמי- הפנינה 2 רעננה  \r\n\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\t(click)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\tmatTooltip=\"{{checked2TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked2Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</mat-radio-group>\r\n\r\n\t\t\t\t<div class=\"col-sm-12 float-right-sm\" *ngIf=\"!deliveryForm.value.choice\">\r\n\t\t\t\t\t<mat-form-field *ngIf=\"!deliveryForm.value.choice\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"כתובת מגורים   :\" \r\n\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t[disabled]=\"deliveryForm.value.choice == true\"\r\n\t\t\t\t\t\tname=\"search\" ngModel />\r\n\t\t\t\t\t</mat-form-field>\r\n\r\n\t\t\t\t\t<div class=\"row radio-fields\" *ngIf=\"!deliveryForm.value.checked\">\r\n\t\t\t\t\t\t<mat-radio-group name=\"address\" ngModel \r\n\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t*ngIf=\"deliveryForm.value.search\">\r\n\t\t\t\t\t\t\t<div class=\"col-sm-6\"\r\n\t\t\t\t\t\t\t*ngFor=\"let adress of addresses | \r\n\t\t\t\t\t\t\tsearchAddress:deliveryForm.value.search | \r\n\t\t\t\t\t\t\tslice:0:6 \">\r\n\t\t\t\t\t\t\t\t<mat-radio-button \r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ adress }}\">\r\n\t\t\t\t\t\t\t\t\t{{ adress }}\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</mat-radio-group>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t[disabled]=\"!deliveryForm.valid\"\r\n\t\t\t\t\t(click)=\"scrollAnimate(appTotal)\"\r\n\t\t\t\t\t(click)=\"isShow='show'\">המשך  </button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</section>\r\n\r\n<!-- <pre>{{ deliveryForm.value | json }}</pre> -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appTotal>\r\n\t<app-total\r\n\t\t[deliveryFormData]=\"deliveryForm.value\">\r\n\t</app-total>\r\n</div>"
 
 /***/ }),
 
@@ -938,7 +944,9 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeliveryComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation__ = __webpack_require__("./src/app/animation.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_google_places_autocomplete__ = __webpack_require__("./node_modules/ngx-google-places-autocomplete/bundles/ngx-google-places-autocomplete.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_google_places_autocomplete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ngx_google_places_autocomplete__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation__ = __webpack_require__("./src/app/animation.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -948,6 +956,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 var DeliveryComponent = /** @class */ (function () {
@@ -986,18 +995,25 @@ var DeliveryComponent = /** @class */ (function () {
             element.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 250);
     };
+    DeliveryComponent.prototype.handleAddressChange = function (address) {
+        console.log(address);
+    };
     DeliveryComponent.prototype.ngOnInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], DeliveryComponent.prototype, "clientInfoFormData", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("placesRef"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ngx_google_places_autocomplete__["GooglePlaceDirective"])
+    ], DeliveryComponent.prototype, "placesRef", void 0);
     DeliveryComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-delivery',
             template: __webpack_require__("./src/app/delivery/delivery.component.html"),
             animations: [
-                __WEBPACK_IMPORTED_MODULE_1__animation__["a" /* toggleHeight */]
+                __WEBPACK_IMPORTED_MODULE_2__animation__["a" /* toggleHeight */]
             ],
             styles: [__webpack_require__("./src/app/delivery/delivery.component.scss")]
         }),
@@ -1088,11 +1104,11 @@ var DetailsFormComponent = /** @class */ (function () {
     DetailsFormComponent.prototype.ngOnInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])('telInput'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('telInput'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], DetailsFormComponent.prototype, "telInput", void 0);
     DetailsFormComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-details-form',
             template: __webpack_require__("./src/app/details-form/details-form.component.html"),
             styles: [__webpack_require__("./src/app/details-form/details-form.component.scss")]
@@ -1186,7 +1202,7 @@ var FaqPageComponent = /** @class */ (function () {
     FaqPageComponent.prototype.ngOnInit = function () {
     };
     FaqPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-faq-page',
             template: __webpack_require__("./src/app/faq-page/faq-page.component.html"),
             styles: [__webpack_require__("./src/app/faq-page/faq-page.component.scss")]
@@ -1420,7 +1436,7 @@ var FlyFormComponent = /** @class */ (function () {
         }
     };
     FlyFormComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-fly-form',
             template: __webpack_require__("./src/app/fly-form/fly-form.component.html"),
             animations: [
@@ -1428,7 +1444,7 @@ var FlyFormComponent = /** @class */ (function () {
             ],
             styles: [__webpack_require__("./src/app/fly-form/fly-form.component.scss")],
         }),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_7__angular_material_core__["c" /* DateAdapter */],
             __WEBPACK_IMPORTED_MODULE_1__angular_material_datepicker__["a" /* MatDatepickerModule */],
@@ -1478,7 +1494,7 @@ var FooterComponent = /** @class */ (function () {
     FooterComponent.prototype.ngOnInit = function () {
     };
     FooterComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-footer',
             template: __webpack_require__("./src/app/footer/footer.component.html"),
             styles: [__webpack_require__("./src/app/footer/footer.component.scss")]
@@ -1547,7 +1563,7 @@ var FormSimComponent = /** @class */ (function () {
     FormSimComponent.prototype.ngOnInit = function () {
     };
     FormSimComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-form-sim',
             template: __webpack_require__("./src/app/form-sim/form-sim.component.html"),
             animations: [
@@ -1655,7 +1671,7 @@ var HeaderComponent = /** @class */ (function () {
     HeaderComponent.prototype.ngOnInit = function () {
     };
     HeaderComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-header',
             template: __webpack_require__("./src/app/header/header.component.html"),
             styles: [__webpack_require__("./src/app/header/header.component.scss")],
@@ -1678,7 +1694,7 @@ var DialogSignIn = /** @class */ (function () {
         this.dialogRef.close();
     };
     DialogSignIn = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'dialog-sign-in',
             template: __webpack_require__("./src/app/header/dialog-sign-in.html"),
             styles: [__webpack_require__("./src/app/header/dialog-sign-in.scss")]
@@ -1697,7 +1713,7 @@ var DialogMessage = /** @class */ (function () {
         this.dialogRef.close();
     };
     DialogMessage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'dialog-message',
             template: __webpack_require__("./src/app/header/dialog-message.html"),
             styles: [__webpack_require__("./src/app/header/dialog-message.scss")]
@@ -1747,7 +1763,7 @@ var HomaPageComponent = /** @class */ (function () {
     HomaPageComponent.prototype.ngOnInit = function () {
     };
     HomaPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-homa-page',
             template: __webpack_require__("./src/app/homa-page/homa-page.component.html"),
             styles: [__webpack_require__("./src/app/homa-page/homa-page.component.scss")]
@@ -1831,15 +1847,15 @@ var HomeSliderComponent = /** @class */ (function () {
     };
     HomeSliderComponent.prototype.ngOnInit = function () { };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["b" /* SwiperComponent */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["b" /* SwiperComponent */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["b" /* SwiperComponent */])
     ], HomeSliderComponent.prototype, "componentRef", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["c" /* SwiperDirective */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["c" /* SwiperDirective */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["c" /* SwiperDirective */])
     ], HomeSliderComponent.prototype, "directiveRef", void 0);
     HomeSliderComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-home-slider',
             template: __webpack_require__("./src/app/home-slider/home-slider.component.html"),
             styles: [__webpack_require__("./src/app/home-slider/home-slider.component.scss")]
@@ -1928,7 +1944,7 @@ var InfoPageComponent = /** @class */ (function () {
     };
     InfoPageComponent.prototype.ngOnInit = function () { };
     InfoPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-info-page',
             template: __webpack_require__("./src/app/info-page/info-page.component.html"),
             styles: [__webpack_require__("./src/app/info-page/info-page.component.scss")]
@@ -1963,7 +1979,7 @@ var DialogUpdateUserInfo = /** @class */ (function () {
         this.closeDialog();
     };
     DialogUpdateUserInfo = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'dialog-update-user-info',
             template: __webpack_require__("./src/app/info-page/dialog-update-user-info.html"),
             styles: [__webpack_require__("./src/app/info-page/dialog-update-user-info.scss")]
@@ -2006,7 +2022,7 @@ var DialogUpdateCardInfo = /** @class */ (function () {
         this.closeDialog();
     };
     DialogUpdateCardInfo = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'dialog-update-card-info',
             template: __webpack_require__("./src/app/info-page/dialog-update-card-info.html"),
             styles: [__webpack_require__("./src/app/info-page/dialog-update-card-info.scss")]
@@ -2133,32 +2149,32 @@ var OffersComponent = /** @class */ (function () {
         // }, 100);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["b" /* SwiperComponent */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["b" /* SwiperComponent */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["b" /* SwiperComponent */])
     ], OffersComponent.prototype, "componentRef", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["c" /* SwiperDirective */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["c" /* SwiperDirective */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ngx_swiper_wrapper__["c" /* SwiperDirective */])
     ], OffersComponent.prototype, "directiveRef", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__entity_package__["a" /* PackagesResponse */])
     ], OffersComponent.prototype, "packagesResponse", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], OffersComponent.prototype, "packagesResponseLength", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])('flyFormCountries'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('flyFormCountries'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], OffersComponent.prototype, "flyFormCountries", void 0);
     OffersComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-offers',
             template: __webpack_require__("./src/app/offers/offers.component.html"),
             styles: [__webpack_require__("./src/app/offers/offers.component.scss")],
         }),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
     ], OffersComponent);
@@ -2231,11 +2247,11 @@ var PaymentComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], PaymentComponent.prototype, "totalFormData", void 0);
     PaymentComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-payment',
             template: __webpack_require__("./src/app/payment/payment.component.html"),
             styles: [__webpack_require__("./src/app/payment/payment.component.scss")]
@@ -2293,7 +2309,7 @@ var PersonalDetailsComponent = /** @class */ (function () {
         }
     };
     PersonalDetailsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-personal-details',
             template: __webpack_require__("./src/app/personal-details/personal-details.component.html"),
             styles: [__webpack_require__("./src/app/personal-details/personal-details.component.scss")]
@@ -2346,11 +2362,11 @@ var PromotionComponent = /** @class */ (function () {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], PromotionComponent.prototype, "FlyForm", void 0);
     PromotionComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-promotion',
             template: __webpack_require__("./src/app/promotion/promotion.component.html"),
             styles: [__webpack_require__("./src/app/promotion/promotion.component.scss")]
@@ -2444,11 +2460,11 @@ var ReturningChosenPackageComponent = /** @class */ (function () {
         }, 250);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])("returning", { read: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] }),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("returning", { read: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] }),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], ReturningChosenPackageComponent.prototype, "returning", void 0);
     ReturningChosenPackageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-returning-chosen-package',
             template: __webpack_require__("./src/app/returning-chosen-package/returning-chosen-package.component.html"),
             animations: [
@@ -2470,7 +2486,7 @@ var ReturningChosenPackageComponent = /** @class */ (function () {
 /***/ "./src/app/returning-customer-page/returning-customer-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner></app-banner>\r\n\r\n<app-returning-chosen-package></app-returning-chosen-package>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<!-- <app-delivery></app-delivery> -->\r\n<!-- <app-total></app-total> -->\r\n<!-- <app-payment></app-payment> -->"
+module.exports = "<app-banner></app-banner>\r\n\r\n<app-returning-chosen-package></app-returning-chosen-package>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<app-delivery></app-delivery>\r\n<!-- <app-total></app-total> -->\r\n<!-- <app-payment></app-payment> -->"
 
 /***/ }),
 
@@ -2503,7 +2519,7 @@ var ReturningCustomerPageComponent = /** @class */ (function () {
     ReturningCustomerPageComponent.prototype.ngOnInit = function () {
     };
     ReturningCustomerPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-returning-customer-page',
             template: __webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.html"),
             styles: [__webpack_require__("./src/app/returning-customer-page/returning-customer-page.component.scss")]
@@ -2544,7 +2560,7 @@ var SearchAddressPipe = /** @class */ (function () {
         });
     };
     SearchAddressPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Pipe */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
             name: 'searchAddress'
         })
     ], SearchAddressPipe);
@@ -2622,7 +2638,7 @@ var HttpService = /** @class */ (function () {
         return this.http.post(this.baseUrl + "Public/SimPackagesByCountries", body);
     };
     HttpService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], HttpService);
     return HttpService;
@@ -2693,11 +2709,11 @@ var SimActiveFormComponent = /** @class */ (function () {
         this.adapter.setLocale('he'); //date format
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], SimActiveFormComponent.prototype, "clientInfoFormData", void 0);
     SimActiveFormComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-sim-active-form',
             template: __webpack_require__("./src/app/sim-active-form/sim-active-form.component.html"),
             animations: [
@@ -2751,7 +2767,7 @@ var SimOrderPageComponent = /** @class */ (function () {
     SimOrderPageComponent.prototype.ngOnInit = function () {
     };
     SimOrderPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-sim-order-page',
             template: __webpack_require__("./src/app/sim-order-page/sim-order-page.component.html"),
             styles: [__webpack_require__("./src/app/sim-order-page/sim-order-page.component.scss")]
@@ -2801,7 +2817,7 @@ var ThankYouPageComponent = /** @class */ (function () {
     ThankYouPageComponent.prototype.ngOnInit = function () {
     };
     ThankYouPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-thank-you-page',
             template: __webpack_require__("./src/app/thank-you-page/thank-you-page.component.html"),
             styles: [__webpack_require__("./src/app/thank-you-page/thank-you-page.component.scss")]
@@ -2886,15 +2902,15 @@ var TotalComponent = /** @class */ (function () {
     TotalComponent.prototype.ngOnInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], TotalComponent.prototype, "additionallyFromData", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], TotalComponent.prototype, "deliveryFormData", void 0);
     TotalComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-total',
             template: __webpack_require__("./src/app/total/total.component.html"),
             animations: [
@@ -2974,7 +2990,7 @@ var UsageLogComponent = /** @class */ (function () {
     UsageLogComponent.prototype.ngOnInit = function () {
     };
     UsageLogComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-usage-log',
             template: __webpack_require__("./src/app/usage-log/usage-log.component.html"),
             styles: [__webpack_require__("./src/app/usage-log/usage-log.component.scss")]
@@ -3024,7 +3040,7 @@ var UserPageSimComponent = /** @class */ (function () {
     UserPageSimComponent.prototype.ngOnInit = function () {
     };
     UserPageSimComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-user-page-sim',
             template: __webpack_require__("./src/app/user-page-sim/user-page-sim.component.html"),
             styles: [__webpack_require__("./src/app/user-page-sim/user-page-sim.component.scss")]
@@ -3074,7 +3090,7 @@ var UserPageComponent = /** @class */ (function () {
     UserPageComponent.prototype.ngOnInit = function () {
     };
     UserPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-user-page',
             template: __webpack_require__("./src/app/user-page/user-page.component.html"),
             styles: [__webpack_require__("./src/app/user-page/user-page.component.scss")]
@@ -3121,7 +3137,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
