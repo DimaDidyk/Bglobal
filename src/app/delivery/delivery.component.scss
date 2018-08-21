@@ -67,7 +67,13 @@
 		margin-right: 26px;
 		margin-top: -3px;
 	}
-	
+	.error-log{
+	    direction: rtl;
+	    font-weight: 400;
+	    font-size: 18px;
+	    color: $purpleDark;
+	    white-space: pre-line;
+	}
 }
 
 

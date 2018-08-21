@@ -4,7 +4,13 @@
 		<h3>אנא בחרו היכן תרצו לאסוף את כרטיס הסים  </h3>
 		<form #deliveryForm="ngForm" (ngSubmit)="onSubmit(deliveryForm)">
 			<div class="row">
-				
+
+<!--      <input ngx-google-places-autocomplete [options]='{
+			componentRestrictions: { country: "il" }
+	 	}' 
+	 	#placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/> -->
+
+		<!-- <pre>{{ placesRef | json }}</pre> -->
 
 				<mat-radio-group name="choice" ngModel required>
 					<div class="col-sm-12 checked-wrapper1">
@@ -42,12 +48,20 @@
 				</mat-radio-group>
 
 				<div class="col-sm-12 float-right-sm" *ngIf="!deliveryForm.value.choice">
+
 					<mat-form-field *ngIf="!deliveryForm.value.choice">
-						<input matInput placeholder="כתובת מגורים   :" 
+						<input matInput
+						ngx-google-places-autocomplete 
+						[options]='options'
+	 					#placesRef="ngx-places" 
+	 					(onAddressChange)="handleAddressChange($event)"
+						placeholder="כתובת מגורים   :" 
 						required
 						[disabled]="deliveryForm.value.choice == true"
 						name="search" ngModel />
 					</mat-form-field>
+
+					<div class="error-log">{{ errorLocality }}</div>
 
 					<div class="row radio-fields" *ngIf="!deliveryForm.value.checked">
 						<mat-radio-group name="address" ngModel 

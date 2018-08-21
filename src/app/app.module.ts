@@ -47,14 +47,7 @@ import { UsageLogComponent } from './usage-log/usage-log.component';
 import { UserPageSimComponent } from './user-page-sim/user-page-sim.component';
 import { UserPageComponent } from './user-page/user-page.component';
 
-
-
-
-
-
-
-
-
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -124,6 +117,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatProgressBarModule,
     NgxMaskModule.forRoot(),
     HttpClientModule,
+    GooglePlaceModule, 
+    BrowserModule, 
+    FormsModule,
   ],
   entryComponents: [
     HeaderComponent,
