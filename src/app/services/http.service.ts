@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Country, SimCountriesWithCategory } from "../entity/Country";
+import { Country, SimCountriesWithCategory, ClosestPickUpPoints } from "../entity/Country";
 import { SimPackages } from "../entity/Package";
 import { UserDataLead, UserDataRegister } from "../entity/User";
 
@@ -53,13 +53,21 @@ export class HttpService {
         return this.http.post(this.baseUrl + "Account/Register", body); 
     }
 
-
     postDataSimPackages(SimPackages: SimPackages){
         const body = {
             Countries: SimPackages.Countries,
             TotalDays: SimPackages.TotalDays,
         };
         return this.http.post(this.baseUrl + "Public/SimPackagesByCountries", body); 
+    }
+
+    postPickUpPoints(PickUpPoints: ClosestPickUpPoints){
+        const body = {
+            City: PickUpPoints.City,
+            Street: PickUpPoints.Street,
+            Building: PickUpPoints.Building,
+        };
+        return this.http.post(this.baseUrl + "Public/ClosestPickUpPoints", body); 
     }
 
 	

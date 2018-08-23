@@ -21,7 +21,22 @@
 		text-align: right;
 		color: $black;
 		user-select: none;
+		.name{
+			color: $blue;
+		}
+		.desc{
+			color: $grayDark;
+			span{
+				float: left;
+				margin-right: 8px;
+				direction: rtl;
+			}
+		}
+		.mat-radio-button{
+			width: 100%;
+		}
 	}
+
 	.bg-button{
 		margin-top: 72px;
 	}
@@ -87,10 +102,15 @@
 			text-align: right;
 		}
 		.checked-wrapper2{
-    		bottom: 54px;
+    		bottom: 58px;
 		}
 		.bg-button{
-			margin-top: 32px;
+			margin-top: 44px;
+		}
+		.radio-fields{
+			.mat-radio-button{
+				margin-bottom: 8px;
+			}
 		}
 	}
 

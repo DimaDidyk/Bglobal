@@ -19,3 +19,8 @@ export class UserDataRegister{
     AllowSendMail: boolean;
 }
 
+export class ClosestPickUpPoints{
+    City: string;
+    Street: string;
+    Building: string;
+}

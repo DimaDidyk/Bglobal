@@ -9,7 +9,7 @@ import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.componen
 
 import { HttpService } from '../services/http.service';
 import { UserDataRegister } from "../entity/User";
-
+ 
 @Component({
 	selector: 'app-client-info',
 	templateUrl: './client-info.component.html',

@@ -10,3 +10,9 @@ export class SimCountriesWithCategory {
   Id: number;
   Name: string;
 }
+
+export class ClosestPickUpPoints{
+    City: string;
+    Street: string;
+    Building: string;
+}

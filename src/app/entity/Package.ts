@@ -12,4 +12,3 @@ export class PackagesResponse {
   Details: string[];
   Description: string;
 }
-

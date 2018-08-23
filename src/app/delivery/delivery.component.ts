@@ -10,6 +10,9 @@ import { SearchAddressPipe } from '../search-address.pipe';
 import { GooglePlaceModule,GooglePlaceDirective } from "ngx-google-places-autocomplete";
 import { toggleHeight } from '../animation';
 
+import { HttpService } from '../services/http.service';
+import { ClosestPickUpPoints } from "../entity/country";
+
 @Component({
 	selector: 'app-delivery',
 	templateUrl: './delivery.component.html',
@@ -20,6 +23,9 @@ import { toggleHeight } from '../animation';
 })
 
 export class DeliveryComponent implements OnInit {
+
+	constructor( private httpService: HttpService ){}
+
 
 	@Input() clientInfoFormData: string;
 
@@ -39,63 +45,68 @@ export class DeliveryComponent implements OnInit {
 		}, 250)
 	}
 
-	checked = true;
-	// test:string = 'test';
-	// addresses = [
-	// 	'demo',
-	// 	'test',
-	// 	'test 1',
-	// 	'test 11',
-	// 	'test 111',
-	// 	'test 2',
-	// 	'test 3',
-	// 	'test 4',
-	// 	'test 5',
-	// 	'test 6',
-	// 	'test 7',
-	// 	'test 8',
-	// 	'תובת כשלהי, עיר  ',
-	// 	'תובת כשלהי, עיר  ',
-	// 	'תובת כשלהי, עיר  ',
-	// 	'תובת כשלהי, עיר  ',
-	// ]
-
 	// locality
 	// route
 	// street_number
+	closestPickUpPoints:ClosestPickUpPoints = new ClosestPickUpPoints();
 	options = {
 		componentRestrictions: { country: "il" }
     };
+	addresses;
+    emptyAddresses:boolean = true;
     errorLocality;
     @ViewChild("placesRef")placesRef : GooglePlaceDirective;
     public handleAddressChange(address) {
-        console.log( address );
-
+        // console.log( address );
         this.errorLocality = '';
-
         let locality = false;
-    	let route = false
+    	let route = false;
     	let street_number = false;
         for (var i = address.address_components.length - 1; i >= 0; i--) {
-        	address.address_components[i];
-        	console.log( address.address_components[i].types[0] );
+        	// console.log( address.address_components[i].long_name );
         	
-        	if( address.address_components[i].types[0] == 'locality' )
+        	if( address.address_components[i].types[0] == 'locality' ){
         		locality = true;
-        	if( address.address_components[i].types[0] == 'route' )
+        		this.closestPickUpPoints.City = address.address_components[i].long_name;
+        	}
+        	if( address.address_components[i].types[0] == 'route' ){
         		route = true;
-        	if( address.address_components[i].types[0] == 'street_number' )
+        		this.closestPickUpPoints.Street = address.address_components[i].long_name;
+        	}
+			if( address.address_components[i].types[0] == 'street_number' ){
         		street_number = true;
-        	console.log( locality, route, street_number );
+        		this.closestPickUpPoints.Building = address.address_components[i].long_name;
+        	}
+        	// console.log( locality, route, street_number );
+        	// console.log( locality, route, );
         }
         if( !locality ) this.errorLocality += 'Введите название города\n';
         if( !route ) this.errorLocality += 'Введите название улицы\n';
-        if( !street_number ) this.errorLocality += 'Введите номер дома';
-        console.log( this.errorLocality );
+        if( !street_number ) this.closestPickUpPoints.Building = 'empty';
+
+
+        if( locality && route && this.errorLocality == '' ){
+        	console.log( 'send query' );
+			this.httpService.postPickUpPoints(this.closestPickUpPoints)
+            .subscribe(
+                error => {
+                	console.log(error);
+                	this.addresses = error;
+                	// this.emptyAddresses ==
+                	if( this.addresses.length == 0 ){
+                		this.emptyAddresses = false;
+                	}else{
+						this.emptyAddresses = true;
+                	}
+                },
+                complete => console.log(complete),
+            );
+        }
+        console.log( this.closestPickUpPoints );
+        // console.log( this.errorLocality );
     }
 
 
-	constructor() { }
 
 	ngOnInit() {
 

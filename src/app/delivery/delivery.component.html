@@ -5,14 +5,7 @@
 		<form #deliveryForm="ngForm" (ngSubmit)="onSubmit(deliveryForm)">
 			<div class="row">
 
-<!--      <input ngx-google-places-autocomplete [options]='{
-			componentRestrictions: { country: "il" }
-	 	}' 
-	 	#placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/> -->
-
-		<!-- <pre>{{ placesRef | json }}</pre> -->
-
-				<mat-radio-group name="choice" ngModel required>
+				<mat-radio-group name="choice" [ngModel]="false" required>
 					<div class="col-sm-12 checked-wrapper1">
 						<mat-radio-button [checked]="deliveryForm.value.choice == 'checked1'"
 						labelPosition="before" 
@@ -65,22 +58,91 @@
 
 					<div class="row radio-fields" *ngIf="!deliveryForm.value.checked">
 						<mat-radio-group name="address" ngModel 
-						required
-						*ngIf="deliveryForm.value.search">
-							<div class="col-sm-6"
-							*ngFor="let adress of addresses | 
-							searchAddress:deliveryForm.value.search | 
-							slice:0:6 ">
+						required 
+						*ngIf="deliveryForm.value.search && addresses && errorLocality == ''">
+							<!-- <div class="col-sm-6"
+							*ngFor="let adress of addresses;let i = index;">
 								<mat-radio-button 
 								 labelPosition="before"
-								 value="{{ adress }}">
-									{{ adress }}
+								 value="{{ adress.CityName + adress.Description }}">
+									<div class="name">{{ adress.PointName }} i: {{i}}</div>
+									<div class="desc">{{ adress.StreetName +' '+ 
+									adress.HouseNumber +', '+
+									adress.CityName }} 
+									<span>( {{adress.Distance}} ק''מ  ) </span> </div>
+								</mat-radio-button>
+							</div> -->
+							<div class="col-sm-6 float-right-sm">
+								<mat-radio-button *ngIf="addresses[0]"
+								 labelPosition="before"
+								 value="{{ addresses[0].CityName + addresses[0].Description }}">
+									<div class="name">{{ addresses[0].PointName }}</div>
+									<div class="desc">{{ addresses[0].StreetName +' '+ 
+									addresses[0].HouseNumber +', '+
+									addresses[0].CityName }} 
+									<span>( {{addresses[0].Distance}} ק''מ  ) </span> </div>
+								</mat-radio-button>
+
+								<mat-radio-button *ngIf="addresses[1]"
+								 labelPosition="before"
+								 value="{{ addresses[1].CityName + addresses[1].Description }}">
+									<div class="name">{{ addresses[1].PointName }}</div>
+									<div class="desc">{{ addresses[1].StreetName +' '+ 
+									addresses[1].HouseNumber +', '+
+									addresses[1].CityName }} 
+									<span>( {{addresses[1].Distance}} ק''מ  ) </span> </div>
+								</mat-radio-button>
+
+								<mat-radio-button *ngIf="addresses[2]"
+								 labelPosition="before"
+								 value="{{ addresses[2].CityName + addresses[2].Description }}">
+									<div class="name">{{ addresses[2].PointName }}</div>
+									<div class="desc">{{ addresses[2].StreetName +' '+ 
+									addresses[2].HouseNumber +', '+
+									addresses[2].CityName }} 
+									<span>( {{addresses[2].Distance}} ק''מ  ) </span> </div>
 								</mat-radio-button>
 							</div>
+							<div class="col-sm-6">
+								<mat-radio-button *ngIf="addresses[3]"
+								 labelPosition="before"
+								 value="{{ addresses[3].CityName + addresses[3].Description }}">
+									<div class="name">{{ addresses[3].PointName }}</div>
+									<div class="desc">{{ addresses[3].StreetName +' '+ 
+									addresses[3].HouseNumber +', '+
+									addresses[3].CityName }} 
+									<span>( {{addresses[3].Distance}} ק''מ  ) </span> </div>
+								</mat-radio-button>
+								<mat-radio-button *ngIf="addresses[4]"
+								 labelPosition="before"
+								 value="{{ addresses[4].CityName + addresses[4].Description }}">
+									<div class="name">{{ addresses[4].PointName }}</div>
+									<div class="desc">{{ addresses[4].StreetName +' '+ 
+									addresses[4].HouseNumber +', '+
+									addresses[4].CityName }} 
+									<span>( {{addresses[4].Distance}} ק''מ  ) </span> </div>
+								</mat-radio-button>
+								<mat-radio-button *ngIf="addresses[5]"
+								 labelPosition="before"
+								 value="{{ addresses[5].CityName + addresses[5].Description }}">
+									<div class="name">{{ addresses[5].PointName }}</div>
+									<div class="desc">{{ addresses[5].StreetName +' '+ 
+									addresses[5].HouseNumber +', '+
+									addresses[5].CityName }} 
+									<span>( {{addresses[5].Distance}} ק''מ  ) </span> </div>
+								</mat-radio-button>
+							</div>
+							
 						</mat-radio-group>
 					</div>
+
+					<div class="error-log" *ngIf="!emptyAddresses">нет доступных адресов</div>
+					<!-- <div class="error-log" 
+					*ngIf="emptyAddresses && closestPickUpPoints.Building == 'empty'">дистанция может быть ошибочной</div> -->
+
 				</div>
 			</div>
+			<!-- <pre>{{ addresses | json }}</pre> -->
 			
 			<div class="row">
 				<div class="col-sm-12">
