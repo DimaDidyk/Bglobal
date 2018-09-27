@@ -1,9 +1,9 @@
 <section id="offers" (mousemove)="initSlider()" #offers>
 
 	<!-- *ngIf="packagesResponse.length != 0" mousemove-->
-	<!-- <pre>{{ packagesResponse | json }}</pre> -->
+	<!-- <pre>{{ packagesResponseLength | json }}</pre> -->
 
-	<div class="container" >
+	<div class="container">
 		<h1>טוסים ל
 			<span *ngIf="flyFormValue" #flyFormCountries (click)="initSlider()">
 				<span *ngIf="flyFormValue.country" class="first-country">{{flyFormValue.country}}</span>
@@ -21,6 +21,7 @@
 			<!-- slider -->
 			<swiper [config]="config" [(index)]="index" (indexChange)="onIndexChange($event)">
 				<div class="swiper-slide"
+				[ngClass]="[packagesResponseLength == 1 ? 'one-slide' : '']"
 				(click)="routPackage( slide )"
 				*ngFor="let slide of packagesResponse">
 					<div class="slide-header">
@@ -32,8 +33,8 @@
 						*ngIf="slide == packagesResponse[1]">Most popular</div>
 						<div class="most economic" 
 						*ngIf="slide == packagesResponse[2]">Most economic</div>
-						<div class="price">₪ {{ slide['SimPrice'] + slide['PackagePrice'] }}</div>
-						<div class="days">( {{ slide['DaysExpired'] }} ימים'  )</div>
+						<div class="price">₪ {{ slide['PackagePrice'] }}</div>
+						<div class="days">( {{ slide['DaysExpired'] }} ימים  )</div>
 						<div class="slide-content">{{ slide['Description'] }}</div>
 						<button type="submit"
 						mat-button class="bg-button"
@@ -43,7 +44,7 @@
 			</swiper><!-- #slider -->
  
 
-			<div class="custome-navigate-slider">
+			<div class="custome-navigate-slider" *ngIf="packagesResponseLength > 1">
 				<div class="back nav-arrow" (click)="prevSlide(600)"
 					*ngIf="hidePrev">
 					<i class="material-icons">keyboard_arrow_left</i>

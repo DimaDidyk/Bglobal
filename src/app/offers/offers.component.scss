@@ -60,7 +60,8 @@
 		border-radius: 6px;
 		cursor: pointer;
 		box-shadow: 0px 2px 9.8px 0.2px rgba(0, 0, 0, 0.16);
-		&:hover{
+		&.one-slide{
+			margin: 0 auto !important;
 		}
 		.slide-header{
 			transition: all .3s;
@@ -107,6 +108,7 @@
 				font-size: 20px;
 				font-weight: 600;
 				margin-top: 4px;
+				direction: rtl;
 			}
 			.slide-content{
 				color: $black;

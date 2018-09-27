@@ -109,6 +109,7 @@
 
 <div [@toggleHeight]="isShow" #appofferswrap>
 	<app-offers 
+	[flyFormValue]="flyForm.value" 
 	[packagesResponse]="packagesResponse" 
 	[packagesResponseLength]="packagesResponseLength"></app-offers>
 </div>

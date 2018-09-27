@@ -28,6 +28,7 @@ export class OffersComponent implements OnInit {
 
 	// get fly from data
 	@Input() packagesResponse:PackagesResponse;
+	@Input() flyFormValue;
 	@Input() packagesResponseLength;
 
 	// slider config
