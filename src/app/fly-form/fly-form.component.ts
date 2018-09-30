@@ -141,8 +141,8 @@ export class FlyFormComponent implements OnInit {
       (data) => {
         this.packagesResponse = data;
         this.packagesResponseLength = this.packagesResponse.length;
-        console.log( data );
-        console.log( this.packagesResponseLength );
+        // console.log( data );
+        // console.log( this.packagesResponseLength );
         // this.OffersComponent.text = 'text';
       },
     );

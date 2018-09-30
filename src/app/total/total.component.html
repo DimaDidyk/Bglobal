@@ -6,19 +6,22 @@
 				<h1>שרותים שנבחרו</h1>
 				<table class="table">
 				  <tbody>
+				  	<!-- PackagePrice -->
 				    <tr>
-				      <td><b class="right">&nbsp; 29</b><b>ליום   ₪ </b> </td>
-				      <td>unlimited : חבילת גלישה</td>
+				      <td><b class="right">&nbsp; {{ getSlidePackgeData['PackagePrice'] }}</b><b>ליום   ₪ </b> </td>
+				      <td>{{ getSlidePackgeData['Name'] }} : חבילה  </td>
 				    </tr>
-				  
+				    <!-- SimPrice -->
 				    <tr>
-				      <td><b>₪ 59  </b></td>
-				      <td>unlimited : חבילת שיחות</td>
+				      <td><b>₪ {{ getSlidePackgeData['SimPrice'] }}  </b></td>
+				      <td>כרטיס סים  </td> 
 				    </tr>
+				    <!-- delivery -->
 				    <tr>
-				      <td><b>₪ 29  </b></td>
-				      <td>עלות כרטיס ומשלוח (חד פעמי)</td> 
+				      <td><b>₪ {{ deliveryFormData.choice == true ? '0' : deliveryPrice }}  </b></td>
+				      <td>משלוח / איסוף עצמי</td> 
 				    </tr>
+				    <!-- coupon -->
 				    <tr *ngIf="isActiveCoupon && errorCoupon == null">
 				      <td><b>- ₪10  </b></td>
 				      <!-- <td>{{ couponName }}</td>  -->
@@ -40,7 +43,7 @@
 				<h1>סה״כ לתשלום</h1>
 				<!-- <h2>יש לך קוד קופון</h2> -->
 				
-				<div class="total-price">₪ 117</div>
+				<div class="total-price">₪ {{ calculateTotalPrice(deliveryFormData.choice) }}</div>
 				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()">יש לי קופון  </span>
 				
 				<form #totalForm="ngForm" 
@@ -79,7 +82,8 @@
 </section>
 
 <!--  -->
-<!-- <pre>{{ additionallyFromData | json }}</pre> -->
+<pre>{{ deliveryFormData | json }}</pre>
+<pre>{{ getSlidePackgeData | json }}</pre>
 <!--  -->
 
 <div [@toggleHeight]="isShow" #appPayment>

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Country, SimCountriesWithCategory, ClosestPickUpPoints } from "../entity/Country";
 import { SimPackages } from "../entity/Package";
 import { UserDataLead, UserDataRegister } from "../entity/User";
+import { Coupon } from "../entity/Coupon";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -25,6 +26,13 @@ export class HttpService {
 	getSimCountriesWithCategory() : Observable<SimCountriesWithCategory[]> {
 		return this.http.get<SimCountriesWithCategory[]>(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
 	}
+
+    postDataCoupon(coupone: Coupon){
+        const body = {
+            Code: coupone.Code,
+        };
+        return this.http.post(this.baseUrl + "Payment/GetCouponValue", body); 
+    }
 
 	postDataCreateSaleLead(userDataLead: UserDataLead){
         const body = {

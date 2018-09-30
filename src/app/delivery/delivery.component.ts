@@ -12,6 +12,7 @@ import { toggleHeight } from '../animation';
 
 import { HttpService } from '../services/http.service';
 import { ClosestPickUpPoints } from "../entity/country";
+// import { TotalComponent } from '../total/total.component';
 
 @Component({
 	selector: 'app-delivery',
@@ -24,14 +25,16 @@ import { ClosestPickUpPoints } from "../entity/country";
 
 export class DeliveryComponent implements OnInit {
 
-	constructor( private httpService: HttpService ){}
-
+	constructor( 
+        private httpService: HttpService,
+        // private totalComponent: TotalComponent,
+     ){}
 
 	@Input() clientInfoFormData: string;
 
 	// show animation
 	isShow = 'hide';
-	onSubmit(clientInfoForm: NgForm) {
+	onSubmit(deliveryForm: NgForm) {
 		this.isShow = 'show';
 	}
 	
