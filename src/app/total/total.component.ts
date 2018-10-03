@@ -3,6 +3,7 @@ import { Component, OnInit, Input, Inject, Injectable, ViewChild, ElementRef } f
 import { NgForm } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { toggleHeight } from '../animation';
+import { Observable } from 'rxjs';
 
 import { Coupon } from "../entity/Coupon";
 import { HttpService } from '../services/http.service';
@@ -22,13 +23,11 @@ export class TotalComponent implements OnInit {
 	constructor( private httpService: HttpService ){}
 
 	@Input() additionallyFromData;
-	@Input() deliveryFormData;
-
+	@Input() deliveryPrice;
 
 	// parse storage data (form)
 	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
 	getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
-	deliveryPrice:number = 17;
 	totalPrice:number;
 
 	couponName = '';
@@ -48,26 +47,33 @@ export class TotalComponent implements OnInit {
 	errorCoupon:string = null;
 	isActiveCoupon:boolean = false;
 
-  	coupon:Coupon = new Coupon();
+	// check coupon
+  	public coupon:Coupon = new Coupon();
+	getConfigCoupone(coupon): Observable<Coupon[]> {
+	    return this.httpService.getDataCoupon(coupon);
+	}
 	sendCoupon(coupon:string){
 		// data to send
 	    this.coupon.Code = 'M30000';
+        this.getConfigCoupone(this.coupon).subscribe(data => this.coupon);
         console.log( this.coupon );
-	    
-	    this.httpService.postDataCoupon(this.coupon).subscribe(
-	      (data) => {
-	        // console.log( this.coupon );
-	        console.log( data );
-	      },
-	    );
 
 		// if( this.activeCoupon === coupon){
 		// 	this.isActiveCoupon = true;
 		// 	this.errorCoupon = null;
-
 		// }else{
 		// 	this.errorCoupon = "invalid coupon";
 		// }
+	}
+
+	// calculate total price
+  	
+	calculateTotalPrice(deliveryFormDataChoice){
+		this.totalPrice = 0;
+		this.totalPrice += this.getSlidePackgeData['PackagePrice'];
+		this.totalPrice += this.getSlidePackgeData['SimPrice'];
+		this.totalPrice += this.deliveryPrice;
+		return this.totalPrice;
 	}
 
 	// scroll animate
@@ -78,21 +84,6 @@ export class TotalComponent implements OnInit {
 			element.scrollIntoView({ behavior: "smooth", block: "start" });
 		}, 250)
 	}
-	
-   
 
-	calculateTotalPrice(deliveryFormDataChoice){
-		this.totalPrice = 0;
-		this.totalPrice += this.getSlidePackgeData['PackagePrice'];
-		this.totalPrice += this.getSlidePackgeData['SimPrice'];
-		if( deliveryFormDataChoice == false ){
-			this.totalPrice += this.deliveryPrice;
-		}
-		return this.totalPrice;
-	}
-
-	ngOnInit() {
-		
-
-	}
+	ngOnInit() {}
 }

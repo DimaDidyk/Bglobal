@@ -1,7 +1,7 @@
 <section id="offers" (mousemove)="initSlider()" #offers>
 
 	<!-- *ngIf="packagesResponse.length != 0" mousemove-->
-	<!-- <pre>{{ packagesResponseLength | json }}</pre> -->
+	<!-- <pre>{{ packagesResponse | json }}</pre> -->
 
 	<div class="container">
 		<h1>טוסים ל
@@ -35,7 +35,11 @@
 						*ngIf="slide == packagesResponse[2]">Most economic</div>
 						<div class="price">₪ {{ slide['PackagePrice'] }}</div>
 						<div class="days">( {{ slide['DaysExpired'] }} ימים  )</div>
-						<div class="slide-content">{{ slide['Description'] }}</div>
+
+						<div class="slide-content">
+							<span *ngFor="let item of slide['Details']">{{ item }}</span>
+						</div>
+
 						<button type="submit"
 						mat-button class="bg-button"
 						>!הזמינו עכשיו  </button>

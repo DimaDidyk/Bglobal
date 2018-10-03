@@ -15,14 +15,14 @@ export class AvailableCountriesComponent implements OnInit {
 
 	constructor( private httpService: HttpService ){}
 
-	getConfig(): Observable<SimCountriesWithCategory[]> {
+	getConfigSimCountriesWithCategory(): Observable<SimCountriesWithCategory[]> {
 	    return this.httpService.getSimCountriesWithCategory();
 	}
 
 	public countriesWithCategory = [];
 	ngOnInit() {
 		// get CountriesWithCategory
-		this.getConfig().subscribe(data => this.countriesWithCategory = data);
+		this.getConfigSimCountriesWithCategory().subscribe(data => this.countriesWithCategory = data);
 	}
 
 }

@@ -18,7 +18,7 @@
 				    </tr>
 				    <!-- delivery -->
 				    <tr>
-				      <td><b>₪ {{ deliveryFormData.choice == true ? '0' : deliveryPrice }}  </b></td>
+				      <td><b>₪ {{ deliveryPrice }}  </b></td>
 				      <td>משלוח / איסוף עצמי</td> 
 				    </tr>
 				    <!-- coupon -->
@@ -43,7 +43,7 @@
 				<h1>סה״כ לתשלום</h1>
 				<!-- <h2>יש לך קוד קופון</h2> -->
 				
-				<div class="total-price">₪ {{ calculateTotalPrice(deliveryFormData.choice) }}</div>
+				<div class="total-price">₪ {{ calculateTotalPrice() }}</div>
 				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()">יש לי קופון  </span>
 				
 				<form #totalForm="ngForm" 
@@ -82,8 +82,9 @@
 </section>
 
 <!--  -->
-<pre>{{ deliveryFormData | json }}</pre>
-<pre>{{ getSlidePackgeData | json }}</pre>
+<!-- <pre>{{ deliveryPrice | json }}</pre> -->
+<!-- <pre>{{ getSlidePackgeData.Id | json }}</pre> -->
+<!-- <pre>{{ getSlidePackgeData | json }}</pre> -->
 <!--  -->
 
 <div [@toggleHeight]="isShow" #appPayment>

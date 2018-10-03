@@ -9,7 +9,7 @@
 					<div class="col-sm-12 checked-wrapper1">
 						<mat-radio-button [checked]="deliveryForm.value.choice == 'checked1'"
 						labelPosition="before" 
-						[value]="false">משלוח ups לנקודת איסוף
+						[value]="[deliveryId]">משלוח ups לנקודת איסוף
 						</mat-radio-button>
 
 						<span class="form-info" 
@@ -26,7 +26,7 @@
 					<div class="col-sm-12 checked-wrapper2">
 						<mat-radio-button  
 						labelPosition="before" 
-						[value]="true">א  יסוף עצמי- הפנינה 2 רעננה  
+						[value]="19">א  יסוף עצמי- הפנינה 2 רעננה  
 						</mat-radio-button>
 						<span class="form-info" 
 						(click)="checked2Tooltip.show()"
@@ -40,9 +40,9 @@
 					</div>
 				</mat-radio-group>
 
-				<div class="col-sm-12 float-right-sm" *ngIf="!deliveryForm.value.choice">
+				<div class="col-sm-12 float-right-sm" *ngIf="!deliveryForm.value.choice != deliveryId">
 
-					<mat-form-field *ngIf="!deliveryForm.value.choice">
+					<mat-form-field *ngIf="!deliveryForm.value.choice != deliveryId">
 						<input matInput
 						ngx-google-places-autocomplete 
 						[options]='options'
@@ -50,13 +50,13 @@
 	 					(onAddressChange)="handleAddressChange($event)"
 						placeholder="כתובת מגורים   :" 
 						required
-						[disabled]="deliveryForm.value.choice == true"
+						[disabled]="deliveryForm.value.choice != deliveryId"
 						name="search" ngModel />
 					</mat-form-field>
 
 					<div class="error-log">{{ errorLocality }}</div>
 
-					<div class="row radio-fields" *ngIf="!deliveryForm.value.checked">
+					<div class="row radio-fields" *ngIf="!deliveryForm.value.choice != deliveryId">
 						<mat-radio-group name="address" ngModel 
 						required 
 						*ngIf="deliveryForm.value.search && addresses && errorLocality == ''">
@@ -156,10 +156,10 @@
 	</div>
 </section>
 
-<!-- <pre>{{ deliveryForm.value | json }}</pre> -->
+<!-- <pre>{{ deliveryForm.value.address | json }}</pre> -->
 
 <div [@toggleHeight]="isShow" #appTotal>
 	<app-total
-		[deliveryFormData]="deliveryForm.value">
+		[deliveryPrice]="deliveryPrice">
 	</app-total>
 </div>

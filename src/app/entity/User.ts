@@ -7,6 +7,11 @@ export class UserDataLead{
     Affiliate: string;
 }
 
+export class UserDataLogin{
+    Email: string;
+    Password: string;
+}
+
 export class UserDataRegister{
     Email: string;
     Password: string;
@@ -17,10 +22,4 @@ export class UserDataRegister{
     Prefix: string;
     Affiliate: string;
     AllowSendMail: boolean;
-}
-
-export class ClosestPickUpPoints{
-    City: string;
-    Street: string;
-    Building: string;
 }

@@ -88,8 +88,7 @@ export class FlyFormComponent implements OnInit {
     this.adapter.setLocale('he'); //date format
 
     // get countries
-    this.getConfig().
-      subscribe(data => this.countries = data);
+    this.getConfig().subscribe(data => this.countries = data);
 
     // parse storage data (form)
     this.flyFormStor = JSON.parse(localStorage.getItem('flyFormValue'));
@@ -141,8 +140,8 @@ export class FlyFormComponent implements OnInit {
       (data) => {
         this.packagesResponse = data;
         this.packagesResponseLength = this.packagesResponse.length;
-        // console.log( data );
-        // console.log( this.packagesResponseLength );
+        console.log( data );
+        console.log( this.packagesResponseLength );
         // this.OffersComponent.text = 'text';
       },
     );
