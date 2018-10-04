@@ -795,7 +795,7 @@ var ClientInfoComponent = /** @class */ (function () {
         this.emailPattern = "[^ @]*@[^ @]*";
         this.isChecked = false;
         this.telPrefix = '972';
-        this.userDataRegister = new __WEBPACK_IMPORTED_MODULE_4__entity_User__["b" /* UserDataRegister */]();
+        this.userDataRegister = new __WEBPACK_IMPORTED_MODULE_4__entity_User__["c" /* UserDataRegister */]();
         // show animation
         this.isShow = 'hide';
         // curentPath
@@ -1150,12 +1150,15 @@ var DetailsFormComponent = /** @class */ (function () {
         this.userDataLead.FirstName = detailsForm.value.name;
         this.userDataLead.Phone = detailsForm.value.tel;
         this.httpService.postDataCreateSaleLead(this.userDataLead)
-            .subscribe(function (error) {
+            .subscribe(function (data) {
+            console.log(data);
+        }, function (error) {
             _this.message = true;
             _this.leadID = error;
+            console.log(error);
             console.log(_this.message);
             console.log(_this.leadID);
-        }, function (data) { return console.log(data); });
+        });
     };
     DetailsFormComponent.prototype.ngOnInit = function () {
     };
@@ -1213,8 +1216,8 @@ var Delivery = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserDataLead; });
-/* unused harmony export UserDataLogin */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserDataRegister; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserDataLogin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return UserDataRegister; });
 var UserDataLead = /** @class */ (function () {
     function UserDataLead() {
     }
@@ -1718,7 +1721,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /***/ "./src/app/header/dialog-sign-in.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"sign-in-dialog\" class=\"gradient-background\">\r\n  <!-- close -->\r\n  <i class=\"fa fa-times-circle\" aria-hidden=\"true\" (click)=\"closeDialog()\"></i>\r\n\r\n  <h1 mat-dialog-title>כניסה לאזור אישי  </h1>\r\n  <hr>\r\n  <div mat-dialog-content>\r\n\r\n    <form #signInForm=\"ngForm\" (ngSubmit)=\"onSubmit(signInForm)\">\r\n      <mat-form-field>\r\n        <input matInput required placeholder=\"דואר אלקטרוני  \" name=\"login\" ngModel/>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field>\r\n        <input matInput required placeholder=\"סיסמה  \" name=\"password\" ngModel/>\r\n      </mat-form-field>\r\n\r\n      <button mat-button class=\"bg-button bg-green-button\"\r\n      [disabled]=\"!signInForm.valid\"> אישור  </button>\r\n\r\n      <p>שכחתי סיסמא  </p>\r\n    </form>\r\n\r\n  </div>\r\n</div>"
+module.exports = "<div id=\"sign-in-dialog\" class=\"gradient-background\">\r\n  <!-- close -->\r\n  <i class=\"fa fa-times-circle\" aria-hidden=\"true\" (click)=\"closeDialog()\"></i>\r\n\r\n  <h1 mat-dialog-title>כניסה לאזור אישי  </h1>\r\n  <hr>\r\n  <div mat-dialog-content>\r\n\r\n    <form #signInForm=\"ngForm\" (ngSubmit)=\"onSubmit(signInForm)\">\r\n      <mat-form-field>\r\n        <input matInput required placeholder=\"דואר אלקטרוני  \" name=\"login\" ngModel/>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field>\r\n        <input matInput required placeholder=\"סיסמה  \" type=\"password\" name=\"password\" ngModel/>\r\n      </mat-form-field>\r\n\r\n      <button mat-button class=\"bg-button bg-green-button\"\r\n      [disabled]=\"!signInForm.valid\"> אישור  </button>\r\n\r\n      <p>שכחתי סיסמא  </p>\r\n    </form>\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1752,6 +1755,8 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogMessage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material___ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_http_service__ = __webpack_require__("./src/app/services/http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__entity_User__ = __webpack_require__("./src/app/entity/User.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1761,6 +1766,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 var HeaderComponent = /** @class */ (function () {
@@ -1804,13 +1811,24 @@ var HeaderComponent = /** @class */ (function () {
 
 // Sign in form dialog
 var DialogSignIn = /** @class */ (function () {
-    function DialogSignIn(dialogRef) {
+    function DialogSignIn(dialogRef, httpService) {
         this.dialogRef = dialogRef;
+        this.httpService = httpService;
+        this.userDataLogin = new __WEBPACK_IMPORTED_MODULE_3__entity_User__["b" /* UserDataLogin */]();
     }
     // submit Sign in form
     DialogSignIn.prototype.onSubmit = function (signInForm) {
+        this.userDataLogin.Email = signInForm.value.login;
+        this.userDataLogin.Password = signInForm.value.password;
         console.log(signInForm.value);
+        console.log(this.userDataLogin);
+        this.httpService.postDataLogin(this.userDataLogin).subscribe(function (data) {
+            console.log(data);
+        }, function (error) {
+            console.log(error);
+        });
     };
+    // close Dialog
     DialogSignIn.prototype.closeDialog = function () {
         this.dialogRef.close();
     };
@@ -1820,7 +1838,8 @@ var DialogSignIn = /** @class */ (function () {
             template: __webpack_require__("./src/app/header/dialog-sign-in.html"),
             styles: [__webpack_require__("./src/app/header/dialog-sign-in.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material___["f" /* MatDialogRef */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material___["f" /* MatDialogRef */],
+            __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */]])
     ], DialogSignIn);
     return DialogSignIn;
 }());
@@ -2716,9 +2735,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var httpOptions = {
     headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
-        'Content-Type': "application/json"
+        'Content-Type': "application/json",
+        'Authorization': "Bearer i7XJdi9k5odDrUijzkIAlVSgq6EPA7HyZ88Na5kFyJe5okWHr5bvuwxu2q_VZ4Qmw8aTPyd66OW5lrt6oIFoVdXkzW-mijmyuZJ9U2CQypFzwStkbEPJ0y2YIEFUIKoggurr_V53bffaGxGirlqsxtNoxn-W6o2leRYmc7-rHCijYT04OBt9bPEMChw9ToXh8y-bSU5nLiNXnWN8Rd9N0_G3joQ4GOcpKH5n2B0YRk3tQn_Jh73N3x6d4Wcnhg3gTZci9oPoKqy3frU9UKA7Vq0Mo0NHHLLpEMhMKzpRYbZ9hMri",
     }),
-    params: {}
+    params: {},
 };
 var HttpService = /** @class */ (function () {
     function HttpService(http) {
@@ -2756,6 +2776,10 @@ var HttpService = /** @class */ (function () {
         return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body);
     };
     // login
+    // postDataLogin(userDataLogin: UserDataLogin){
+    //     httpOptions.params = userDataLogin;
+    //     return this.http.post<UserDataLogin[]>(this.baseUrl + "Account/Login", httpOptions); 
+    // }
     HttpService.prototype.postDataLogin = function (userDataLogin) {
         var body = {
             Email: userDataLogin.Email,
@@ -2992,7 +3016,7 @@ var ThankYouPageComponent = /** @class */ (function () {
 /***/ "./src/app/total/total.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"total\">\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t\r\n\t\t\t<div class=\"col-sm-6 selected-services float-right-sm\">\r\n\t\t\t\t<h1>שרותים שנבחרו</h1>\r\n\t\t\t\t<table class=\"table\">\r\n\t\t\t\t  <tbody>\r\n\t\t\t\t  \t<!-- PackagePrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp; {{ getSlidePackgeData['PackagePrice'] }}</b><b>ליום   ₪ </b> </td>\r\n\t\t\t\t      <td>{{ getSlidePackgeData['Name'] }} : חבילה  </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- SimPrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ getSlidePackgeData['SimPrice'] }}  </b></td>\r\n\t\t\t\t      <td>כרטיס סים  </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- delivery -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ deliveryPrice }}  </b></td>\r\n\t\t\t\t      <td>משלוח / איסוף עצמי</td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- coupon -->\r\n\t\t\t\t    <tr *ngIf=\"isActiveCoupon && errorCoupon == null\">\r\n\t\t\t\t      <td><b>- ₪10  </b></td>\r\n\t\t\t\t      <!-- <td>{{ couponName }}</td>  -->\r\n\t\t\t\t      <td>קופון </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t      <td><b> </b></td>\r\n\t\t\t\t      <td> </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp;{{ flyFormStor.countDays }}</b><b> ימים  </b> </td>\r\n\t\t\t\t      <td>סה”כ ימים </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    \r\n\t\t\t\t  </tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-sm-6 input-box float-right-sm\">\r\n\t\t\t\t<h1>סה״כ לתשלום</h1>\r\n\t\t\t\t<!-- <h2>יש לך קוד קופון</h2> -->\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"total-price\">₪ {{ calculateTotalPrice() }}</div>\r\n\t\t\t\t<span class=\"open-counpon {{!showInput}}\" (click)=\"showInputCoupon()\">יש לי קופון  </span>\r\n\t\t\t\t\r\n\t\t\t\t<form #totalForm=\"ngForm\" \r\n\t\t\t\t(ngSubmit)=\"onSubmit(totalForm)\" \r\n\t\t\t\tclass=\"{{showInput}}\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-xs-4\">\r\n\t\t\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t\t\t[disabled]=\"!totalForm.valid\"\r\n\t\t\t\t\t\t\t(click)=\"sendCoupon(totalForm.value.coupon)\">לבדוק  </button>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-8\">\r\n\t\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t\t<input matInput placeholder=\"הזן קוד קופון\" \r\n\t\t\t\t\t\t\t\tname=\"coupon\" ngModel/>\r\n\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-12 invalid-coupon\" *ngIf=\"errorCoupon\">\r\n\t\t\t\t\t\t\t<p>{{ errorCoupon }}</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t<!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->\r\n\t\t\t\t<button mat-button class=\"bg-button bg-green-button main-button\"\r\n\t\t\t\t(click)=\"scrollAnimate(appPayment)\"\r\n\t\t\t\t(click)=\"isShow='show'\">המשך</button>\r\n\t\t\t\t<hr>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</section>\r\n\r\n<!--  -->\r\n<!-- <pre>{{ deliveryPrice | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData.Id | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData | json }}</pre> -->\r\n<!--  -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appPayment>\r\n\t<app-payment [totalFormData]=\"totalForm.value\">\r\n\t</app-payment>\r\n</div>"
+module.exports = "<section id=\"total\">\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t\r\n\t\t\t<div class=\"col-sm-6 selected-services float-right-sm\">\r\n\t\t\t\t<h1>שרותים שנבחרו</h1>\r\n\t\t\t\t<table class=\"table\">\r\n\t\t\t\t  <tbody>\r\n\t\t\t\t  \t<!-- PackagePrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp; {{ getSlidePackgeData['PackagePrice'] }}</b><b>ליום   ₪ </b> </td>\r\n\t\t\t\t      <td>{{ getSlidePackgeData['Name'] }} : חבילה  </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- SimPrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ getSlidePackgeData['SimPrice'] }}  </b></td>\r\n\t\t\t\t      <td>כרטיס סים  </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- delivery -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ deliveryPrice }}  </b></td>\r\n\t\t\t\t      <td>משלוח / איסוף עצמי</td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- coupon -->\r\n\t\t\t\t    <tr *ngIf=\"isActiveCoupon && errorCoupon == null\">\r\n\t\t\t\t      <td><b>- ₪ {{ couponeSale }}  </b></td>\r\n\t\t\t\t      <!-- <td>{{ couponName }}</td>  -->\r\n\t\t\t\t      <td>קופון </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t      <td><b> </b></td>\r\n\t\t\t\t      <td> </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp;{{ flyFormStor.countDays }}</b><b> ימים  </b> </td>\r\n\t\t\t\t      <td>סה”כ ימים </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    \r\n\t\t\t\t  </tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-sm-6 input-box float-right-sm\">\r\n\t\t\t\t<h1>סה״כ לתשלום</h1>\r\n\t\t\t\t<!-- <h2>יש לך קוד קופון</h2> -->\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"total-price\">₪ {{ calculateTotalPrice() }}</div>\r\n\t\t\t\t<span class=\"open-counpon {{!showInput}}\" (click)=\"showInputCoupon()\">יש לי קופון  </span>\r\n\t\t\t\t\r\n\t\t\t\t<form #couponeForm=\"ngForm\" \r\n\t\t\t\t(ngSubmit)=\"onSubmit(couponeForm)\" \r\n\t\t\t\tclass=\"{{showInput}}\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-xs-4\">\r\n\t\t\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t\t\t[disabled]=\"!couponeForm.valid\">לבדוק  </button>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-8\">\r\n\t\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t\t<input matInput placeholder=\"הזן קוד קופון\" \r\n\t\t\t\t\t\t\t\trequired \r\n\t\t\t\t\t\t\t\tname=\"coupon\" ngModel/>\r\n\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-12 invalid-coupon\" *ngIf=\"errorCoupon\">\r\n\t\t\t\t\t\t\t<p>{{ errorCoupon }}</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t<!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->\r\n\t\t\t\t<button mat-button class=\"bg-button bg-green-button main-button\"\r\n\t\t\t\t(click)=\"scrollAnimate(appPayment)\"\r\n\t\t\t\t(click)=\"isShow='show'\">המשך</button>\r\n\t\t\t\t<hr>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</section>\r\n\r\n<!--  -->\r\n<!-- <pre>{{ deliveryPrice | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData.Id | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData | json }}</pre> -->\r\n<!--  -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appPayment>\r\n\t<app-payment >\r\n\t\t<!-- [couponeFormData]=\"couponeForm.value\" -->\r\n\t</app-payment>\r\n</div>"
 
 /***/ }),
 
@@ -3031,47 +3055,47 @@ var TotalComponent = /** @class */ (function () {
         // parse storage data (form)
         this.flyFormStor = JSON.parse(localStorage.getItem('flyFormValue'));
         this.getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
-        this.couponName = '';
-        this.showInput = 'hide';
-        this.activeCoupon = "test";
         this.errorCoupon = null;
         this.isActiveCoupon = false;
+        this.showInput = 'hide';
         // check coupon
         this.coupon = new __WEBPACK_IMPORTED_MODULE_2__entity_Coupon__["a" /* Coupon */]();
         // scroll animate
         this.isShow = 'hide';
     }
-    TotalComponent.prototype.onSubmit = function (totalForm) {
-        this.couponName = totalForm.value.coupon;
-        totalForm.value.coupon = '';
-        // this.showInput = 'hide';
+    TotalComponent.prototype.onSubmit = function (couponeForm) {
+        var _this = this;
+        // check coupon
+        this.coupon.Code = couponeForm.value.coupon; //'M30000'
+        this.httpService.getDataCoupon(this.coupon).subscribe(function (data) {
+            _this.couponeSale = data;
+            _this.couponeSale = Number(_this.couponeSale.Value);
+            if (_this.couponeSale > 0) {
+                _this.isActiveCoupon = true;
+                _this.errorCoupon = null;
+            }
+            else {
+                _this.errorCoupon = "invalid coupon";
+            }
+            console.log(data);
+        }, function (error) {
+            console.log(error);
+        });
     };
     // show Input Coupon
     TotalComponent.prototype.showInputCoupon = function () {
         this.showInput = "show";
     };
-    TotalComponent.prototype.getConfigCoupone = function (coupon) {
-        return this.httpService.getDataCoupon(coupon);
-    };
-    TotalComponent.prototype.sendCoupon = function (coupon) {
-        var _this = this;
-        // data to send
-        this.coupon.Code = 'M30000';
-        this.getConfigCoupone(this.coupon).subscribe(function (data) { return _this.coupon; });
-        console.log(this.coupon);
-        // if( this.activeCoupon === coupon){
-        // 	this.isActiveCoupon = true;
-        // 	this.errorCoupon = null;
-        // }else{
-        // 	this.errorCoupon = "invalid coupon";
-        // }
-    };
     // calculate total price
-    TotalComponent.prototype.calculateTotalPrice = function (deliveryFormDataChoice) {
+    TotalComponent.prototype.calculateTotalPrice = function () {
         this.totalPrice = 0;
-        this.totalPrice += this.getSlidePackgeData['PackagePrice'];
+        this.totalPrice = (this.flyFormStor.countDays / this.getSlidePackgeData['DaysExpired']) * this.getSlidePackgeData['PackagePrice'];
         this.totalPrice += this.getSlidePackgeData['SimPrice'];
         this.totalPrice += this.deliveryPrice;
+        if (this.couponeSale > 0) {
+            this.totalPrice = this.totalPrice - this.couponeSale;
+        }
+        this.totalPrice = Math.ceil(this.totalPrice);
         return this.totalPrice;
     };
     TotalComponent.prototype.scrollAnimate = function (element) {
