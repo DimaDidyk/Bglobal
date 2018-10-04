@@ -57,13 +57,16 @@ export class DetailsFormComponent implements OnInit {
 
 		this.httpService.postDataCreateSaleLead(this.userDataLead)
             .subscribe(
+                data => {
+                	console.log( data );
+                },
                 error => {
                 	this.message = true;
                 	this.leadID = error;
+                	console.log( error );
                 	console.log( this.message );
                 	console.log( this.leadID );
                 },
-                data => console.log( data ),
             );
 	}
 	

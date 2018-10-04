@@ -3,6 +3,9 @@ import { BrowserModule }    from '@angular/platform-browser';
 import { MatMenuTrigger, MatMenuModule, MatDialog, MatDialogRef } from '@angular/material/';
 import { NgForm } from '@angular/forms';
 
+import { HttpService } from '../services/http.service';
+import { UserDataLogin } from "../entity/User";
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -51,11 +54,32 @@ export class HeaderComponent implements OnInit {
 	styleUrls: ['./dialog-sign-in.scss']
 })
 export class DialogSignIn {
-	constructor( public dialogRef: MatDialogRef<DialogSignIn> ) { }
+	constructor( 
+		public dialogRef: MatDialogRef<DialogSignIn>,
+		private httpService: HttpService,
+	){}
+
+	userDataLogin:UserDataLogin = new UserDataLogin();
+
 	// submit Sign in form
 	onSubmit(signInForm: NgForm) {
+		this.userDataLogin.Email = signInForm.value.login;
+		this.userDataLogin.Password = signInForm.value.password;
+
 		console.log( signInForm.value );
+		console.log( this.userDataLogin );
+
+		this.httpService.postDataLogin(this.userDataLogin).subscribe(
+			(data) => {
+				console.log( data );
+			},
+			(error) => {
+				console.log( error );
+			}
+		);
 	}
+
+	// close Dialog
 	closeDialog() {
 	    this.dialogRef.close();
 	}

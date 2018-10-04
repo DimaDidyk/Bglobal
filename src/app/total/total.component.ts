@@ -29,13 +29,32 @@ export class TotalComponent implements OnInit {
 	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
 	getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
 	totalPrice:number;
-
-	couponName = '';
+	couponeSale:number = 0;
+	errorCoupon:string = null;
+	isActiveCoupon:boolean = false;
 	showInput = 'hide';
-	onSubmit(totalForm: NgForm) {
-		this.couponName = totalForm.value.coupon;
-		totalForm.value.coupon = '';
-		// this.showInput = 'hide';
+
+	// check coupon
+  	public coupon:Coupon = new Coupon();
+	onSubmit(couponeForm: NgForm) {
+
+		// check coupon
+		this.coupon.Code = couponeForm.value.coupon; //'M30000'
+        this.httpService.getDataCoupon(this.coupon).subscribe(
+        	data => {
+	        	this.couponeSale = Number(data.Value);
+	        	if( this.couponeSale > 0 ){
+					this.isActiveCoupon = true;
+					this.errorCoupon = null;
+				}else{
+					this.errorCoupon = "invalid coupon";
+				}
+	        	// console.log( data );
+       	 	}
+       	 	error => {
+       	 		console.log( error );
+       	 	}
+        );
 	}
 
 	// show Input Coupon
@@ -43,36 +62,16 @@ export class TotalComponent implements OnInit {
 		this.showInput = "show";
 	}
 
-	activeCoupon:string = "test";
-	errorCoupon:string = null;
-	isActiveCoupon:boolean = false;
-
-	// check coupon
-  	public coupon:Coupon = new Coupon();
-	getConfigCoupone(coupon): Observable<Coupon[]> {
-	    return this.httpService.getDataCoupon(coupon);
-	}
-	sendCoupon(coupon:string){
-		// data to send
-	    this.coupon.Code = 'M30000';
-        this.getConfigCoupone(this.coupon).subscribe(data => this.coupon);
-        console.log( this.coupon );
-
-		// if( this.activeCoupon === coupon){
-		// 	this.isActiveCoupon = true;
-		// 	this.errorCoupon = null;
-		// }else{
-		// 	this.errorCoupon = "invalid coupon";
-		// }
-	}
-
 	// calculate total price
-  	
-	calculateTotalPrice(deliveryFormDataChoice){
+	calculateTotalPrice(){
 		this.totalPrice = 0;
-		this.totalPrice += this.getSlidePackgeData['PackagePrice'];
+		this.totalPrice = (this.flyFormStor.countDays / this.getSlidePackgeData['DaysExpired']) * this.getSlidePackgeData['PackagePrice'];
 		this.totalPrice += this.getSlidePackgeData['SimPrice'];
 		this.totalPrice += this.deliveryPrice;
+		if( this.couponeSale > 0 ){
+			this.totalPrice = this.totalPrice - this.couponeSale;
+		}
+		this.totalPrice = Math.ceil(this.totalPrice);
 		return this.totalPrice;
 	}
 

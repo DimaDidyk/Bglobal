@@ -23,7 +23,7 @@
 				    </tr>
 				    <!-- coupon -->
 				    <tr *ngIf="isActiveCoupon && errorCoupon == null">
-				      <td><b>- ₪10  </b></td>
+				      <td><b>- ₪ {{ couponeSale }}  </b></td>
 				      <!-- <td>{{ couponName }}</td>  -->
 				      <td>קופון </td> 
 				    </tr>
@@ -46,18 +46,18 @@
 				<div class="total-price">₪ {{ calculateTotalPrice() }}</div>
 				<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()">יש לי קופון  </span>
 				
-				<form #totalForm="ngForm" 
-				(ngSubmit)="onSubmit(totalForm)" 
+				<form #couponeForm="ngForm" 
+				(ngSubmit)="onSubmit(couponeForm)" 
 				class="{{showInput}}">
 					<div class="row">
 						<div class="col-xs-4">
 							<button mat-button class="bg-button bg-green-button" 
-							[disabled]="!totalForm.valid"
-							(click)="sendCoupon(totalForm.value.coupon)">לבדוק  </button>
+							[disabled]="!couponeForm.valid">לבדוק  </button>
 						</div>
 						<div class="col-xs-8">
 							<mat-form-field>
 								<input matInput placeholder="הזן קוד קופון" 
+								required 
 								name="coupon" ngModel/>
 							</mat-form-field>
 						</div>
@@ -88,6 +88,7 @@
 <!--  -->
 
 <div [@toggleHeight]="isShow" #appPayment>
-	<app-payment [totalFormData]="totalForm.value">
+	<app-payment >
+		<!-- [couponeFormData]="couponeForm.value" -->
 	</app-payment>
 </div>

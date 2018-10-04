@@ -9,9 +9,11 @@ import { Delivery } from "../entity/Delivery";
 
 const httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': "application/json"
+        'Content-Type': "application/json",
+        'Authorization': "Bearer i7XJdi9k5odDrUijzkIAlVSgq6EPA7HyZ88Na5kFyJe5okWHr5bvuwxu2q_VZ4Qmw8aTPyd66OW5lrt6oIFoVdXkzW-mijmyuZJ9U2CQypFzwStkbEPJ0y2YIEFUIKoggurr_V53bffaGxGirlqsxtNoxn-W6o2leRYmc7-rHCijYT04OBt9bPEMChw9ToXh8y-bSU5nLiNXnWN8Rd9N0_G3joQ4GOcpKH5n2B0YRk3tQn_Jh73N3x6d4Wcnhg3gTZci9oPoKqy3frU9UKA7Vq0Mo0NHHLLpEMhMKzpRYbZ9hMri",
     }),
-    params: {}
+
+    params: {},
 };
 
 @Injectable()
@@ -34,6 +36,7 @@ export class HttpService {
     // check coupone
     getDataCoupon(coupon: Coupon) : Observable<Coupon[]> {
         httpOptions.params = coupon;
+        console.log( httpOptions );
         return this.http.get<Coupon[]>(this.baseUrl + "Payment/GetCouponValue" , httpOptions);
     }
 
@@ -57,6 +60,10 @@ export class HttpService {
     }
 
     // login
+    // postDataLogin(userDataLogin: UserDataLogin){
+    //     httpOptions.params = userDataLogin;
+    //     return this.http.post<UserDataLogin[]>(this.baseUrl + "Account/Login", httpOptions); 
+    // }
     postDataLogin(userDataLogin: UserDataLogin){
         const body = {
             Email: userDataLogin.Email,
@@ -64,7 +71,6 @@ export class HttpService {
         };
         return this.http.post(this.baseUrl + "Account/Login", body); 
     }
-
 
     // register
     postDataRegister(userDataRegister: UserDataRegister){
