@@ -36,7 +36,6 @@ export class HttpService {
     // check coupone
     getDataCoupon(coupon: Coupon) : Observable<Coupon[]> {
         httpOptions.params = coupon;
-        console.log( httpOptions );
         return this.http.get<Coupon[]>(this.baseUrl + "Payment/GetCouponValue" , httpOptions);
     }
 

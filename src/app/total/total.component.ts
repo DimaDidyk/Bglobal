@@ -29,7 +29,7 @@ export class TotalComponent implements OnInit {
 	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
 	getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
 	totalPrice:number;
-	couponeSale:number = 0;
+	couponeSale;
 	errorCoupon:string = null;
 	isActiveCoupon:boolean = false;
 	showInput = 'hide';
@@ -37,20 +37,20 @@ export class TotalComponent implements OnInit {
 	// check coupon
   	public coupon:Coupon = new Coupon();
 	onSubmit(couponeForm: NgForm) {
-
 		// check coupon
 		this.coupon.Code = couponeForm.value.coupon; //'M30000'
         this.httpService.getDataCoupon(this.coupon).subscribe(
         	data => {
-	        	this.couponeSale = Number(data.Value);
-	        	if( this.couponeSale > 0 ){
+	        	this.couponeSale = data;
+	        	this.couponeSale = Number(this.couponeSale.Value);
+				if( this.couponeSale > 0 ){
 					this.isActiveCoupon = true;
 					this.errorCoupon = null;
 				}else{
 					this.errorCoupon = "invalid coupon";
 				}
-	        	// console.log( data );
-       	 	}
+	        	console.log( data );
+       	 	},
        	 	error => {
        	 		console.log( error );
        	 	}
