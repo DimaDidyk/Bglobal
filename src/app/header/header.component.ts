@@ -14,7 +14,10 @@ import { UserDataLogin } from "../entity/User";
 
 export class HeaderComponent implements OnInit {
 
-	constructor(public dialog: MatDialog) {}
+	constructor(
+		public dialog: MatDialog,
+        private httpService: HttpService,
+	){}
 
 
 	// open and close menu

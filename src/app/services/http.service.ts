@@ -106,5 +106,12 @@ export class HttpService {
         return this.http.post(this.baseUrl + "Public/ClosestPickUpPoints", body); 
     }
 
+    public checkLogin(){
+        let tokenAuthorization = localStorage.getItem('tokenAuthorization');
+        if( tokenAuthorization == undefined || tokenAuthorization == null ){
+            return 0;
+        }
+        return 1;
+    }
 	
 }

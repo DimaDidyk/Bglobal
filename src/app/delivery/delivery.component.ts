@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 import { HttpService } from '../services/http.service';
 import { ClosestPickUpPoints } from "../entity/country";
 import { Delivery } from "../entity/Delivery";
+import { HeaderComponent } from "../header/header.component";
 
 // import { TotalComponent } from '../total/total.component';
 // private totalComponent: TotalComponent,
@@ -31,7 +32,7 @@ export class DeliveryComponent implements OnInit {
 
     constructor( 
         private httpService: HttpService,
-        // private totalComponent: TotalComponent,
+        private headerComponent: HeaderComponent,
      ){}
 
     @Input() clientInfoFormData: string;
@@ -59,6 +60,8 @@ export class DeliveryComponent implements OnInit {
         this.getConfigDelivery( this.delivery ).subscribe( 
             data => this.deliveryPrice = Number(data) 
         );
+
+        this.checkLogin();
     }
     
     checked1TooltipContent = "checked1TooltipContent is an anti-fraud security feature to help verify that you are in possession of your credit card. On most credit cards (including Visa and Mastercard), the three-digit CVV number is printed on the signature panel on the back of the card immediately after the card's account number. On American Express credit cards, the four-digit CVV number is printed on the front of the card above the card’s account number.";
@@ -131,6 +134,16 @@ export class DeliveryComponent implements OnInit {
         // console.log( this.closestPickUpPoints );
         // console.log( this.errorLocality );
     }
+
+    // check login
+    public checkLogin(){
+        let tokenAuthorization = localStorage.getItem('tokenAuthorization');
+        if( tokenAuthorization == undefined || tokenAuthorization == null ){
+            this.headerComponent.openDialog();
+        }
+    }
+
+   
 
     ngOnInit() {}
 }

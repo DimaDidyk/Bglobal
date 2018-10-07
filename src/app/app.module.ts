@@ -135,7 +135,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     },
     OffersComponent,
-    // TotalComponent,
+    HeaderComponent,
     HttpService
   ],
   bootstrap: [AppComponent]

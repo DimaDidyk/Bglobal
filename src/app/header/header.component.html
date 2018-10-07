@@ -20,6 +20,7 @@
 			(mouseleave)="closeMenu()">
 				
 				<p routerLink="/user">
+					 {{ httpService.checkLogin() == 1? 'true': 'false' }}
 					 שלום דימה    <i class="fa fa-user-o" aria-hidden="true"></i>
 				</p>
 
