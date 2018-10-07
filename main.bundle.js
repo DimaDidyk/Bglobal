@@ -486,7 +486,7 @@ var AppModule = /** @class */ (function () {
                     useValue: DEFAULT_SWIPER_CONFIG
                 },
                 __WEBPACK_IMPORTED_MODULE_27__offers_offers_component__["a" /* OffersComponent */],
-                // TotalComponent,
+                __WEBPACK_IMPORTED_MODULE_23__header_header_component__["c" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_34__services_http_service__["a" /* HttpService */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
@@ -951,6 +951,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_http_service__ = __webpack_require__("./src/app/services/http.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__entity_country__ = __webpack_require__("./src/app/entity/country.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__entity_Delivery__ = __webpack_require__("./src/app/entity/Delivery.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -966,11 +967,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 // import { TotalComponent } from '../total/total.component';
 // private totalComponent: TotalComponent,
 var DeliveryComponent = /** @class */ (function () {
-    function DeliveryComponent(httpService) {
+    function DeliveryComponent(httpService, headerComponent) {
         this.httpService = httpService;
+        this.headerComponent = headerComponent;
         // getConfigDelivery
         this.getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
         this.deliveryPrice = 0;
@@ -1000,6 +1003,7 @@ var DeliveryComponent = /** @class */ (function () {
         this.delivery.deliveryId = deliveryForm.value.choice;
         // send getConfigDelivery
         this.getConfigDelivery(this.delivery).subscribe(function (data) { return _this.deliveryPrice = Number(data); });
+        this.checkLogin();
     };
     // scroll animate
     DeliveryComponent.prototype.scrollAnimate = function (element) {
@@ -1055,6 +1059,13 @@ var DeliveryComponent = /** @class */ (function () {
         // console.log( this.closestPickUpPoints );
         // console.log( this.errorLocality );
     };
+    // check login
+    DeliveryComponent.prototype.checkLogin = function () {
+        var tokenAuthorization = localStorage.getItem('tokenAuthorization');
+        if (tokenAuthorization == undefined || tokenAuthorization == null) {
+            this.headerComponent.openDialog();
+        }
+    };
     DeliveryComponent.prototype.ngOnInit = function () { };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
@@ -1073,7 +1084,8 @@ var DeliveryComponent = /** @class */ (function () {
             ],
             styles: [__webpack_require__("./src/app/delivery/delivery.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_http_service__["a" /* HttpService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_http_service__["a" /* HttpService */],
+            __WEBPACK_IMPORTED_MODULE_6__header_header_component__["c" /* HeaderComponent */]])
     ], DeliveryComponent);
     return DeliveryComponent;
 }());
@@ -1735,7 +1747,7 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n\t<div class=\"container\">\r\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\r\n\r\n\t\t<!-- mobile sandwich -->\r\n\t\t<div id=\"sandwich\"\r\n\t\t (click)=\"clickSendwich()\"  \r\n\t\t [ngClass]=\"status ? 'active' : '' \">\r\n\t\t\t<div class=\"sw sw-topper\"></div>\r\n\t\t\t<div class=\"sw sw-bottom\"></div>\r\n\t\t\t<div class=\"sw sw-footer\"></div>\r\n\t\t</div>\r\n\r\n\t\t<div id=\"main-menu\" \r\n\t\t (click)=\"clickSendwich()\" \r\n\t\t [ngClass]=\"status ? 'active' : '' \"\r\n\t\t >\r\n\t\t\t<div id=\"sign-in\" class=\"main-manu-item\"\r\n\t\t\t(mouseenter)=\"openMenu()\"\r\n\t\t\t(mouseleave)=\"closeMenu()\">\r\n\t\t\t\t\r\n\t\t\t\t<p routerLink=\"/user\">\r\n\t\t\t\t\t שלום דימה    <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i>\r\n\t\t\t\t</p>\r\n\r\n\t\t\t\t<!-- User menu -->\r\n\t\t\t\t<div id=\"user-menu\" class=\"{{ userMenuStaus }}\">\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/user/sim\" >כרטיס סים שלי</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/user\">מצב החבילה עדכני</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/user/info\">פרטים אישיים</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/\">יציאה</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  (click)=\"openDialog()\"> sign in dialog </div>\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  (click)=\"openDialogMessage()\"> DialogMessage </div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/\"  class=\"main-manu-item\">דף הבית  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/available-countries\"  class=\"main-manu-item\">רשימת מדינות נתמכות  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/faq\"  class=\"main-manu-item\">שאלות נפוצות  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/thank-you\"  class=\"main-manu-item\">הפעלת/טעינת כרטיס  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/contact-us\"  class=\"main-manu-item\">צור קשר  </p>\r\n\t\t\t\r\n\t\t</div>\r\n\t</div>\r\n</header>\r\n"
+module.exports = "<header>\r\n\t<div class=\"container\">\r\n\t\t<img routerLink=\"/\" src=\"./assets/img/logo.png\" alt=\"Bglobal\" class=\"logo\">\r\n\r\n\t\t<!-- mobile sandwich -->\r\n\t\t<div id=\"sandwich\"\r\n\t\t (click)=\"clickSendwich()\"  \r\n\t\t [ngClass]=\"status ? 'active' : '' \">\r\n\t\t\t<div class=\"sw sw-topper\"></div>\r\n\t\t\t<div class=\"sw sw-bottom\"></div>\r\n\t\t\t<div class=\"sw sw-footer\"></div>\r\n\t\t</div>\r\n\r\n\t\t<div id=\"main-menu\" \r\n\t\t (click)=\"clickSendwich()\" \r\n\t\t [ngClass]=\"status ? 'active' : '' \"\r\n\t\t >\r\n\t\t\t<div id=\"sign-in\" class=\"main-manu-item\"\r\n\t\t\t(mouseenter)=\"openMenu()\"\r\n\t\t\t(mouseleave)=\"closeMenu()\">\r\n\t\t\t\t\r\n\t\t\t\t<p routerLink=\"/user\">\r\n\t\t\t\t\t {{ httpService.checkLogin() == 1? 'true': 'false' }}\r\n\t\t\t\t\t שלום דימה    <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i>\r\n\t\t\t\t</p>\r\n\r\n\t\t\t\t<!-- User menu -->\r\n\t\t\t\t<div id=\"user-menu\" class=\"{{ userMenuStaus }}\">\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/user/sim\" >כרטיס סים שלי</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/user\">מצב החבילה עדכני</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/user/info\">פרטים אישיים</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  [routerLinkActiveOptions]=\"{exact: true}\" \r\n\t\t\t\t  routerLinkActive=\"active-link\" \r\n\t\t\t\t  routerLink=\"/\">יציאה</div>\r\n\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  (click)=\"openDialog()\"> sign in dialog </div>\r\n\t\t\t\t  <div class=\"user-menu-item\" \r\n\t\t\t\t  (click)=\"openDialogMessage()\"> DialogMessage </div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/\"  class=\"main-manu-item\">דף הבית  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/available-countries\"  class=\"main-manu-item\">רשימת מדינות נתמכות  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/faq\"  class=\"main-manu-item\">שאלות נפוצות  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/thank-you\"  class=\"main-manu-item\">הפעלת/טעינת כרטיס  </p>\r\n\t\t\t<p [routerLinkActiveOptions]=\"{exact: true}\" routerLinkActive=\"active-link\" routerLink=\"/contact-us\"  class=\"main-manu-item\">צור קשר  </p>\r\n\t\t\t\r\n\t\t</div>\r\n\t</div>\r\n</header>\r\n"
 
 /***/ }),
 
@@ -1771,8 +1783,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(dialog) {
+    function HeaderComponent(dialog, httpService) {
         this.dialog = dialog;
+        this.httpService = httpService;
         // open and close menu
         this.userMenuStaus = "hide";
         // header mobile menu
@@ -1804,7 +1817,8 @@ var HeaderComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/header/header.component.html"),
             styles: [__webpack_require__("./src/app/header/header.component.scss")],
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material___["e" /* MatDialog */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material___["e" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */]])
     ], HeaderComponent);
     return HeaderComponent;
 }());
@@ -2822,6 +2836,13 @@ var HttpService = /** @class */ (function () {
             Building: PickUpPoints.Building,
         };
         return this.http.post(this.baseUrl + "Public/ClosestPickUpPoints", body);
+    };
+    HttpService.prototype.checkLogin = function () {
+        var tokenAuthorization = localStorage.getItem('tokenAuthorization');
+        if (tokenAuthorization == undefined || tokenAuthorization == null) {
+            return 0;
+        }
+        return 1;
     };
     HttpService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
