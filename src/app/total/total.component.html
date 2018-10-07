@@ -32,7 +32,9 @@
 				      <td> </td> 
 				    </tr>
 				    <tr>
-				      <td><b class="right">&nbsp;{{ flyFormStor.countDays }}</b><b> ימים  </b> </td>
+				      <td><b class="right">&nbsp;{{ flyFormStor.countDays }}</b><b> 
+				       {{ flyFormStor.countDays == 1? 'ליום' : 'ימים  ' }}
+				      </b></td>
 				      <td>סה”כ ימים </td>
 				    </tr>
 				    
@@ -81,11 +83,9 @@
 	</div>
 </section>
 
-<!--  -->
 <!-- <pre>{{ deliveryPrice | json }}</pre> -->
 <!-- <pre>{{ getSlidePackgeData.Id | json }}</pre> -->
 <!-- <pre>{{ getSlidePackgeData | json }}</pre> -->
-<!--  -->
 
 <div [@toggleHeight]="isShow" #appPayment>
 	<app-payment >

@@ -173,7 +173,7 @@ export class FlyFormComponent implements OnInit {
   daydiff(first, second) {
     first = new Date(first);
     second = new Date(second);
-    return Math.round((first - second) / (1000 * 60 * 60 * 24));
+    return Math.round((first - second) / (1000 * 60 * 60 * 24)) + 1;
   }
 
   // geyObject

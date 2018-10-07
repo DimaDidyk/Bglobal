@@ -60,6 +60,7 @@ export class DialogSignIn {
 	){}
 
 	userDataLogin:UserDataLogin = new UserDataLogin();
+	error:string;
 
 	// submit Sign in form
 	onSubmit(signInForm: NgForm) {
@@ -69,12 +70,15 @@ export class DialogSignIn {
 		console.log( signInForm.value );
 		console.log( this.userDataLogin );
 
+		this.error = '';
+
 		this.httpService.postDataLogin(this.userDataLogin).subscribe(
 			(data) => {
-				console.log( data );
+				localStorage.setItem('tokenAuthorization', String(data));
+				this.closeDialog();
 			},
 			(error) => {
-				console.log( error );
+				this.error = error.error.Message;
 			}
 		);
 	}
