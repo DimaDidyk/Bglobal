@@ -65,7 +65,7 @@ export class TotalComponent implements OnInit {
 	// calculate total price
 	calculateTotalPrice(){
 		this.totalPrice = 0;
-		this.totalPrice = (this.flyFormStor.countDays / this.getSlidePackgeData['DaysExpired']) * this.getSlidePackgeData['PackagePrice'];
+		this.totalPrice = Math.ceil((this.flyFormStor.countDays / this.getSlidePackgeData['DaysExpired'])) * this.getSlidePackgeData['PackagePrice'];
 		this.totalPrice += this.getSlidePackgeData['SimPrice'];
 		this.totalPrice += this.deliveryPrice;
 		if( this.couponeSale > 0 ){
