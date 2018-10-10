@@ -6,6 +6,7 @@ import { SimPackages } from "../entity/Package";
 import { UserDataLead, UserDataRegister, UserDataLogin } from "../entity/User";
 import { Coupon } from "../entity/Coupon";
 import { Delivery } from "../entity/Delivery";
+import { BuyPackageData } from "../entity/Payment";
 
 const tokenAuthorization = localStorage.getItem('tokenAuthorization');
 const httpOptions = {
@@ -23,6 +24,9 @@ export class HttpService {
 
 	constructor(private http: HttpClient) {}
 
+    /*
+    * GET
+    */
     // get countries 
 	getCountries() : Observable<Country[]> {
 		return this.http.get<Country[]>(this.baseUrl + "Public/SimCountries", httpOptions);
@@ -45,6 +49,9 @@ export class HttpService {
         return this.http.get<Delivery[]>(this.baseUrl + "Public/DeliveryPrice" , httpOptions);
     }
 
+    /*
+    * POST
+    */
     // create lead
 	postDataCreateSaleLead(userDataLead: UserDataLead){
         const body = {
@@ -58,17 +65,19 @@ export class HttpService {
         return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body); 
     }
 
+    // Payment
+    postDataBuyPackage(buyPackageData: BuyPackageData){
+        httpOptions.params = null;
+        return this.http.post(this.baseUrl + "Payment/BuyPackage", buyPackageData, httpOptions); 
+    }
+
     // login
-    // postDataLogin(userDataLogin: UserDataLogin){
-    //     httpOptions.params = userDataLogin;
-    //     return this.http.post<UserDataLogin[]>(this.baseUrl + "Account/Login", httpOptions); 
-    // }
     postDataLogin(userDataLogin: UserDataLogin){
-        const body = {
-            Email: userDataLogin.Email,
-            Password: userDataLogin.Password,
-        };
-        return this.http.post(this.baseUrl + "Account/Login", body); 
+        // const body = {
+        //     Email: userDataLogin.Email,
+        //     Password: userDataLogin.Password,
+        // };
+        return this.http.post(this.baseUrl + "Account/Login", userDataLogin); 
     }
 
     // register

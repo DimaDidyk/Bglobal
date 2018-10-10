@@ -1,4 +1,4 @@
 export class Coupon{
-    Code: string;
+    Code: string = '';
     Currency: string;
 }

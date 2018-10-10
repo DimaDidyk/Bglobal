@@ -70,9 +70,6 @@ export class DialogSignIn {
 		this.userDataLogin.Email = signInForm.value.login;
 		this.userDataLogin.Password = signInForm.value.password;
 
-		console.log( signInForm.value );
-		console.log( this.userDataLogin );
-
 		this.error = '';
 
 		this.httpService.postDataLogin(this.userDataLogin).subscribe(

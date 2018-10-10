@@ -24,6 +24,7 @@ export class TotalComponent implements OnInit {
 
 	@Input() additionallyFromData;
 	@Input() deliveryPrice;
+	@Input() deliveryRequest;
 
 	// parse storage data (form)
 	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
@@ -33,8 +34,9 @@ export class TotalComponent implements OnInit {
 	errorCoupon:string = null;
 	isActiveCoupon:boolean = false;
 	showInput = 'hide';
+	// couponeName:string = '';
 
-	// check coupon
+	// check coupone
   	public coupon:Coupon = new Coupon();
 	onSubmit(couponeForm: NgForm) {
 		// check coupon
@@ -48,11 +50,11 @@ export class TotalComponent implements OnInit {
 					this.errorCoupon = null;
 				}else{
 					this.errorCoupon = "invalid coupon";
+       	 			couponeForm.value.coupon = '';
 				}
-	        	console.log( data );
        	 	},
        	 	error => {
-       	 		console.log( error );
+       	 		couponeForm.value.coupon = '';
        	 	}
         );
 	}

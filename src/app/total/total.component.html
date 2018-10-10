@@ -83,12 +83,14 @@
 	</div>
 </section>
 
-<!-- <pre>{{ deliveryPrice | json }}</pre> -->
+<!-- <pre>{{ deliveryRequest | json }}</pre> -->
 <!-- <pre>{{ getSlidePackgeData.Id | json }}</pre> -->
 <!-- <pre>{{ getSlidePackgeData | json }}</pre> -->
 
 <div [@toggleHeight]="isShow" #appPayment>
-	<app-payment >
-		<!-- [couponeFormData]="couponeForm.value" -->
+	<app-payment 
+		[totalPrice]="calculateTotalPrice()"
+		[couponeCode]="coupon.Code"
+		[deliveryRequest]="deliveryRequest">
 	</app-payment>
 </div>

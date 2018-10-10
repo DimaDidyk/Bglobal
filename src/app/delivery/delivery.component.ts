@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 
 import { HttpService } from '../services/http.service';
 import { ClosestPickUpPoints } from "../entity/country";
-import { Delivery } from "../entity/Delivery";
+import { Delivery, DeliveryRequest } from "../entity/Delivery";
 import { HeaderComponent } from "../header/header.component";
 
 // import { TotalComponent } from '../total/total.component';
@@ -48,6 +48,8 @@ export class DeliveryComponent implements OnInit {
         return this.httpService.getDeliveryPrice(delivery);
     }
 
+    // request for payment
+    deliveryRequest:DeliveryRequest = new DeliveryRequest();
     // show animation
     isShow = 'hide';
     onSubmit(deliveryForm: NgForm) {
@@ -58,9 +60,13 @@ export class DeliveryComponent implements OnInit {
         this.delivery.deliveryId = deliveryForm.value.choice;
         // send getConfigDelivery
         this.getConfigDelivery( this.delivery ).subscribe( 
-            data => this.deliveryPrice = Number(data) 
+            data => {
+                this.deliveryPrice = Number(data);
+                console.log( data );
+                this.deliveryRequest.Id = Number(data);
+                this.deliveryRequest.PickUpPoint = deliveryForm.value.address;
+            },
         );
-
         this.checkLogin();
     }
     

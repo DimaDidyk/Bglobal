@@ -3,12 +3,8 @@
 		<h1>פרטי תשלום</h1>
 		<h3>אנה הזן פרטי תשלום </h3>
 		
-		
 		<form #PaymentForm="ngForm" (ngSubmit)="onSubmit(PaymentForm)">
-
 			<div class="row">
-				
-
 				<div class="row form-inputs">
 					<!-- cvv -->
 					<div class="col-md-6 col-sm-12 col-xs-12">
@@ -88,13 +84,15 @@
 					</div>
 				</div>
 				<div class="col-sm-8">
-					<mat-checkbox [align]="true" name="checked" ngModel>מאשר לשמור פרטי הכרטיס במערכת לטעינות עתידיות</mat-checkbox>
+					<mat-checkbox [align]="true" name="checked" ngModel="false">מאשר לשמור פרטי הכרטיס במערכת לטעינות עתידיות</mat-checkbox>
 				</div>
 			</div>
 
-			<button mat-button class="bg-button" [disabled]="!PaymentForm.valid">הזמן כטיס </button>
+			<button mat-button class="bg-button" >הזמן כטיס </button>
+			<!-- [disabled]="!PaymentForm.valid" -->
 		</form>
-		
 	</div>
-</section>
 
+	<!-- <pre>{{ PaymentForm.value | json }}</pre> -->
+
+</section>

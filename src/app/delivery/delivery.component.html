@@ -5,7 +5,7 @@
 		<form #deliveryForm="ngForm" (ngSubmit)="onSubmit(deliveryForm)">
 			<div class="row">
 
-				<mat-radio-group name="choice" [ngModel]="false" required>
+				<mat-radio-group name="choice" [ngModel]="22" required>
 					<div class="col-sm-12 checked-wrapper1">
 						<mat-radio-button [checked]="deliveryForm.value.choice == 'checked1'"
 						labelPosition="before" 
@@ -156,10 +156,12 @@
 	</div>
 </section>
 
-<!-- <pre>{{ deliveryForm.value.address | json }}</pre> -->
+<!-- <pre>{{ deliveryForm.value | json }}</pre> -->
+<!-- <pre>{{ deliveryForm.valid | json }}</pre> -->
 
 <div [@toggleHeight]="isShow" #appTotal>
 	<app-total
+		[deliveryRequest]="deliveryRequest"
 		[deliveryPrice]="deliveryPrice">
 	</app-total>
 </div>
