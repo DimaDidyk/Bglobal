@@ -928,7 +928,7 @@ var ContactUsPageComponent = /** @class */ (function () {
 /***/ "./src/app/delivery/delivery.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"delivery\">\r\n\t<div class=\"container\">\r\n\t\t<h1>כתובת למשלוח  </h1>\r\n\t\t<h3>אנא בחרו היכן תרצו לאסוף את כרטיס הסים  </h3>\r\n\t\t<form #deliveryForm=\"ngForm\" (ngSubmit)=\"onSubmit(deliveryForm)\">\r\n\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t<mat-radio-group name=\"choice\" [ngModel]=\"false\" required>\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper1\">\r\n\t\t\t\t\t\t<mat-radio-button [checked]=\"deliveryForm.value.choice == 'checked1'\"\r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"[deliveryId]\">משלוח ups לנקודת איסוף\r\n\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\tmatTooltip=\"{{checked1TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked1Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t(click)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper2\">\r\n\t\t\t\t\t\t<mat-radio-button  \r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"19\">א  יסוף עצמי- הפנינה 2 רעננה  \r\n\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\t(click)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\tmatTooltip=\"{{checked2TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked2Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</mat-radio-group>\r\n\r\n\t\t\t\t<div class=\"col-sm-12 float-right-sm\" *ngIf=\"!deliveryForm.value.choice != deliveryId\">\r\n\r\n\t\t\t\t\t<mat-form-field *ngIf=\"!deliveryForm.value.choice != deliveryId\">\r\n\t\t\t\t\t\t<input matInput\r\n\t\t\t\t\t\tngx-google-places-autocomplete \r\n\t\t\t\t\t\t[options]='options'\r\n\t \t\t\t\t\t#placesRef=\"ngx-places\" \r\n\t \t\t\t\t\t(onAddressChange)=\"handleAddressChange($event)\"\r\n\t\t\t\t\t\tplaceholder=\"כתובת מגורים   :\" \r\n\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t[disabled]=\"deliveryForm.value.choice != deliveryId\"\r\n\t\t\t\t\t\tname=\"search\" ngModel />\r\n\t\t\t\t\t</mat-form-field>\r\n\r\n\t\t\t\t\t<div class=\"error-log\">{{ errorLocality }}</div>\r\n\r\n\t\t\t\t\t<div class=\"row radio-fields\" *ngIf=\"!deliveryForm.value.choice != deliveryId\">\r\n\t\t\t\t\t\t<mat-radio-group name=\"address\" ngModel \r\n\t\t\t\t\t\trequired \r\n\t\t\t\t\t\t*ngIf=\"deliveryForm.value.search && addresses && errorLocality == ''\">\r\n\t\t\t\t\t\t\t<!-- <div class=\"col-sm-6\"\r\n\t\t\t\t\t\t\t*ngFor=\"let adress of addresses;let i = index;\">\r\n\t\t\t\t\t\t\t\t<mat-radio-button \r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ adress.CityName + adress.Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ adress.PointName }} i: {{i}}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ adress.StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\tadress.HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\tadress.CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{adress.Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div> -->\r\n\t\t\t\t\t\t\t<div class=\"col-sm-6 float-right-sm\">\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[0]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[0].CityName + addresses[0].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[0].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[0].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[0].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[0].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[0].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[1]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[1].CityName + addresses[1].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[1].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[1].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[1].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[1].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[1].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[2]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[2].CityName + addresses[2].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[2].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[2].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[2].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[2].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[2].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[3]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[3].CityName + addresses[3].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[3].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[3].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[3].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[3].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[3].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[4]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[4].CityName + addresses[4].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[4].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[4].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[4].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[4].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[4].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[5]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[5].CityName + addresses[5].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[5].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[5].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[5].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[5].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[5].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</mat-radio-group>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"error-log\" *ngIf=\"!emptyAddresses\">нет доступных адресов</div>\r\n\t\t\t\t\t<!-- <div class=\"error-log\" \r\n\t\t\t\t\t*ngIf=\"emptyAddresses && closestPickUpPoints.Building == 'empty'\">дистанция может быть ошибочной</div> -->\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<!-- <pre>{{ addresses | json }}</pre> -->\r\n\t\t\t\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t[disabled]=\"!deliveryForm.valid\"\r\n\t\t\t\t\t(click)=\"scrollAnimate(appTotal)\"\r\n\t\t\t\t\t(click)=\"isShow='show'\">המשך  </button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</section>\r\n\r\n<!-- <pre>{{ deliveryForm.value.address | json }}</pre> -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appTotal>\r\n\t<app-total\r\n\t\t[deliveryPrice]=\"deliveryPrice\">\r\n\t</app-total>\r\n</div>"
+module.exports = "<section id=\"delivery\">\r\n\t<div class=\"container\">\r\n\t\t<h1>כתובת למשלוח  </h1>\r\n\t\t<h3>אנא בחרו היכן תרצו לאסוף את כרטיס הסים  </h3>\r\n\t\t<form #deliveryForm=\"ngForm\" (ngSubmit)=\"onSubmit(deliveryForm)\">\r\n\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t<mat-radio-group name=\"choice\" [ngModel]=\"22\" required>\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper1\">\r\n\t\t\t\t\t\t<mat-radio-button [checked]=\"deliveryForm.value.choice == 'checked1'\"\r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"[deliveryId]\">משלוח ups לנקודת איסוף\r\n\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\tmatTooltip=\"{{checked1TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked1Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t(click)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked1Tooltip.show()\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"col-sm-12 checked-wrapper2\">\r\n\t\t\t\t\t\t<mat-radio-button  \r\n\t\t\t\t\t\tlabelPosition=\"before\" \r\n\t\t\t\t\t\t[value]=\"19\">א  יסוף עצמי- הפנינה 2 רעננה  \r\n\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\t(click)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"checked2Tooltip.show()\"\r\n\t\t\t\t\t\tmatTooltip=\"{{checked2TooltipContent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\" \r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#checked2Tooltip=\"matTooltip\"\r\n\t\t\t\t\t\t>?</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</mat-radio-group>\r\n\r\n\t\t\t\t<div class=\"col-sm-12 float-right-sm\" *ngIf=\"!deliveryForm.value.choice != deliveryId\">\r\n\r\n\t\t\t\t\t<mat-form-field *ngIf=\"!deliveryForm.value.choice != deliveryId\">\r\n\t\t\t\t\t\t<input matInput\r\n\t\t\t\t\t\tngx-google-places-autocomplete \r\n\t\t\t\t\t\t[options]='options'\r\n\t \t\t\t\t\t#placesRef=\"ngx-places\" \r\n\t \t\t\t\t\t(onAddressChange)=\"handleAddressChange($event)\"\r\n\t\t\t\t\t\tplaceholder=\"כתובת מגורים   :\" \r\n\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t[disabled]=\"deliveryForm.value.choice != deliveryId\"\r\n\t\t\t\t\t\tname=\"search\" ngModel />\r\n\t\t\t\t\t</mat-form-field>\r\n\r\n\t\t\t\t\t<div class=\"error-log\">{{ errorLocality }}</div>\r\n\r\n\t\t\t\t\t<div class=\"row radio-fields\" *ngIf=\"!deliveryForm.value.choice != deliveryId\">\r\n\t\t\t\t\t\t<mat-radio-group name=\"address\" ngModel \r\n\t\t\t\t\t\trequired \r\n\t\t\t\t\t\t*ngIf=\"deliveryForm.value.search && addresses && errorLocality == ''\">\r\n\t\t\t\t\t\t\t<!-- <div class=\"col-sm-6\"\r\n\t\t\t\t\t\t\t*ngFor=\"let adress of addresses;let i = index;\">\r\n\t\t\t\t\t\t\t\t<mat-radio-button \r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ adress.CityName + adress.Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ adress.PointName }} i: {{i}}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ adress.StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\tadress.HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\tadress.CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{adress.Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div> -->\r\n\t\t\t\t\t\t\t<div class=\"col-sm-6 float-right-sm\">\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[0]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[0].CityName + addresses[0].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[0].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[0].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[0].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[0].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[0].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[1]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[1].CityName + addresses[1].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[1].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[1].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[1].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[1].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[1].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[2]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[2].CityName + addresses[2].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[2].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[2].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[2].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[2].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[2].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[3]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[3].CityName + addresses[3].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[3].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[3].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[3].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[3].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[3].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[4]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[4].CityName + addresses[4].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[4].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[4].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[4].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[4].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[4].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t\t<mat-radio-button *ngIf=\"addresses[5]\"\r\n\t\t\t\t\t\t\t\t labelPosition=\"before\"\r\n\t\t\t\t\t\t\t\t value=\"{{ addresses[5].CityName + addresses[5].Description }}\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"name\">{{ addresses[5].PointName }}</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"desc\">{{ addresses[5].StreetName +' '+ \r\n\t\t\t\t\t\t\t\t\taddresses[5].HouseNumber +', '+\r\n\t\t\t\t\t\t\t\t\taddresses[5].CityName }} \r\n\t\t\t\t\t\t\t\t\t<span>( {{addresses[5].Distance}} ק''מ  ) </span> </div>\r\n\t\t\t\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</mat-radio-group>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"error-log\" *ngIf=\"!emptyAddresses\">нет доступных адресов</div>\r\n\t\t\t\t\t<!-- <div class=\"error-log\" \r\n\t\t\t\t\t*ngIf=\"emptyAddresses && closestPickUpPoints.Building == 'empty'\">дистанция может быть ошибочной</div> -->\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<!-- <pre>{{ addresses | json }}</pre> -->\r\n\t\t\t\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t[disabled]=\"!deliveryForm.valid\"\r\n\t\t\t\t\t(click)=\"scrollAnimate(appTotal)\"\r\n\t\t\t\t\t(click)=\"isShow='show'\">המשך  </button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</section>\r\n\r\n<!-- <pre>{{ deliveryForm.value | json }}</pre> -->\r\n<!-- <pre>{{ deliveryForm.valid | json }}</pre> -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appTotal>\r\n\t<app-total\r\n\t\t[deliveryRequest]=\"deliveryRequest\"\r\n\t\t[deliveryPrice]=\"deliveryPrice\">\r\n\t</app-total>\r\n</div>"
 
 /***/ }),
 
@@ -979,6 +979,8 @@ var DeliveryComponent = /** @class */ (function () {
         this.deliveryPrice = 0;
         this.deliveryId = 22;
         this.delivery = new __WEBPACK_IMPORTED_MODULE_5__entity_Delivery__["a" /* Delivery */]();
+        // request for payment
+        this.deliveryRequest = new __WEBPACK_IMPORTED_MODULE_5__entity_Delivery__["b" /* DeliveryRequest */]();
         // show animation
         this.isShow = 'hide';
         this.checked1TooltipContent = "checked1TooltipContent is an anti-fraud security feature to help verify that you are in possession of your credit card. On most credit cards (including Visa and Mastercard), the three-digit CVV number is printed on the signature panel on the back of the card immediately after the card's account number. On American Express credit cards, the four-digit CVV number is printed on the front of the card above the card’s account number.";
@@ -1002,7 +1004,12 @@ var DeliveryComponent = /** @class */ (function () {
         this.delivery.packageId = this.getSlidePackgeData.Id;
         this.delivery.deliveryId = deliveryForm.value.choice;
         // send getConfigDelivery
-        this.getConfigDelivery(this.delivery).subscribe(function (data) { return _this.deliveryPrice = Number(data); });
+        this.getConfigDelivery(this.delivery).subscribe(function (data) {
+            _this.deliveryPrice = Number(data);
+            console.log(data);
+            _this.deliveryRequest.Id = Number(data);
+            _this.deliveryRequest.PickUpPoint = deliveryForm.value.address;
+        });
         this.checkLogin();
     };
     // scroll animate
@@ -1200,6 +1207,7 @@ var DetailsFormComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Coupon; });
 var Coupon = /** @class */ (function () {
     function Coupon() {
+        this.Code = '';
     }
     return Coupon;
 }());
@@ -1213,10 +1221,39 @@ var Coupon = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Delivery; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DeliveryRequest; });
 var Delivery = /** @class */ (function () {
     function Delivery() {
     }
     return Delivery;
+}());
+
+var DeliveryRequest = /** @class */ (function () {
+    function DeliveryRequest() {
+    }
+    return DeliveryRequest;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/entity/Payment.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CreditCardDetails; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyPackageData; });
+var CreditCardDetails = /** @class */ (function () {
+    function CreditCardDetails() {
+    }
+    return CreditCardDetails;
+}());
+
+var BuyPackageData = /** @class */ (function () {
+    function BuyPackageData() {
+    }
+    return BuyPackageData;
 }());
 
 
@@ -1835,8 +1872,6 @@ var DialogSignIn = /** @class */ (function () {
         var _this = this;
         this.userDataLogin.Email = signInForm.value.login;
         this.userDataLogin.Password = signInForm.value.password;
-        console.log(signInForm.value);
-        console.log(this.userDataLogin);
         this.error = '';
         this.httpService.postDataLogin(this.userDataLogin).subscribe(function (data) {
             localStorage.setItem('tokenAuthorization', String(data));
@@ -2349,7 +2384,7 @@ var OffersComponent = /** @class */ (function () {
 /***/ "./src/app/payment/payment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"payment-form\">\r\n\t<div class=\"container\">\r\n\t\t<h1>פרטי תשלום</h1>\r\n\t\t<h3>אנה הזן פרטי תשלום </h3>\r\n\t\t\r\n\t\t\r\n\t\t<form #PaymentForm=\"ngForm\" (ngSubmit)=\"onSubmit(PaymentForm)\">\r\n\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t\r\n\r\n\t\t\t\t<div class=\"row form-inputs\">\r\n\t\t\t\t\t<!-- cvv -->\r\n\t\t\t\t\t<div class=\"col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t<input matInput \r\n\t\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t\tplaceholder=\"מספר כרטיס אשראי\" \r\n\t\t\t\t\t\t\tminlength=\"8\" \r\n\t\t\t\t\t\t\tmaxlength=\"16\" \r\n\t\t\t\t\t\t\t(keypress)=\"number_keyPress($event)\" \r\n\t\t\t\t\t\t\t#numberCard \r\n\t\t\t\t\t\t\tname=\"numberCard\" \r\n\t\t\t\t\t\t\tngModel>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<!-- year -->\r\n\t\t\t\t\t<div class=\"col-md-2 col-sm-4 col-xs-6\">\r\n\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t<mat-select placeholder=\"YYYY\"\r\n\t\t\t\t\t\t\trequired ngModel name=\"year\">\r\n\t\t\t\t\t\t\t\t<mat-option *ngFor=\"let y of year\" [value]=\"y\">\r\n\t\t\t\t\t\t\t\t{{ y }}\r\n\t\t\t\t\t\t\t\t</mat-option>\r\n\t\t\t\t\t\t\t</mat-select>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<!-- month -->\r\n\t\t\t\t\t<div class=\"col-md-2 col-sm-4 col-xs-6\">\r\n\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t<mat-select placeholder=\"MM\"\r\n\t\t\t\t\t\t\trequired ngModel name=\"month\">\r\n\t\t\t\t\t\t\t\t<mat-option *ngFor=\"let month of months\" [value]=\"month\">\r\n\t\t\t\t\t\t\t\t{{ month }}\r\n\t\t\t\t\t\t\t\t</mat-option>\r\n\t\t\t\t\t\t\t</mat-select>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<!-- card -->\r\n\t\t\t\t\t<div class=\"col-md-2 col-sm-4 col-xs-6\">\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t(click)=\"tooltipCVV.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"tooltipCVV.show()\">?</span>\r\n\t\t\t\t\t\t<mat-form-field class=\"cvv-input\">\r\n\t\t\t\t\t\t\t<input matInput \r\n\t\t\t\t\t\t\t(mouseover)=\"tooltipCVV.hide()\"\r\n\t\t\t\t\t\t\t(click)=\"tooltipCVV.hide()\"\r\n\t\t\t\t\t\t\trequired \r\n\t\t\t\t\t\t\tplaceholder=\"CVV\"\r\n\t\t\t\t\t\t\tminlength=\"3\"\r\n\t\t\t\t\t\t\tmaxlength=\"4\"\r\n\t\t\t\t\t\t\t(keypress)=\"number_keyPress($event)\" \r\n\t\t\t\t\t\t\t#cvv \r\n\t\t\t\t\t\t\tname=\"cvv\" \r\n\t\t\t\t\t\t\tngModel>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\r\n\t\t\t\t\t\t<span class=\"tool\" matTooltip=\"{{tooltipCVVcontent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\"\r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#tooltipCVV=\"matTooltip\"></span>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-4 col-xs-6\">\r\n\t\t\t\t\t<div class=\"payment-service\">\r\n\t\t\t\t\t\t<img src=\"./assets/img/1-payment.png\" alt=\"payment\">\r\n\t\t\t\t\t\t<img src=\"./assets/img/2-payment.png\" alt=\"payment\">\r\n\t\t\t\t\t\t<img src=\"./assets/img/3-payment.png\" alt=\"payment\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-sm-8\">\r\n\t\t\t\t\t<mat-checkbox [align]=\"true\" name=\"checked\" ngModel>מאשר לשמור פרטי הכרטיס במערכת לטעינות עתידיות</mat-checkbox>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<button mat-button class=\"bg-button\" [disabled]=\"!PaymentForm.valid\">הזמן כטיס </button>\r\n\t\t</form>\r\n\t\t\r\n\t</div>\r\n</section>\r\n\r\n"
+module.exports = "<section id=\"payment-form\">\r\n\t<div class=\"container\">\r\n\t\t<h1>פרטי תשלום</h1>\r\n\t\t<h3>אנה הזן פרטי תשלום </h3>\r\n\t\t\r\n\t\t<form #PaymentForm=\"ngForm\" (ngSubmit)=\"onSubmit(PaymentForm)\">\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"row form-inputs\">\r\n\t\t\t\t\t<!-- cvv -->\r\n\t\t\t\t\t<div class=\"col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t<input matInput \r\n\t\t\t\t\t\t\trequired\r\n\t\t\t\t\t\t\tplaceholder=\"מספר כרטיס אשראי\" \r\n\t\t\t\t\t\t\tminlength=\"8\" \r\n\t\t\t\t\t\t\tmaxlength=\"16\" \r\n\t\t\t\t\t\t\t(keypress)=\"number_keyPress($event)\" \r\n\t\t\t\t\t\t\t#numberCard \r\n\t\t\t\t\t\t\tname=\"numberCard\" \r\n\t\t\t\t\t\t\tngModel>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<!-- year -->\r\n\t\t\t\t\t<div class=\"col-md-2 col-sm-4 col-xs-6\">\r\n\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t<mat-select placeholder=\"YYYY\"\r\n\t\t\t\t\t\t\trequired ngModel name=\"year\">\r\n\t\t\t\t\t\t\t\t<mat-option *ngFor=\"let y of year\" [value]=\"y\">\r\n\t\t\t\t\t\t\t\t{{ y }}\r\n\t\t\t\t\t\t\t\t</mat-option>\r\n\t\t\t\t\t\t\t</mat-select>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<!-- month -->\r\n\t\t\t\t\t<div class=\"col-md-2 col-sm-4 col-xs-6\">\r\n\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t<mat-select placeholder=\"MM\"\r\n\t\t\t\t\t\t\trequired ngModel name=\"month\">\r\n\t\t\t\t\t\t\t\t<mat-option *ngFor=\"let month of months\" [value]=\"month\">\r\n\t\t\t\t\t\t\t\t{{ month }}\r\n\t\t\t\t\t\t\t\t</mat-option>\r\n\t\t\t\t\t\t\t</mat-select>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<!-- card -->\r\n\t\t\t\t\t<div class=\"col-md-2 col-sm-4 col-xs-6\">\r\n\t\t\t\t\t\t<span class=\"form-info\" \r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t(click)=\"tooltipCVV.show()\"\r\n\t\t\t\t\t\t(mouseover)=\"tooltipCVV.show()\">?</span>\r\n\t\t\t\t\t\t<mat-form-field class=\"cvv-input\">\r\n\t\t\t\t\t\t\t<input matInput \r\n\t\t\t\t\t\t\t(mouseover)=\"tooltipCVV.hide()\"\r\n\t\t\t\t\t\t\t(click)=\"tooltipCVV.hide()\"\r\n\t\t\t\t\t\t\trequired \r\n\t\t\t\t\t\t\tplaceholder=\"CVV\"\r\n\t\t\t\t\t\t\tminlength=\"3\"\r\n\t\t\t\t\t\t\tmaxlength=\"4\"\r\n\t\t\t\t\t\t\t(keypress)=\"number_keyPress($event)\" \r\n\t\t\t\t\t\t\t#cvv \r\n\t\t\t\t\t\t\tname=\"cvv\" \r\n\t\t\t\t\t\t\tngModel>\r\n\t\t\t\t\t\t</mat-form-field>\r\n\r\n\t\t\t\t\t\t<span class=\"tool\" matTooltip=\"{{tooltipCVVcontent}}\" \r\n\t\t\t\t\t\tmatTooltipPosition=\"above\"\r\n\t\t\t\t\t\ttooltip=\"matTooltip\" \r\n\t\t\t\t\t\tmatTooltipShowDelay=\"100\"\r\n\t\t\t\t\t\t#tooltipCVV=\"matTooltip\"></span>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-4 col-xs-6\">\r\n\t\t\t\t\t<div class=\"payment-service\">\r\n\t\t\t\t\t\t<img src=\"./assets/img/1-payment.png\" alt=\"payment\">\r\n\t\t\t\t\t\t<img src=\"./assets/img/2-payment.png\" alt=\"payment\">\r\n\t\t\t\t\t\t<img src=\"./assets/img/3-payment.png\" alt=\"payment\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-sm-8\">\r\n\t\t\t\t\t<mat-checkbox [align]=\"true\" name=\"checked\" ngModel=\"false\">מאשר לשמור פרטי הכרטיס במערכת לטעינות עתידיות</mat-checkbox>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<button mat-button class=\"bg-button\" >הזמן כטיס </button>\r\n\t\t\t<!-- [disabled]=\"!PaymentForm.valid\" -->\r\n\t\t</form>\r\n\t</div>\r\n\r\n\t<!-- <pre>{{ PaymentForm.value | json }}</pre> -->\r\n\r\n</section>"
 
 /***/ }),
 
@@ -2367,6 +2402,9 @@ module.exports = ".gradient-background {\n  background: -webkit-gradient(linear,
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_http_service__ = __webpack_require__("./src/app/services/http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__entity_Payment__ = __webpack_require__("./src/app/entity/Payment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__entity_Delivery__ = __webpack_require__("./src/app/entity/Delivery.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2378,21 +2416,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
 var PaymentComponent = /** @class */ (function () {
-    function PaymentComponent(router) {
+    function PaymentComponent(router, httpService) {
         this.router = router;
+        this.httpService = httpService;
         this.tooltipCVVcontent = "CVV is an anti-fraud security feature to help verify that you are in possession of your credit card. On most credit cards (including Visa and Mastercard), the three-digit CVV number is printed on the signature panel on the back of the card immediately after the card's account number. On American Express credit cards, the four-digit CVV number is printed on the front of the card above the card’s account number.";
-        // show animation
-        this.isShow = 'hide';
+        // Payment Data
+        this.buyPackageData = new __WEBPACK_IMPORTED_MODULE_3__entity_Payment__["a" /* BuyPackageData */]();
+        this.creditCardDetails = new __WEBPACK_IMPORTED_MODULE_3__entity_Payment__["b" /* CreditCardDetails */]();
+        // get localStorage
+        this.getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
+        this.getflyFormValue = JSON.parse(localStorage.getItem('flyFormValue'));
         // month and year card
         this.months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
         this.currentYear = (new Date()).getFullYear();
         this.year = [];
     }
+    // Submit payment
     PaymentComponent.prototype.onSubmit = function (PaymentForm) {
-        this.isShow = 'show';
-        console.log(this.isShow);
-        this.router.navigate(['thank-you']);
+        // CreditCardDetails
+        this.creditCardDetails.ExpiredMonth = PaymentForm.value.month;
+        this.creditCardDetails.ExpiredYear = PaymentForm.value.year;
+        this.creditCardDetails.Holder = 'UserName';
+        this.creditCardDetails.Number = PaymentForm.value.numberCard;
+        this.creditCardDetails.CVV = PaymentForm.value.cvv;
+        // BuyPackageData
+        this.buyPackageData.PackageId = this.getSlidePackgeData.Id; //PackageId
+        this.buyPackageData.SimCardRequired = PaymentForm.value.checked; //SimCardRequired
+        this.buyPackageData.FlyDate = this.getflyFormValue.dateLanding; //FlyDate
+        this.buyPackageData.ReturnDate = this.getflyFormValue.dateAppearance; //ReturnDate
+        this.buyPackageData.CreditCard = this.creditCardDetails; //CreditCard 'object'
+        this.buyPackageData.Coupone = this.couponeCode; //Coupone
+        this.buyPackageData.Delivery = this.deliveryRequest; //Delivery 'object'
+        // this.buyPackageData.Currency = 'Currency'; //Currency
+        console.log(this.buyPackageData);
+        console.log(this.couponeCode);
+        this.httpService.postDataBuyPackage(this.buyPackageData).subscribe(function (data) { return console.log(data); }, function (error) {
+            console.log(error);
+        });
+        // this.router.navigate( ['thank-you'] );
     };
     PaymentComponent.prototype.number_keyPress = function (event) {
         var pattern = /[0-9]/;
@@ -2409,15 +2474,24 @@ var PaymentComponent = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Number)
+    ], PaymentComponent.prototype, "totalPrice", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
-    ], PaymentComponent.prototype, "totalFormData", void 0);
+    ], PaymentComponent.prototype, "couponeCode", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__entity_Delivery__["b" /* DeliveryRequest */])
+    ], PaymentComponent.prototype, "deliveryRequest", void 0);
     PaymentComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-payment',
             template: __webpack_require__("./src/app/payment/payment.component.html"),
             styles: [__webpack_require__("./src/app/payment/payment.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */]])
     ], PaymentComponent);
     return PaymentComponent;
 }());
@@ -2763,6 +2837,9 @@ var HttpService = /** @class */ (function () {
         this.http = http;
         this.baseUrl = "https://api.bglobal.global/api/";
     }
+    /*
+    * GET
+    */
     // get countries 
     HttpService.prototype.getCountries = function () {
         return this.http.get(this.baseUrl + "Public/SimCountries", httpOptions);
@@ -2781,6 +2858,9 @@ var HttpService = /** @class */ (function () {
         httpOptions.params = delivery;
         return this.http.get(this.baseUrl + "Public/DeliveryPrice", httpOptions);
     };
+    /*
+    * POST
+    */
     // create lead
     HttpService.prototype.postDataCreateSaleLead = function (userDataLead) {
         var body = {
@@ -2793,17 +2873,18 @@ var HttpService = /** @class */ (function () {
         };
         return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body);
     };
+    // Payment
+    HttpService.prototype.postDataBuyPackage = function (buyPackageData) {
+        httpOptions.params = null;
+        return this.http.post(this.baseUrl + "Payment/BuyPackage", buyPackageData, httpOptions);
+    };
     // login
-    // postDataLogin(userDataLogin: UserDataLogin){
-    //     httpOptions.params = userDataLogin;
-    //     return this.http.post<UserDataLogin[]>(this.baseUrl + "Account/Login", httpOptions); 
-    // }
     HttpService.prototype.postDataLogin = function (userDataLogin) {
-        var body = {
-            Email: userDataLogin.Email,
-            Password: userDataLogin.Password,
-        };
-        return this.http.post(this.baseUrl + "Account/Login", body);
+        // const body = {
+        //     Email: userDataLogin.Email,
+        //     Password: userDataLogin.Password,
+        // };
+        return this.http.post(this.baseUrl + "Account/Login", userDataLogin);
     };
     // register
     HttpService.prototype.postDataRegister = function (userDataRegister) {
@@ -3041,7 +3122,7 @@ var ThankYouPageComponent = /** @class */ (function () {
 /***/ "./src/app/total/total.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"total\">\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t\r\n\t\t\t<div class=\"col-sm-6 selected-services float-right-sm\">\r\n\t\t\t\t<h1>שרותים שנבחרו</h1>\r\n\t\t\t\t<table class=\"table\">\r\n\t\t\t\t  <tbody>\r\n\t\t\t\t  \t<!-- PackagePrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp; {{ getSlidePackgeData['PackagePrice'] }}</b><b>ליום   ₪ </b> </td>\r\n\t\t\t\t      <td>{{ getSlidePackgeData['Name'] }} : חבילה  </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- SimPrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ getSlidePackgeData['SimPrice'] }}  </b></td>\r\n\t\t\t\t      <td>כרטיס סים  </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- delivery -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ deliveryPrice }}  </b></td>\r\n\t\t\t\t      <td>משלוח / איסוף עצמי</td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- coupon -->\r\n\t\t\t\t    <tr *ngIf=\"isActiveCoupon && errorCoupon == null\">\r\n\t\t\t\t      <td><b>- ₪ {{ couponeSale }}  </b></td>\r\n\t\t\t\t      <!-- <td>{{ couponName }}</td>  -->\r\n\t\t\t\t      <td>קופון </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t      <td><b> </b></td>\r\n\t\t\t\t      <td> </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp;{{ flyFormStor.countDays }}</b><b> \r\n\t\t\t\t       {{ flyFormStor.countDays == 1? 'ליום' : 'ימים  ' }}\r\n\t\t\t\t      </b></td>\r\n\t\t\t\t      <td>סה”כ ימים </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    \r\n\t\t\t\t  </tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-sm-6 input-box float-right-sm\">\r\n\t\t\t\t<h1>סה״כ לתשלום</h1>\r\n\t\t\t\t<!-- <h2>יש לך קוד קופון</h2> -->\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"total-price\">₪ {{ calculateTotalPrice() }}</div>\r\n\t\t\t\t<span class=\"open-counpon {{!showInput}}\" (click)=\"showInputCoupon()\">יש לי קופון  </span>\r\n\t\t\t\t\r\n\t\t\t\t<form #couponeForm=\"ngForm\" \r\n\t\t\t\t(ngSubmit)=\"onSubmit(couponeForm)\" \r\n\t\t\t\tclass=\"{{showInput}}\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-xs-4\">\r\n\t\t\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t\t\t[disabled]=\"!couponeForm.valid\">לבדוק  </button>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-8\">\r\n\t\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t\t<input matInput placeholder=\"הזן קוד קופון\" \r\n\t\t\t\t\t\t\t\trequired \r\n\t\t\t\t\t\t\t\tname=\"coupon\" ngModel/>\r\n\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-12 invalid-coupon\" *ngIf=\"errorCoupon\">\r\n\t\t\t\t\t\t\t<p>{{ errorCoupon }}</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t<!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->\r\n\t\t\t\t<button mat-button class=\"bg-button bg-green-button main-button\"\r\n\t\t\t\t(click)=\"scrollAnimate(appPayment)\"\r\n\t\t\t\t(click)=\"isShow='show'\">המשך</button>\r\n\t\t\t\t<hr>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</section>\r\n\r\n<!-- <pre>{{ deliveryPrice | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData.Id | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData | json }}</pre> -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appPayment>\r\n\t<app-payment >\r\n\t\t<!-- [couponeFormData]=\"couponeForm.value\" -->\r\n\t</app-payment>\r\n</div>"
+module.exports = "<section id=\"total\">\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t\r\n\t\t\t<div class=\"col-sm-6 selected-services float-right-sm\">\r\n\t\t\t\t<h1>שרותים שנבחרו</h1>\r\n\t\t\t\t<table class=\"table\">\r\n\t\t\t\t  <tbody>\r\n\t\t\t\t  \t<!-- PackagePrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp; {{ getSlidePackgeData['PackagePrice'] }}</b><b>ליום   ₪ </b> </td>\r\n\t\t\t\t      <td>{{ getSlidePackgeData['Name'] }} : חבילה  </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- SimPrice -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ getSlidePackgeData['SimPrice'] }}  </b></td>\r\n\t\t\t\t      <td>כרטיס סים  </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- delivery -->\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b>₪ {{ deliveryPrice }}  </b></td>\r\n\t\t\t\t      <td>משלוח / איסוף עצמי</td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <!-- coupon -->\r\n\t\t\t\t    <tr *ngIf=\"isActiveCoupon && errorCoupon == null\">\r\n\t\t\t\t      <td><b>- ₪ {{ couponeSale }}  </b></td>\r\n\t\t\t\t      <!-- <td>{{ couponName }}</td>  -->\r\n\t\t\t\t      <td>קופון </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t      <td><b> </b></td>\r\n\t\t\t\t      <td> </td> \r\n\t\t\t\t    </tr>\r\n\t\t\t\t    <tr>\r\n\t\t\t\t      <td><b class=\"right\">&nbsp;{{ flyFormStor.countDays }}</b><b> \r\n\t\t\t\t       {{ flyFormStor.countDays == 1? 'ליום' : 'ימים  ' }}\r\n\t\t\t\t      </b></td>\r\n\t\t\t\t      <td>סה”כ ימים </td>\r\n\t\t\t\t    </tr>\r\n\t\t\t\t    \r\n\t\t\t\t  </tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-sm-6 input-box float-right-sm\">\r\n\t\t\t\t<h1>סה״כ לתשלום</h1>\r\n\t\t\t\t<!-- <h2>יש לך קוד קופון</h2> -->\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"total-price\">₪ {{ calculateTotalPrice() }}</div>\r\n\t\t\t\t<span class=\"open-counpon {{!showInput}}\" (click)=\"showInputCoupon()\">יש לי קופון  </span>\r\n\t\t\t\t\r\n\t\t\t\t<form #couponeForm=\"ngForm\" \r\n\t\t\t\t(ngSubmit)=\"onSubmit(couponeForm)\" \r\n\t\t\t\tclass=\"{{showInput}}\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-xs-4\">\r\n\t\t\t\t\t\t\t<button mat-button class=\"bg-button bg-green-button\" \r\n\t\t\t\t\t\t\t[disabled]=\"!couponeForm.valid\">לבדוק  </button>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-8\">\r\n\t\t\t\t\t\t\t<mat-form-field>\r\n\t\t\t\t\t\t\t\t<input matInput placeholder=\"הזן קוד קופון\" \r\n\t\t\t\t\t\t\t\trequired \r\n\t\t\t\t\t\t\t\tname=\"coupon\" ngModel/>\r\n\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-xs-12 invalid-coupon\" *ngIf=\"errorCoupon\">\r\n\t\t\t\t\t\t\t<p>{{ errorCoupon }}</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-sm-12\">\r\n\t\t\t\t<!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->\r\n\t\t\t\t<button mat-button class=\"bg-button bg-green-button main-button\"\r\n\t\t\t\t(click)=\"scrollAnimate(appPayment)\"\r\n\t\t\t\t(click)=\"isShow='show'\">המשך</button>\r\n\t\t\t\t<hr>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</section>\r\n\r\n<!-- <pre>{{ deliveryRequest | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData.Id | json }}</pre> -->\r\n<!-- <pre>{{ getSlidePackgeData | json }}</pre> -->\r\n\r\n<div [@toggleHeight]=\"isShow\" #appPayment>\r\n\t<app-payment \r\n\t\t[totalPrice]=\"calculateTotalPrice()\"\r\n\t\t[couponeCode]=\"coupon.Code\"\r\n\t\t[deliveryRequest]=\"deliveryRequest\">\r\n\t</app-payment>\r\n</div>"
 
 /***/ }),
 
@@ -3083,7 +3164,8 @@ var TotalComponent = /** @class */ (function () {
         this.errorCoupon = null;
         this.isActiveCoupon = false;
         this.showInput = 'hide';
-        // check coupon
+        // couponeName:string = '';
+        // check coupone
         this.coupon = new __WEBPACK_IMPORTED_MODULE_2__entity_Coupon__["a" /* Coupon */]();
         // scroll animate
         this.isShow = 'hide';
@@ -3101,10 +3183,10 @@ var TotalComponent = /** @class */ (function () {
             }
             else {
                 _this.errorCoupon = "invalid coupon";
+                couponeForm.value.coupon = '';
             }
-            console.log(data);
         }, function (error) {
-            console.log(error);
+            couponeForm.value.coupon = '';
         });
     };
     // show Input Coupon
@@ -3138,6 +3220,10 @@ var TotalComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], TotalComponent.prototype, "deliveryPrice", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], TotalComponent.prototype, "deliveryRequest", void 0);
     TotalComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-total',
