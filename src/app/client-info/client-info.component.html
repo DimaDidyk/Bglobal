@@ -41,13 +41,18 @@
 				<div class="col-sm-12">
 					<button mat-button class="bg-button bg-green-button" 
 					[disabled]="!clientInfoForm.valid"
-					(click)="scrollAnimate(delivery)"
+					(click)="scrollAnimate(scroll)"
+					>המשך  </button>
+					<!-- 
 					(click)="scrollAnimate(simactiveform)"
-					(click)="isShow='show'">המשך  </button>
+					(click)="scrollAnimate(delivery)"
+					(click)="isShow='show'"
+					 -->
 				</div>
 			</div>
 		</form>
 	</div>
+	<div #scroll></div>
 </section>
 
 <!--  -->

@@ -9,8 +9,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
 
 import { HttpService } from '../services/http.service';
-import { BuyPackageData, CreditCardDetails } from "../entity/Payment";
+import { BuyPackageData, CreditCardDetails, CreditCardDetailsResponse } from "../entity/Payment";
 import { DeliveryRequest } from "../entity/Delivery";
+ 
+import { DialogMessageData } from "../entity/Dialog";
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-payment',
@@ -24,6 +27,7 @@ export class PaymentComponent implements OnInit {
 	constructor(
 		private router: Router,
 		private httpService: HttpService,
+		private headerComponent: HeaderComponent,
 	){}
 
 	@Input() totalPrice:number;
@@ -32,13 +36,20 @@ export class PaymentComponent implements OnInit {
 	// Payment Data
     buyPackageData:BuyPackageData = new BuyPackageData();
     creditCardDetails:CreditCardDetails = new CreditCardDetails();
+    creditCardDetailsResponse;
 	@Input() deliveryRequest:DeliveryRequest; // DeliveryRequest
 	// get localStorage
     getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
     getflyFormValue = JSON.parse(localStorage.getItem('flyFormValue'));
 
     // Submit payment
+	dialogMessageData:DialogMessageData = new DialogMessageData();
+
 	onSubmit(PaymentForm: NgForm) {
+		// message Dialog
+		this.dialogMessageData.title = '';
+		this.dialogMessageData.message = 'message';
+
 		// CreditCardDetails
 		this.creditCardDetails.ExpiredMonth = PaymentForm.value.month;
 		this.creditCardDetails.ExpiredYear = PaymentForm.value.year;
@@ -55,14 +66,22 @@ export class PaymentComponent implements OnInit {
 		this.buyPackageData.Coupone = this.couponeCode; //Coupone
 		this.buyPackageData.Delivery = this.deliveryRequest; //Delivery 'object'
 		// this.buyPackageData.Currency = 'Currency'; //Currency
-
-		console.log( this.buyPackageData );
-		console.log( this.couponeCode );
+		// console.log( this.buyPackageData );
+		// console.log( this.couponeCode );
 
 		this.httpService.postDataBuyPackage(this.buyPackageData).subscribe(
-	        data => console.log(data),
+	        data => {
+	        	this.creditCardDetailsResponse = data;
+	        	this.dialogMessageData.title = 'החיוב עבר בהצלחה  ';
+	        	this.dialogMessageData.message = this.creditCardDetailsResponse.InvoceId + 'אמספר אישור ';
+				this.headerComponent.openDialogMessage(this.dialogMessageData);
+	        },
 	        error => {
 	            console.log(error);
+	            this.dialogMessageData.title = 'החיוב לא עבר. ';
+				this.dialogMessageData.message = error.error.Message +
+				'\n אנא בדוק את פרטי האשראי או צור קשר עם מוקד התמיכה בטלפון 03-3723030';
+				this.headerComponent.openDialogMessage(this.dialogMessageData);
 	        },
 	    );
 		// this.router.navigate( ['thank-you'] );

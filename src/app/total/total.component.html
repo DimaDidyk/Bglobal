@@ -19,8 +19,9 @@
 				    <!-- delivery -->
 				    <tr>
 				      <td><b>₪ {{ deliveryPrice }}  </b></td>
-				      <td>משלוח / איסוף עצמי</td> 
+				      <td>{{ deliveryRequest.Id == 0? 'איסוף עצמי ' : 'משלוח ' }}</td> <!-- משלוח / איסוף עצמי -->
 				    </tr>
+
 				    <!-- coupon -->
 				    <tr *ngIf="isActiveCoupon && errorCoupon == null">
 				      <td><b>- ₪ {{ couponeSale }}  </b></td>

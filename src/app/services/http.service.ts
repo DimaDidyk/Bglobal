@@ -20,22 +20,22 @@ const httpOptions = {
 @Injectable()
 export class HttpService {
 
-	baseUrl: string = "https://api.bglobal.global/api/";
+    baseUrl: string = "https://api.bglobal.global/api/";
 
-	constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
     /*
     * GET
     */
     // get countries 
-	getCountries() : Observable<Country[]> {
-		return this.http.get<Country[]>(this.baseUrl + "Public/SimCountries", httpOptions);
-	}
+    getCountries() : Observable<Country[]> {
+        return this.http.get<Country[]>(this.baseUrl + "Public/SimCountries", httpOptions);
+    }
 
     // get countries wgith vategory
-	getSimCountriesWithCategory() : Observable<SimCountriesWithCategory[]> {
-		return this.http.get<SimCountriesWithCategory[]>(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
-	}
+    getSimCountriesWithCategory() : Observable<SimCountriesWithCategory[]> {
+        return this.http.get<SimCountriesWithCategory[]>(this.baseUrl + "Public/SimCountriesWithCategory", httpOptions);
+    }
 
     // check coupone
     getDataCoupon(coupon: Coupon) : Observable<Coupon[]> {
@@ -52,17 +52,13 @@ export class HttpService {
     /*
     * POST
     */
-    // create lead
-	postDataCreateSaleLead(userDataLead: UserDataLead){
-        const body = {
-        	Email: userDataLead.Email,
-        	FirstName: userDataLead.FirstName,
-        	LastName: userDataLead.LastName,
-        	Phone: userDataLead.Phone,
-        	Message: userDataLead.Message,
-        	Affiliate: userDataLead.Affiliate,
-        };
-        return this.http.post(this.baseUrl + "Leads/CreateSaleLead", body); 
+    // create SALE lead
+    postDataCreateSaleLead(userDataLead: UserDataLead){
+        return this.http.post(this.baseUrl + "Leads/CreateSaleLead", userDataLead); 
+    }
+    // create SERVIClEead
+    postDataCreateServiceLead(userDataLead: UserDataLead){
+        return this.http.post(this.baseUrl + "Leads/CreateServiceLead", userDataLead); 
     }
 
     // Payment
@@ -73,10 +69,6 @@ export class HttpService {
 
     // login
     postDataLogin(userDataLogin: UserDataLogin){
-        // const body = {
-        //     Email: userDataLogin.Email,
-        //     Password: userDataLogin.Password,
-        // };
         return this.http.post(this.baseUrl + "Account/Login", userDataLogin); 
     }
 
@@ -122,5 +114,5 @@ export class HttpService {
         }
         return 1;
     }
-	
+    
 }

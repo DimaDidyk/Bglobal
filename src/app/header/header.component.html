@@ -17,10 +17,10 @@
 		 >
 			<div id="sign-in" class="main-manu-item"
 			(mouseenter)="openMenu()"
-			(mouseleave)="closeMenu()">
+			(mouseleave)="closeMenu()"
+			*ngIf="httpService.checkLogin()">
 				
 				<p routerLink="/user">
-					 {{ httpService.checkLogin() == 1? 'true': 'false' }}
 					 שלום דימה    <i class="fa fa-user-o" aria-hidden="true"></i>
 				</p>
 
@@ -46,8 +46,8 @@
 				  routerLinkActive="active-link" 
 				  routerLink="/">יציאה</div>
 
-				  <div class="user-menu-item" 
-				  (click)="openDialog()"> sign in dialog </div>
+				  <!-- <div class="user-menu-item" 
+				  (click)="openDialogLogIn()"> sign in dialog </div> -->
 				  <div class="user-menu-item" 
 				  (click)="openDialogMessage()"> DialogMessage </div>
 				</div>
@@ -56,8 +56,13 @@
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/"  class="main-manu-item">דף הבית  </p>
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/available-countries"  class="main-manu-item">רשימת מדינות נתמכות  </p>
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/faq"  class="main-manu-item">שאלות נפוצות  </p>
-			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/thank-you"  class="main-manu-item">הפעלת/טעינת כרטיס  </p>
+			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/thank-you"  class="main-manu-item"
+			*ngIf="httpService.checkLogin()">הפעלת/טעינת כרטיס  </p>
 			<p [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" routerLink="/contact-us"  class="main-manu-item">צור קשר  </p>
+			
+			<p (click)="openDialogLogIn()" class="main-manu-item"
+			*ngIf="!httpService.checkLogin()">התחברות לחשבון פרטי  </p>
+			
 			
 		</div>
 	</div>

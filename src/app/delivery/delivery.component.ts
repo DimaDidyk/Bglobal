@@ -16,9 +16,6 @@ import { ClosestPickUpPoints } from "../entity/country";
 import { Delivery, DeliveryRequest } from "../entity/Delivery";
 import { HeaderComponent } from "../header/header.component";
 
-// import { TotalComponent } from '../total/total.component';
-// private totalComponent: TotalComponent,
-
 @Component({
     selector: 'app-delivery',
     templateUrl: './delivery.component.html',
@@ -115,8 +112,8 @@ export class DeliveryComponent implements OnInit {
             // console.log( locality, route, street_number );
             // console.log( locality, route, );
         }
-        if( !locality ) this.errorLocality += 'Введите название города\n';
-        if( !route ) this.errorLocality += 'Введите название улицы\n';
+        if( !locality ) this.errorLocality += 'הזן שם עיר \n';
+        if( !route ) this.errorLocality += ' הזן שם רחוב  \n';
         if( !street_number ) this.closestPickUpPoints.Building = 'empty';
 
 
@@ -145,11 +142,8 @@ export class DeliveryComponent implements OnInit {
     public checkLogin(){
         let tokenAuthorization = localStorage.getItem('tokenAuthorization');
         if( tokenAuthorization == undefined || tokenAuthorization == null ){
-            this.headerComponent.openDialog();
+            this.headerComponent.openDialogLogIn();
         }
     }
-
-   
-
     ngOnInit() {}
 }

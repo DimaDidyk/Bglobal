@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { HttpService } from '../services/http.service';
 import { UserDataLead } from "../entity/User";
+import { DialogMessageData } from "../entity/Dialog";
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-details-form',
@@ -31,8 +33,10 @@ export class DetailsFormComponent implements OnInit {
 		this.telInput.nativeElement.focus();
 	}
 
-	constructor( private httpService: HttpService ){}
-
+	constructor( 
+		private httpService: HttpService,
+		private headerComponent: HeaderComponent,
+	){}
 	
 	user = {
 	    'Email': '',
@@ -43,12 +47,11 @@ export class DetailsFormComponent implements OnInit {
 	    'Affiliate': 'SimSite',
     };
 	userDataLead:UserDataLead = new UserDataLead();
-
-	message:boolean = false;
-	leadID;
+	dialogMessageData:DialogMessageData = new DialogMessageData();
 
     onSubmit( detailsForm: NgForm ) {
-		console.log( detailsForm.value );
+		this.dialogMessageData.title = '';
+		this.dialogMessageData.message = 'message';
 
 		this.userDataLead = this.user;
 		this.userDataLead.Email = detailsForm.value.email;
@@ -58,19 +61,19 @@ export class DetailsFormComponent implements OnInit {
 		this.httpService.postDataCreateSaleLead(this.userDataLead)
             .subscribe(
                 data => {
-                	console.log( data );
+					this.dialogMessageData.message = 'על פנייתך. מלל: מספר פנייתך: ' + data + ', נציגנו יצרו עמך קשר בהקדם';
+					this.headerComponent.openDialogMessage(this.dialogMessageData);
                 },
                 error => {
-                	this.message = true;
-                	this.leadID = error;
-                	console.log( error );
-                	console.log( this.message );
-                	console.log( this.leadID );
+					this.dialogMessageData.title = 'שגיאה. מלל:';
+					this.dialogMessageData.message = error.error.Message;
+					this.headerComponent.openDialogMessage(this.dialogMessageData);
                 },
             );
 	}
 	
 	ngOnInit() {
+    	
 	}
 
 }

@@ -9,6 +9,12 @@ export class CreditCardDetails{
   CVV: string;
 }
 
+export class CreditCardDetailsResponse{
+  IsClearingSuccess: boolean;
+  Message: string;
+  InvoceId: number;
+}
+
 export class BuyPackageData{
   PackageId: number;
   SimCardRequired: boolean;
@@ -19,3 +25,4 @@ export class BuyPackageData{
   Delivery: object;
   Currency: string;
 }
+

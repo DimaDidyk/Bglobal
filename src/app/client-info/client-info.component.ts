@@ -10,6 +10,9 @@ import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.componen
 import { HttpService } from '../services/http.service';
 import { UserDataRegister } from "../entity/User";
  
+import { DialogMessageData } from "../entity/Dialog";
+import { HeaderComponent } from "../header/header.component";
+
 @Component({
 	selector: 'app-client-info',
 	templateUrl: './client-info.component.html',
@@ -26,6 +29,7 @@ export class ClientInfoComponent implements OnInit {
 		public route: ActivatedRoute,
 		private router: Router,
 		private httpService: HttpService,
+		private headerComponent: HeaderComponent,
 	) {}
 
 	// get data from Sim
@@ -45,19 +49,22 @@ export class ClientInfoComponent implements OnInit {
 	isChecked:boolean = false;
 	telPrefix:string = '972';
 
-
 	userDataRegister:UserDataRegister = new UserDataRegister();
 
 	// show animation
 	isShow = 'hide';
+	dialogMessageData:DialogMessageData = new DialogMessageData();
 	onSubmit(clientInfoForm: NgForm) {
-		this.isShow = 'show';
+		// message Dialog
+		this.dialogMessageData.title = '';
+		this.dialogMessageData.message = 'message';
 
+		// User Data
 		this.userDataRegister.Email = clientInfoForm.value.email;
-
+		// 
 		this.userDataRegister.Password = clientInfoForm.value.tel.slice(-7);
 		this.userDataRegister.ConfirmPassword = clientInfoForm.value.tel.slice(-7);
-
+		// 
 		this.userDataRegister.FirstName = clientInfoForm.value.name;
 		this.userDataRegister.LastName = clientInfoForm.value.soname;
 		this.userDataRegister.Phone = clientInfoForm.value.tel;
@@ -65,12 +72,22 @@ export class ClientInfoComponent implements OnInit {
 		this.userDataRegister.AllowSendMail = clientInfoForm.value.checked;
 		this.userDataRegister.Affiliate = 'string';
 
-		console.log( this.userDataRegister );
-
+		// console.log( this.userDataRegister );
 		this.httpService.postDataRegister(this.userDataRegister)
             .subscribe(
-                error => console.log(error),
-                data => console.log(data),
+                data => {
+                	console.log(data);
+					this.dialogMessageData.title = 'Registration successful';
+					this.headerComponent.openDialogMessage(this.dialogMessageData);
+					this.isShow = 'show';
+                },
+                error => {
+                	console.log(error);
+                	this.dialogMessageData.title = 'שגיאה. מלל:';
+					this.dialogMessageData.message = error.error.Message;
+					this.headerComponent.openDialogMessage(this.dialogMessageData);
+					// this.isShow = 'show';
+                },
             );
 	}
 	
