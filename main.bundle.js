@@ -1961,12 +1961,6 @@ var HeaderComponent = /** @class */ (function () {
     };
     // On init 
     HeaderComponent.prototype.ngOnInit = function () {
-        window.onpopstate = function (e) {
-            console.log(e);
-            // e.preventDefault();
-            // e.preventDefault();
-            // location.replace( '/' );
-        };
     };
     HeaderComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -2903,6 +2897,18 @@ var ReturningCustomerPageComponent = /** @class */ (function () {
     function ReturningCustomerPageComponent() {
     }
     ReturningCustomerPageComponent.prototype.ngOnInit = function () {
+        var state = {};
+        var title = 'Register';
+        var url = '/sim-order/';
+        history.pushState(state, title, url);
+        window.onpopstate = function (e) {
+            console.log(e);
+            e.preventDefault();
+            var state = {};
+            var title = 'Register';
+            var url = '/sim-order/';
+            history.pushState(state, title, url);
+        };
     };
     ReturningCustomerPageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
