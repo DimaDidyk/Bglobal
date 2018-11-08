@@ -8,11 +8,18 @@ import { Coupon } from "../entity/Coupon";
 import { Delivery } from "../entity/Delivery";
 import { BuyPackageData } from "../entity/Payment";
 
-const tokenAuthorization = JSON.parse(localStorage.getItem('tokenAuthorization'));
+
+var tokenAuthorization = '';
+if( localStorage.getItem('tokenAuthorization') ){
+    var tokenAuthorizationJson = JSON.parse(localStorage.getItem('tokenAuthorization'));
+    var tokenAuthorization = tokenAuthorizationJson.token_type+" "+ tokenAuthorizationJson.access_token;
+}else{
+    tokenAuthorization = '';
+}
 const httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': "application/json",
-        'Authorization': tokenAuthorization.token_type+" "+ tokenAuthorization.access_token,
+        'Authorization': tokenAuthorization,
     }),
     params: {},
 };

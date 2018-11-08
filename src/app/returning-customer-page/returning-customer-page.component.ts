@@ -10,6 +10,19 @@ export class ReturningCustomerPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  	var state = {};
+	var title = 'Register';
+	var url = '/sim-order/';
+	history.pushState(state, title, url);
+	window.onpopstate = function (e) { 
+		console.log( e );
+		e.preventDefault();
+		var state = {};
+		var title = 'Register';
+		var url = '/sim-order/';
+		history.pushState(state, title, url);
+	}
   }
 
 }

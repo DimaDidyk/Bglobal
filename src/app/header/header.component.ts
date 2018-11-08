@@ -49,12 +49,7 @@ export class HeaderComponent implements OnInit {
 
 	// On init 
 	ngOnInit() {
- 		window.onpopstate = function (e) { 
- 			console.log( e ); 
- 			// e.preventDefault();
- 			// e.preventDefault();
- 			// location.replace( '/' );
- 		}
+		
 	}
 }
 
