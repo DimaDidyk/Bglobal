@@ -12,8 +12,13 @@ import { BuyPackageData } from "../entity/Payment";
 var tokenAuthorization = '';
 if( localStorage.getItem('tokenAuthorization') ){
     var tokenAuthorizationJson = JSON.parse(localStorage.getItem('tokenAuthorization'));
-    var tokenAuthorization = tokenAuthorizationJson.token_type+" "+ tokenAuthorizationJson.access_token;
+    if( tokenAuthorizationJson.access_token || tokenAuthorizationJson.token_type){
+        var tokenAuthorization = tokenAuthorizationJson.token_type+" "+ tokenAuthorizationJson.access_token;
+    }else{
+        localStorage.removeItem('tokenAuthorization');
+    }
 }else{
+    localStorage.removeItem('tokenAuthorization');
     tokenAuthorization = '';
 }
 const httpOptions = {
