@@ -8,11 +8,11 @@ import { Coupon } from "../entity/Coupon";
 import { Delivery } from "../entity/Delivery";
 import { BuyPackageData } from "../entity/Payment";
 
-const tokenAuthorization = localStorage.getItem('tokenAuthorization');
+const tokenAuthorization = JSON.parse(localStorage.getItem('tokenAuthorization'));
 const httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': "application/json",
-        'Authorization': "Bearer " + tokenAuthorization,
+        'Authorization': tokenAuthorization.token_type+" "+ tokenAuthorization.access_token,
     }),
     params: {},
 };

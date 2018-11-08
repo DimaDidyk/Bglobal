@@ -34,8 +34,15 @@
 		margin-bottom: 50px;
 		margin-top: 22px;
 	}
+	.buttons{
+		text-align: center;
+	}
 	.main-button{
 		margin-top: 50px;
+		margin-left: 10px;
+		margin-right: 10px;
+		max-width: 260px;
+		display: inline-block;
 	}
 	.input-box{
 		padding-right: 50px;

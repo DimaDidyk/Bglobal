@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 
 import { Coupon } from "../entity/Coupon";
 import { HttpService } from '../services/http.service';
+import { DeliveryComponent } from "../delivery/delivery.component";
 
 
 @Component({
@@ -17,10 +18,12 @@ import { HttpService } from '../services/http.service';
 	],
 	styleUrls: ['./total.component.scss']
 })
-
 export class TotalComponent implements OnInit {
 
-	constructor( private httpService: HttpService ){}
+	constructor( 
+		private httpService: HttpService,
+		private deliveryComponent: DeliveryComponent,
+	){}
 
 	@Input() additionallyFromData;
 	@Input() deliveryPrice;
@@ -49,7 +52,7 @@ export class TotalComponent implements OnInit {
 					this.isActiveCoupon = true;
 					this.errorCoupon = null;
 				}else{
-					this.errorCoupon = "invalid coupon";
+					this.errorCoupon = "קופון שגוי";
        	 			couponeForm.value.coupon = '';
 				}
        	 	},
@@ -79,6 +82,11 @@ export class TotalComponent implements OnInit {
 
 	// scroll animate
 	isShow = 'hide';
+	isShowCurrent = 'show';
+	showDelivery(){
+		this.deliveryComponent.isShowCurrent = 'show';
+		this.deliveryComponent.isShow = 'hide';
+	}
 	scrollAnimate(element) {
 		this.isShow = 'show';
 		setTimeout(function(){

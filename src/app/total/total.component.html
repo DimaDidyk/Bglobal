@@ -1,4 +1,4 @@
-<section id="total">
+<section id="total" [@toggleHeight]="isShowCurrent">
 	<div class="container">
 		<div class="row">
 			
@@ -73,11 +73,14 @@
 		</div>
 
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12 buttons">
 				<!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->
+				<button mat-button class="bg-button main-button"
+				(click)="showDelivery()">חזור </button>
+
 				<button mat-button class="bg-button bg-green-button main-button"
 				(click)="scrollAnimate(appPayment)"
-				(click)="isShow='show'">המשך</button>
+				(click)="isShow='show'" (click)="isShowCurrent='hide'">המשך</button>
 				<hr>
 			</div>
 		</div>

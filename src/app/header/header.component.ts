@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
         private httpService: HttpService,
 	){}
 
-
 	// open and close menu
 	userMenuStaus = "hide";
 	openMenu() {
@@ -49,7 +48,14 @@ export class HeaderComponent implements OnInit {
 	}
 
 	// On init 
-	ngOnInit() {}
+	ngOnInit() {
+ 		window.onpopstate = function (e) { 
+ 			console.log( e ); 
+ 			// e.preventDefault();
+ 			// e.preventDefault();
+ 			// location.replace( '/' );
+ 		}
+	}
 }
 
 // Message dialog
@@ -94,7 +100,8 @@ export class DialogSignIn {
 
 		this.httpService.postDataLogin(this.userDataLogin).subscribe(
 			(data) => {
-				localStorage.setItem('tokenAuthorization', String(data));
+				// console.log( data );
+				localStorage.setItem('tokenAuthorization', JSON.stringify(data));
 				this.closeDialog();
 			},
 			(error) => {

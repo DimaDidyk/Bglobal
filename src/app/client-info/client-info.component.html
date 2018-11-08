@@ -1,4 +1,4 @@
-<section id="client-info" class="gradient-background">
+<section id="client-info" class="gradient-background" [@toggleHeight]="isShowCurrent">
 	<div class="container">
 		<h1>פרטי לקוח</h1>
 		<form #clientInfoForm="ngForm" (ngSubmit)="onSubmit(clientInfoForm)">

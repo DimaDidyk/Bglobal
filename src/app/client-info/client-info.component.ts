@@ -46,18 +46,19 @@ export class ClientInfoComponent implements OnInit {
 	      event.preventDefault();
 	    }
 	}
-	isChecked:boolean = false;
+	isChecked:boolean = true;
 	telPrefix:string = '972';
 
 	userDataRegister:UserDataRegister = new UserDataRegister();
 
 	// show animation
 	isShow = 'hide';
+	isShowCurrent = 'show';
 	dialogMessageData:DialogMessageData = new DialogMessageData();
 	onSubmit(clientInfoForm: NgForm) {
 		// message Dialog
 		this.dialogMessageData.title = '';
-		this.dialogMessageData.message = 'message';
+		// this.dialogMessageData.message = 'message';
 
 		// User Data
 		this.userDataRegister.Email = clientInfoForm.value.email;
@@ -76,10 +77,11 @@ export class ClientInfoComponent implements OnInit {
 		this.httpService.postDataRegister(this.userDataRegister)
             .subscribe(
                 data => {
-                	console.log(data);
+					localStorage.setItem('tokenAuthorization', JSON.stringify(data));
 					this.dialogMessageData.title = 'Registration successful';
 					this.headerComponent.openDialogMessage(this.dialogMessageData);
 					this.isShow = 'show';
+					this.isShowCurrent = 'hide';
                 },
                 error => {
                 	console.log(error);

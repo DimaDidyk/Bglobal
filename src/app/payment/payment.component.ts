@@ -14,6 +14,7 @@ import { DeliveryRequest } from "../entity/Delivery";
  
 import { DialogMessageData } from "../entity/Dialog";
 import { HeaderComponent } from "../header/header.component";
+import { TotalComponent } from "../total/total.component";
 
 @Component({
   selector: 'app-payment',
@@ -28,6 +29,7 @@ export class PaymentComponent implements OnInit {
 		private router: Router,
 		private httpService: HttpService,
 		private headerComponent: HeaderComponent,
+		private totalComponent: TotalComponent,
 	){}
 
 	@Input() totalPrice:number;
@@ -106,4 +108,8 @@ export class PaymentComponent implements OnInit {
 		}
 	}
 
+	showTotal(){
+		this.totalComponent.isShowCurrent = 'show';
+		this.totalComponent.isShow = 'hide'
+	}
 }

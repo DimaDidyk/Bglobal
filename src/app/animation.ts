@@ -13,5 +13,5 @@ export const toggleHeight = trigger('toggleHeight', [
 	    // display: 'block'
 	})),
 	transition('hide => show', animate('200ms 50ms ease-in')),
-	transition('show => hide', animate('200ms ease-out'))
+	transition('show => hide', animate('800ms ease-out')),
 ]);

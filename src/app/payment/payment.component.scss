@@ -44,10 +44,20 @@
 			max-height: 36px;
 		}
 	}
+	// .bg-button{
+	// 	max-width: 500px;
+	// 	display: block;
+	// 	margin: 50px auto;
+	// }
+	.buttons{
+		text-align: center;
+	}
 	.bg-button{
-		max-width: 500px;
-		display: block;
-		margin: 50px auto;
+		margin-top: 50px;
+		margin-left: 10px;
+		margin-right: 10px;
+		max-width: 260px;
+		display: inline-block;
 	}
 	.cvv-input{
 		padding-left: 40px;

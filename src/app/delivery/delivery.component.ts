@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Inject, Injectable, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgForm, FormControl, FormsModule  } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +15,7 @@ import { HttpService } from '../services/http.service';
 import { ClosestPickUpPoints } from "../entity/country";
 import { Delivery, DeliveryRequest } from "../entity/Delivery";
 import { HeaderComponent } from "../header/header.component";
+// import { TotalComponent } from "../total/total.component";
 
 @Component({
     selector: 'app-delivery',
@@ -30,6 +31,7 @@ export class DeliveryComponent implements OnInit {
     constructor( 
         private httpService: HttpService,
         private headerComponent: HeaderComponent,
+        // private totalComponent: TotalComponent,
      ){}
 
     @Input() clientInfoFormData: string;
@@ -49,8 +51,8 @@ export class DeliveryComponent implements OnInit {
     deliveryRequest:DeliveryRequest = new DeliveryRequest();
     // show animation
     isShow = 'hide';
+    isShowCurrent = 'show';
     onSubmit(deliveryForm: NgForm) {
-        this.isShow = 'show';
 
         // Delivery obj
         this.delivery.packageId = this.getSlidePackgeData.Id;
@@ -58,13 +60,16 @@ export class DeliveryComponent implements OnInit {
         // send getConfigDelivery
         this.getConfigDelivery( this.delivery ).subscribe( 
             data => {
+                this.isShow = 'show';
+                this.isShowCurrent = 'hide';
+                // this.totalComponent.isShowCurrent = 'show';
                 this.deliveryPrice = Number(data);
                 console.log( data );
                 this.deliveryRequest.Id = Number(data);
                 this.deliveryRequest.PickUpPoint = deliveryForm.value.address;
             },
         );
-        this.checkLogin();
+        // this.checkLogin();
     }
     
     checked1TooltipContent = "checked1TooltipContent is an anti-fraud security feature to help verify that you are in possession of your credit card. On most credit cards (including Visa and Mastercard), the three-digit CVV number is printed on the signature panel on the back of the card immediately after the card's account number. On American Express credit cards, the four-digit CVV number is printed on the front of the card above the card’s account number.";
