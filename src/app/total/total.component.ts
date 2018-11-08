@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Inject, Injectable, ViewChild, ElementRef } f
 
 import { NgForm } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { toggleHeight } from '../animation';
+import { toggleOpacity } from '../animation';
 import { Observable } from 'rxjs';
 
 import { Coupon } from "../entity/Coupon";
@@ -14,7 +14,7 @@ import { DeliveryComponent } from "../delivery/delivery.component";
 	selector: 'app-total',
 	templateUrl: './total.component.html',
 	animations: [
-		toggleHeight
+		toggleOpacity
 	],
 	styleUrls: ['./total.component.scss']
 })

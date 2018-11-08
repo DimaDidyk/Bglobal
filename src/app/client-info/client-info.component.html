@@ -1,4 +1,4 @@
-<section id="client-info" class="gradient-background" [@toggleHeight]="isShowCurrent">
+<section id="client-info" class="gradient-background" [@toggleOpacity]="isShowCurrent">
 	<div class="container">
 		<h1>פרטי לקוח</h1>
 		<form #clientInfoForm="ngForm" (ngSubmit)="onSubmit(clientInfoForm)">
@@ -63,7 +63,7 @@
 
 
 <!-- app-sim-active-form -->
-<div [@toggleHeight]="isShow" #simactiveform>
+<div [@toggleOpacity]="isShow" #simactiveform>
 	<app-sim-active-form
 	    *ngIf="routeCurentPath == 'distributors' "
 		[clientInfoFormData]="clientInfoForm.value">
@@ -71,7 +71,7 @@
 </div>
 
 <!-- app-delivery -->
-<div [@toggleHeight]="isShow" #delivery>
+<div [@toggleOpacity]="isShow" #delivery>
 	<app-delivery
 	    *ngIf="routePackage != undefined "
 		[clientInfoFormData]="clientInfoForm.value">

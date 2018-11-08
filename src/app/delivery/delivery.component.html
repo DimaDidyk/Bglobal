@@ -1,4 +1,4 @@
-<section id="delivery" [@toggleHeight]="isShowCurrent">
+<section id="delivery" [@toggleOpacity]="isShowCurrent">
 	<div class="container">
 		<h1>כתובת למשלוח  </h1>
 		<h3>אנא בחרו היכן תרצו לאסוף את כרטיס הסים  </h3>
@@ -159,7 +159,7 @@
 <!-- <pre>{{ deliveryForm.value | json }}</pre> -->
 <!-- <pre>{{ deliveryForm.valid | json }}</pre> -->
 
-<div [@toggleHeight]="isShow" #appTotal>
+<div [@toggleOpacity]="isShow" #appTotal>
 	<app-total
 		[deliveryRequest]="deliveryRequest"
 		[deliveryPrice]="deliveryPrice">

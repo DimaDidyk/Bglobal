@@ -8,7 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { SearchAddressPipe } from '../search-address.pipe';
 import { GooglePlaceModule,GooglePlaceDirective } from "ngx-google-places-autocomplete";
-import { toggleHeight } from '../animation';
+import { toggleOpacity } from '../animation';
 import { Observable } from 'rxjs';
 
 import { HttpService } from '../services/http.service';
@@ -21,7 +21,7 @@ import { HeaderComponent } from "../header/header.component";
     selector: 'app-delivery',
     templateUrl: './delivery.component.html',
     animations: [
-        toggleHeight
+        toggleOpacity
     ],
     styleUrls: ['./delivery.component.scss']
 })

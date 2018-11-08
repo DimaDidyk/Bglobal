@@ -4,7 +4,7 @@ import { NgForm, FormsModule, FormControl, Validators, PatternValidator } from '
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
-import { toggleHeight } from '../animation';
+import { toggleOpacity } from '../animation';
 import { SimOrderPageComponent } from '../sim-order-page/sim-order-page.component';
 
 import { HttpService } from '../services/http.service';
@@ -17,7 +17,7 @@ import { HeaderComponent } from "../header/header.component";
 	selector: 'app-client-info',
 	templateUrl: './client-info.component.html',
 	animations: [
-		toggleHeight
+		toggleOpacity
 	],
 	styleUrls: ['./client-info.component.scss'],
 })
@@ -79,6 +79,7 @@ export class ClientInfoComponent implements OnInit {
                 data => {
 					localStorage.setItem('tokenAuthorization', JSON.stringify(data));
 					this.dialogMessageData.title = 'Registration successful';
+					this.dialogMessageData.message = '';
 					this.headerComponent.openDialogMessage(this.dialogMessageData);
 					this.isShow = 'show';
 					this.isShowCurrent = 'hide';
@@ -111,6 +112,10 @@ export class ClientInfoComponent implements OnInit {
 		// console.log( this.routeCurentPath );
 		// console.log( this.routePackage );
 		// console.log( this.route );
+		if( this.httpService.checkLogin() ){
+			this.isShowCurrent = 'hide';
+			this.isShow = 'true';
+		}
 	}
 
 }
