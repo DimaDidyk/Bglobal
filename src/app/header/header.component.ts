@@ -30,10 +30,9 @@ export class HeaderComponent implements OnInit {
 	// On init 
 	ngOnInit() {
 		if( this.httpService.checkLogin() ){
-
 			this.getConfigUserInfo().subscribe(
 				data => {
-					// console.log( data );
+					console.log( data );
 					this.userInfo = data;
 				},
 				error => {
@@ -66,6 +65,7 @@ export class HeaderComponent implements OnInit {
 
 	// Log out
 	LogOut() {
+		this.userMenuStaus = "hide";
 		localStorage.removeItem('tokenAuthorization');
 	}
 
@@ -127,6 +127,7 @@ export class DialogSignIn {
 				localStorage.setItem('tokenAuthorization', JSON.stringify(data));
 				this.headerComponent.ngOnInit();
 				this.closeDialog();
+				location.reload();
 			},
 			(error) => {
 				this.error = error.error.Message;

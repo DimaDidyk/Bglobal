@@ -23,7 +23,6 @@ import { UserPageComponent } from './user-page/user-page.component';
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '', component:  HomaPageComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full'},
   { path: 'distributors', component: SimOrderPageComponent },
   { path: 'sim-order/:package', component:  ReturningCustomerPageComponent,
     children: [
@@ -38,6 +37,8 @@ const routes: Routes = [
   { path: 'user/sim', component:  UserPageSimComponent },
   { path: 'user/info', component:  InfoPageComponent },
   { path: 'user', component:  UserPageComponent },
+  { path: '**', component: HomaPageComponent },
+  
 ];
 
 @NgModule({

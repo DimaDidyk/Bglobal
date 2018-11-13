@@ -21,7 +21,7 @@ if( localStorage.getItem('tokenAuthorization') ){
     localStorage.removeItem('tokenAuthorization');
     tokenAuthorization = '';
 }
-const httpOptions = {
+var httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': "application/json",
         'Authorization': tokenAuthorization,
@@ -33,9 +33,7 @@ const httpOptions = {
 export class HttpService {
 
     baseUrl: string = "https://api.bglobal.global/api/";
-
     constructor(private http: HttpClient) {}
-
     /*
     * GET
     */
