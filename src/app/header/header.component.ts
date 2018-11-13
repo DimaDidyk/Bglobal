@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { BrowserModule }    from '@angular/platform-browser';
 import { MatMenuTrigger, MatMenuModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 import { HttpService } from '../services/http.service';
-import { UserDataLogin } from "../entity/User";
+import { UserDataLogin, UserInfo } from "../entity/User";
 import { DialogMessageData } from "../entity/Dialog";
 
 @Component({
@@ -19,6 +20,29 @@ export class HeaderComponent implements OnInit {
 		public dialog: MatDialog,
         private httpService: HttpService,
 	){}
+
+	// get user information
+	getConfigUserInfo(): Observable<UserInfo[]> {
+	    return this.httpService.getUserInfo();
+	}
+
+	public userInfo = [];
+	// On init 
+	ngOnInit() {
+		if( this.httpService.checkLogin() ){
+
+			this.getConfigUserInfo().subscribe(
+				data => {
+					// console.log( data );
+					this.userInfo = data;
+				},
+				error => {
+					console.log( error );
+				},
+			);
+		}
+	}
+
 
 	// open and close menu
 	userMenuStaus = "hide";
@@ -40,6 +64,11 @@ export class HeaderComponent implements OnInit {
 	    this.dialog.open(DialogSignIn);
 	}
 
+	// Log out
+	LogOut() {
+		localStorage.removeItem('tokenAuthorization');
+	}
+
 	// open sign in dialog
 	openDialogMessage(DialogMessageData) {
 	    this.dialog.open(DialogMessage, {
@@ -47,10 +76,8 @@ export class HeaderComponent implements OnInit {
 	    });	
 	}
 
-	// On init 
-	ngOnInit() {
-		
-	}
+	
+	
 }
 
 // Message dialog
@@ -81,6 +108,7 @@ export class DialogSignIn {
 	constructor( 
 		public dialogRef: MatDialogRef<DialogSignIn>,
 		private httpService: HttpService,
+		private headerComponent: HeaderComponent,
 	){}
 
 	userDataLogin:UserDataLogin = new UserDataLogin();
@@ -97,6 +125,7 @@ export class DialogSignIn {
 			(data) => {
 				// console.log( data );
 				localStorage.setItem('tokenAuthorization', JSON.stringify(data));
+				this.headerComponent.ngOnInit();
 				this.closeDialog();
 			},
 			(error) => {

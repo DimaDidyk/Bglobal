@@ -21,7 +21,7 @@
 			*ngIf="httpService.checkLogin()">
 				
 				<p routerLink="/user">
-					 שלום דימה    <i class="fa fa-user-o" aria-hidden="true"></i>
+					{{ userInfo.Name }} ם דימה   <i class="fa fa-user-o" aria-hidden="true"></i>
 				</p>
 
 				<!-- User menu -->
@@ -41,10 +41,7 @@
 				  routerLinkActive="active-link" 
 				  routerLink="/user/info">פרטים אישיים</div>
 
-				  <div class="user-menu-item" 
-				  [routerLinkActiveOptions]="{exact: true}" 
-				  routerLinkActive="active-link" 
-				  routerLink="/">יציאה</div>
+				  <div class="user-menu-item" (click)="LogOut()" >יציאה</div>
 
 				  <!-- <div class="user-menu-item" 
 				  (click)="openDialogLogIn()"> sign in dialog </div> -->

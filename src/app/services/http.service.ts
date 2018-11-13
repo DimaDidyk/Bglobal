@@ -3,7 +3,7 @@ import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Country, SimCountriesWithCategory, ClosestPickUpPoints } from "../entity/Country";
 import { SimPackages } from "../entity/Package";
-import { UserDataLead, UserDataRegister, UserDataLogin } from "../entity/User";
+import { UserDataLead, UserDataRegister, UserDataLogin, UserInfo } from "../entity/User";
 import { Coupon } from "../entity/Coupon";
 import { Delivery } from "../entity/Delivery";
 import { BuyPackageData } from "../entity/Payment";
@@ -59,6 +59,10 @@ export class HttpService {
     getDeliveryPrice(delivery: Delivery) : Observable<Delivery[]> {
         httpOptions.params = delivery;
         return this.http.get<Delivery[]>(this.baseUrl + "Public/DeliveryPrice" , httpOptions);
+    }
+    // get user information
+    getUserInfo(): Observable<UserInfo[]> {
+        return this.http.get<UserInfo[]>(this.baseUrl + "Account/UserInfo" , httpOptions);
     }
 
     /*

@@ -46,9 +46,11 @@
 		margin-top: 14px;
 		float: right;
 		margin-bottom: 14px;
-	    text-align: right;
-        width: max-content;
-        padding-left: 50px;
+		text-align: right;
+		width: max-content;
+		padding-left: 50px;
+		position: relative;
+		z-index: 1;
 	}
 	.checked-wrapper2{
 		position: absolute;
@@ -96,6 +98,7 @@
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
 	#delivery{
+		padding-top: 60px;
 		.checked-wrapper{
 			position: static;
 			width: 100%;

@@ -84,7 +84,7 @@
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
 	#payment-form{
-		
+		padding-top: 40px;
 		.payment-service{
 			text-align: center;
 			margin-bottom: 20px;
@@ -99,6 +99,12 @@
 		.cvv-input{
 			padding-left: 40px;
 			margin-bottom: 26px;
+		}
+		.bg-button{
+			margin-top: 0;
+		}
+		.main-button{
+			margin-top: 20px;
 		}
 	}
 }

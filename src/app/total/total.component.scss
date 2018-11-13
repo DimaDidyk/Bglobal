@@ -110,11 +110,15 @@
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
 	#total{
+		padding-top: 40px;
 		.selected-services{
 			padding-left: 15px;
 		}
 		.input-box{
 			padding-right: 15px;
+		}
+		.main-button{
+			margin-top: 0;
 		}
 	}
 }

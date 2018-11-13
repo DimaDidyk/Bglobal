@@ -45,7 +45,6 @@ export class FlyFormComponent implements OnInit {
     return this.httpService.getCountries();
   }
 
-
   // add new date inputs
   CountryIdName = [
     { nameSalect: "country" },
@@ -83,8 +82,6 @@ export class FlyFormComponent implements OnInit {
       this.errorSelect2 = false;
       this.errorSelect3 = false;
     }
-
-
     this.adapter.setLocale('he'); //date format
 
     // get countries

@@ -18,10 +18,12 @@ import { AvailableCountriesComponent } from './available-countries/available-cou
 import { InfoPageComponent } from './info-page/info-page.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
 import { UserPageComponent } from './user-page/user-page.component';
+// import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '', component:  HomaPageComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full'},
   { path: 'distributors', component: SimOrderPageComponent },
   { path: 'sim-order/:package', component:  ReturningCustomerPageComponent,
     children: [

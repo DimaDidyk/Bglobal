@@ -23,3 +23,11 @@ export class UserDataRegister{
     Affiliate: string;
     AllowSendMail: boolean;
 }
+
+
+export class UserInfo{
+    Email: string;
+    HasRegistered: boolean;
+    LoginProvider: string; 
+    Name: string; 
+}
