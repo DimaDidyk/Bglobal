@@ -223,7 +223,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: '', component: __WEBPACK_IMPORTED_MODULE_3__homa_page_homa_page_component__["a" /* HomaPageComponent */] },
-    { path: '**', redirectTo: '', pathMatch: 'full' },
     { path: 'distributors', component: __WEBPACK_IMPORTED_MODULE_4__sim_order_page_sim_order_page_component__["a" /* SimOrderPageComponent */] },
     { path: 'sim-order/:package', component: __WEBPACK_IMPORTED_MODULE_6__returning_customer_page_returning_customer_page_component__["a" /* ReturningCustomerPageComponent */],
         children: [
@@ -238,6 +237,7 @@ var routes = [
     { path: 'user/sim', component: __WEBPACK_IMPORTED_MODULE_5__user_page_sim_user_page_sim_component__["a" /* UserPageSimComponent */] },
     { path: 'user/info', component: __WEBPACK_IMPORTED_MODULE_12__info_page_info_page_component__["c" /* InfoPageComponent */] },
     { path: 'user', component: __WEBPACK_IMPORTED_MODULE_14__user_page_user_page_component__["a" /* UserPageComponent */] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_3__homa_page_homa_page_component__["a" /* HomaPageComponent */] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1983,7 +1983,7 @@ var HeaderComponent = /** @class */ (function () {
         var _this = this;
         if (this.httpService.checkLogin()) {
             this.getConfigUserInfo().subscribe(function (data) {
-                // console.log( data );
+                console.log(data);
                 _this.userInfo = data;
             }, function (error) {
                 console.log(error);
@@ -2005,6 +2005,7 @@ var HeaderComponent = /** @class */ (function () {
     };
     // Log out
     HeaderComponent.prototype.LogOut = function () {
+        this.userMenuStaus = "hide";
         localStorage.removeItem('tokenAuthorization');
     };
     // open sign in dialog
@@ -2065,6 +2066,7 @@ var DialogSignIn = /** @class */ (function () {
             localStorage.setItem('tokenAuthorization', JSON.stringify(data));
             _this.headerComponent.ngOnInit();
             _this.closeDialog();
+            location.reload();
         }, function (error) {
             _this.error = error.error.Message;
         });
@@ -2969,7 +2971,7 @@ var ReturningChosenPackageComponent = /** @class */ (function () {
 /***/ "./src/app/returning-customer-page/returning-customer-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner></app-banner>\r\n\r\n<app-returning-chosen-package></app-returning-chosen-package>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<app-delivery></app-delivery>\r\n<!-- <app-total></app-total> -->\r\n<!-- <app-payment></app-payment> -->"
+module.exports = "<app-banner></app-banner>\r\n\r\n<app-returning-chosen-package></app-returning-chosen-package>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<!-- <app-delivery></app-delivery> -->\r\n<!-- <app-total></app-total> -->\r\n<!-- <app-payment></app-payment> -->"
 
 /***/ }),
 
