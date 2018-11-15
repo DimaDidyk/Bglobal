@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
 		if( this.httpService.checkLogin() ){
 			this.getConfigUserInfo().subscribe(
 				data => {
-					console.log( data );
+					// console.log( data );
 					this.userInfo = data;
 				},
 				error => {
@@ -120,14 +120,13 @@ export class DialogSignIn {
 		this.userDataLogin.Password = signInForm.value.password;
 
 		this.error = '';
-
 		this.httpService.postDataLogin(this.userDataLogin).subscribe(
 			(data) => {
 				// console.log( data );
 				localStorage.setItem('tokenAuthorization', JSON.stringify(data));
 				this.headerComponent.ngOnInit();
 				this.closeDialog();
-				location.reload();
+				// location.reload();
 			},
 			(error) => {
 				this.error = error.error.Message;

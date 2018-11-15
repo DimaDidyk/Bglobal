@@ -86,6 +86,10 @@ export class ClientInfoComponent implements OnInit {
                 },
                 error => {
                 	console.log(error);
+                	console.log(error.error.ModelState);
+                	// for (var i = error.error.ModelState.length - 1; i >= 0; i--) {
+                	// 	console.log( error.error.ModelState[i] );
+                	// }
                 	this.dialogMessageData.title = 'שגיאה. מלל:';
 					this.dialogMessageData.message = error.error.Message;
 					this.headerComponent.openDialogMessage(this.dialogMessageData);

@@ -12,6 +12,16 @@ import { BuyPackageData } from "../entity/Payment";
 var tokenAuthorization = '';
 if( localStorage.getItem('tokenAuthorization') ){
     var tokenAuthorizationJson = JSON.parse(localStorage.getItem('tokenAuthorization'));
+    // time
+    var nowTime = new Date();
+    var expiresDateToken = new Date(tokenAuthorizationJson.expires);
+    if( nowTime > expiresDateToken ){
+        console.log( 'remove Token' );
+        localStorage.removeItem('tokenAuthorization');
+    }else{
+        console.log( 'true Token' );
+    }
+
     if( tokenAuthorizationJson.access_token || tokenAuthorizationJson.token_type){
         var tokenAuthorization = tokenAuthorizationJson.token_type+" "+ tokenAuthorizationJson.access_token;
     }else{
