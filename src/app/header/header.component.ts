@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
 
 	constructor(
 		public dialog: MatDialog,
-        private httpService: HttpService,
+        public httpService: HttpService,
 	){}
 
 	// get user information
@@ -107,8 +107,8 @@ export class DialogMessage{
 export class DialogSignIn {
 	constructor( 
 		public dialogRef: MatDialogRef<DialogSignIn>,
-		private httpService: HttpService,
-		private headerComponent: HeaderComponent,
+		public httpService: HttpService,
+		public headerComponent: HeaderComponent,
 	){}
 
 	userDataLogin:UserDataLogin = new UserDataLogin();
@@ -126,7 +126,7 @@ export class DialogSignIn {
 				localStorage.setItem('tokenAuthorization', JSON.stringify(data));
 				this.headerComponent.ngOnInit();
 				this.closeDialog();
-				// location.reload();
+				location.reload();
 			},
 			(error) => {
 				this.error = error.error.Message;

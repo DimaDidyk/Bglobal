@@ -34,7 +34,7 @@ export class FlyFormComponent implements OnInit {
 
 
   constructor(//private http: HttpClient,
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
     private adapter: DateAdapter<any>,
     private picker: MatDatepickerModule,
     private httpService: HttpService,

@@ -9,7 +9,7 @@
 	<div class="container">
 		<!-- <pre>{{ userDataLead | json }}</pre> -->
 		
-		<form #detailsForm="ngForm" (ngSubmit)="onSubmit(detailsForm)" class="form" *ngIf="!message">
+		<form #detailsForm="ngForm" (ngSubmit)="onSubmit(detailsForm)" class="form">
 			<div class="row">
 				<div class="col-sm-4">
 					<mat-form-field>
@@ -44,9 +44,5 @@
 				</div>
 			</div>
 		</form>
-
-		<div class="row message" *ngIf="message">
-			<!-- <h3>запрос отправлен. Номер запроса {{ leadID }}</h3> -->
-		</div>
 	</div>
 </section>

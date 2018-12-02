@@ -29,9 +29,9 @@ export class HomeSliderComponent implements OnInit {
   @ViewChild(SwiperComponent) componentRef: SwiperComponent;
   @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
-  public textAnimate(selector:string): void{
+  selector;
+  public textAnimate(selector){
     let index = this.index;
-
     let selectors = document.getElementsByClassName(selector);
 
     for (let i = selectors.length - 1; i >= 0; i--) {

@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Country, SimCountriesWithCategory, ClosestPickUpPoints } from "../entity/Country";
-import { SimPackages } from "../entity/Package";
+import { Country, SimCountriesWithCategory, ClosestPickUpPoints } from "../entity/country";
+import { SimPackages } from "../entity/package";
 import { UserDataLead, UserDataRegister, UserDataLogin, UserInfo } from "../entity/User";
 import { Coupon } from "../entity/Coupon";
 import { Delivery } from "../entity/Delivery";
