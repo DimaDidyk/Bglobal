@@ -40,7 +40,7 @@ export class DeliveryComponent implements OnInit {
     // getConfigDelivery
     getSlidePackgeData = JSON.parse(localStorage.getItem('packageData'));
     deliveryPrice = 0;
-    deliveryId;
+    deliveryId = 22;
 
     public delivery:Delivery = new Delivery();
     getConfigDelivery(delivery): Observable<Delivery[]> {
