@@ -18,7 +18,6 @@ import { Delivery, DeliveryRequest } from "../entity/Delivery";
 import { PickUpPoint } from '../entity/PickUpPoint';
 import { HeaderComponent } from "../header/header.component";
 import { HttpClient } from '@angular/common/http';
-import { } from '../../assets/html';
 
 // import { TotalComponent } from "../total/total.component";
 
