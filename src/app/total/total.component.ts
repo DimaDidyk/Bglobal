@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { Coupon } from "../entity/Coupon";
 import { HttpService } from '../services/http.service';
 import { DeliveryComponent } from "../delivery/delivery.component";
+import { DeliveryRequest } from '../entity/Delivery';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class TotalComponent implements OnInit {
 
 	@Input() additionallyFromData;
 	@Input() deliveryPrice;
-	@Input() deliveryRequest;
+  @Input() deliveryRequest: DeliveryRequest;
 
 	// parse storage data (form)
 	flyFormStor = JSON.parse( localStorage.getItem( 'flyFormValue' ) );
@@ -94,5 +95,6 @@ export class TotalComponent implements OnInit {
 		}, 250)
 	}
 
-	ngOnInit() {}
+  ngOnInit() {
+  }
 }

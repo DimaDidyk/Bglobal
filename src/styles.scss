@@ -30,6 +30,46 @@ body{
   position: relative;
 }
 
+
+.loader{
+  background-image: url('./assets/img/loading.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 70%;
+  height: 70%;
+
+
+  &__container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.loading{
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+
 img{
 	width: max-content;
 }

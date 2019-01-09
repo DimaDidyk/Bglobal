@@ -39,10 +39,18 @@
 					<mat-checkbox [align]="true" name="checked" [ngModel]="isChecked">מאשר קבלת דיוור למייל</mat-checkbox>
 				</div>
 				<div class="col-sm-12">
+
 					<button mat-button class="bg-button bg-green-button" 
+					*ngIf="!loading"
 					[disabled]="!clientInfoForm.valid"
 					(click)="scrollAnimate(scroll)"
 					>המשך  </button>
+					<div *ngIf="loading"  mat-button class="bg-button bg-green-button" >
+						<div class="loader__container">
+							<div class='loader loading'></div>
+						</div>
+					</div>
+					
 					<!-- 
 					(click)="scrollAnimate(simactiveform)"
 					(click)="scrollAnimate(delivery)"

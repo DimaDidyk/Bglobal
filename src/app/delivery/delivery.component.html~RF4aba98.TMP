@@ -24,7 +24,7 @@
           <div class="col-sm-12 checked-wrapper2">
             <mat-radio-button labelPosition="before"
                               [value]="19">
-              איסוף עצמי - הפנינה 2 רעננה
+              א  יסוף עצמי- הפנינה 2 רעננה
             </mat-radio-button>
 
             <span class="form-info"
@@ -159,14 +159,12 @@
       <div class="row">
         <div class="col-sm-12">
           <button mat-button class="bg-button bg-green-button"
-                  [disabled]="!(deliveryForm.value.deliveryId == 19 || (deliveryForm.value.search && deliveryForm.value.pickUp))"
-                  
+                  [disabled]="!deliveryForm.valid && dataReceived"
                   (click)="scrollAnimate(appTotal)"
                   (click)="isShow='show'">
             המשך
           </button>
-          <!-- [disabled]="!deliveryForm.valid || !dataReceived" -->
-</div>
+        </div>
       </div>
     </form>
   </div>

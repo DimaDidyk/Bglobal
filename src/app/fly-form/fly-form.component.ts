@@ -33,6 +33,7 @@ import { DateAdapter } from '@angular/material/core';
 export class FlyFormComponent implements OnInit {
 
 
+
   constructor(//private http: HttpClient,
     public route: ActivatedRoute,
     private adapter: DateAdapter<any>,
@@ -40,6 +41,9 @@ export class FlyFormComponent implements OnInit {
     private httpService: HttpService,
     private OffersComponent: OffersComponent,
   ){}
+
+
+
 
   getConfig(): Observable<Country[]> {
     return this.httpService.getCountries();
@@ -122,6 +126,8 @@ export class FlyFormComponent implements OnInit {
   // animate show and hide
   isShow = 'hide';
   isHide = 'show';
+  loading = false;
+
   onSubmit(flyForm: NgForm) {
     localStorage.setItem('flyFormValue', JSON.stringify(flyForm.value));
 
@@ -132,11 +138,15 @@ export class FlyFormComponent implements OnInit {
       this.getIdCountryByName(flyForm.value.country3),
     ];
     this.simPackages.TotalDays = flyForm.value.countDays;
+    this.loading = true;
 
     this.httpService.postDataSimPackages(this.simPackages).subscribe(
       (data) => {
         this.packagesResponse = data;
         this.packagesResponseLength = this.packagesResponse.length;
+        this.loading = false;
+        
+        
         console.log( data );
         console.log( this.packagesResponseLength );
         // this.OffersComponent.text = 'text';
@@ -218,7 +228,7 @@ export class FlyFormComponent implements OnInit {
 
   // scroll animate
   scrollAnimate(element) {
-    let arrayCountries = this.countries.map((country) => country.Name);
+    //let arrayCountries = this.countries.map((country) => country.Name);
     if (this.errorSelect1 == false || this.errorSelect2 == false || this.errorSelect3 == false) {
       this.isShow = 'show';
       this.isHide = 'hide';

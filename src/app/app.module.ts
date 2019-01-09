@@ -49,6 +49,7 @@ import { UserPageComponent } from './user-page/user-page.component';
 
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PackagesComponent } from './packages/packages.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -94,6 +95,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PersonalDetailsComponent,
     UsageLogComponent,
     NotFoundComponent,
+    PackagesComponent,
   ],
   imports: [
     BrowserModule,

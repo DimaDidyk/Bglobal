@@ -1,92 +1,106 @@
 <section id="total" [@toggleOpacity]="isShowCurrent">
-	<div class="container">
-		<div class="total-wrap">
-			<div class="row">
-				
-				<div class="col-sm-6 selected-services float-right-sm">
-					<h1>שרותים שנבחרו</h1>
-					<table class="table">
-					  <tbody>
-					  	<!-- PackagePrice -->
-					    <tr>
-					      <td><b class="right">&nbsp; {{ getSlidePackgeData['PackagePrice'] }}</b><b>ליום   ₪ </b> </td>
-					      <td>{{ getSlidePackgeData['Name'] }} : חבילה  </td>
-					    </tr>
-					    <!-- SimPrice -->
-					    <tr>
-					      <td><b>₪ {{ getSlidePackgeData['SimPrice'] }}  </b></td>
-					      <td>כרטיס סים  </td> 
-					    </tr>
-					    <!-- delivery -->
-					    <tr>
-					      <td><b>₪ {{ deliveryPrice }}  </b></td>
-					      <td>{{ deliveryRequest.Id == 0? 'איסוף עצמי ' : 'משלוח ' }}</td> <!-- משלוח / איסוף עצמי -->
-					    </tr>
+  <div class="container">
+    <div class="total-wrap">
+      <div class="row">
 
-					    <!-- coupon -->
-					    <tr *ngIf="isActiveCoupon && errorCoupon == null">
-					      <td><b>- ₪ {{ couponeSale }}  </b></td>
-					      <!-- <td>{{ couponName }}</td>  -->
-					      <td>קופון </td> 
-					    </tr>
-						<tr>
-					      <td><b> </b></td>
-					      <td> </td> 
-					    </tr>
-					    <tr>
-					      <td><b class="right">&nbsp;{{ flyFormStor.countDays }}</b><b> 
-					       {{ flyFormStor.countDays == 1? 'ליום' : 'ימים  ' }}
-					      </b></td>
-					      <td>סה”כ ימים </td>
-					    </tr>
-					    
-					  </tbody>
-					</table>
-				</div>
-				<div class="col-sm-6 input-box float-right-sm">
-					<h1>סה״כ לתשלום</h1>
-					<!-- <h2>יש לך קוד קופון</h2> -->
-					
-					<div class="total-price">₪ {{ calculateTotalPrice() }}</div>
-					<span class="open-counpon {{!showInput}}" (click)="showInputCoupon()">יש לי קופון  </span>
-					
-					<form #couponeForm="ngForm" 
-					(ngSubmit)="onSubmit(couponeForm)" 
-					class="{{showInput}}">
-						<div class="row">
-							<div class="col-xs-4">
-								<button mat-button class="bg-button bg-green-button" 
-								[disabled]="!couponeForm.valid">לבדוק  </button>
-							</div>
-							<div class="col-xs-8">
-								<mat-form-field>
-									<input matInput placeholder="הזן קוד קופון" 
-									required 
-									name="coupon" ngModel/>
-								</mat-form-field>
-							</div>
-							<div class="col-xs-12 invalid-coupon" *ngIf="errorCoupon">
-								<p>{{ errorCoupon }}</p>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
+        <div class="col-sm-6 selected-services float-right-sm">
+          <h1>שרותים שנבחרו</h1>
+          <table class="table">
+            <tbody>
+              <!-- PackagePrice -->
+              <tr>
+                <td><b dir="rtl"><span> {{ getSlidePackgeData['PackagePrice'] }} ₪</span> <span *ngIf="getSlidePackgeData['DaysExpired']==1">ליום </span>   </b></td>
+                <td>{{ getSlidePackgeData['Name'] }} : חבילה  </td>
+              </tr>
+              <!-- SimPrice -->
+              <tr>
+                <td><b>₪ {{ getSlidePackgeData['SimPrice'] }}  </b></td>
+                <td>כרטיס סים  </td>
+              </tr>
+              <!-- delivery -->
+              <tr>
+                <td>
+                  <b>
+                    <span *ngIf="deliveryRequest.Id == 19">איסוף עצמי</span>
+                    <span *ngIf="deliveryRequest.Id != 19 && deliveryPrice == 0"> חינם </span>
+                    <span *ngIf="deliveryRequest.Id != 19 && deliveryPrice != 0">₪ {{ deliveryPrice }}</span>
+                  </b>
+                </td>
+                <td>משלוח</td> <!-- משלוח / איסוף עצמי -->
+              </tr>
 
-			<div class="row">
-				<div class="col-sm-12 buttons">
-					<!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->
-					<button mat-button class="bg-button main-button"
-					(click)="showDelivery()">חזור </button>
+              <!-- coupon -->
+              <tr *ngIf="isActiveCoupon && errorCoupon == null">
+                <td><b>- ₪ {{ couponeSale }}  </b></td>
+                <!-- <td>{{ couponName }}</td>  -->
+                <td>קופון </td>
+              </tr>
+              <tr>
+                <td><b> </b></td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>
+                  <b class="right">&nbsp;{{ flyFormStor.countDays }}</b><b>
+                    {{ flyFormStor.countDays == 1? 'ליום' : 'ימים  ' }}
+                  </b>
+                </td>
+                <td>סה”כ ימים </td>
+              </tr>
 
-					<button mat-button class="bg-button bg-green-button main-button"
-					(click)="scrollAnimate(appPayment)"
-					(click)="isShow='show'" (click)="isShowCurrent='hide'">המשך</button>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-6 input-box float-right-sm">
+          <h1>סה״כ לתשלום</h1>
+          <!-- <h2>יש לך קוד קופון</h2> -->
+
+          <div class="total-price">₪ {{ calculateTotalPrice() }}</div>
+          <span class="open-counpon {{!showInput}}" (click)="showInputCoupon()">יש לי קופון  </span>
+
+          <form #couponeForm="ngForm"
+                (ngSubmit)="onSubmit(couponeForm)"
+                class="{{showInput}}">
+            <div class="row">
+              <div class="col-xs-4">
+                <button mat-button class="bg-button bg-green-button"
+                        [disabled]="!couponeForm.valid">
+                  לבדוק
+                </button>
+              </div>
+              <div class="col-xs-8">
+                <mat-form-field>
+                  <input matInput placeholder="הזן קוד קופון"
+                         required
+                         name="coupon" ngModel />
+                </mat-form-field>
+              </div>
+              <div class="col-xs-12 invalid-coupon" *ngIf="errorCoupon">
+                <p>{{ errorCoupon }}</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 buttons">
+          <!-- <h3>!ניתן לטעינות חוזרת בכל עת גלישה במהירות מירבית סים אחד לכל החיים*</h3> -->
+          <button mat-button class="bg-button main-button"
+                  (click)="showDelivery()">
+            חזור
+          </button>
+
+          <button mat-button class="bg-button bg-green-button main-button"
+                  (click)="scrollAnimate(appPayment)"
+                  (click)="isShow='show'" (click)="isShowCurrent='hide'">
+            המשך
+          </button>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- <pre>{{ deliveryRequest | json }}</pre> -->
@@ -94,9 +108,9 @@
 <!-- <pre>{{ getSlidePackgeData | json }}</pre> -->
 
 <div [@toggleOpacity]="isShow" #appPayment>
-	<app-payment 
-		[totalPrice]="calculateTotalPrice()"
-		[couponeCode]="coupon.Code"
-		[deliveryRequest]="deliveryRequest">
-	</app-payment>
+
+  <app-payment [totalPrice]="calculateTotalPrice()"
+               [couponeCode]="coupon.Code"
+               [deliveryRequest]="deliveryRequest">
+  </app-payment>
 </div>

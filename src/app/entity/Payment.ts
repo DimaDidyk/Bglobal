@@ -7,6 +7,7 @@ export class CreditCardDetails{
   Number: string;
   TypeShortName: string;
   CVV: string;
+  IsAllowToSave: boolean;
 }
 
 export class CreditCardDetailsResponse{

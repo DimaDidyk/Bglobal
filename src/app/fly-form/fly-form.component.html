@@ -18,7 +18,7 @@
 						<div class="col-sm-12">
 							<mat-form-field class="example-full-width">
 							    <input type="text" 
-							    placeholder="בחרו את העיד  :"
+							    placeholder="בחרו את היעד  :"
 							    name="{{ countryNameSelect['nameSalect'] }}" 
 							    [ngModel]="getObjectValue(flyFormStor, countryNameSelect['nameSalect'])"
 							    aria-label="Number" 
@@ -68,7 +68,7 @@
 								<input matInput required
 								[matDatepicker]="picker2"
 								[min]="flyForm.value.dateLanding || minDate"
-								placeholder="בחרו תאריך המראה  :"
+								placeholder="בחרו תאריך חזרה  :"
 								name="dateAppearance"
 								[ngModel]="flyFormStor.dateAppearance">
 								<mat-datepicker-toggle #matTfse
@@ -112,8 +112,15 @@
 	[flyFormValue]="flyForm.value" 
 	[packagesResponse]="packagesResponse" 
 	[packagesResponseLength]="packagesResponseLength"></app-offers>
+
+	<div *ngIf="loading"  mat-button class="bg-button bg-green-button" >
+			<div class="loader__container">
+				<div class='loader loading'></div>
+	</div>
+
 </div>
 
 <div [@toggleHeight]="isHide" *ngIf="route.snapshot.routeConfig.path == ''">
 	<app-promotion [FlyForm]="FlyForm"></app-promotion>
+	</div>
 </div>

@@ -81,7 +81,7 @@ export class OffersComponent implements OnInit {
     	localStorage.setItem('packageData', JSON.stringify(packageData));
     	
     	// this.flyFormStor = JSON.parse(localStorage.getItem('flyFormValue'));
-		this.router.navigate([ 'sim-order', this.replaceSpace( packageData['Name'] ) ]);
+		this.router.navigate([ 'sim-order', this.replaceSpace( packageData['Id'] ) ]);
 		// reload
 		this.router.routeReuseStrategy.shouldReuseRoute = function(){
 		    return false;
@@ -96,7 +96,7 @@ export class OffersComponent implements OnInit {
 	
 	initSlider(){
   		// this.componentRef.directiveRef.update();
-  		// console.log( 'this' );
+		  // console.log( 'this' );
   		if( this.packagesResponseLength != 0 ){
 			this.componentRef.directiveRef.update();
   		}
@@ -104,6 +104,8 @@ export class OffersComponent implements OnInit {
 
 	ngOnInit() {
 		// arrow on mobile
+		
+		
 		if( window.innerWidth < 768 ){
 			this.hidePrev = true;
 		}

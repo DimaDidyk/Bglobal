@@ -15,7 +15,7 @@
 			?
 		</h1>
 
-		<h3 *ngIf="packagesResponseLength == 0">Пакеты не найдены</h3>
+		<h3 *ngIf="packagesResponseLength == 0">לא נמצאו חבילות מתאימות</h3>
 
 		<h3 *ngIf="packagesResponseLength != 0">אלה החבילות שהכי מתאימות לכם</h3>
 		
@@ -23,7 +23,7 @@
 			<!-- slider -->
 			<swiper [config]="config" [(index)]="index" (indexChange)="onIndexChange($event)">
 				<div class="swiper-slide"
-				[ngClass]="[packagesResponseLength == 1 ? 'one-slide' : '']"
+				[ngClass]="[packagesResponseLength == 1 ? '' : '']"
 				(click)="routPackage( slide )"
 				*ngFor="let slide of packagesResponse">
 					<div class="slide-header">
