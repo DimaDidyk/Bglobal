@@ -135,58 +135,6 @@
                     {{
  addresses[5].StreetName +' '+
 									addresses[5].HouseNumber +', '+
-<<<<<<< HEAD
-									addresses[5].CityName
-                    }}
-                    <span>( {{addresses[5].Distance}} ק''מ  ) </span>
-                  </div>
-                </mat-radio-button>
-              </div>
-
-            </mat-radio-group>
-          </div> 
-
-          <div class="error-log" *ngIf="!emptyAddresses"> אין כתובות זמינות  </div>
-          <!-- <div class="error-log"
-          *ngIf="emptyAddresses && closestPickUpPoints.Building == 'empty'">дистанция может быть ошибочной</div> -->
-
-        </div>
-      </div>
-
-      <!--<pre>{{ addresses | json }}</pre>-->
-
-      
-
-      <div class="row">
-        <div class="col-sm-12">
-          <button mat-button class="bg-button bg-green-button"
-                  [disabled]="!(deliveryForm.value.deliveryId == 19 || (deliveryForm.value.search && deliveryForm.value.pickUp))"
-                  
-                  (click)="scrollAnimate(appTotal)"
-                  (click)="isShow='show'">
-            המשך
-          </button>
-          <!-- [disabled]="!deliveryForm.valid || !dataReceived" -->
-</div>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!--<pre>{{ deliveryRequest | json }}</pre>
-
-<pre>{{ delivery | json }}</pre>
-
-<pre>{{ deliveryForm.value | json }}</pre>
-
-<pre>{{ deliveryForm.valid | json }}</pre>
-
-<pre>{{ deliveryForm.errors | json }}</pre>-->
-
-<!--<pre>{{ deliveryForm | json }}</pre>-->
-
-
-=======
 									addresses[5].CityName }} 
 									<span>( {{addresses[5].Distance}} ק''מ  ) </span> </div>
 								</mat-radio-button>
@@ -215,7 +163,6 @@
 </section>
 
 <!-- <pre>{{ deliveryForm.value | json }}</pre> -->
->>>>>>> 7f643f07ed891646816c962e6c6c7f825bc2ae4e
 
 <div [@toggleOpacity]="isShow" #appTotal>
   <app-total [deliveryRequest]="deliveryRequest"

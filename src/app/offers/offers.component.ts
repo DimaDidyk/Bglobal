@@ -81,7 +81,7 @@ export class OffersComponent implements OnInit {
     	localStorage.setItem('packageData', JSON.stringify(packageData));
     	
     	// this.flyFormStor = JSON.parse(localStorage.getItem('flyFormValue'));
-		this.router.navigate([ 'sim-order', this.replaceSpace( packageData['Id'] ) ]);
+		this.router.navigate([ 'sim-order', this.replaceSpace( packageData['Name'] ) ]);
 		// reload
 		this.router.routeReuseStrategy.shouldReuseRoute = function(){
 		    return false;
