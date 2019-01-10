@@ -72,12 +72,13 @@ export class PaymentComponent implements OnInit {
     // this.buyPackageData.Currency = 'Currency'; //Currency
     // console.log( this.buyPackageData );
     // console.log( this.couponeCode );
-
+    this.buyPackageData.SimCardRequired = true;
+    console.log(this.buyPackageData);
     this.httpService.postDataBuyPackage(this.buyPackageData).subscribe(
       data => {
         this.creditCardDetailsResponse = data;
         this.dialogMessageData.title = 'החיוב עבר בהצלחה  ';
-        this.dialogMessageData.message = this.creditCardDetailsResponse.InvoceId + 'אמספר אישור ';
+        this.dialogMessageData.message = this.creditCardDetailsResponse.InvoceId + ' אמספר אישור ';
         this.headerComponent.openDialogMessage(this.dialogMessageData);
       },
       error => {

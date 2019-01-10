@@ -95,6 +95,11 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  openDialogVerify(){
+    
+  }
+
+
 
 }
 
@@ -112,6 +117,29 @@ export class DialogMessage {
 
   closeDialog() {
     this.dialogRef.close();
+  }
+}
+
+
+
+// Verify email message dialog
+@Component({
+  selector: 'dialog-verify-message',
+  templateUrl: 'dialog-verify-message.html',
+  styleUrls: ['./dialog-verify-message.scss']
+})
+export class DialogVerify {
+  constructor(
+    public dialogRef: MatDialogRef<DialogMessage>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ) { }
+
+  closeDialog() {
+    this.dialogRef.close();
+  }
+
+  verify(){
+
   }
 }
 

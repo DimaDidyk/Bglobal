@@ -1,0 +1,12 @@
+<div id="message-dialog" class="gradient-background">
+	<!-- close icon -->
+	<i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i>
+	
+	<h1 mat-dialog-title *ngIf="data.title">{{ data.title }}</h1>
+	<hr *ngIf="data.title">
+
+	<p>{{ data.message }}</p>
+
+	<button mat-button class="bg-button bg-green-button"
+	(click)="verify()">שלח  </button>
+</div>

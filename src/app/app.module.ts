@@ -27,7 +27,7 @@ import { FaqPageComponent } from './faq-page/faq-page.component';
 import { FlyFormComponent } from './fly-form/fly-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormSimComponent } from './form-sim/form-sim.component';
-import { DialogMessage, DialogSignIn, HeaderComponent } from './header/header.component';
+import { DialogMessage, DialogSignIn, HeaderComponent, DialogVerify } from './header/header.component';
 import { HomaPageComponent } from './homa-page/homa-page.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { DialogUpdateCardInfo, DialogUpdateUserInfo, InfoPageComponent } from './info-page/info-page.component';
@@ -62,6 +62,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HeaderComponent,
     DialogSignIn,
     DialogMessage,
+    DialogVerify,
     FooterComponent,
     HomeSliderComponent,
     FlyFormComponent,
@@ -129,6 +130,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HeaderComponent,
     DialogSignIn,
     DialogMessage,
+    DialogVerify,
     DialogUpdateUserInfo,
     DialogUpdateCardInfo,
     InfoPageComponent,
